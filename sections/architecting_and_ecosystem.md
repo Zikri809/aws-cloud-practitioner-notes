@@ -76,7 +76,7 @@
   - Go global in minutes (deploy in multiple regions).
   - Use serverless architectures.
   - Experiment frequently.
-  - Be aware of all AWS services (mechanical sympathy).
+  - Understand the technology's operating characteristics and use resources in ways that suit the workload (mechanical sympathy).
 
 ### 5. Cost Optimization
 
@@ -115,22 +115,17 @@
 ## AWS Ecosystem - Free Resources
 
 - **AWS Blogs**: [AWS Blogs](https://aws.amazon.com/blogs/aws/)
-- **AWS Forums**: [AWS Forums](https://forums.aws.amazon.com/index.jspa)
+- **AWS re:Post**: [AWS community questions and Knowledge Center](https://repost.aws/)
 - **AWS Whitepapers & Guides**: [AWS Whitepapers & Guides](https://aws.amazon.com/whitepapers)
-- **AWS Quick Starts**: [AWS Quick Starts](https://aws.amazon.com/quickstart/)
-  - Automated, gold-standard deployments in the AWS Cloud.
-  - Examples: WordPress on AWS, leveraging CloudFormation.
+- **Deployment solutions**: [AWS Solutions Library](https://aws.amazon.com/solutions/)
+  - Find supported deployment solutions and architecture guidance. Older materials call partner reference deployments AWS Quick Starts.
 - **AWS Solutions**: [AWS Solutions](https://aws.amazon.com/solutions/)
   - Vetted technology solutions for the AWS Cloud.
   - Example - AWS Landing Zone (secure, multi-account environment).
 
 ### AWS Ecosystem - AWS Support
 
-| DEVELOPER                                               | BUSINESS                                                      | ENTERPRISE                                                      |
-| ------------------------------------------------------- | ------------------------------------------------------------- | --------------------------------------------------------------- |
-| Business hours email access to Cloud Support Associates | 24x7 phone, email, and chat access to Cloud Support Engineers | Access to a Technical Account Manager (TAM)                     |
-| General guidance: < 24 business hours                   | Production system impaired: < 4 hours                         | Concierge Support Team (for billing and account best practices) |
-| System impaired: < 12 business hours                    | Production system down: < 1 hour                              | Business-critical system down: < 15 minutes                     |
+Current plans are Basic, Business Support+, Enterprise Support, and Unified Operations. Enterprise adds a designated TAM; Unified Operations provides additional operational support. Older Developer, Business, and Enterprise On-Ramp comparisons are historical during the transition to 1 January 2027, with AWS GovCloud (US) exceptions. Use the [billing and support chapter](./account_management_billing_support.md) and AWS's live plan documentation for entitlement and initial-response targets.
 
 ## AWS Marketplace
 
@@ -139,3 +134,12 @@
   - Custom AMIs, CloudFormation templates, SaaS, containers.
 - Purchases go into your AWS bill.
 - You can sell your own solutions on the AWS Marketplace.
+
+## AWS documentation review
+
+Reviewed 16 October 2026. Retained the six-pillar framework and updated support-plan references, community resources, and the meaning of mechanical sympathy.
+
+- [AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html)
+- [Performance-efficiency design principles](https://docs.aws.amazon.com/wellarchitected/latest/performance-efficiency-pillar/design-principles.html)
+- [Current AWS Support plans](https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html)
+- [AWS re:Post](https://repost.aws/)

@@ -63,7 +63,7 @@
 - Cloud-based virtual contact center
 - Receives calls and creates contact flows
 - Integrates with CRM systems or AWS
-- No upfront payments, 80% cheaper than traditional contact centers
+- Pricing depends on channels, features, and usage. An advertised comparison does not guarantee an 80% saving for every contact center.
 
 ## Amazon Comprehend
 
@@ -74,12 +74,14 @@
   - Extracts key phrases, places, people, brands, or events
   - Determines sentiment of the text
   - Analyzes text using tokenization and parts of speech
-  - Organizes text files by topic
+  - Core text-analysis features include entities, key phrases, and sentiment. Topic modeling, event detection, and prompt-safety classification have separate availability restrictions; do not assume all historical features are open to new customers.
 - Key uses:
   - Analyzing customer interactions for positive or negative experiences
   - Grouping articles by topics
 
 ## Amazon SageMaker
+
+The model-building service is now called **Amazon SageMaker AI**. The broader SageMaker product family includes additional data and AI capabilities. **Amazon Bedrock** provides access to foundation models for generative AI applications; distinguish this from building and training your own models.
 
 - Fully managed service for developers / data scientists to build ML models
 - Typically, difficult to do all the processes in one place + provision servers
@@ -87,9 +89,9 @@
 
 ## Amazon Forecast
 
-- Fully managed service that uses ML to deliver highly accurate forecasts
+- Historical/existing-customer forecasting service. Amazon Forecast has been closed to new customers since 29 July 2024. For new workloads, evaluate the supported forecasting tools named in AWS's migration guidance.
 - Example: predict the future sales of a raincoat
-- 50% more accurate than looking at the data itself
+- Forecast accuracy depends on data and evaluation; there is no general 50% accuracy guarantee.
 - Reduces forecasting time from months to hours
 - Key uses:
   - Product Demand Planning
@@ -98,7 +100,7 @@
 
 ## Amazon Kendra
 
-- Fully managed document search service powered by ML
+- Managed enterprise document search service. Kendra is closed to new customers under its current availability notice; distinguish its historical capabilities from a recommendation to onboard a new account.
 - Extracts answers from various document types (text, PDF, HTML, PowerPoint, MS Word, FAQs)
 - Offers natural language search capabilities
 - Learns from user interactions to promote preferred results
@@ -132,7 +134,18 @@
 - **Connect**: Cloud contact center
 - **Comprehend**: Natural language processing
 - **SageMaker**: Machine learning for developers and data scientists
-- **Forecast**: Accurate forecasts
-- **Kendra**: ML-powered search engine
+- **Forecast**: existing-customer forecasting service, closed to new customers.
+- **Kendra**: enterprise search with new-customer restrictions.
 - **Personalize**: Real-time personalized recommendations
 - **Textract**: Detect text and data in documents
+
+## AWS documentation review
+
+Reviewed 16 October 2026. Removed unsupported accuracy/cost promises, clarified SageMaker AI and Bedrock, and identified restricted Forecast and Kendra services.
+
+- [Amazon SageMaker AI](https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html)
+- [Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html)
+- [Amazon Forecast availability](https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html)
+- [Amazon Kendra availability](https://docs.aws.amazon.com/kendra/latest/dg/kendra-availability-change.html)
+- [Comprehend availability changes](https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-availability-change.html)
+- [Amazon Connect](https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html)

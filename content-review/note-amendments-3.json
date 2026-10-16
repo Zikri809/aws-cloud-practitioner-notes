@@ -1,0 +1,283 @@
+[
+  {
+    "file": "sections/cloud_monitoring.md",
+    "summary": "Clarified CloudTrail's default event history, current Health naming, EventBridge, and X-Ray instrumentation lifecycle.",
+    "sources": [
+      {
+        "title": "CloudTrail event history",
+        "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html"
+      },
+      {
+        "title": "AWS Health",
+        "url": "https://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html"
+      },
+      {
+        "title": "X-Ray to OpenTelemetry migration",
+        "url": "https://docs.aws.amazon.com/xray/latest/devguide/xray-sdk-migration.html"
+      },
+      {
+        "title": "CodeGuru Reviewer availability",
+        "url": "https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/codeguru-reviewer-availability-change.html"
+      },
+      {
+        "title": "Amazon EventBridge",
+        "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html"
+      }
+    ],
+    "changes": [
+      {
+        "find": "- The CloudWatch Events name will be replaced with EventBridge",
+        "replace": "- CloudWatch Events is the earlier name for these event-bus capabilities. Use Amazon EventBridge terminology; EventBridge Scheduler is a separate scheduling capability."
+      },
+      {
+        "find": "- CloudTrail is enabled by default!",
+        "replace": "- CloudTrail event history is available by default for the last 90 days of management events in each Region. This is not a trail that automatically retains every API/data event indefinitely."
+      },
+      {
+        "find": "- Events are stored for 90 days in CloudTrail\n- To keep events beyond this period, log them to S3 and use Athena",
+        "replace": "- Event history covers 90 days of management events. Data events require configuration and are not included in event history.\n- Configure a trail to S3 for longer retention and select the event types required for the audit. S3 data can be queried with Athena. CloudTrail Lake has separate availability and retention rules; it is not a new-customer default."
+      },
+      {
+        "find": "- Helps analyze and debug distributed applications by providing request tracing.",
+        "replace": "- Helps analyze and debug distributed applications by providing request tracing. The X-Ray service remains available, but the X-Ray SDKs and daemon entered maintenance on 25 February 2026. Prefer supported OpenTelemetry instrumentation for new work."
+      },
+      {
+        "find": "- Uses machine learning to identify:",
+        "replace": "- CodeGuru Reviewer no longer accepts new repository associations; existing associations can continue. Its following capabilities describe existing-customer/historical use, not a recommendation to onboard a new account:\n- Uses machine learning to identify:"
+      },
+      {
+        "find": "## AWS Status - Service Health Dashboard",
+        "replace": "## AWS Status - Service Health Dashboard\n\nCurrent name: the public service-health view of AWS Health Dashboard. Use [health.aws.amazon.com](https://health.aws.amazon.com/health/status)."
+      },
+      {
+        "find": "## AWS Personal Health Dashboard",
+        "replace": "## AWS Personal Health Dashboard\n\nCurrent name: the account-health view of AWS Health Dashboard. Public service status and account-specific events are different views of AWS Health."
+      }
+    ]
+  },
+  {
+    "file": "sections/security_compliance.md",
+    "summary": "Corrected Inspector scope, root-only tasks, KMS terminology and rotation, ACM certificate pricing, and several overly broad security claims.",
+    "sources": [
+      {
+        "title": "Amazon Inspector",
+        "url": "https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html"
+      },
+      {
+        "title": "KMS keys",
+        "url": "https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html"
+      },
+      {
+        "title": "KMS key rotation",
+        "url": "https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html"
+      },
+      {
+        "title": "ACM exportable public certificates",
+        "url": "https://docs.aws.amazon.com/acm/latest/userguide/acm-exportable-certificates.html"
+      },
+      {
+        "title": "Root user tasks",
+        "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/root-user-tasks.html"
+      },
+      {
+        "title": "Change a support plan",
+        "url": "https://docs.aws.amazon.com/awssupport/latest/user/changing-support-plans.html"
+      },
+      {
+        "title": "AWS penetration testing policy",
+        "url": "https://aws.amazon.com/security/penetration-testing/"
+      },
+      {
+        "title": "Security Hub CSPM and AWS Config",
+        "url": "https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-prereq-config.html"
+      }
+    ],
+    "changes": [
+      {
+        "find": "  - Ensure AWS employees can’t access your data",
+        "replace": "  - Operate the service infrastructure with AWS access-control and data-protection controls; customers still configure who may access their data."
+      },
+      {
+        "find": "  - Enabling encryption for objects (e.g., server-side or client-side encryption).",
+        "replace": "  - Select suitable encryption and access policies. New S3 uploads are already encrypted with at least SSE-S3; stronger or client-side requirements remain a customer design decision."
+      },
+      {
+        "find": "- Prevents DDOS attack",
+        "replace": "- Helps detect and mitigate DDoS attacks; do not interpret protection as a guarantee that every attack is prevented."
+      },
+      {
+        "find": "- 24/7 access to AWS DDoS response team (DRP)",
+        "replace": "- Shield Advanced includes eligibility for Shield Response Team assistance; expert response and cost-protection features are not blanket Shield Standard benefits."
+      },
+      {
+        "find": "- AWS customers are welcome to carry out security assessments or penetration tests against their AWS infrastructure without prior approval for 8 services:",
+        "replace": "- AWS permits testing customer-owned resources on its current permitted-services list without prior approval, subject to the penetration-testing policy. The following examples are not an exhaustive or permanently fixed list:"
+      },
+      {
+        "find": "- Encryption Opt-in:",
+        "replace": "- Encryption configuration depends on the service; do not assume all entries below are unencrypted by default:"
+      },
+      {
+        "find": "  - S3 buckets: Server-side encryption of objects",
+        "replace": "  - S3: all new uploads have default SSE-S3 encryption; optionally select other supported modes."
+      },
+      {
+        "find": "## Types of Customer Master Keys: CMK",
+        "replace": "## Types of Customer Master Keys: CMK\n\nCurrent terminology is **KMS keys**. CMK is the older name. Distinguish customer managed keys, AWS managed keys, and AWS owned keys."
+      },
+      {
+        "find": "- Possibility of rotation policy (new key generated every year, old key preserved)",
+        "replace": "- Eligible customer managed symmetric keys support configurable automatic rotation periods (90 to 2,560 days), with 365 days as the default, and on-demand rotation. Rotating key material does not change the key ID; previous material remains available to decrypt older ciphertext."
+      },
+      {
+        "find": "- Free of charge for public TLS certificates",
+        "replace": "- Non-exportable public certificates used with integrated services have no ACM certificate charge. Exportable public certificates and private CA services have charges; not every ACM certificate is free."
+      },
+      {
+        "find": "- Remember: only for EC2 instances and container infrastructure",
+        "replace": "- Inspector scans supported EC2 workloads, ECR container images, and Lambda functions. Supported scan modes and resource coverage vary; Inspector Classic is a retired, separate service."
+      },
+      {
+        "find": "- Amazon Macie is a fully managed data security and data privacy service that uses machine learning and pattern matching to discover and protect your sensitive data in AWS.",
+        "replace": "- Amazon Macie discovers sensitive data and evaluates security/privacy risks in supported S3 data. It does not automatically scan all databases or all data in every AWS service."
+      },
+      {
+        "find": "- Must first enable the AWS Config Service",
+        "replace": "- Security Hub CSPM controls that use AWS Config require the relevant Config recorder and resource recording. This is not a prerequisite for every Security Hub finding integration or every newer Security Hub capability."
+      },
+      {
+        "start": "- Lock away your AWS account root user access keys!",
+        "end": "## IAM Access Analyzer",
+        "replace": "- Do not create root access keys. Protect root sign-in with MFA and use federated workforce access for routine work.\n- Do not memorize the old claim that changing a support plan is root-only: authorized IAM principals can change plans. Organizations can also centrally perform some privileged tasks for member accounts.\n- Tasks that still require root credentials in the applicable account context include changing the root password and configuring S3 MFA Delete. Account closure and recovery have standalone/member-account distinctions; consult the current task list rather than assuming root is always the only path.\n\n[AWS root-user guidance](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html) and [support-plan changes](https://docs.aws.amazon.com/awssupport/latest/user/changing-support-plans.html) explain the exceptions."
+      },
+      {
+        "find": "- Inspector: For EC2 only, install agent and find vulnerabilities",
+        "replace": "- Inspector: vulnerability assessment for supported EC2, ECR, and Lambda resources; scan modes vary."
+      },
+      {
+        "find": "  - Change or cancel your AWS Support plan",
+        "replace": "  - Check the current task-specific permissions; changing support plans can be delegated to authorized IAM principals."
+      }
+    ]
+  },
+  {
+    "file": "sections/machine_learning.md",
+    "summary": "Removed unsupported accuracy/cost promises, clarified SageMaker AI and Bedrock, and identified restricted Forecast and Kendra services.",
+    "sources": [
+      {
+        "title": "Amazon SageMaker AI",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
+      },
+      {
+        "title": "Amazon Bedrock",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
+      },
+      {
+        "title": "Amazon Forecast availability",
+        "url": "https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html"
+      },
+      {
+        "title": "Amazon Kendra availability",
+        "url": "https://docs.aws.amazon.com/kendra/latest/dg/kendra-availability-change.html"
+      },
+      {
+        "title": "Comprehend availability changes",
+        "url": "https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-availability-change.html"
+      },
+      {
+        "title": "Amazon Connect",
+        "url": "https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html"
+      }
+    ],
+    "changes": [
+      {
+        "find": "- No upfront payments, 80% cheaper than traditional contact centers",
+        "replace": "- Pricing depends on channels, features, and usage. An advertised comparison does not guarantee an 80% saving for every contact center."
+      },
+      {
+        "find": "  - Organizes text files by topic",
+        "replace": "  - Core text-analysis features include entities, key phrases, and sentiment. Topic modeling, event detection, and prompt-safety classification have separate availability restrictions; do not assume all historical features are open to new customers."
+      },
+      {
+        "find": "## Amazon SageMaker\n",
+        "replace": "## Amazon SageMaker\n\nThe model-building service is now called **Amazon SageMaker AI**. The broader SageMaker product family includes additional data and AI capabilities. **Amazon Bedrock** provides access to foundation models for generative AI applications; distinguish this from building and training your own models.\n"
+      },
+      {
+        "find": "- Fully managed service that uses ML to deliver highly accurate forecasts",
+        "replace": "- Historical/existing-customer forecasting service. Amazon Forecast has been closed to new customers since 29 July 2024. For new workloads, evaluate the supported forecasting tools named in AWS's migration guidance."
+      },
+      {
+        "find": "- 50% more accurate than looking at the data itself",
+        "replace": "- Forecast accuracy depends on data and evaluation; there is no general 50% accuracy guarantee."
+      },
+      {
+        "find": "- Fully managed document search service powered by ML",
+        "replace": "- Managed enterprise document search service. Kendra is closed to new customers under its current availability notice; distinguish its historical capabilities from a recommendation to onboard a new account."
+      },
+      {
+        "find": "- **Forecast**: Accurate forecasts",
+        "replace": "- **Forecast**: existing-customer forecasting service, closed to new customers."
+      },
+      {
+        "find": "- **Kendra**: ML-powered search engine",
+        "replace": "- **Kendra**: enterprise search with new-customer restrictions."
+      }
+    ]
+  },
+  {
+    "file": "sections/vpc.md",
+    "summary": "Clarified public/private subnet routing, Direct Connect encryption, endpoint support, VPN termination, and deployment-dependent NAT behavior.",
+    "sources": [
+      {
+        "title": "VPC subnet types",
+        "url": "https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html"
+      },
+      {
+        "title": "NAT gateway basics",
+        "url": "https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-basics.html"
+      },
+      {
+        "title": "Direct Connect encryption",
+        "url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/encryption-in-transit.html"
+      },
+      {
+        "title": "AWS Site-to-Site VPN",
+        "url": "https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html"
+      },
+      {
+        "title": "AWS PrivateLink",
+        "url": "https://docs.aws.amazon.com/vpc/latest/privatelink/what-is-privatelink.html"
+      }
+    ],
+    "changes": [
+      {
+        "find": "- A public subnet is a subnet that is accessible from the internet\n- A private subnet is a subnet that is not accessible from the internet",
+        "replace": "- A public subnet has a direct route to an internet gateway. Internet reachability also requires suitable addressing and security rules.\n- A private subnet has no direct route to an internet gateway; it can still use configured egress or private connectivity."
+      },
+      {
+        "find": "- Allows instances in the VPC to directly communicate with the internet.",
+        "replace": "- Provides an internet path when routing, public IPv4 or IPv6 addressing, and security rules permit it. Attaching an internet gateway alone does not make every instance public."
+      },
+      {
+        "find": "- Managed by AWS\n",
+        "replace": "- Managed by AWS. This outbound-internet example describes a public NAT gateway; private NAT gateways serve different connectivity use cases. Match NAT deployment and resilience to the current zonal or regional offering.\n"
+      },
+      {
+        "find": "- VPC Endpoint Interface: the rest",
+        "replace": "- Interface endpoints: supported AWS and other PrivateLink endpoint services, not automatically every AWS service. Check service and Region support."
+      },
+      {
+        "find": "  - AWS: must use a Virtual Private Gateway (VGW)",
+        "replace": "  - AWS termination can use a virtual private gateway or transit gateway, according to the supported VPN architecture."
+      },
+      {
+        "find": "  - The connection is private, secure and fast",
+        "replace": "  - Provides dedicated connectivity. Direct Connect traffic is not encrypted by default; use an appropriate VPN, supported MACsec, or application encryption when required."
+      },
+      {
+        "find": "  - Takes at least a month to establish",
+        "replace": "  - Provisioning time depends on the connection, provider, facility, and existing connectivity; there is no universal one-month minimum."
+      }
+    ]
+  }
+]

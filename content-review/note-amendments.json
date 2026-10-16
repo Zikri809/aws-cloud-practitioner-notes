@@ -1,0 +1,252 @@
+[
+  {
+    "file": "sections/s3.md",
+    "summary": "Corrected object limits, default encryption and access controls, version IDs, server access logging, storage-class resilience, and legacy Snow recommendations.",
+    "sources": [
+      {
+        "title": "S3 object and multipart upload limits",
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/qfacts.html"
+      },
+      {
+        "title": "Default SSE-S3 encryption",
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingServerSideEncryption.html"
+      },
+      {
+        "title": "S3 Object Ownership",
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html"
+      },
+      {
+        "title": "S3 storage classes",
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html"
+      },
+      {
+        "title": "S3 versioning",
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html"
+      },
+      {
+        "title": "Server access logging",
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html"
+      },
+      {
+        "title": "Snowball Edge availability and alternatives",
+        "url": "https://docs.aws.amazon.com/snowball/latest/developer-guide/snowball-edge-availability-change.html"
+      },
+      {
+        "title": "Snow device availability",
+        "url": "https://docs.aws.amazon.com/snowball/latest/developer-guide/snowball-edge-availability-change.html"
+      }
+    ],
+    "changes": [
+      {
+        "find": "- Buckets must have a globally unique name (across all regions all accounts)",
+        "replace": "- General purpose bucket names must be unique within an AWS partition. Directory buckets have different naming and scope rules."
+      },
+      {
+        "find": "  - Max Object Size is 5TB (5000GB)",
+        "replace": "  - The current multipart-upload maximum object size is 48.8 TiB. The historical 5 TB limit is outdated; consult the linked S3 limits page rather than memorizing an old value."
+      },
+      {
+        "find": "- **Encryption:** encrypt objects in Amazon S3 using encryption keys",
+        "replace": "- **Encryption:** S3 automatically encrypts all new object uploads with at least SSE-S3. Choose SSE-KMS or another supported encryption option when requirements call for it.\n- **Current defaults:** New buckets use Bucket owner enforced Object Ownership with ACLs disabled, and Block Public Access is enabled. Prefer policy-based access control over ACLs.\n- **Consistency:** S3 provides strong read-after-write consistency for object writes, overwrites, and deletes; it is not an eventually consistent object store."
+      },
+      {
+        "find": "  - the user IAM permissions allow it OR the resource policy ALLOWS it",
+        "replace": "  - AWS evaluates applicable identity, resource, organization, and other policies; cross-account requests can require permission on both sides"
+      },
+      {
+        "find": "      \"sid\": \"PublicRead\",",
+        "replace": "      \"Sid\": \"PublicRead\","
+      },
+      {
+        "find": "        \"arn:aws:s3::examplebucket/*\"",
+        "replace": "        \"arn:aws:s3:::example-bucket/*\""
+      },
+      {
+        "find": "- **If you get a 403 (Forbidden) error, make sure the bucket policy allows public reads!**",
+        "replace": "- Direct S3 website endpoints require intentionally public content and do not support HTTPS. Diagnose 403 responses using AWS's access-control guidance; do not disable Block Public Access as a general fix. For private S3 origins with HTTPS, use CloudFront with origin access control."
+      },
+      {
+        "find": "- Same key overwrite will increment the “version”: 1, 2, 3….",
+        "replace": "- Overwriting a key creates a new version with an opaque, S3-generated version ID; version IDs are not sequential counters."
+      },
+      {
+        "find": "- Any request made to S3, from any account, authorized or denied, will be logged into another S3 bucket",
+        "replace": "- Server access logging delivers access records to a destination S3 bucket on a best-effort basis. Records can be delayed or missing; use appropriately configured CloudTrail data events when object-level API auditing is required."
+      },
+      {
+        "find": "  - Same for all storage classes",
+        "replace": "  - The durability design target does not mean every class survives loss of an AZ. One Zone-IA and Express One Zone store data within one AZ; choose a multi-AZ class for AZ-loss resilience."
+      },
+      {
+        "find": "- [Amazon S3 Intelligent Tiering](#s3-intelligent-tiering)",
+        "replace": "- [Amazon S3 Intelligent Tiering](#s3-intelligent-tiering)\n- S3 Express One Zone: low-latency storage in a single AZ using directory buckets; different from multi-AZ S3 Standard."
+      },
+      {
+        "find": "- Expedited (1 to 5 minutes), Standard (3 to 5 hours), Bulk (5 to 12 hours) – free",
+        "replace": "- Typical retrieval options: Expedited (1 to 5 minutes), Standard (3 to 5 hours), and Bulk (5 to 12 hours). Bulk retrieval is free for this class; do not assume every retrieval tier is free."
+      },
+      {
+        "start": "## AWS Snow Family\n",
+        "end": "## Hybrid Cloud for Storage\n",
+        "replace": "## AWS Snow Family\n\nSnow device examples in older questions are historical. Snowball Edge is closed to new customers; its service-specific availability notice says existing customers can continue using it. AWS Snowmobile is retired, and Snowcone is not available to new customers. Do not treat old device ordering instructions or capacity tables as current purchasing guidance.\n\n### Data Migrations with AWS Snow Family\n\nFor new migrations, evaluate AWS DataSync for online movement, AWS Data Transfer Terminal for uploading from your own portable devices at an AWS facility, and AWS Partner transfer options. Choose based on connectivity, data volume, security requirements, and availability.\n\n### Snowball Edge (for data transfers)\n\nHistorically, customers shipped encrypted devices for bulk transfer and used local compute. Existing customers must consult their supported device's current documentation; old Snowball capacities are not interchangeable.\n\n### AWS Snowcone\n\nHistorical compact edge-compute and transfer device. It is not a current recommendation for new workloads.\n\n### AWS Snowmobile\n\nHistorical truck-based transfer service. AWS lists its end of support as 14 March 2024.\n\n## What is Edge Computing?\n\nProcessing data near where it is produced can reduce reliance on a distant Region. For current AWS on-premises and edge infrastructure, evaluate supported AWS Outposts options.\n\n## AWS OpsHub\n\nOpsHub was a desktop management application for supported Snow devices. It does not remove the devices' lifecycle or eligibility restrictions."
+      },
+      {
+        "find": "- Snow Family: import data onto S3 through a physical device, edge computing",
+        "replace": "- Snow Family: historical device-based transfer and edge-compute concepts; new customers should use the documented alternatives."
+      }
+    ]
+  },
+  {
+    "file": "sections/cloud_integration.md",
+    "summary": "Corrected SQS deletion semantics, MQ engines, service names, and the blanket claim that SNS cannot retain messages.",
+    "sources": [
+      {
+        "title": "SQS visibility timeout and deletion",
+        "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html"
+      },
+      {
+        "title": "Amazon MQ",
+        "url": "https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/welcome.html"
+      },
+      {
+        "title": "SNS FIFO archiving and replay",
+        "url": "https://docs.aws.amazon.com/sns/latest/dg/fifo-message-archiving-replay.html"
+      },
+      {
+        "title": "Amazon Data Firehose",
+        "url": "https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html"
+      },
+      {
+        "title": "Managed Service for Apache Flink",
+        "url": "https://docs.aws.amazon.com/managed-flink/latest/java/what-is.html"
+      }
+    ],
+    "changes": [
+      {
+        "find": "  - using Kinesis: real-time data streaming model (out of scope for the exam)",
+        "replace": "  - using Kinesis Data Streams: real-time streaming. Use the current CLF-C02 scope guide rather than declaring streaming services categorically out of scope."
+      },
+      {
+        "find": "- Messages are deleted after they’re read by consumers",
+        "replace": "- Receiving a message hides it temporarily; it does not delete it. The consumer or its integration deletes it after successful processing. Undeleted messages can reappear after the visibility timeout."
+      },
+      {
+        "find": "  - Kinesis Data Firehose: load streams into S3, Redshift, ElasticSearch, etc…",
+        "replace": "  - Amazon Data Firehose (formerly Kinesis Data Firehose): deliver streaming data to supported destinations such as S3 and Amazon OpenSearch Service."
+      },
+      {
+        "find": "  - Kinesis Data Analytics: perform real-time analytics on streams using SQL",
+        "replace": "  - Amazon Managed Service for Apache Flink: stream processing. The separate Kinesis Data Analytics for SQL applications service ended support on 27 January 2026."
+      },
+      {
+        "find": "- Each subscriber to the topic will get all the messages",
+        "replace": "- SNS fans out to subscriptions; subscription filter policies can limit which messages each subscriber receives."
+      },
+      {
+        "find": "- Amazon MQ = managed Apache ActiveMQ",
+        "replace": "- Amazon MQ manages Apache ActiveMQ Classic and RabbitMQ brokers."
+      },
+      {
+        "find": "  - No message retention",
+        "replace": "  - Standard topics are not general-purpose persistent queues. FIFO topics can use opt-in message archiving and replay for up to 365 days."
+      },
+      {
+        "find": "- Amazon MQ: managed Apache MQ in the cloud (MQTT, AMQP.. protocols)",
+        "replace": "- Amazon MQ: managed ActiveMQ Classic or RabbitMQ, using each engine's supported messaging protocols."
+      }
+    ]
+  },
+  {
+    "file": "sections/databases.md",
+    "summary": "Corrected RDS deployment distinctions, Aurora storage and pricing claims, Redshift billing, DocumentDB wording, and retired QLDB guidance.",
+    "sources": [
+      {
+        "title": "RDS Multi-AZ DB clusters",
+        "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html"
+      },
+      {
+        "title": "RDS quotas",
+        "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Limits.html"
+      },
+      {
+        "title": "Aurora quotas and storage limits",
+        "url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Limits.html"
+      },
+      {
+        "title": "ElastiCache engines",
+        "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WhatIs.html"
+      },
+      {
+        "title": "Redshift Serverless billing",
+        "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-billing.html"
+      },
+      {
+        "title": "AWS services in full shutdown",
+        "url": "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html"
+      },
+      {
+        "title": "Managed Blockchain end of support",
+        "url": "https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-end-of-support.html"
+      }
+    ],
+    "changes": [
+      {
+        "find": "  - Supports **MySQL**, **PostgreSQL**, **MariaDB**, **Oracle**, **SQL Server**.",
+        "replace": "  - Supports engines including MySQL, PostgreSQL, MariaDB, Oracle, SQL Server, and Db2. Aurora is a MySQL/PostgreSQL-compatible engine with its own architecture."
+      },
+      {
+        "find": "  - Storage backed by EBS (gp2 or io1)",
+        "replace": "  - RDS DB instance storage includes supported gp2/gp3 and provisioned-IOPS options; available choices depend on the engine and deployment."
+      },
+      {
+        "find": "| Can create up to 5 Read Replicas    | Data is only read/written to the main database    |\n| Data is only written to the main DB | Can only have 1 other AZ as failover              |",
+        "replace": "| Replica limits depend on the engine; do not assume a universal maximum of five | A traditional Multi-AZ DB instance has one non-readable standby |\n| Applications normally write to the primary | A Multi-AZ DB cluster has a writer and two readable instances across three AZs |"
+      },
+      {
+        "find": "  - **5x faster** than MySQL, **3x faster** than PostgreSQL.",
+        "replace": "  - AWS publishes workload-specific performance comparisons; do not interpret a marketing multiple as a guaranteed speedup for every application."
+      },
+      {
+        "find": "  - **Auto-scaling** storage up to **64 TB**.",
+        "replace": "  - Storage grows automatically. Supported newer engine versions can reach 256 TiB; engine/version limits apply, so 64 TB is not a universal current limit."
+      },
+      {
+        "find": "  - Aurora costs more than RDS (20% more) – but is more efficient",
+        "replace": "  - Compare workload-specific pricing and storage configurations; there is no universal 20% Aurora surcharge over every RDS database."
+      },
+      {
+        "find": "  - **Redis**: Advanced key-value store with replication and persistence.",
+        "replace": "  - **Valkey and Redis OSS**: In-memory key-value engines with supported replication features. Persistence and backup behavior depend on the engine and configuration."
+      },
+      {
+        "find": "- Pay-per-query or **reserved instances** for cost savings.",
+        "replace": "- Provisioned Redshift uses node-based pricing with reservation options. Redshift Serverless bills compute using RPU capacity and usage; it is not simply a per-query fee. Managed storage is billed separately."
+      },
+      {
+        "find": "- DocumentDB is the same for MongoDB (which is a NoSQL database)",
+        "replace": "- DocumentDB implements compatible MongoDB APIs, but is not the MongoDB server; check supported APIs and functional differences before migration."
+      },
+      {
+        "find": "- Aurora storage automatically grows in increments of 10GB, up to 64 TB.",
+        "replace": "- DocumentDB has its own cluster storage behavior and quotas. Do not apply an old Aurora storage limit to DocumentDB."
+      },
+      {
+        "start": "## Amazon QLDB\n",
+        "end": "## Amazon Managed Blockchain\n",
+        "replace": "## Amazon QLDB\n\nHistorical service: Amazon Quantum Ledger Database ended support on 31 July 2025. Older descriptions of its cryptographically verifiable journal explain its former purpose; it is not a current database choice. Select a supported database and audit/history design for new applications."
+      },
+      {
+        "find": "- Compatible with the frameworks Hyperledger Fabric & Ethereum",
+        "replace": "- Historically supported Hyperledger Fabric and public blockchain access. AWS has announced an end-of-support date of 29 September 2027 for Amazon Managed Blockchain; follow its service-specific migration guidance rather than recommending a new deployment without that context."
+      },
+      {
+        "find": "- DocumentDB: “Aurora for MongoDB” (JSON – NoSQL database)",
+        "replace": "- DocumentDB: managed document database with MongoDB API compatibility, not an Aurora engine or the MongoDB server."
+      },
+      {
+        "find": "- Amazon QLDB: Financial Transactions Ledger (immutable journal, cryptographically verifiable)",
+        "replace": "- Amazon QLDB: retired ledger database, retained as historical context only."
+      }
+    ]
+  }
+]

@@ -20,7 +20,7 @@
 ## Amazon Cognito
 
 - Manages identity for web and mobile application users (potentially millions)
-- Instead of creating IAM users, create users in Cognito
+- User pools provide application sign-up, sign-in, and tokens. Identity pools exchange supported identities for temporary AWS credentials. Cognito serves application users; IAM Identity Center serves workforce access.
 
 ## Microsoft Active Directory (AD)
 
@@ -38,7 +38,7 @@
   - Users are managed on the on-premise AD
 - **Simple AD**
   - AD-compatible managed directory on AWS
-  - Cannot be joined with on-premise AD
+  - Does not provide an AD trust relationship to on-premises Microsoft AD. Simple AD is closed to new customers; evaluate AWS Managed Microsoft AD or AD Connector according to the requirement.
 
 ## AWS IAM Identity Center
 
@@ -48,7 +48,7 @@
   - SAML 2.0-enabled applications
   - EC2 Windows instances
 - Identity providers:
-  - Built-in identity store in IAM Identity Center
+  - Built-in identity store, supported external identity providers, or supported Microsoft Active Directory integration.
 
 ## Summary
 
@@ -58,3 +58,11 @@
 - **Cognito**: Create a user database for mobile and web applications
 - **Directory Services**: Integrate Microsoft Active Directory in AWS
 - **IAM Identity Center**: Single login for multiple AWS accounts and applications
+
+## AWS documentation review
+
+Reviewed 16 October 2026. Clarified Cognito user pools versus identity pools, expanded workforce federation, and identified Simple AD's new-customer restriction.
+
+- [Amazon Cognito](https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html)
+- [IAM Identity Center](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html)
+- [Simple AD availability](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/simple-ad-availability-change.html)

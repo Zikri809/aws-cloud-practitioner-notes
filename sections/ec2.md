@@ -37,8 +37,8 @@
 - It provides flexibility to scale compute resources up or down based on demand, offering a cost-effective solution for applications with variable workloads.
 - Key features include:
   - **On-Demand Instances**: Pay for compute capacity by the hour or second, with no long-term commitments.
-  - **Reserved Instances**: Make a one-time payment for a significant discount on instance usage over a one- or three-year term.
-  - **Spot Instances**: Bid for unused EC2 capacity at a potentially lower price, allowing cost savings for flexible workloads.
+  - **Reserved Instances**: Commit for one or three years to receive a billing discount. No Upfront, Partial Upfront, and All Upfront options are available.
+  - **Spot Instances**: Use spare EC2 capacity at a variable Spot price. This is not a highest-bidder auction; workloads must tolerate interruption.
 
 ### EC2 Sizing & Configuration Options
 
@@ -95,7 +95,7 @@ Amazon EC2 offers a variety of instance types, each designed to meet specific ap
 | **c5.large**      | 2         | 4                | Up to 10 Gigabit        | EBS only    |
 | **c5.xlarge**     | 4         | 8                | Up to 10 Gigabit        | EBS only    |
 | **c5.2xlarge**    | 8         | 16               | Up to 10 Gigabit        | EBS only    |
-| **c5n.9xlarge**   | 36        | 96               | 10 Gigabit              | EBS only    |
+| **c5n.9xlarge**   | 36        | 96               | 50 Gigabit              | EBS only    |
 
 #### Memory Optimized Instances
 
@@ -111,7 +111,7 @@ Amazon EC2 offers a variety of instance types, each designed to meet specific ap
 | **r5.large**      | 2         | 16               | Up to 10 Gigabit        | EBS only    |
 | **r5.xlarge**     | 4         | 32               | Up to 10 Gigabit        | EBS only    |
 | **r5.4xlarge**    | 16        | 128              | Up to 10 Gigabit        | EBS only    |
-| **r5b.12xlarge**  | 48        | 384              | 10 Gigabit              | EBS only    |
+| **r5b.12xlarge**  | 48        | 384              | 20 Gigabit              | EBS only    |
 
 #### Storage Optimized Instances
 
@@ -139,10 +139,10 @@ Here's a quick overview of some example instance types in each category, along w
 | **c5.large**      | 2         | 4                | EBS only            | Compute-intensive applications like gaming, web servers, and machine learning inference.                                   |
 | **m5.xlarge**     | 4         | 16               | EBS only            | Balanced workloads, such as small databases and caching fleets. Ideal for web applications.                                |
 | **r5.xlarge**     | 4         | 32               | EBS only            | Memory-intensive applications such as databases, in-memory caches, and analytics workloads.                                |
-| **i3.2xlarge**    | 8         | 61               | 1 x 2.5 TB NVMe SSD | Storage-intensive applications like NoSQL databases, data warehousing, and big data analytics.                             |
+| **i3.2xlarge**    | 8         | 61               | 1 x 1.9 TB NVMe SSD | Storage-intensive applications like NoSQL databases, data warehousing, and big data analytics.                             |
 | **p3.2xlarge**    | 8         | 61               | EBS only            | GPU-accelerated computing for machine learning, high-performance computing (HPC), and graphics-intensive applications.     |
 
-t2.micro is part of the AWS free tier (up to 750 hours per month)
+The instance examples above illustrate families, not the newest generation or a promise of Free Tier eligibility. Accounts created on or after 15 July 2025 use the newer credit-based Free Tier. Check [EC2 Free Tier eligibility](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-free-tier-usage.html) for the account and instance type.
 
 ## Introduction to Security Groups
 
@@ -184,7 +184,7 @@ t2.micro is part of the AWS free tier (up to 750 hours per month)
 ### Good to Know
 
 - **Limits**: Each security group can have up to 60 inbound and 60 outbound rules by default (this limit can be increased by requesting through AWS Support).
-- **Default Security Group**: When you create a VPC, a default security group is automatically created, which allows all outbound traffic and denies all inbound traffic by default.
+- **Default Security Group**: Its initial inbound rule allows traffic from network interfaces assigned to the same security group; its outbound rule allows traffic out. A newly created custom group initially has no inbound rules. Existing rules can be changed.
 - **Multiple Security Groups**: You can assign multiple security groups to a single EC2 instance, enabling fine-grained control over traffic.
 - **Security Best Practices**:
   - Apply the principle of least privilege (only allow necessary traffic).
@@ -216,10 +216,8 @@ t2.micro is part of the AWS free tier (up to 750 hours per month)
 
 ### On Demand Instance
 
-- Pay for what you use:
-  - Linux or Windows - billing per second, after the first minute
-  - All other operating systems - billing per hour
-- Has the highest cost but no upfront payment
+- Billing granularity depends on the operating system and software offering. Eligible instance usage is billed per second with a 60-second minimum; check the current pricing terms rather than assuming all other operating systems use hourly rounding.
+- No upfront payment is required for standard On-Demand usage.
 - No long-term commitment
 - Recommended for **short-term** and **un-interrupted workloads**, where you can't predict how the application will behave
 
@@ -243,7 +241,7 @@ t2.micro is part of the AWS free tier (up to 750 hours per month)
 - Commit to a certain type of usage ($10/hour for 1 or 3 years)
 - Usage beyond EC2 Savings Plans is billed at the On-Demand price
 
-- Locked to a specific instance family & AWS region (e.g., M5 in us-east-1)
+- **EC2 Instance Savings Plans** are tied to an instance family in a Region. **Compute Savings Plans** are more flexible across eligible EC2, Fargate, and Lambda usage; they are not tied to one EC2 family or Region.
 - Flexible across:
   - Instance Size (e.g., m5.xlarge, m5.2xlarge)
   - OS (e.g., Linux, Windows)
@@ -252,7 +250,7 @@ t2.micro is part of the AWS free tier (up to 750 hours per month)
 ### Spot Instances
 
 - Can get a discount of up to 90% compared to On-demand
-- Instances that you can “lose” at any point of time if your max price is less than the current spot price
+- Instances can be interrupted because AWS needs the capacity, the Spot price exceeds a configured maximum, or constraints cannot be met. A low price does not guarantee continued capacity.
 - The MOST cost-efficient instances in AWS
 - Useful for workloads that are resilient to failure
   - Batch jobs
@@ -269,7 +267,7 @@ t2.micro is part of the AWS free tier (up to 750 hours per month)
 - Purchasing Options:
   - On-demand – pay per second for active Dedicated Host
   - Reserved - 1 or 3 years (No Upfront, Partial Upfront, All Upfront)
-- The most expensive option
+- Compare host-level pricing and license requirements with other options; a Dedicated Host is a physical host, not a per-instance price equivalent.
 - Useful for software that have complicated licensing model (BYOL – Bring Your Own License)
 - Or for companies that have strong regulatory or compliance needs
 
@@ -282,23 +280,23 @@ t2.micro is part of the AWS free tier (up to 750 hours per month)
 ### Capacity Reservations
 
 - Reserve On-Demand instances capacity in a specific AZ for any duration
-- You always have access to EC2 capacity when you need it
-- No time commitment (create/cancel anytime), no billing discounts
+- An active reservation holds matching capacity in the specified AZ, subject to its configuration and lifecycle.
+- Immediate-use reservations normally have no term commitment. Future-dated reservations have commitment rules. A Capacity Reservation itself is not a billing discount.
 - Combine with Regional Reserved Instances and Savings Plans to benefit from billing discounts
 - You’re charged at On-Demand rate whether you run instances or not
 - Suitable for short-term, uninterrupted workloads that needs to be in a specific AZ
 
 ### EC2 Instance Launch Types Comparison
 
-| **Launch Type**           | **Cost Structure**                                                                  | **Payment Options**                                    | **Commitment**                | **Use Case**                                                 | **Flexibility**                                                          |
-| ------------------------- | ----------------------------------------------------------------------------------- | ------------------------------------------------------ | ----------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| **On-Demand Instances**   | - Linux/Windows: per second after the first minute <br> - Other OS: billed per hour | No upfront payment                                     | No long-term commitment       | Short-term and unpredictable workloads                       | High flexibility; can start/stop anytime                                 |
-| **Reserved Instances**    | Up to 72% discount compared to On-Demand                                            | - No Upfront <br> - Partial Upfront <br> - All Upfront | 1 year or 3 years             | Steady-state applications (e.g., databases)                  | Reserved capacity in a specific region or AZ                             |
-| **Savings Plans**         | Up to 72% discount based on long-term usage                                         | Commit to a certain usage amount                       | 1 year or 3 years             | Applications with predictable usage patterns                 | Flexible across instance size, OS, and tenancy                           |
-| **Spot Instances**        | Discount up to 90% compared to On-Demand                                            | Pay the Spot price                                     | No commitment required        | Cost-sensitive, resilient workloads (e.g., batch jobs)       | Instances can be terminated anytime if spot price exceeds your max price |
-| **Dedicated Hosts**       | Most expensive; pay per second for active host                                      | - On-Demand <br> - Reserved (1 or 3 years)             | Long-term commitment possible | Compliance-heavy applications or complex licensing models    | Full control over server; ideal for BYOL scenarios                       |
-| **Dedicated Instances**   | Higher than shared instances; not the most expensive                                | On-Demand pricing                                      | No long-term commitment       | Workloads needing dedicated hardware but can share resources | Limited control over instance placement                                  |
-| **Capacity Reservations** | Billed at On-Demand rates regardless of instance running                            | No upfront payment                                     | No time commitment            | Ensures EC2 capacity availability in a specific AZ           | Can create/cancel anytime; no discounts on billing                       |
+| Purchasing option | Commitment and purpose | Important distinction |
+| --- | --- | --- |
+| On-Demand | Usage-based compute without a term commitment | Billing granularity depends on the OS and product. |
+| Reserved Instances | One- or three-year billing commitment | Zonal reservations include capacity; Regional reservations provide billing benefits without reserving capacity. |
+| Compute Savings Plans | One- or three-year hourly spend commitment | Covers eligible EC2, Fargate, and Lambda usage; other Savings Plans types have different scopes. |
+| Spot | Spare EC2 capacity for interruption-tolerant work | Interruptions can result from capacity, price, or constraints; design for interruption. |
+| Dedicated Hosts | Physical host allocation, including eligible BYOL uses | Compare host-level pricing and licensing requirements. |
+| Dedicated Instances | Instances on hardware dedicated to one account | Does not provide the host placement controls of Dedicated Hosts. |
+| Capacity Reservations | Holds matching EC2 capacity in an AZ | No inherent discount; future-dated reservations have commitment rules. |
 
 ## Which purchasing option is right for my use case?
 
@@ -312,7 +310,7 @@ t2.micro is part of the AWS free tier (up to 750 hours per month)
   - Committing to a set amount per hour for a specified duration while enjoying any room type
   - Suitable for a SaaS provider that anticipates steady usage of compute resources over three years.
 - **Spot Instances**:
-  - Bidding for available rooms; the highest bidder secures the room, but they can be asked to leave at any moment.
+  - Using spare rooms at the provider's current discounted price, accepting that the capacity can be reclaimed.
   - Perfect for a research team processing large data sets where jobs can be paused and resumed.
 - **Dedicated Hosts**:
   - Renting an entire wing of the resort exclusively for ourselves.
@@ -326,15 +324,7 @@ t2.micro is part of the AWS free tier (up to 750 hours per month)
 
 ## Price Comparison Example – m4.large – us-east-1
 
-| **Launch Type**           | **Hourly Price**                     | **Monthly Price (Approx.)** | **Notes**                                                        |
-| ------------------------- | ------------------------------------ | --------------------------- | ---------------------------------------------------------------- |
-| **On-Demand Instance**    | $0.096 per hour                      | $69.12                      | Pay-as-you-go pricing. Ideal for short-term usage.               |
-| **Reserved Instances**    | $0.054 per hour (1-year term)        | $39.24                      | Commit to one year for a significant discount.                   |
-| **Savings Plans**         | $0.058 per hour (1-year term)        | $41.76                      | Flexible savings plan applicable to any instance type.           |
-| **Spot Instances**        | $0.028 per hour (varies with demand) | $20.16                      | Pricing varies; can be interrupted. Best for flexible workloads. |
-| **Dedicated Hosts**       | $0.12 per hour (per host)            | $86.40                      | Dedicated physical server; pricing per host.                     |
-| **Dedicated Instances**   | $0.096 per hour                      | $69.12                      | Similar to on-demand but on dedicated hardware.                  |
-| **Capacity Reservations** | $0.096 per hour                      | $69.12                      | Reserved capacity at on-demand pricing.                          |
+The old m4.large dollar-price table has been removed: it mixed instance and host pricing and lacked reproducible configuration and date information. Use the [AWS Pricing Calculator](https://calculator.aws/) with the exact Region, OS, tenancy, term, and payment option. Spot prices change, and monthly cost depends on actual usage.
 
 ## Shared Responsibility Model for EC2
 
@@ -355,4 +345,15 @@ t2.micro is part of the AWS free tier (up to 750 hours per month)
 - EC2 User Data: Script launched at the first start of an instance
 - SSH: start a terminal into our EC2 Instances (port 22)
 - EC2 Instance Role: link to IAM roles
-- Purchasing Options: On-Demand, Spot, Reserved (Standard + Convertible + Scheduled), Dedicated Host, Dedicated Instance
+- Purchasing Options: On-Demand, Spot, Reserved (Standard or Convertible), Savings Plans, Dedicated Hosts, Dedicated Instances, and Capacity Reservations.
+
+## AWS documentation review
+
+Reviewed 16 October 2026. Corrected Spot pricing, RI payment choices, Savings Plans scope, default security-group behavior, instance examples, and unsupported price comparisons.
+
+- [EC2 instance types](https://docs.aws.amazon.com/ec2/latest/instancetypes/instance-types.html)
+- [EC2 On-Demand pricing](https://aws.amazon.com/ec2/pricing/on-demand/)
+- [Spot interruptions](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-interruptions.html)
+- [Default security group](https://docs.aws.amazon.com/vpc/latest/userguide/default-security-group.html)
+- [Savings Plans types](https://docs.aws.amazon.com/savingsplans/latest/userguide/plan-types.html)
+- [Capacity Reservations](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-capacity-reservations.html)

@@ -1,0 +1,332 @@
+[
+  {
+    "pattern": "Pricing Calculator",
+    "title": "AWS Pricing Calculator",
+    "url": "https://docs.aws.amazon.com/pricing-calculator/latest/userguide/what-is-pricing-calculator.html"
+  },
+  {
+    "pattern": "Migration Evaluator|TCO|total cost of ownership",
+    "title": "Migration Evaluator",
+    "url": "https://docs.aws.amazon.com/prescriptive-guidance/latest/migration-tools/discovery-migration-evaluator.html"
+  },
+  {
+    "pattern": "Data Transfer Terminal",
+    "title": "AWS Data Transfer Terminal",
+    "url": "https://aws.amazon.com/data-transfer-terminal/"
+  },
+  {
+    "pattern": "Snowball|Snowmobile|Snowcone",
+    "title": "Snowball Edge availability",
+    "url": "https://docs.aws.amazon.com/snowball/latest/developer-guide/snowball-edge-availability-change.html"
+  },
+  {
+    "pattern": "Savings Plans",
+    "title": "Savings Plans types",
+    "url": "https://docs.aws.amazon.com/savingsplans/latest/userguide/plan-types.html"
+  },
+  {
+    "pattern": "Trusted Advisor",
+    "title": "Trusted Advisor",
+    "url": "https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor.html"
+  },
+  {
+    "pattern": "Enterprise Support|Business Support|Developer Support|Basic Support|Unified Operations|concierge|\\bTAM\\b|technical support|Cloud Support|^Enterprise[.]?$|^Business[.]?$|^Basic[.]?$|^Developer[.]?$",
+    "title": "AWS Support plans",
+    "url": "https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html"
+  },
+  {
+    "pattern": "Cost Explorer",
+    "title": "AWS Cost Explorer",
+    "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html"
+  },
+  {
+    "pattern": "Budgets",
+    "title": "AWS Budgets",
+    "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html"
+  },
+  {
+    "pattern": "Cost and Usage|Cost & Usage|cost allocation|Billing|consolidated|volume discount|discount sharing",
+    "title": "Consolidated billing",
+    "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/consolidated-billing.html"
+  },
+  {
+    "pattern": "Health Dashboard",
+    "title": "AWS Health",
+    "url": "https://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html"
+  },
+  {
+    "pattern": "CloudTrail",
+    "title": "AWS CloudTrail",
+    "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html"
+  },
+  {
+    "pattern": "CloudWatch|EventBridge",
+    "title": "Amazon CloudWatch",
+    "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html"
+  },
+  {
+    "pattern": "AWS Config",
+    "title": "AWS Config",
+    "url": "https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html"
+  },
+  {
+    "pattern": "Artifact|compliance|audit reports|HIPAA",
+    "title": "AWS compliance and shared responsibility",
+    "url": "https://aws.amazon.com/compliance/shared-responsibility-model/"
+  },
+  {
+    "pattern": "Inspector",
+    "title": "Amazon Inspector",
+    "url": "https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html"
+  },
+  {
+    "pattern": "Macie",
+    "title": "Amazon Macie",
+    "url": "https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html"
+  },
+  {
+    "pattern": "GuardDuty",
+    "title": "Amazon GuardDuty",
+    "url": "https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html"
+  },
+  {
+    "pattern": "WAF|Shield|DDoS",
+    "title": "AWS WAF and Shield",
+    "url": "https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html"
+  },
+  {
+    "pattern": "Certificate Manager|ACM",
+    "title": "AWS Certificate Manager",
+    "url": "https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html"
+  },
+  {
+    "pattern": "KMS|encryption keys|CloudHSM",
+    "title": "AWS cryptography services",
+    "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/security-services.html"
+  },
+  {
+    "pattern": "IAM|Identity Center|access key|least privilege|permissions|password|MFA|root|credential|FIDO|federat|single sign.on|Revoke",
+    "title": "IAM security best practices",
+    "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html"
+  },
+  {
+    "pattern": "Cognito",
+    "title": "Amazon Cognito",
+    "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html"
+  },
+  {
+    "pattern": "Organizations|SCP|Control Tower",
+    "title": "AWS Organizations",
+    "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html"
+  },
+  {
+    "pattern": "Directory",
+    "title": "AWS Directory Service",
+    "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html"
+  },
+  {
+    "pattern": "Aurora|RDS|relational",
+    "title": "Amazon RDS",
+    "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+  },
+  {
+    "pattern": "Spot|Reserved Instance|Dedicated|EC2|AMI|Elastic IP",
+    "title": "Amazon EC2",
+    "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html"
+  },
+  {
+    "pattern": "Auto Scaling|AutoScaling|scaling|scale out",
+    "title": "Amazon EC2 Auto Scaling",
+    "url": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html"
+  },
+  {
+    "pattern": "load balanc|ALB|ELB|NLB",
+    "title": "Elastic Load Balancing",
+    "url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html"
+  },
+  {
+    "pattern": "EBS|Elastic Block Store",
+    "title": "Amazon EBS",
+    "url": "https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html"
+  },
+  {
+    "pattern": "EFS|Elastic File",
+    "title": "Amazon EFS",
+    "url": "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html"
+  },
+  {
+    "pattern": "S3|Glacier|object storage",
+    "title": "Amazon S3 storage classes",
+    "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html"
+  },
+  {
+    "pattern": "Storage Gateway",
+    "title": "AWS Storage Gateway",
+    "url": "https://aws.amazon.com/storagegateway/"
+  },
+  {
+    "pattern": "DataSync",
+    "title": "AWS DataSync",
+    "url": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html"
+  },
+  {
+    "pattern": "Aurora|RDS|relational",
+    "title": "Amazon RDS",
+    "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
+  },
+  {
+    "pattern": "DynamoDB",
+    "title": "Amazon DynamoDB",
+    "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html"
+  },
+  {
+    "pattern": "ElastiCache|Redis|Valkey|Memcached",
+    "title": "Amazon ElastiCache",
+    "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WhatIs.html"
+  },
+  {
+    "pattern": "Redshift",
+    "title": "Amazon Redshift",
+    "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/welcome.html"
+  },
+  {
+    "pattern": "database|Neptune|DocumentDB",
+    "title": "AWS database services",
+    "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/database.html"
+  },
+  {
+    "pattern": "Lambda",
+    "title": "AWS Lambda",
+    "url": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+  },
+  {
+    "pattern": "ECS|Fargate|container|Docker|EKS",
+    "title": "AWS container services",
+    "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/containers.html"
+  },
+  {
+    "pattern": "API Gateway",
+    "title": "Amazon API Gateway",
+    "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html"
+  },
+  {
+    "pattern": "CloudFormation|CDK|infrastructure as code",
+    "title": "AWS CloudFormation",
+    "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html"
+  },
+  {
+    "pattern": "Systems Manager",
+    "title": "AWS Systems Manager",
+    "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html"
+  },
+  {
+    "pattern": "Elastic Beanstalk",
+    "title": "AWS Elastic Beanstalk",
+    "url": "https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/Welcome.html"
+  },
+  {
+    "pattern": "CodeDeploy|CodeCommit|CodeBuild|CodePipeline|CodeStar|Cloud9",
+    "title": "AWS developer tools",
+    "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/developer-tools.html"
+  },
+  {
+    "pattern": "CloudFront|edge location",
+    "title": "Amazon CloudFront",
+    "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html"
+  },
+  {
+    "pattern": "Route 53|DNS",
+    "title": "Amazon Route 53",
+    "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html"
+  },
+  {
+    "pattern": "Direct Connect",
+    "title": "AWS Direct Connect",
+    "url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/Welcome.html"
+  },
+  {
+    "pattern": "VPN|Virtual Private Gateway|Customer Gateway",
+    "title": "AWS Site-to-Site VPN",
+    "url": "https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html"
+  },
+  {
+    "pattern": "Transit Gateway",
+    "title": "AWS Transit Gateway",
+    "url": "https://docs.aws.amazon.com/vpc/latest/tgw/what-is-transit-gateway.html"
+  },
+  {
+    "pattern": "VPC|subnet|security group|network ACL",
+    "title": "Amazon VPC",
+    "url": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html"
+  },
+  {
+    "pattern": "SQS|Simple Queue",
+    "title": "Amazon SQS",
+    "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html"
+  },
+  {
+    "pattern": "SNS|Simple Notification",
+    "title": "Amazon SNS",
+    "url": "https://docs.aws.amazon.com/sns/latest/dg/welcome.html"
+  },
+  {
+    "pattern": "Kinesis|Firehose|Athena|EMR|QuickSight|Glue|streaming data|analytics",
+    "title": "AWS analytics services",
+    "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/analytics.html"
+  },
+  {
+    "pattern": "SageMaker|Rekognition|Lex|Polly|Translate|Comprehend|Transcribe|machine learning",
+    "title": "AWS AI and ML services",
+    "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/machine-learning.html"
+  },
+  {
+    "pattern": "Migration Service|Migration Hub|Elastic Disaster Recovery|migration|DRS",
+    "title": "AWS migration services",
+    "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/migration-services.html"
+  },
+  {
+    "pattern": "MediaConvert|WorkSpaces|AppStream|IoT|Connect|SES|Amazon MQ|WorkDocs|WorkMail|X-Ray|Backup|Outposts|Marketplace|Global Accelerator|Lightsail|Resource Groups|Service Catalog|Service Quotas|Launch Wizard|Batch|FSx|Step Functions|AppConfig|Secrets Manager|License Manager|HealthLake|Textract|Fraud Detector|DocumentDB|Kendra|OpsWorks|Chime|Sumerian|Ground Station|Cloud Map|Amplify|App Mesh|Amazon QLDB|Managed Blockchain|AWS Transfer|Application Discovery|CloudEndure|AWS Wavelength|Device Farm|Amazon Pinpoint|Service Workbench",
+    "title": "Overview of AWS services",
+    "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/amazon-web-services-cloud-platform.html"
+  },
+  {
+    "pattern": "Partner|Software Path|Services Path|APN",
+    "title": "AWS Partner Paths",
+    "url": "https://aws.amazon.com/partners/paths/"
+  },
+  {
+    "pattern": "re:Post|forums",
+    "title": "AWS re:Post",
+    "url": "https://repost.aws/"
+  },
+  {
+    "pattern": "Quick Start|QuickStart|Solutions Library",
+    "title": "AWS Solutions Library",
+    "url": "https://aws.amazon.com/solutions/"
+  },
+  {
+    "pattern": "Region|Availability Zone|global infrastructure|data center|physical|infrastructure|edge",
+    "title": "AWS global infrastructure",
+    "url": "https://aws.amazon.com/about-aws/global-infrastructure/"
+  },
+  {
+    "pattern": "economies of scale|capital|expense|cost|pay.as.you.go|pay for|usage.based|upfront|variable|consum",
+    "title": "AWS pricing principles",
+    "url": "https://docs.aws.amazon.com/whitepapers/latest/how-aws-pricing-works/key-principles.html"
+  },
+  {
+    "pattern": "availability|fault toleran|resilien|failure|redundan|decoupl",
+    "title": "AWS Well-Architected reliability",
+    "url": "https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html"
+  },
+  {
+    "pattern": "agility|elasticity|scalability|cloud|benefit|speed|global|rapid|minutes",
+    "title": "Cloud computing advantages",
+    "url": "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html"
+  },
+  {
+    "pattern": ".",
+    "title": "AWS Cloud Practitioner exam domains",
+    "url": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html"
+  }
+]

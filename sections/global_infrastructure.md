@@ -65,7 +65,7 @@
   - www.google.com => 12.34.56.78 == A record (IPv4)
   - www.google.com => 2001:0db8:85a3:0000:0000:8a2e:0370:7334 == AAAA IPv6
   - search.google.com => www.google.com == CNAME: hostname to hostname
-  - example.com => AWS resource == Alias (ex: ELB, CloudFront, S3, RDS, etc…)
+  - example.com => supported AWS alias target, such as an ELB load balancer, CloudFront distribution, or S3 website endpoint. An RDS DB instance endpoint is not a general Route 53 alias target; use an appropriate CNAME on a non-apex name.
 
 ### Route 53 - Diagram for A Record
 
@@ -118,7 +118,7 @@ Need to know them at a high-level for the Cloud Practitioner Exam
 - Content Delivery Network (CDN)
 - **Improves read performance, content is cached at the edge**
 - Improves users experience
-- 216 Point of Presence globally (edge locations)
+- Uses AWS's global edge network. The number of locations changes; check current AWS infrastructure information instead of memorizing an old count.
 - DDoS protection (because worldwide), integration with Shield, AWS Web Application Firewall
 - Source: <https://aws.amazon.com/cloudfront/features/?nc=sn&loc=2>
 
@@ -126,7 +126,7 @@ Need to know them at a high-level for the Cloud Practitioner Exam
 
 - S3 bucket
   - For distributing files and caching them at the edge
-  - Enhanced security with CloudFront Origin Access Identity (OAI)
+  - Prefer CloudFront origin access control (OAC) for a supported private S3 origin. OAI is the older mechanism and has feature limitations.
   - CloudFront can be used as an ingress (to upload files to S3)
 - Custom Origin (HTTP)
   - Application Load Balancer
@@ -139,13 +139,13 @@ Need to know them at a high-level for the Cloud Practitioner Exam
 | CloudFront                                                     | S3 Cross Region Replication                                                            |
 | -------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | Global Edge network                                            | Must be setup for each region you want replication to happen                           |
-| Files are cached for a TTL (Time to Live) (maybe a day)        | Files are updated in near real-time, Read only                                         |
-| **Great for static content that must be available everywhere** | **Great for dynamic content that needs to be available at low-latency in few regions** |
+| Cached objects follow cache-control and TTL settings | Replication asynchronously copies eligible objects between versioned buckets |
+| Useful for cached content delivery near viewers | Useful for compliance, data locality, and resilience; replicas are objects, not a dynamic application or a universally read-only database |
 
 ### S3 Transfer Acceleration
 
 - Increase transfer speed by transferring file to an AWS edge location which will forward the data to the S3 bucket in the target region
-- if we try to upload file to Australia S3 bucket it will take time using CloudFront we can rescue time.
+- S3 Transfer Acceleration is a separate S3 transfer feature that uses edge locations; do not confuse it with a CloudFront distribution.
 - File in USA -> Edge Location(USA) -> S3 Bucket(Australia)
 - Test the tool at: <https://s3-accelerate-speedtest.s3-accelerate.amazonaws.com/en/accelerate-speed-comparsion.html>
 
@@ -153,7 +153,7 @@ Need to know them at a high-level for the Cloud Practitioner Exam
 
 - Improve global application availability and performance using the AWS global network
 - Traffic is routed to your applications using the AWS global network instead of the internet.
-- Leverage the AWS internal network to optimize the route to your application (60% improvement)
+- Uses the AWS network to optimize paths to supported endpoints. Actual improvement depends on client location and network conditions; there is no guaranteed 60% speedup.
 - 2 Anycast IP are created for your application and traffic is sent through Edge Locations
 - The Edge locations send the traffic to your application
 - Test the tool at: <https://speedtest.globalaccelerator.aws/#/>
@@ -204,7 +204,7 @@ Need to know them at a high-level for the Cloud Practitioner Exam
 - Ultra-low latency applications through 5G networks
 - Traffic doesn’t leave the Communication Service Provider’s (CSP) network
 - High-bandwidth and secure connection to the parent AWS Region
-- No additional charges or service agreements
+- Wavelength usage is billed according to its supported services and pricing. Connectivity, carrier, and parent-Region requirements must be considered; it is not a blanket no-charge deployment.
 - Use cases: Smart Cities, ML-assisted diagnostics, Connected Vehicles, Interactive Live Video Streams, AR/VR, Real-time Gaming
 
 ## AWS Local Zones
@@ -237,3 +237,13 @@ applications
 - AWS Local Zones
   - Bring AWS resources (compute, database, storage, …) closer to your users
   - Good for latency-sensitive applications
+
+## AWS documentation review
+
+Reviewed 16 October 2026. Removed stale edge counts and an unsupported speed percentage; corrected CloudFront OAC, replication, Route 53 aliases, and transfer acceleration.
+
+- [Route 53 alias targets](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-choosing-alias-non-alias.html)
+- [CloudFront private origins](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-overview.html)
+- [S3 replication](https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html)
+- [S3 Transfer Acceleration](https://docs.aws.amazon.com/AmazonS3/latest/userguide/transfer-acceleration.html)
+- [Global Accelerator](https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html)

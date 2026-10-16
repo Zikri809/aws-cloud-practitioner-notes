@@ -58,11 +58,9 @@
 
 ![IAM Policies Inheritance](../images/IAM_Policies_inheritance.png)
 
-- Policies are evaluated together for a user, including:
-  - **Directly attached policies**.
-  - **Group policies**.
-  - **Policies attached to roles**.
-- If multiple policies apply, IAM combines them to evaluate the final permission set.
+- A user's identity policies include directly attached policies and policies inherited from its IAM groups.
+- When a user assumes a role, requests use that role's temporary session credentials. The role's permissions are not simply added to the user's existing permissions.
+- Evaluation also considers resource policies, permissions boundaries, session policies, and organization policies where applicable. An applicable explicit deny overrides an allow.
 
 | **Policy Type**                 | **Description**                                                                                  |
 |---------------------------------|------------------------------------------------------------------------------------------------|
@@ -110,7 +108,7 @@
    - Non-alphanumeric characters (special symbols like `!`, `@`, `#`).
 3. **Prevent password reuse**: Enforce that new passwords cannot be the same as recently used passwords (e.g., prevent using the last 3 passwords).
 4. **Password expiration**: Set the password to expire after a certain period (e.g., 90 days) to prompt users to change their passwords.
-5. **Enable Multi-Factor Authentication (MFA)**: Enforce MFA for extra security, requiring both a password and a second authentication factor.
+5. **MFA is separate**: An IAM account password policy cannot enforce MFA. Configure MFA devices and the appropriate access policies or IAM Identity Center settings separately.
 
 ### IAM Roles for Services
 
@@ -147,9 +145,9 @@
    - Assign roles to AWS resources instead of using IAM user credentials in code or configuration files.
    - Prevents security issues that could arise from accidental exposure of long-term credentials.
 
-4. **Rotate IAM Credentials Regularly**:
-   - Regularly rotate IAM access keys and passwords.
-   - Remove unused credentials to reduce risk.
+4. **Prefer temporary credentials**:
+   - Use federation and IAM Identity Center for workforce access, and roles for workloads.
+   - For use cases that still need long-term access keys, update them when needed and remove unused credentials. Do not create root access keys.
 
 5. **Use AWS Managed Policies for Common Use Cases**:
    - AWS provides a set of predefined managed policies that are regularly updated.
@@ -187,7 +185,7 @@
 - Enhances account security by requiring a second form of authentication.
 - Reduces the risk of credential compromise and unauthorized access.
 - AWS recommends enabling MFA for all IAM users, especially for root accounts and privileged users.
-- Main benefit of MFA: if a password is stolen or hacked, the account is not compromised
+- MFA reduces the risk from a stolen password; it does not guarantee that an account cannot be compromised. Prefer phishing-resistant passkeys or security keys where supported.
 
 ## MFA Devices Options in AWS
 
@@ -197,8 +195,7 @@ AWS supports several types of MFA devices:
 |------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------|
 | **Virtual MFA Device**                          | Uses apps like Google Authenticator or Authy. Generates a time-based one-time password (TOTP) on a smartphone or tablet.  |
 | **Hardware MFA Device**                         | Physical devices like Gemalto tokens that generate time-based codes.                                                     |
-| **U2F Security Key**                            | USB devices supporting the Universal 2nd Factor (U2F) standard. Typically used for browser-based sign-ins.               |
-| **AWS Multi-Factor Authentication (MFA)**       | AWS offers its own MFA solutions integrated with IAM to easily configure and manage MFA devices for users.               |
+| **Passkey or security key** | FIDO authenticators, including supported device-bound or synced passkeys and physical security keys. |
 
 ## How Can Users Access AWS?
 
@@ -267,7 +264,7 @@ print('S3 Buckets:', [bucket['Name'] for bucket in response['Buckets']])
 - **Users**: Mapped to a physical user, has a username and password for AWS Management Console access.
 - **Groups**: Contains users and allows applying common permissions to multiple users.
 - **Policies**: JSON document that defines permissions for users, groups, or roles.
-- **Roles**: Assign to AWS services (e.g., EC2, Lambda) for accessing other resources without credentials.
+- **Roles**: Grant temporary credentials to trusted services, workloads, or federated users. Applications still authenticate; they avoid embedded long-term keys.
 - **Permissions**: Allow or deny actions on AWS resources, defined using policies.
 - **MFA**: Multi-Factor Authentication for an additional layer of security beyond username and password.
 - **Password Policy**: Enforce password complexity, rotation, and reuse rules for IAM users.
@@ -275,3 +272,11 @@ print('S3 Buckets:', [bucket['Name'] for bucket in response['Buckets']])
 - **AWS SDK**: Use programming languages (e.g., Python, JavaScript) to manage AWS services programmatically.
 - **Access Keys**: Key pairs used to authenticate when accessing AWS using the CLI or SDK.
 - **Audit Tools**: IAM Credential Report lists user credentials; Access Advisor shows service permissions usage.
+
+## AWS documentation review
+
+Reviewed 16 October 2026. Corrected role-session permission evaluation, MFA/password-policy separation, workforce federation, and credential guidance.
+
+- [IAM security best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)
+- [Policies and permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html)
+- [IAM password policy](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_account-policy.html)

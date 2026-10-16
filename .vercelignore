@@ -1,0 +1,16 @@
+.git
+.vercel
+.env*
+.github
+node_modules
+.next
+test-results
+playwright-report
+tests
+_includes
+_layouts
+assets
+Gemfile
+Gemfile.lock
+.ruby-version
+.ruby-gemset

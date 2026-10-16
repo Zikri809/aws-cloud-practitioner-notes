@@ -56,7 +56,7 @@
   - Managing the underlying database engine (e.g., MySQL, PostgreSQL).
   - Ensuring hardware security and network isolation.
   - Applying patches to the database software.
-  - Audit the underlying instance and disks & guarantee it functions
+  - Operate and maintain the underlying instance and storage infrastructure.
 
 - **Customer Responsibility:**
   - Managing database credentials and access control.
@@ -70,13 +70,13 @@
 - **AWS Responsibility:**
   - Ensuring data durability and availability.
   - Managing infrastructure security for S3.
-  - Guarantee you get unlimited storage
-  - Ensure AWS employees can’t access your data
+  - Operate scalable object storage within documented service limits.
+  - Operate the service infrastructure with AWS access-control and data-protection controls; customers still configure who may access their data.
   - Ensure separation of the data between different customers
 
 - **Customer Responsibility:**
   - Configuring bucket policies, access control lists (ACLs), and IAM roles.
-  - Enabling encryption for objects (e.g., server-side or client-side encryption).
+  - Select suitable encryption and access policies. New S3 uploads are already encrypted with at least SSE-S3; stronger or client-side requirements remain a customer design decision.
   - Monitoring and auditing access using AWS CloudTrail and S3 access logs.
   - Implementing versioning and lifecycle policies for object management.
 
@@ -96,11 +96,11 @@
 
 ## AWS Shield
 
-- Prevents DDOS attack
+- Helps detect and mitigate DDoS attacks; do not interpret protection as a guarantee that every attack is prevented.
 - AWS Shield which protects against Distributed Denial of Service (DDoS) attacks is available globally on Amazon CloudFront Edge Locations.
 - Amazon EC2, Elastic Load Balancing (ELB), Amazon CloudFront, Amazon Route 53, AWS Global Accelerator provide automatic ddos protection.
 - Provides protection from attacks such as SYN/UDP Floods, Reflection attacks and other layer 3/layer 4 attacks
-- 24/7 access to AWS DDoS response team (DRP)
+- Shield Advanced includes eligibility for Shield Response Team assistance; expert response and cost-protection features are not blanket Shield Standard benefits.
 - Protect against higher fees during usage spikes due to DDoS
 
 ## AWS WAF - Web Application Firewall
@@ -116,7 +116,7 @@
 
 ## Penetration Testing on AWS Cloud
 
-- AWS customers are welcome to carry out security assessments or penetration tests against their AWS infrastructure without prior approval for 8 services:
+- AWS permits testing customer-owned resources on its current permitted-services list without prior approval, subject to the penetration-testing policy. The following examples are not an exhaustive or permanently fixed list:
   - Amazon EC2 instances, NAT Gateways, and Elastic Load Balancers
   - Amazon RDS
   - Amazon CloudFront
@@ -149,9 +149,9 @@
 
 - Anytime you hear “encryption” for an AWS service, it’s most likely KMS
 - KMS = AWS manages the encryption keys for us
-- Encryption Opt-in:
+- Encryption configuration depends on the service; do not assume all entries below are unencrypted by default:
   - EBS volumes: encrypt volumes
-  - S3 buckets: Server-side encryption of objects
+  - S3: all new uploads have default SSE-S3 encryption; optionally select other supported modes.
   - Redshift database: encryption of data
   - RDS database: encryption of data
   - EFS drives: encryption of data
@@ -163,7 +163,7 @@
 ## AWS CloudHSM
 
 - It is a service to keep hardware-based crypto keys safe.
-- Used to meet compliance requirements (FIPS 140-2 level 3 compliant).
+- Hardware certification depends on the HSM type. Check the current CloudHSM documentation for the relevant FIPS validation rather than assuming one version for every HSM.
 - Offers customers a private, isolated HSM access.
 - Provides the ability to integrate with AWS services (e.g. Amazon RDS, Amazon S3).
 - CloudHSM is designed for applications with high performance and security requirements, especially for cryptographic operations.
@@ -171,10 +171,12 @@
 
 ## Types of Customer Master Keys: CMK
 
+Current terminology is **KMS keys**. CMK is the older name. Distinguish customer managed keys, AWS managed keys, and AWS owned keys.
+
 ### Customer Managed CMK
 
 - Create, manage and used by the customer, can enable or disable
-- Possibility of rotation policy (new key generated every year, old key preserved)
+- Eligible customer managed symmetric keys support configurable automatic rotation periods (90 to 2,560 days), with 365 days as the default, and on-demand rotation. Rotating key material does not change the key ID; previous material remains available to decrypt older ciphertext.
 - Possibility to bring-your-own-key
 
 ### AWS managed CMK
@@ -197,7 +199,7 @@
 - Let’s you easily provision, manage, and deploy **SSL/TLS Certificates**
 - Used to provide in-flight encryption for websites (HTTPS)
 - Supports both public and private TLS certificates
-- Free of charge for public TLS certificates
+- Non-exportable public certificates used with integrated services have no ACM certificate charge. Exportable public certificates and private CA services have charges; not every ACM certificate is free.
 - Automatic TLS certificate renewal
 - Integrations with (load TLS certificates on)
   - Elastic Load Balancers
@@ -255,7 +257,7 @@
 
 ### What does AWS Inspector evaluate?
 
-- Remember: only for EC2 instances and container infrastructure
+- Inspector scans supported EC2 workloads, ECR container images, and Lambda functions. Supported scan modes and resource coverage vary; Inspector Classic is a retired, separate service.
 - Continuous scanning of the infrastructure, only when needed
 - Package vulnerabilities (EC2 & ECR) – database of CVE
 - Network reachability (EC2)
@@ -279,7 +281,7 @@
 
 ## Amazon Macie
 
-- Amazon Macie is a fully managed data security and data privacy service that uses machine learning and pattern matching to discover and protect your sensitive data in AWS.
+- Amazon Macie discovers sensitive data and evaluates security/privacy risks in supported S3 data. It does not automatically scan all databases or all data in every AWS service.
 - Macie helps identify and alert you to sensitive data, such as personally identifiable information (PII)
 
 ## AWS Security Hub
@@ -294,7 +296,7 @@
   - AWS Systems Manager
   - AWS Firewall Manager
   - AWS Partner Network Solutions
-- Must first enable the AWS Config Service
+- Security Hub CSPM controls that use AWS Config require the relevant Config recorder and resource recording. This is not a prerequisite for every Security Hub finding integration or every newer Security Hub capability.
 
 ## Amazon Detective
 
@@ -319,18 +321,11 @@
 
 - Root user = Account Owner (created when the account is created)
 - Has complete access to all AWS services and resources
-- Lock away your AWS account root user access keys!
-- Do not use the root account for everyday tasks, even administrative tasks
-- **Actions that can be performed only by the root user:**
-  - Change account settings (account name, email address, root user password, root user access keys)
-  - View certain tax invoices
-  - Close your AWS account
-  - Restore IAM user permissions
-  - Change or cancel your AWS Support plan
-  - Register as a seller in the Reserved Instance Marketplace
-  - Configure an Amazon S3 bucket to enable MFA
-  - Edit or delete an Amazon S3 bucket policy that includes an invalid VPC ID or VPC endpoint ID
-  - Sign up for GovCloud
+- Do not create root access keys. Protect root sign-in with MFA and use federated workforce access for routine work.
+- Do not memorize the old claim that changing a support plan is root-only: authorized IAM principals can change plans. Organizations can also centrally perform some privileged tasks for member accounts.
+- Tasks that still require root credentials in the applicable account context include changing the root password and configuring S3 MFA Delete. Account closure and recovery have standalone/member-account distinctions; consult the current task list rather than assuming root is always the only path.
+
+[AWS root-user guidance](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html) and [support-plan changes](https://docs.aws.amazon.com/awssupport/latest/user/changing-support-plans.html) explain the exceptions.
 
 ## IAM Access Analyzer
 
@@ -357,7 +352,7 @@
 - AWS Certificate Manager: provision, manage, and deploy SSL/TLS Certificates
 - Artifact: Get access to compliance reports such as PCI, ISO, etc…
 - GuardDuty: Find malicious behavior with VPC, DNS & CloudTrail Logs
-- Inspector: For EC2 only, install agent and find vulnerabilities
+- Inspector: vulnerability assessment for supported EC2, ECR, and Lambda resources; scan modes vary.
 - Config: Track config changes and compliance against rules
 - Macie: Find sensitive data (ex: PII data) in Amazon S3 buckets
 - CloudTrail: Track API calls made by users within account
@@ -367,5 +362,18 @@
 - Root user privileges:
   - Change account settings
   - Close your AWS account
-  - Change or cancel your AWS Support plan
+  - Check the current task-specific permissions; changing support plans can be delegated to authorized IAM principals.
   - Register as a seller in the Reserved Instance Marketplace
+
+## AWS documentation review
+
+Reviewed 16 October 2026. Corrected Inspector scope, root-only tasks, KMS terminology and rotation, ACM certificate pricing, and several overly broad security claims.
+
+- [Amazon Inspector](https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html)
+- [KMS keys](https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html)
+- [KMS key rotation](https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html)
+- [ACM exportable public certificates](https://docs.aws.amazon.com/acm/latest/userguide/acm-exportable-certificates.html)
+- [Root user tasks](https://docs.aws.amazon.com/IAM/latest/UserGuide/root-user-tasks.html)
+- [Change a support plan](https://docs.aws.amazon.com/awssupport/latest/user/changing-support-plans.html)
+- [AWS penetration testing policy](https://aws.amazon.com/security/penetration-testing/)
+- [Security Hub CSPM and AWS Config](https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-prereq-config.html)

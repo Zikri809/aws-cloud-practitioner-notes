@@ -58,9 +58,7 @@
 
 ### CloudFormation Stack Designer
 
-- Example: WordPress CloudFormation Stack
-- We can see all the resources
-- We can see the relations between the components
+- Historical visual-editor example. CloudFormation templates and change sets remain the source of infrastructure definitions; verify current console tooling before following older Designer screenshots.
 
 ## AWS Cloud Development Kit (CDK)
 
@@ -81,27 +79,20 @@ In below example, we define an AWS CDK stack that creates an S3 bucket with vers
 pip install aws-cdk-lib
 ```
 
-Once you have the dependencies installed, you can execute this Python script, and it will create the S3 bucket in your AWS account based on the code defined in the `MyS3BucketStack` class.
+This CDK v2 example synthesizes a template. It does not create resources until you bootstrap the target environment where required and run `cdk deploy`. Keep the default retention behavior for stored data.
 
 ```python
-from aws_cdk import core
+from aws_cdk import App, Stack
 from aws_cdk import aws_s3 as s3
+from constructs import Construct
 
-class MyS3BucketStack(core.Stack):
-    def __init__(self, scope: core.Construct, id: str, **kwargs) -> None:
-        super().__init__(scope, id, **kwargs)
+class MyS3BucketStack(Stack):
+    def __init__(self, scope: Construct, construct_id: str, **kwargs):
+        super().__init__(scope, construct_id, **kwargs)
+        s3.Bucket(self, "MyS3Bucket", versioned=True)
 
-        # Define an S3 bucket
-        s3.Bucket(
-            self,
-            'MyS3Bucket',
-            versioned=True,
-            removal_policy=core.RemovalPolicy.DESTROY
-        )
-
-# App entry point
-app = core.App()
-MyS3BucketStack(app, 'MyS3BucketStack')
+app = App()
+MyS3BucketStack(app, "MyS3BucketStack")
 app.synth()
 ```
 
@@ -133,7 +124,7 @@ app.synth()
   - Capacity provisioning
   - Load balancing & auto-scaling
 - Application health-monitoring & responsiveness
-- Just the application code is the responsibility of the developer
+- Customers remain responsible for application code, data, access policies, configuration, and keeping the chosen platform branch supported. Managed platform updates are configurable, not a blanket removal of patching responsibilities.
 - Three architecture models:
   - Single Instance deployment: good for dev
   - LB + ASG: great for production or pre-production web applications
@@ -179,7 +170,7 @@ AWS Elastic Beanstalk uses AWS CloudFormation underneath for managing the infras
 - Works with EC2 Instances
 - Works with On-Premises Servers
 - Hybrid service
-- Servers / Instances must be provisioned and configured ahead of time with the CodeDeploy Agent
+- EC2 and on-premises deployments need the CodeDeploy agent. CodeDeploy also supports Lambda and ECS deployments through their supported deployment configurations.
 
 ## AWS CodeCommit
 
@@ -193,7 +184,7 @@ AWS Elastic Beanstalk uses AWS CloudFormation underneath for managing the infras
 - Benefits:
   - Fully managed
   - Scalable & highly available
-  - Private, Secured, Integrated with AWS
+  - Private, secured, and integrated with AWS. CodeCommit reopened to new customers on 25 November 2025; older closed-to-new-customer notices are no longer current.
 
 ## AWS CodeBuild
 
@@ -228,13 +219,11 @@ AWS Elastic Beanstalk uses AWS CloudFormation underneath for managing the infras
 
 ## AWS CodeStar
 
-- Unified UI to easily manage software development activities in one place
-- “Quick way” to get started to correctly set-up CodeCommit, CodePipeline, CodeBuild, CodeDeploy, Elastic Beanstalk, EC2, etc…
-- Can edit the code ”in-the-cloud” using AWS Cloud9
+Historical service: AWS CodeStar ended support in 2024. Use supported individual developer tools, such as CodePipeline, CodeBuild, and CodeDeploy. CodeStar's retirement does not mean CodeStar Connections/AWS CodeConnections or those separate services have retired.
 
 ## AWS Cloud9
 
-- AWS Cloud9 is a cloud IDE (Integrated Development Environment) for writing, running and debugging code
+- AWS Cloud9 is a browser IDE for existing customers. It has been closed to new customers since 25 July 2024; new users should choose supported local development tools or AWS CloudShell for browser-based CLI tasks.
 - “Classic” IDE (like IntelliJ, Visual Studio Code…) are downloaded on a computer before being used
 - A cloud IDE can be used within a web browser, meaning you can work on your projects from your office, home, or anywhere with internet with no setup necessary
 - AWS Cloud9 also allows for code collaboration in real-time (pair programming)
@@ -255,7 +244,7 @@ AWS Elastic Beanstalk uses AWS CloudFormation underneath for managing the infras
 
 - We need to install the SSM agent onto the systems we control
 - Installed by default on Amazon Linux AMI & some Ubuntu AMI
-- If an instance can’t be controlled with SSM, it’s probably an issue with the SSM agent!
+- Check SSM Agent, IAM instance permissions, network access to the required endpoints, and the managed-node configuration when a system is not reachable.
 - Thanks to the SSM agent, we can run commands, patch & configure our servers
 
 ### Systems Manager - SSM Session Manager
@@ -268,17 +257,13 @@ AWS Elastic Beanstalk uses AWS CloudFormation underneath for managing the infras
 
 ## AWS OpsWorks
 
-- Chef & Puppet help you perform server configuration automatically, or repetitive actions
-- They work great with EC2 & On-Premises VM
-- AWS OpsWorks = Managed Chef & Puppet
-- It’s an alternative to AWS SSM
-- Only provision standard AWS resources:
-  - EC2 Instances, Databases, Load Balancers, EBS volumes…
-- **Chef or Puppet needed => AWS OpsWorks**
+Historical service: The AWS OpsWorks services ended support in 2024. Do not choose OpsWorks for a new deployment. Evaluate AWS Systems Manager for supported configuration/patch automation and the software vendor's supported Chef or Puppet deployment options.
 
 ### OpsWorks Architecture
 
-![OpsWorks Architecture](../images/OpsWorks_Architecture.png)
+The original diagram below describes the retired service and is retained only to explain older material.
+
+![Historical OpsWorks architecture](../images/OpsWorks_Architecture.png)
 
 ## Deployment - Summary
 
@@ -290,7 +275,7 @@ AWS Elastic Beanstalk uses AWS CloudFormation underneath for managing the infras
   - Deploy code consistently with a known architecture: ex, ALB + EC2 + RDS
 - CodeDeploy (hybrid): deploy & upgrade any application onto servers
 - Systems Manager (hybrid): patch, configure and run commands at scale
-- OpsWorks (hybrid): managed Chef and Puppet in AWS
+- OpsWorks: retired managed Chef/Puppet and stack-management services, retained as historical context.
 
 ## Developer Services - Summary
 
@@ -299,7 +284,17 @@ AWS Elastic Beanstalk uses AWS CloudFormation underneath for managing the infras
 - CodeDeploy: Deploy code onto servers
 - CodePipeline: Orchestration of pipeline (from code to build to deploy)
 - CodeArtifact: Store software packages / dependencies on AWS
-- CodeStar: Unified view for allowing developers to do CICD and code
-- Cloud9: Cloud IDE (Integrated Development Environment) with collab
+- CodeStar: retired; use supported individual CI/CD services.
+- Cloud9: browser IDE for existing customers; closed to new customers.
 - AWS CDK: Define your cloud infrastructure using a programming language
 
+## AWS documentation review
+
+Reviewed 16 October 2026. Updated the CDK example to v2 and distinguished supported developer services from retired CodeStar and OpsWorks and restricted Cloud9.
+
+- [AWS CDK v2 Python example](https://docs.aws.amazon.com/cdk/v2/guide/hello-world.html)
+- [CodeCommit documentation history](https://docs.aws.amazon.com/codecommit/latest/userguide/history.html)
+- [AWS CodeStar end of support](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html)
+- [AWS OpsWorks Stacks end of life](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html)
+- [AWS Cloud9 availability](https://docs.aws.amazon.com/cloud9/latest/user-guide/welcome.html)
+- [Systems Manager setup](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-nodes.html)

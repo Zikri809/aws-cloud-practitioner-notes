@@ -19,7 +19,7 @@
 - In that case, it’s better to **decouple** your applications:
   - using SQS: queue model
   - using SNS: pub/sub model
-  - using Kinesis: real-time data streaming model (out of scope for the exam)
+  - using Kinesis Data Streams: real-time streaming. Use the current CLF-C02 scope guide rather than declaring streaming services categorically out of scope.
 - These services can scale independently from our application!
 
 ## Amazon SQS - Simple Queue Service
@@ -31,7 +31,7 @@
 - Scales from 1 message per second to 10,000s per second
 - Default retention of messages: 4 days, maximum of 14 days
 - No limit to how many messages can be in the queue
-- Messages are deleted after they’re read by consumers
+- Receiving a message hides it temporarily; it does not delete it. The consumer or its integration deletes it after successful processing. Undeleted messages can reappear after the visibility timeout.
 - Low latency (<10 ms on publish and receive)
 - Consumers share the work to read messages & scale horizontally
 
@@ -41,8 +41,8 @@
 - Managed service to collect, process, and analyze real-time streaming data at any scale
 - Too detailed for the Cloud Practitioner exam but good to know:
   - Kinesis Data Streams: low latency streaming to ingest data at scale from hundreds of thousands of sources
-  - Kinesis Data Firehose: load streams into S3, Redshift, ElasticSearch, etc…
-  - Kinesis Data Analytics: perform real-time analytics on streams using SQL
+  - Amazon Data Firehose (formerly Kinesis Data Firehose): deliver streaming data to supported destinations such as S3 and Amazon OpenSearch Service.
+  - Amazon Managed Service for Apache Flink: stream processing. The separate Kinesis Data Analytics for SQL applications service ended support on 27 January 2026.
   - Kinesis Video Streams: monitor real-time video streams for analytics or ML
 
 ## Amazon SNS
@@ -51,7 +51,7 @@
 - Amazon Simple Notification Service is a notification service provided as part of Amazon Web Services since 2010. It provides a low-cost infrastructure for mass delivery of messages, predominantly to mobile users.
 - The “event publishers” only sends message to one SNS topic
 - As many “event subscribers” as we want to listen to the SNS topic notifications
-- Each subscriber to the topic will get all the messages
+- SNS fans out to subscriptions; subscription filter policies can limit which messages each subscriber receives.
 - Up to 12,500,000 subscriptions per topic, 100,000 topics limit
 
 ## Amazon MQ
@@ -59,7 +59,7 @@
 - SQS, SNS are “cloud-native” services, and they’re using proprietary protocols from AWS.
 - Traditional applications running from on-premise may use open protocols such as: MQTT, AMQP, STOMP, Openwire, WSS
 - When migrating to the cloud, instead of re-engineering the application to use SQS and SNS, we can use Amazon MQ
-- Amazon MQ = managed Apache ActiveMQ
+- Amazon MQ manages Apache ActiveMQ Classic and RabbitMQ brokers.
 - Amazon MQ doesn’t “scale” as much as SQS / SNS
 - Amazon MQ runs on a dedicated machine (not serverless)
 - Amazon MQ has both queue feature (~SQS) and topic features (~SNS)
@@ -75,6 +75,16 @@
   - Notification service in AWS
   - Subscribers: Email, Lambda, SQS, HTTP, Mobile…
   - Multiple Subscribers, send all messages to all of them
-  - No message retention
+  - Standard topics are not general-purpose persistent queues. FIFO topics can use opt-in message archiving and replay for up to 365 days.
 - Kinesis: real-time data streaming, persistence and analysis
-- Amazon MQ: managed Apache MQ in the cloud (MQTT, AMQP.. protocols)
+- Amazon MQ: managed ActiveMQ Classic or RabbitMQ, using each engine's supported messaging protocols.
+
+## AWS documentation review
+
+Reviewed 16 October 2026. Corrected SQS deletion semantics, MQ engines, service names, and the blanket claim that SNS cannot retain messages.
+
+- [SQS visibility timeout and deletion](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html)
+- [Amazon MQ](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/welcome.html)
+- [SNS FIFO archiving and replay](https://docs.aws.amazon.com/sns/latest/dg/fifo-message-archiving-replay.html)
+- [Amazon Data Firehose](https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html)
+- [Managed Service for Apache Flink](https://docs.aws.amazon.com/managed-flink/latest/java/what-is.html)

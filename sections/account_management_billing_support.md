@@ -44,7 +44,7 @@
 
 - Global service
 - Allows to manage **multiple AWS accounts**
-- The main account is the master account
+- The organization's controlling account is the **management account**. Master account is legacy terminology.
 - Cost Benefits:
   - Consolidated Billing across all accounts - single payment method
   - Pricing benefits from aggregated usage (volume discount for EC2, S3…)
@@ -64,11 +64,11 @@
 
 - Whitelist or blacklist IAM actions
 - Applied at the OU or Account level
-- Does not apply to the Master Account
+- SCPs do not restrict principals in the management account. They constrain applicable principals in member accounts and do not grant permissions themselves.
 - SCP is applied to all the Users and Roles of the Account, including Root user
 - The SCP does not affect service-linked roles
   - Service-linked roles enable other AWS services to integrate with AWS Organizations and can't be restricted by SCPs.
-- SCP must have an explicit Allow (does not allow anything by default)
+- Effective access depends on the complete SCP hierarchy plus IAM permissions. An allow-list strategy requires an allow at every applicable level; a deny-list strategy usually retains FullAWSAccess. Neither an SCP allow nor FullAWSAccess grants an IAM principal permissions by itself.
 - Use cases:
   - Restrict access to certain services (for example: can’t use EMR)
   - Enforce PCI compliance by explicitly disabling services
@@ -133,14 +133,14 @@
 
 - On-demand instances:
   - Minimum of 60s
-  - Pay per second (Linux/Windows) or per hour (other)
+  - Billing granularity depends on the OS/software offering; eligible usage is billed per second with a 60-second minimum.
 - Reserved instances:
-  - Up to 75% discount compared to On-demand on hourly rate
+  - Discount depends on the term, offering, and payment choice; compare with the current published EC2 RI rates.
   - 1- or 3-years commitment
   - All upfront, partial upfront, no upfront
 - Spot instances:
   - Up to 90% discount compared to On-demand on hourly rate
-  - Bid for unused capacity
+  - Use spare capacity at the current Spot price, accepting interruptions; this is not a highest-bidder auction.
 - Dedicated Host:
   - On-demand
   - Reservation for 1 year or 3 years commitment
@@ -173,7 +173,7 @@
 - Volume type (based on performance)
 - Storage volume in GB per month provisioned
 - IOPS:
-  - General Purpose SSD: Included
+  - General Purpose SSD: baseline performance is included; additional gp3 IOPS/throughput can incur charges.
   - Provisioned IOPS SSD: provisioned amount in IOPS
   - Magnetic: Number of requests
 - Snapshots:
@@ -191,7 +191,7 @@
   - Memory class
 - Purchase type:
   - On-demand
-  - Reserved instances (1 or 3 years) with required up-front
+  - Reserved DB instances offer supported No Upfront, Partial Upfront, or All Upfront choices; availability depends on the offering.
 - Backup Storage: There is no additional charge for backup storage up to 100% of your total database storage for a region.
 - Additional storage (per GB per month)
 - Number of input and output requests per month
@@ -208,11 +208,12 @@
 - Aggregated for each edge location, then applied to your bill
 - Data Transfer Out (volume discount)
 - Number of HTTP/HTTPS requests
+- CloudFront also offers flat-rate plans. The above describes pay-as-you-go factors, not every current pricing option.
 
 ## Networking Costs in AWS per GB - Simplified
 
 - Use Private IP instead of Public IP for good savings and better network performance
-- Use same AZ for maximum savings (at the cost of high availability)
+- Evaluate data paths and service-specific cross-AZ charges, but preserve the resilience the workload requires. A cost note is not a recommendation to remove Multi-AZ redundancy. Public IPv4 addresses can also incur charges.
 
 ## Savings Plan
 
@@ -227,7 +228,8 @@
   - Up to 66% discount compared to On-Demand
   - Regardless of Family, Region, size, OS, tenancy, compute options
   - Compute Options: EC2, Fargate, Lambda
-- Setup from the AWS Cost Explorer console
+- AWS also offers SageMaker AI Savings Plans and Database Savings Plans for supported usage. Database plans have different scope and eligibility; do not treat an EC2 reservation as a database-wide commitment.
+- Manage commitments using the current Billing and Cost Management interfaces.
 - Estimate pricing at <https://aws.amazon.com/savingsplans/pricing/>
 
 ## AWS Compute Optimizer
@@ -240,7 +242,7 @@
   - EC2 Auto Scaling Groups
   - EBS volumes
   - Lambda functions
-- Lower your costs by up to 25%
+- Potential savings depend on the workload and whether the recommended changes are appropriate; no fixed reduction is guaranteed.
 - Recommendations can be exported to S3
 
 ## Billing and Costing Tools
@@ -269,7 +271,7 @@
   - Starts with Prefix aws: (e.g. aws: createdBy)
 - User-defined tags
   - Defined by the user
-  - Starts with Prefix user:
+  - User-defined cost allocation tags do not require a user: prefix. Activate the desired tag keys for billing allocation; aws: is the reserved AWS-generated prefix.
 
 ## Tagging and Resource Groups
 
@@ -296,7 +298,7 @@
 - Analyze your data at a high level: total costs and usage across all accounts
 - Or Monthly, hourly, resource level granularity
 - Choose an optimal **Savings Plan**(to lower prices on your bill)
-- **Forecast usage up to 12 months based on previous usage**
+- **Current monthly cost/usage forecasts extend up to 18 months**, subject to supported granularity and sufficient history. Forecasts are estimates, not guaranteed bills.
 
 - Cost Explorer – Monthly Cost by AWS Service
 - Cost Explorer– Hourly & Resource Level
@@ -313,14 +315,14 @@
 ## AWS Budgets
 
 - Create budget and send alarms when costs exceeds the budget
-- 3 types of budgets: Usage, Cost, Reservation
+- Budgets cover cost, usage, RI utilization/coverage, and Savings Plans utilization/coverage.
 - For Reserved Instances (RI)
   - Track utilization
   - Supports EC2, ElastiCache, RDS, Redshift
 - Up to 5 SNS notifications per budget
 - Can filter by: Service, Linked Account, Tag, Purchase Option, Instance Type, Region, Availability Zone, API Operation, etc…
 - Same options as AWS Cost Explorer!
-- 2 budgets are free, then $0.02/day/budget
+- Monitoring-only budgets are free under current pricing; action-enabled budgets have their own allowance and pricing. Check AWS Cost Management pricing. Budgets are not a universal hard spending cap: notifications and actions can occur after charges are incurred.
 
 ## AWS Cost Anomaly Detection
 
@@ -341,73 +343,29 @@ and/or continuous cost increases (you don't need to define thresholds)
 
 ## Trusted Advisor
 
-- No need to install anything – high level AWS account assessment
-- Analyze your AWS accounts and provides recommendation on 5 categories
-- Cost optimization
-- Performance
-- Security
-- Fault tolerance
-- Service limits
+Trusted Advisor checks configurations and recommends improvements across **cost optimization, performance, security, fault tolerance, service limits, and operational excellence**. The old five-category and fixed seven-check descriptions are outdated. Access depends on support-plan entitlement; use the current check reference.
 
 ## Trusted Advisor - Support Plans
 
-| 7 CORE CHECKS Basic & Developer Support plan                         | FULL CHECKS Business & Enterprise Support plan        |
-| -------------------------------------------------------------------- | ----------------------------------------------------- |
-| S3 Bucket Permissions, Security Groups – Specific Ports Unrestricted | Full Checks available on the 5 categories             |
-| IAM Use (one IAM user minimum), MFA on Root Account                  | Ability to set CloudWatch alarms when reaching limits |
-| EBS Public Snapshots, RDS Public Snapshots, Service Limits           | Programmatic Access using AWS Support API             |
+Basic includes a limited selection of checks. Business Support+, Enterprise Support, and Unified Operations provide broader capabilities; consult the current entitlement documentation.
 
 ## AWS Basic Support Plan
 
-- Customer Service & Communities - 24x7 access to customer service, documentation, whitepapers, and support forums.
-- AWS Trusted Advisor - Access to the 7 core Trusted Advisor checks and guidance to provision your resources following best practices to increase performance and improve security.
-- AWS Personal Health Dashboard - A personalized view of the health of AWS services, and alerts when your resources are impacted.
+Included for all customers. Provides account/billing help, documentation, public service-health information, and community resources. Basic is not a paid technical support plan.
 
-## AWS Developer Support Plan
+## Current paid support plans
 
-- All Basic Support Plan +
-- Business hours email access to Cloud Support Associates
-- Unlimited cases / 1 primary contact
-- Case severity / response times:
-  - General guidance: < 24 business hours
-  - System impaired: < 12 business hours
+| Plan | Distinguishing capability |
+| --- | --- |
+| Business Support+ | 24/7 technical support and AWS Support API access |
+| Enterprise Support | Designated TAM and response targets for critical production cases |
+| Unified Operations | Additional operational engagement, specialist expertise, and critical-workload support |
 
-## AWS Business Support Plan (24/7)
+Compare current severity definitions and response targets on the official plan pages. Targets describe initial response or engagement, not guaranteed incident resolution.
 
-- Intended to be used if you have production workloads
-- Trusted Advisor – Full set of checks + API access
-- 24x7 phone, email, and chat access to Cloud Support Engineers
-- Unlimited cases / unlimited contacts
-- Access to Infrastructure Event Management for additional fee.
-- Case severity / response times:
-  - General guidance: < 24 business hours
-  - System impaired: < 12 business hours
-  - Production system impaired: < 4 hours
-  - Production system down: < 1 hour
+## Legacy support-plan transition
 
-## AWS Enterprise On-Ramp Support Plan (24/7)
-
-- Intended to be used if you have production or business critical workloads
-- All of Business Support Plan +
-- Access to a pool of Technical Account Managers (TAM)
-- Concierge Support Team (for billing and account best practices)
-- Infrastructure Event Management, Well-Architected & Operations Reviews
-- Case severity / response times:
-  - Production system impaired: < 4 hours
-  - Production system down: < 1 hour
-  - Business-critical system down: < 30 minutes
-
-## AWS Enterprise Support Plan (24/7)
-
-- Intended to be used if you have mission critical workloads
-- All of Business Support Plan +
-- Access to a designated Technical Account Manager (TAM)
-- Concierge Support Team (for billing and account best practices)
-- Infrastructure Event Management, Well-Architected & Operations Reviews
-- Case severity / response times:
-  - Production system impaired: < 4 hours
-  - Production system down: < 1 hour
-  - Business-critical system down: < 15 minutes
+As of this review, Developer Support, the old Business Support, and Enterprise On-Ramp are transition-era plans with a stated end date of **1 January 2027** in the commercial AWS Regions. Existing-customer transition rules differ by plan. AWS documents an exception for AWS GovCloud (US), where these plans remain available. New-account questions should use the current plan lineup rather than the old names.
 
 ## Account Best Practices - Summary
 
@@ -415,7 +373,7 @@ and/or continuous cost increases (you don't need to define thresholds)
 - Use SCP (service control policies) to restrict account power
 - Easily setup multiple accounts with best-practices with AWS Control Tower
 - Use Tags & Cost Allocation Tags for easy management & billing
-- IAM guidelines: MFA, least-privilege, password policy, password rotation
+- IAM guidelines: federated workforce access, temporary credentials, MFA, least privilege, and appropriate password/credential controls.
 - Config to record all resources configurations & compliance over time
 - CloudFormation to deploy stacks across accounts and regions
 - Trusted Advisor to get insights, Support Plan adapted to your needs
@@ -436,3 +394,17 @@ and/or continuous cost increases (you don't need to define thresholds)
 - **Savings Plans**: easy way to save based on long-term usage of AWS
 - **Cost Anomaly Detection**: detect unusual spends using Machine Learning
 - **Service Quotas**: notify you when you're close to service quota threshold
+
+## AWS documentation review
+
+Reviewed 16 October 2026. Updated support plans, Trusted Advisor categories, budget behavior, forecasting horizon, terminology, pricing caveats, and Free Tier guidance.
+
+- [Current AWS Support plans](https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html)
+- [Legacy support-plan transitions](https://docs.aws.amazon.com/awssupport/latest/user/support-plans-eos.html)
+- [Trusted Advisor categories](https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor.html)
+- [AWS Budgets](https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html)
+- [Cost Explorer forecasting](https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html)
+- [Cost allocation tags](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html)
+- [Current Free Tier](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier.html)
+- [Savings Plans types](https://docs.aws.amazon.com/savingsplans/latest/userguide/plan-types.html)
+- [CloudFront pricing](https://aws.amazon.com/cloudfront/pricing/)

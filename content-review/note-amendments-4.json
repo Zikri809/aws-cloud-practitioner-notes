@@ -1,0 +1,223 @@
+[
+  {
+    "file": "sections/account_management_billing_support.md",
+    "summary": "Updated support plans, Trusted Advisor categories, budget behavior, forecasting horizon, terminology, pricing caveats, and Free Tier guidance.",
+    "sources": [
+      {
+        "title": "Current AWS Support plans",
+        "url": "https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html"
+      },
+      {
+        "title": "Legacy support-plan transitions",
+        "url": "https://docs.aws.amazon.com/awssupport/latest/user/support-plans-eos.html"
+      },
+      {
+        "title": "Trusted Advisor categories",
+        "url": "https://docs.aws.amazon.com/awssupport/latest/user/get-started-with-aws-trusted-advisor.html"
+      },
+      {
+        "title": "AWS Budgets",
+        "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html"
+      },
+      {
+        "title": "Cost Explorer forecasting",
+        "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html"
+      },
+      {
+        "title": "Cost allocation tags",
+        "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html"
+      },
+      {
+        "title": "Current Free Tier",
+        "url": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier.html"
+      },
+      {
+        "title": "Savings Plans types",
+        "url": "https://docs.aws.amazon.com/savingsplans/latest/userguide/plan-types.html"
+      },
+      {
+        "title": "CloudFront pricing",
+        "url": "https://aws.amazon.com/cloudfront/pricing/"
+      }
+    ],
+    "changes": [
+      {
+        "find": "- The main account is the master account",
+        "replace": "- The organization's controlling account is the **management account**. Master account is legacy terminology."
+      },
+      {
+        "find": "- Does not apply to the Master Account",
+        "replace": "- SCPs do not restrict principals in the management account. They constrain applicable principals in member accounts and do not grant permissions themselves."
+      },
+      {
+        "find": "- SCP must have an explicit Allow (does not allow anything by default)",
+        "replace": "- Effective access depends on the complete SCP hierarchy plus IAM permissions. An allow-list strategy requires an allow at every applicable level; a deny-list strategy usually retains FullAWSAccess. Neither an SCP allow nor FullAWSAccess grants an IAM principal permissions by itself."
+      },
+      {
+        "find": "  - Pay per second (Linux/Windows) or per hour (other)",
+        "replace": "  - Billing granularity depends on the OS/software offering; eligible usage is billed per second with a 60-second minimum."
+      },
+      {
+        "find": "  - Up to 75% discount compared to On-demand on hourly rate",
+        "replace": "  - Discount depends on the term, offering, and payment choice; compare with the current published EC2 RI rates."
+      },
+      {
+        "find": "  - Bid for unused capacity",
+        "replace": "  - Use spare capacity at the current Spot price, accepting interruptions; this is not a highest-bidder auction."
+      },
+      {
+        "find": "  - General Purpose SSD: Included",
+        "replace": "  - General Purpose SSD: baseline performance is included; additional gp3 IOPS/throughput can incur charges."
+      },
+      {
+        "find": "  - Reserved instances (1 or 3 years) with required up-front",
+        "replace": "  - Reserved DB instances offer supported No Upfront, Partial Upfront, or All Upfront choices; availability depends on the offering."
+      },
+      {
+        "find": "- Number of HTTP/HTTPS requests",
+        "replace": "- Number of HTTP/HTTPS requests\n- CloudFront also offers flat-rate plans. The above describes pay-as-you-go factors, not every current pricing option."
+      },
+      {
+        "find": "- Use same AZ for maximum savings (at the cost of high availability)",
+        "replace": "- Evaluate data paths and service-specific cross-AZ charges, but preserve the resilience the workload requires. A cost note is not a recommendation to remove Multi-AZ redundancy. Public IPv4 addresses can also incur charges."
+      },
+      {
+        "find": "- Setup from the AWS Cost Explorer console",
+        "replace": "- AWS also offers SageMaker AI Savings Plans and Database Savings Plans for supported usage. Database plans have different scope and eligibility; do not treat an EC2 reservation as a database-wide commitment.\n- Manage commitments using the current Billing and Cost Management interfaces."
+      },
+      {
+        "find": "  - Starts with Prefix user:",
+        "replace": "  - User-defined cost allocation tags do not require a user: prefix. Activate the desired tag keys for billing allocation; aws: is the reserved AWS-generated prefix."
+      },
+      {
+        "find": "- **Forecast usage up to 12 months based on previous usage**",
+        "replace": "- **Current monthly cost/usage forecasts extend up to 18 months**, subject to supported granularity and sufficient history. Forecasts are estimates, not guaranteed bills."
+      },
+      {
+        "find": "- 3 types of budgets: Usage, Cost, Reservation",
+        "replace": "- Budgets cover cost, usage, RI utilization/coverage, and Savings Plans utilization/coverage."
+      },
+      {
+        "find": "- 2 budgets are free, then $0.02/day/budget",
+        "replace": "- Monitoring-only budgets are free under current pricing; action-enabled budgets have their own allowance and pricing. Check AWS Cost Management pricing. Budgets are not a universal hard spending cap: notifications and actions can occur after charges are incurred."
+      },
+      {
+        "start": "## Trusted Advisor\n",
+        "end": "## Account Best Practices - Summary\n",
+        "replace": "## Trusted Advisor\n\nTrusted Advisor checks configurations and recommends improvements across **cost optimization, performance, security, fault tolerance, service limits, and operational excellence**. The old five-category and fixed seven-check descriptions are outdated. Access depends on support-plan entitlement; use the current check reference.\n\n## Trusted Advisor - Support Plans\n\nBasic includes a limited selection of checks. Business Support+, Enterprise Support, and Unified Operations provide broader capabilities; consult the current entitlement documentation.\n\n## AWS Basic Support Plan\n\nIncluded for all customers. Provides account/billing help, documentation, public service-health information, and community resources. Basic is not a paid technical support plan.\n\n## Current paid support plans\n\n| Plan | Distinguishing capability |\n| --- | --- |\n| Business Support+ | 24/7 technical support and AWS Support API access |\n| Enterprise Support | Designated TAM and response targets for critical production cases |\n| Unified Operations | Additional operational engagement, specialist expertise, and critical-workload support |\n\nCompare current severity definitions and response targets on the official plan pages. Targets describe initial response or engagement, not guaranteed incident resolution.\n\n## Legacy support-plan transition\n\nAs of this review, Developer Support, the old Business Support, and Enterprise On-Ramp are transition-era plans with a stated end date of **1 January 2027** in the commercial AWS Regions. Existing-customer transition rules differ by plan. AWS documents an exception for AWS GovCloud (US), where these plans remain available. New-account questions should use the current plan lineup rather than the old names."
+      },
+      {
+        "find": "- IAM guidelines: MFA, least-privilege, password policy, password rotation",
+        "replace": "- IAM guidelines: federated workforce access, temporary credentials, MFA, least privilege, and appropriate password/credential controls."
+      }
+    ]
+  },
+  {
+    "file": "sections/architecting_and_ecosystem.md",
+    "summary": "Retained the six-pillar framework and updated support-plan references, community resources, and the meaning of mechanical sympathy.",
+    "sources": [
+      {
+        "title": "AWS Well-Architected Framework",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html"
+      },
+      {
+        "title": "Performance-efficiency design principles",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/performance-efficiency-pillar/design-principles.html"
+      },
+      {
+        "title": "Current AWS Support plans",
+        "url": "https://docs.aws.amazon.com/awssupport/latest/user/aws-support-plans.html"
+      },
+      { "title": "AWS re:Post", "url": "https://repost.aws/" }
+    ],
+    "changes": [
+      {
+        "find": "  - Be aware of all AWS services (mechanical sympathy).",
+        "replace": "  - Understand the technology's operating characteristics and use resources in ways that suit the workload (mechanical sympathy)."
+      },
+      {
+        "find": "- **AWS Forums**: [AWS Forums](https://forums.aws.amazon.com/index.jspa)",
+        "replace": "- **AWS re:Post**: [AWS community questions and Knowledge Center](https://repost.aws/)"
+      },
+      {
+        "start": "### AWS Ecosystem - AWS Support\n",
+        "end": "## AWS Marketplace\n",
+        "replace": "### AWS Ecosystem - AWS Support\n\nCurrent plans are Basic, Business Support+, Enterprise Support, and Unified Operations. Enterprise adds a designated TAM; Unified Operations provides additional operational support. Older Developer, Business, and Enterprise On-Ramp comparisons are historical during the transition to 1 January 2027, with AWS GovCloud (US) exceptions. Use the [billing and support chapter](./account_management_billing_support.md) and AWS's live plan documentation for entitlement and initial-response targets."
+      }
+    ]
+  },
+  {
+    "file": "sections/other_aws_services.md",
+    "summary": "Identified retired Sumerian and Elastic Transcoder, upcoming Pinpoint end of support, and new-customer restrictions for migration tools.",
+    "sources": [
+      {
+        "title": "AWS service lifecycle",
+        "url": "https://docs.aws.amazon.com/general/latest/gr/service-lifecycle.html"
+      },
+      {
+        "title": "Retired services",
+        "url": "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html"
+      },
+      {
+        "title": "AWS Elemental MediaConvert",
+        "url": "https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html"
+      },
+      {
+        "title": "Pinpoint end of support",
+        "url": "https://docs.aws.amazon.com/pinpoint/latest/userguide/migrate.html"
+      },
+      {
+        "title": "Application Discovery Service availability",
+        "url": "https://docs.aws.amazon.com/application-discovery/latest/userguide/application-discovery-service-availability-change.html"
+      },
+      {
+        "title": "Migration Hub availability",
+        "url": "https://docs.aws.amazon.com/mhj/latest/userguide/migrationhub-availability-change.html"
+      },
+      {
+        "title": "AWS DataSync",
+        "url": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html"
+      }
+    ],
+    "changes": [
+      {
+        "find": "## Amazon AppStream 2.0\n",
+        "replace": "## Amazon AppStream 2.0\n\nAWS documentation now uses **Amazon WorkSpaces Applications** for this application-streaming offering. Older exam material calls it AppStream 2.0; recognize both names.\n"
+      },
+      {
+        "find": "| Users connect to the VDI and open native or WAM applications      |",
+        "replace": "| Users connect to their supported desktop environment and applications |"
+      },
+      {
+        "start": "## Amazon Sumerian\n",
+        "end": "## AWS IoT Core\n",
+        "replace": "## Amazon Sumerian\n\nHistorical service: AWS lists Amazon Sumerian as retired, with support ending in March 2023. Its former purpose was building web-based AR/VR and 3D experiences. It is not a current service recommendation."
+      },
+      {
+        "find": "- Applications can communicate with devices even when they aren’t connected",
+        "replace": "- Device Shadows retain reported/desired state while devices are offline; a disconnected device receives relevant updates after it reconnects, not through a live offline connection."
+      },
+      {
+        "start": "## Amazon Elastic Transcoder\n",
+        "end": "## AWS AppSync\n",
+        "replace": "## Amazon Elastic Transcoder\n\nHistorical service: Elastic Transcoder ended support in November 2025. For new file-based media transcoding, evaluate **AWS Elemental MediaConvert**, which converts media into supported delivery formats. Do not select Elastic Transcoder for a new deployment."
+      },
+      {
+        "find": "- Synchronize to Amazon S3 (any storage classes including Glacier), Amazon EFS, Amazon FSx for Windows",
+        "replace": "- Transfers data to supported S3, EFS, and FSx locations. Archived source objects may need restoration before they can be read; destination storage-class and metadata behavior have service-specific rules."
+      },
+      {
+        "find": "## AWS Application Discovery Service\n",
+        "replace": "## AWS Application Discovery Service\n\nClosed to new customers since November 2025. The following capabilities describe existing-customer use. The old Discovery Connector is retired; do not confuse it with supported discovery agents/collectors or recommend it for a new migration.\n"
+      },
+      {
+        "find": "## AWS Migration Hub\n",
+        "replace": "## AWS Migration Hub\n\nMigration Hub stopped accepting new customers on 7 November 2025. These capabilities are retained for context; new customers should use the alternatives in AWS's availability guidance.\n"
+      },
+      {
+        "find": "## AWS Pinpoint\n",
+        "replace": "## AWS Pinpoint\n\nEnd of support is scheduled for **30 October 2026**, after this review date. Plan migration rather than treating its campaign, journey, endpoint, and analytics features as a long-term new-workload choice. The SMS, voice, mobile push, OTP, and number-validation APIs continue under AWS End User Messaging; that is not a blanket replacement for every Pinpoint feature.\n"
+      }
+    ]
+  }
+]

@@ -96,7 +96,7 @@
 
 - **RDS (Relational Database Service)**: Fully managed service for relational databases.
   - It’s a managed DB service for DB use SQL as a query language.
-  - Supports **MySQL**, **PostgreSQL**, **MariaDB**, **Oracle**, **SQL Server**.
+  - Supports engines including MySQL, PostgreSQL, MariaDB, Oracle, SQL Server, and Db2. Aurora is a MySQL/PostgreSQL-compatible engine with its own architecture.
   - Handles **backup**, **patching**, **high availability** (Multi-AZ), and **scaling**.
 
 ### Advantage over using RDS versus deploying DB on EC2
@@ -109,7 +109,7 @@
   - Multi AZ setup for DR (Disaster Recovery)
   - Maintenance windows for upgrades
   - Scaling capability (vertical and horizontal)
-  - Storage backed by EBS (gp2 or io1)
+  - RDS DB instance storage includes supported gp2/gp3 and provisioned-IOPS options; available choices depend on the engine and deployment.
 - BUT you can’t SSH into your instances
 
 ### RDS Deployments
@@ -123,8 +123,8 @@
 | Read Replicas                       | Multi-AZ                                          |
 | ----------------------------------- | ------------------------------------------------- |
 | Scale the read workload of your DB  | Failover in case of AZ outage (high availability) |
-| Can create up to 5 Read Replicas    | Data is only read/written to the main database    |
-| Data is only written to the main DB | Can only have 1 other AZ as failover              |
+| Replica limits depend on the engine; do not assume a universal maximum of five | A traditional Multi-AZ DB instance has one non-readable standby |
+| Applications normally write to the primary | A Multi-AZ DB cluster has a writer and two readable instances across three AZs |
 
 ![Read Replicas Multi-AZ](../images/read_replicas_multi_AZ.png)
 
@@ -141,16 +141,16 @@
 
 - **Amazon Aurora**: High-performance RDS database.
   - Compatible with **MySQL** and **PostgreSQL**.
-  - **5x faster** than MySQL, **3x faster** than PostgreSQL.
-  - **Auto-scaling** storage up to **64 TB**.
+  - AWS publishes workload-specific performance comparisons; do not interpret a marketing multiple as a guaranteed speedup for every application.
+  - Storage grows automatically. Supported newer engine versions can reach 256 TiB; engine/version limits apply, so 64 TB is not a universal current limit.
   - Supports **Multi-AZ** and up to **15 read replicas**.
   - Great for **enterprise-grade** applications requiring high availability and performance.
-  - Aurora costs more than RDS (20% more) – but is more efficient
+  - Compare workload-specific pricing and storage configurations; there is no universal 20% Aurora surcharge over every RDS database.
 
 ## Amazon ElastiCache Overview
 
 - **ElastiCache**: In-memory data caching service.
-  - **Redis**: Advanced key-value store with replication and persistence.
+  - **Valkey and Redis OSS**: In-memory key-value engines with supported replication features. Persistence and backup behavior depend on the engine and configuration.
   - **Memcached**: Simple, memory-only caching service.
   - Reduces database load and speeds up applications by **caching frequent queries**.
   - Caches are in-memory databases with high performance, low latency
@@ -192,7 +192,7 @@
 - Supports integration with **BI tools** (QuickSight, Tableau).
 - Massively Parallel Query Execution (MPP), highly available.
 - Has a SQL interface for performing the queries.
-- Pay-per-query or **reserved instances** for cost savings.
+- Provisioned Redshift uses node-based pricing with reservation options. Redshift Serverless bills compute using RPU capacity and usage; it is not simply a per-query fee. Managed storage is billed separately.
 - Designed for **massive datasets**.
 
 ## Amazon EMR (Elastic MapReduce)
@@ -233,10 +233,10 @@
 ## DocumentDB (with MongoDB Compatibility)
 
 - Managed document database, **MongoDB-compatible**.
-- DocumentDB is the same for MongoDB (which is a NoSQL database)
+- DocumentDB implements compatible MongoDB APIs, but is not the MongoDB server; check supported APIs and functional differences before migration.
 - Highly scalable and durable with **Multi-AZ**.
 - Built for **JSON** document storage.
-- Aurora storage automatically grows in increments of 10GB, up to 64 TB.
+- DocumentDB has its own cluster storage behavior and quotas. Do not apply an old Aurora storage limit to DocumentDB.
 - Automatically scales to workloads with millions of requests per seconds
 - Use cases: Content management, cataloging, and mobile backends.
 
@@ -256,13 +256,7 @@
 
 ## Amazon QLDB
 
-- QLDB stands for ”Quantum Ledger Database”
-- A ledger is a book **recording financial transactions**
-- Fully Managed, Serverless, High available, Replication across 3 AZ
-- Used to **review history of all the changes made to your application data** over time
-- **Immutable** system: no entry can be removed or modified, cryptographically verifiable
-- 2-3x better performance than common ledger blockchain frameworks, manipulate data using SQL
-- Difference with Amazon Managed Blockchain: no decentralization component, in accordance with financial regulation rules
+Historical service: Amazon Quantum Ledger Database ended support on 31 July 2025. Older descriptions of its cryptographically verifiable journal explain its former purpose; it is not a current database choice. Select a supported database and audit/history design for new applications.
 
 ## Amazon Managed Blockchain
 
@@ -270,7 +264,7 @@
 - Amazon Managed Blockchain is a managed service to:
   - Join public blockchain networks
   - Or create your own scalable private network
-- Compatible with the frameworks Hyperledger Fabric & Ethereum
+- Historically supported Hyperledger Fabric and public blockchain access. AWS has announced an end-of-support date of 29 September 2027 for Amazon Managed Blockchain; follow its service-specific migration guidance rather than recommending a new deployment without that context.
 
 ## AWS Glue
 
@@ -298,9 +292,21 @@
 - Hadoop Cluster: EMR
 - Athena: query data on Amazon S3 (serverless & SQL)
 - QuickSight: dashboards on your data (serverless)
-- DocumentDB: “Aurora for MongoDB” (JSON – NoSQL database)
-- Amazon QLDB: Financial Transactions Ledger (immutable journal, cryptographically verifiable)
+- DocumentDB: managed document database with MongoDB API compatibility, not an Aurora engine or the MongoDB server.
+- Amazon QLDB: retired ledger database, retained as historical context only.
 - Amazon Managed Blockchain: managed Hyperledger Fabric & Ethereum blockchains
 - Glue: Managed ETL (Extract Transform Load) and Data Catalog service
 - Database Migration: DMS
 - Neptune: graph database
+
+## AWS documentation review
+
+Reviewed 16 October 2026. Corrected RDS deployment distinctions, Aurora storage and pricing claims, Redshift billing, DocumentDB wording, and retired QLDB guidance.
+
+- [RDS Multi-AZ DB clusters](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html)
+- [RDS quotas](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Limits.html)
+- [Aurora quotas and storage limits](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_Limits.html)
+- [ElastiCache engines](https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WhatIs.html)
+- [Redshift Serverless billing](https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-billing.html)
+- [AWS services in full shutdown](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html)
+- [Managed Blockchain end of support](https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-end-of-support.html)

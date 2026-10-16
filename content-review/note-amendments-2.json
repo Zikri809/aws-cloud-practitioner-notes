@@ -1,0 +1,241 @@
+[
+  {
+    "file": "sections/deploying.md",
+    "summary": "Updated the CDK example to v2 and distinguished supported developer services from retired CodeStar and OpsWorks and restricted Cloud9.",
+    "sources": [
+      {
+        "title": "AWS CDK v2 Python example",
+        "url": "https://docs.aws.amazon.com/cdk/v2/guide/hello-world.html"
+      },
+      {
+        "title": "CodeCommit documentation history",
+        "url": "https://docs.aws.amazon.com/codecommit/latest/userguide/history.html"
+      },
+      {
+        "title": "AWS CodeStar end of support",
+        "url": "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html"
+      },
+      {
+        "title": "AWS OpsWorks Stacks end of life",
+        "url": "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html"
+      },
+      {
+        "title": "AWS Cloud9 availability",
+        "url": "https://docs.aws.amazon.com/cloud9/latest/user-guide/welcome.html"
+      },
+      {
+        "title": "Systems Manager setup",
+        "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-nodes.html"
+      }
+    ],
+    "changes": [
+      {
+        "find": "Once you have the dependencies installed, you can execute this Python script, and it will create the S3 bucket in your AWS account based on the code defined in the `MyS3BucketStack` class.",
+        "replace": "This CDK v2 example synthesizes a template. It does not create resources until you bootstrap the target environment where required and run `cdk deploy`. Keep the default retention behavior for stored data."
+      },
+      {
+        "start": "```python\nfrom aws_cdk import core",
+        "end": "## Developer problems on AWS",
+        "replace": "```python\nfrom aws_cdk import App, Stack\nfrom aws_cdk import aws_s3 as s3\nfrom constructs import Construct\n\nclass MyS3BucketStack(Stack):\n    def __init__(self, scope: Construct, construct_id: str, **kwargs):\n        super().__init__(scope, construct_id, **kwargs)\n        s3.Bucket(self, \"MyS3Bucket\", versioned=True)\n\napp = App()\nMyS3BucketStack(app, \"MyS3BucketStack\")\napp.synth()\n```"
+      },
+      {
+        "find": "- Just the application code is the responsibility of the developer",
+        "replace": "- Customers remain responsible for application code, data, access policies, configuration, and keeping the chosen platform branch supported. Managed platform updates are configurable, not a blanket removal of patching responsibilities."
+      },
+      {
+        "find": "- Servers / Instances must be provisioned and configured ahead of time with the CodeDeploy Agent",
+        "replace": "- EC2 and on-premises deployments need the CodeDeploy agent. CodeDeploy also supports Lambda and ECS deployments through their supported deployment configurations."
+      },
+      {
+        "find": "  - Private, Secured, Integrated with AWS",
+        "replace": "  - Private, secured, and integrated with AWS. CodeCommit reopened to new customers on 25 November 2025; older closed-to-new-customer notices are no longer current."
+      },
+      {
+        "start": "## AWS CodeStar\n",
+        "end": "## AWS Cloud9\n",
+        "replace": "## AWS CodeStar\n\nHistorical service: AWS CodeStar ended support in 2024. Use supported individual developer tools, such as CodePipeline, CodeBuild, and CodeDeploy. CodeStar's retirement does not mean CodeStar Connections/AWS CodeConnections or those separate services have retired."
+      },
+      {
+        "find": "- AWS Cloud9 is a cloud IDE (Integrated Development Environment) for writing, running and debugging code",
+        "replace": "- AWS Cloud9 is a browser IDE for existing customers. It has been closed to new customers since 25 July 2024; new users should choose supported local development tools or AWS CloudShell for browser-based CLI tasks."
+      },
+      {
+        "find": "- If an instance can’t be controlled with SSM, it’s probably an issue with the SSM agent!",
+        "replace": "- Check SSM Agent, IAM instance permissions, network access to the required endpoints, and the managed-node configuration when a system is not reachable."
+      },
+      {
+        "start": "## AWS OpsWorks\n",
+        "end": "## Deployment - Summary\n",
+        "replace": "## AWS OpsWorks\n\nHistorical service: The AWS OpsWorks services ended support in 2024. Do not choose OpsWorks for a new deployment. Evaluate AWS Systems Manager for supported configuration/patch automation and the software vendor's supported Chef or Puppet deployment options.\n\n### OpsWorks Architecture\n\nThe original diagram below describes the retired service and is retained only to explain older material.\n\n![Historical OpsWorks architecture](../images/OpsWorks_Architecture.png)"
+      },
+      {
+        "find": "- OpsWorks (hybrid): managed Chef and Puppet in AWS",
+        "replace": "- OpsWorks: retired managed Chef/Puppet and stack-management services, retained as historical context."
+      },
+      {
+        "find": "- CodeStar: Unified view for allowing developers to do CICD and code",
+        "replace": "- CodeStar: retired; use supported individual CI/CD services."
+      },
+      {
+        "find": "- Cloud9: Cloud IDE (Integrated Development Environment) with collab",
+        "replace": "- Cloud9: browser IDE for existing customers; closed to new customers."
+      }
+    ]
+  },
+  {
+    "file": "sections/other_compute.md",
+    "summary": "Corrected serverless definitions, EC2 scaling, Lambda runtime and container support, and pricing assumptions.",
+    "sources": [
+      {
+        "title": "Lambda runtimes",
+        "url": "https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html"
+      },
+      {
+        "title": "Lambda container images",
+        "url": "https://docs.aws.amazon.com/lambda/latest/dg/images-create.html"
+      },
+      {
+        "title": "Lambda quotas",
+        "url": "https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html"
+      },
+      {
+        "title": "Lambda pricing",
+        "url": "https://aws.amazon.com/lambda/pricing/"
+      },
+      {
+        "title": "ECS compute options",
+        "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html"
+      },
+      {
+        "title": "API Gateway API types",
+        "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-vs-rest.html"
+      }
+    ],
+    "changes": [
+      {
+        "find": "- **Two launch modes**: **EC2** (self-managed instances) and **Fargate** (serverless).",
+        "replace": "- Core compute choices include customer-managed EC2 instances and Fargate. ECS also offers managed-instance and external-capacity options; distinguish orchestration from responsibility for the host."
+      },
+      {
+        "find": "- Serverless was pioneered by AWS Lambda but now also includes anything that’s managed: “databases, messaging, storage, etc.”",
+        "replace": "- A managed service is not automatically serverless. For example, provisioned RDS instances still have capacity and instance choices; Lambda and Fargate remove host-server management for their supported workloads."
+      },
+      {
+        "find": "| Scaling means intervention to add / remove servers | Scaling is automated!                     |",
+        "replace": "| EC2 Auto Scaling can add and remove instances automatically | Lambda scales supported invocations subject to concurrency and service quotas |"
+      },
+      {
+        "find": "- Go\n- .NET Core",
+        "replace": "- Go through a supported OS-only/custom runtime (the old managed go1.x runtime is deprecated)\n- Supported .NET runtimes"
+      },
+      {
+        "find": "- custom runtime (via container images) (community supported, example Rust)",
+        "replace": "- Other languages through a custom runtime that implements the Lambda Runtime API; supported container images are another packaging option."
+      },
+      {
+        "find": "- It is usually **very cheap** to run AWS Lambda so it’s **very popular**",
+        "replace": "- These figures describe a conventional request/duration pricing example, not a quote for every configuration. Architecture, Region, usage tiers, provisioned concurrency, extra ephemeral storage, and newer execution options can change cost. Check current Lambda pricing and Free Tier account eligibility."
+      },
+      {
+        "find": "- **Throttling**, **caching**, and **authorization** features built-in.",
+        "replace": "- Features depend on API type. For example, API Gateway's built-in API cache is a REST API feature; do not assume HTTP and WebSocket APIs provide the same features."
+      },
+      {
+        "find": "- Language Support: many programming languages except (arbitrary) Docker",
+        "replace": "- Lambda supports runtime-compatible container images. It is not a service for arbitrary long-running containers; use ECS/Fargate for those workloads."
+      },
+      {
+        "find": "- ECR: Private Docker Images Repository",
+        "replace": "- ECR: managed private and public container-image repositories."
+      }
+    ]
+  },
+  {
+    "file": "sections/global_infrastructure.md",
+    "summary": "Removed stale edge counts and an unsupported speed percentage; corrected CloudFront OAC, replication, Route 53 aliases, and transfer acceleration.",
+    "sources": [
+      {
+        "title": "Route 53 alias targets",
+        "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-choosing-alias-non-alias.html"
+      },
+      {
+        "title": "CloudFront private origins",
+        "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-overview.html"
+      },
+      {
+        "title": "S3 replication",
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/replication.html"
+      },
+      {
+        "title": "S3 Transfer Acceleration",
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/transfer-acceleration.html"
+      },
+      {
+        "title": "Global Accelerator",
+        "url": "https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html"
+      }
+    ],
+    "changes": [
+      {
+        "find": "  - example.com => AWS resource == Alias (ex: ELB, CloudFront, S3, RDS, etc…)",
+        "replace": "  - example.com => supported AWS alias target, such as an ELB load balancer, CloudFront distribution, or S3 website endpoint. An RDS DB instance endpoint is not a general Route 53 alias target; use an appropriate CNAME on a non-apex name."
+      },
+      {
+        "find": "- 216 Point of Presence globally (edge locations)",
+        "replace": "- Uses AWS's global edge network. The number of locations changes; check current AWS infrastructure information instead of memorizing an old count."
+      },
+      {
+        "find": "  - Enhanced security with CloudFront Origin Access Identity (OAI)",
+        "replace": "  - Prefer CloudFront origin access control (OAC) for a supported private S3 origin. OAI is the older mechanism and has feature limitations."
+      },
+      {
+        "find": "| Files are cached for a TTL (Time to Live) (maybe a day)        | Files are updated in near real-time, Read only                                         |\n| **Great for static content that must be available everywhere** | **Great for dynamic content that needs to be available at low-latency in few regions** |",
+        "replace": "| Cached objects follow cache-control and TTL settings | Replication asynchronously copies eligible objects between versioned buckets |\n| Useful for cached content delivery near viewers | Useful for compliance, data locality, and resilience; replicas are objects, not a dynamic application or a universally read-only database |"
+      },
+      {
+        "find": "- if we try to upload file to Australia S3 bucket it will take time using CloudFront we can rescue time.",
+        "replace": "- S3 Transfer Acceleration is a separate S3 transfer feature that uses edge locations; do not confuse it with a CloudFront distribution."
+      },
+      {
+        "find": "- Leverage the AWS internal network to optimize the route to your application (60% improvement)",
+        "replace": "- Uses the AWS network to optimize paths to supported endpoints. Actual improvement depends on client location and network conditions; there is no guaranteed 60% speedup."
+      },
+      {
+        "find": "- No additional charges or service agreements",
+        "replace": "- Wavelength usage is billed according to its supported services and pricing. Connectivity, carrier, and parent-Region requirements must be considered; it is not a blanket no-charge deployment."
+      }
+    ]
+  },
+  {
+    "file": "sections/advanced_identity.md",
+    "summary": "Clarified Cognito user pools versus identity pools, expanded workforce federation, and identified Simple AD's new-customer restriction.",
+    "sources": [
+      {
+        "title": "Amazon Cognito",
+        "url": "https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html"
+      },
+      {
+        "title": "IAM Identity Center",
+        "url": "https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html"
+      },
+      {
+        "title": "Simple AD availability",
+        "url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/simple-ad-availability-change.html"
+      }
+    ],
+    "changes": [
+      {
+        "find": "- Instead of creating IAM users, create users in Cognito",
+        "replace": "- User pools provide application sign-up, sign-in, and tokens. Identity pools exchange supported identities for temporary AWS credentials. Cognito serves application users; IAM Identity Center serves workforce access."
+      },
+      {
+        "find": "  - Cannot be joined with on-premise AD",
+        "replace": "  - Does not provide an AD trust relationship to on-premises Microsoft AD. Simple AD is closed to new customers; evaluate AWS Managed Microsoft AD or AD Connector according to the requirement."
+      },
+      {
+        "find": "  - Built-in identity store in IAM Identity Center",
+        "replace": "  - Built-in identity store, supported external identity providers, or supported Microsoft Active Directory integration."
+      }
+    ]
+  }
+]

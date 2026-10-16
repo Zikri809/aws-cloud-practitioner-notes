@@ -1,0 +1,523 @@
+{
+  "1:8": {
+    "prompt": "An existing customer eligible to continue using Snowball Edge is reviewing its historical use cases. Which two are supported? (Choose TWO.)",
+    "explanation": "Snowball Edge is closed to new customers. Existing-customer eligibility is distinct from full retirement."
+  },
+  "1:14": {
+    "options": {
+      "E": "AWS operates and secures the underlying physical infrastructure; customers retain responsibility for their data, identities, and service configuration."
+    }
+  },
+  "1:17": {
+    "options": {
+      "C": "Eligible usage across member accounts can be combined for applicable volume pricing and discount sharing."
+    }
+  },
+  "1:36": {
+    "prompt": "Which credentials form a long-term IAM user access-key pair used for programmatic access?",
+    "explanation": "The AWS CLI also supports federation and temporary credentials; long-term IAM user keys are not required for every CLI user."
+  },
+  "3:8": {
+    "prompt": "Which RDS features can support availability or recovery designs? A read replica requires promotion before it can replace a failed writer. (Choose TWO.)"
+  },
+  "3:18": {
+    "prompt": "Among these purchasing choices, which offers the lowest cost for the described continuously running RDS workload over a three-year commitment?"
+  },
+  "3:31": { "options": { "B": "The AWS Region where the instance runs." } },
+  "4:1": {
+    "prompt": "Which AWS service is recommended for provisioning and managing a TLS certificate for an HTTPS application integrated with supported AWS services?",
+    "answers": ["B"],
+    "explanation": "AWS Certificate Manager manages certificates. IAM server-certificate storage is a legacy alternative, not the recommended certificate provisioning service."
+  },
+  "4:6": {
+    "prompt": "A new customer can bring its own high-capacity storage devices to a designated AWS facility to upload data. Which AWS service provides this physical transfer location?",
+    "options": { "A": "AWS DataSync.", "C": "AWS Data Transfer Terminal." }
+  },
+  "4:7": {
+    "prompt": "Which S3 archive class offers a Standard retrieval option that typically completes in 3–5 hours, rather than immediate object access?",
+    "options": { "A": "S3 Glacier Flexible Retrieval." },
+    "explanation": "Retrieval times depend on the class and retrieval tier; they are not a universal guaranteed five-hour limit."
+  },
+  "4:13": {
+    "options": {
+      "C": "Prefer temporary credentials; when long-term access keys are necessary, update them when needed and remove unused keys."
+    }
+  },
+  "4:18": {
+    "prompt": "Which AWS-managed relational database service provides MySQL-compatible and PostgreSQL-compatible database engines?"
+  },
+  "4:21": {
+    "prompt": "Which AWS service helps build a data-driven business case for migrating on-premises servers to AWS?",
+    "options": { "B": "AWS Migration Evaluator." }
+  },
+  "4:45": {
+    "prompt": "Which AWS messaging service can publish SMS notifications to supported destinations, subject to country availability and messaging requirements?"
+  },
+  "5:4": {
+    "prompt": "Two Amazon Linux On-Demand EC2 instances run for 2 hours, 5 minutes, 9 seconds and 4 hours, 23 minutes, 7 seconds. Excluding other charges, how much instance runtime is billed?",
+    "options": {
+      "A": "3 hours and 5 hours.",
+      "B": "2 hours and 4 hours.",
+      "C": "2 hours, 5 minutes, 9 seconds and 4 hours, 23 minutes, 7 seconds.",
+      "D": "A full day for each instance."
+    },
+    "explanation": "These instances use per-second billing with a 60-second minimum, which both runtimes exceed."
+  },
+  "5:25": {
+    "prompt": "A newly created IAM user has no policies granting permissions. They cannot create EBS snapshots or create a separate S3 bucket. What explains this?",
+    "options": {
+      "D": "Requests are implicitly denied until an applicable policy allows them, subject to other policy restrictions."
+    },
+    "explanation": "EBS manages snapshot storage; customers do not select a destination S3 bucket for standard EBS snapshots."
+  },
+  "5:27": {
+    "prompt": "For an existing eligible customer, which AWS directory service historically provided a managed hierarchical data store for organizational data?"
+  },
+  "5:28": {
+    "prompt": "What initial response target does Business Support+ provide for a business-critical system down case?",
+    "options": { "D": "Less than 30 minutes." }
+  },
+  "5:31": {
+    "prompt": "Among these options, which is the lowest current support plan with an initial response target of up to 15 minutes for a business-critical system down case?"
+  },
+  "5:33": {
+    "prompt": "Which AWS service provisions and manages TLS certificates for supported integrations?"
+  },
+  "5:34": {
+    "prompt": "Which AWS service includes State Manager for automating and maintaining the configuration of managed nodes?",
+    "options": { "B": "AWS Systems Manager." }
+  },
+  "5:38": {
+    "options": {
+      "A": "Give the employee shared root credentials.",
+      "C": "Use workforce federation or IAM Identity Center with least-privilege role permissions and temporary credentials."
+    }
+  },
+  "5:45": {
+    "prompt": "You identify unexpected activity suggesting account compromise. Which are appropriate security response steps? (Choose TWO.)",
+    "options": {
+      "C": "Delete every IAM user before preserving or reviewing audit evidence.",
+      "D": "Review CloudTrail activity and investigate affected resources while preserving evidence.",
+      "E": "Secure the root identity and revoke compromised credentials and sessions; contact AWS Support as appropriate."
+    }
+  },
+  "5:49": {
+    "options": {
+      "E": "Use a compatible custom runtime implementing the Lambda Runtime API, or a supported Lambda container image."
+    }
+  },
+  "6:2": {
+    "prompt": "Which features are included in Business Support+? (Choose TWO.)",
+    "options": {
+      "A": "24/7 technical support by phone, web, and chat.",
+      "C": "Access to the AWS Support API."
+    }
+  },
+  "6:19": {
+    "options": {
+      "D": "AWS Cost Explorer provides estimated monthly cost forecasts up to 18 months ahead."
+    }
+  },
+  "6:22": {
+    "options": {
+      "A": "Avoid creating root access keys; remove any existing root access keys after replacing their use securely."
+    }
+  },
+  "6:25": {
+    "prompt": "Which are common AWS pricing components among these choices? (Choose TWO.)"
+  },
+  "6:28": {
+    "options": {
+      "A": "AWS can aggregate demand across many customers to reduce the unit cost of infrastructure."
+    },
+    "explanation": "Economies of scale differ from a customer's own service-specific volume discounts. Future price reductions are not guaranteed."
+  },
+  "6:31": {
+    "prompt": "Which AWS service develops a business case comparing an on-premises server environment with AWS?",
+    "options": { "D": "AWS Migration Evaluator." }
+  },
+  "6:32": {
+    "prompt": "Which services support resource-configuration compliance checks and AWS best-practice recommendations? (Choose TWO.)"
+  },
+  "6:33": {
+    "prompt": "Which AWS service provides State Manager to automate configuration of managed EC2 instances?",
+    "options": { "A": "AWS Systems Manager." }
+  },
+  "6:35": {
+    "prompt": "Which choices involve provisioning server instances rather than using the named serverless alternatives? (Choose TWO.)",
+    "explanation": "This question refers to provisioned RDS DB instances and EMR on EC2. RDS-related services and EMR also have serverless options."
+  },
+  "6:45": {
+    "prompt": "Which listed S3 class provides multi-AZ storage with millisecond access for infrequently accessed data, with retrieval charges and a minimum storage duration?"
+  },
+  "6:47": {
+    "prompt": "Why can on-demand Lambda reduce idle compute charges for an intermittent event-driven workload?",
+    "options": {
+      "B": "On-demand invocation billing can avoid paying for idle application servers between requests; other configured features can still incur charges."
+    }
+  },
+  "6:49": {
+    "prompt": "A company has adequate network connectivity and wants managed online transfer of files from on-premises storage into AWS storage. Which service fits?",
+    "options": { "D": "AWS DataSync." }
+  },
+  "7:23": {
+    "prompt": "Which service can adjust the aggregate capacity of an EC2 fleet by adding or removing instances according to configured policies?"
+  },
+  "7:29": {
+    "prompt": "Which listed storage class stores data redundantly across multiple Availability Zones?",
+    "explanation": "S3 Standard uses multiple Availability Zones. S3 also offers single-AZ classes, so this is not a property of every S3 class."
+  },
+  "7:35": {
+    "prompt": "Which current support plan provides a limited set of Trusted Advisor checks rather than the full set available with eligible paid plans?",
+    "options": { "B": "Basic Support." },
+    "explanation": "A fixed count of seven core checks is outdated. Check availability and entitlements in the current Trusted Advisor documentation."
+  },
+  "7:36": {
+    "prompt": "Which is NOT a property of AWS Lambda?",
+    "options": {
+      "A": "AWS manages the underlying servers.",
+      "B": "Concurrency can scale within configured limits and quotas.",
+      "C": "On-demand requests and execution duration are usage-based billing components.",
+      "D": "Every function can execute for an unlimited duration."
+    }
+  },
+  "7:37": {
+    "prompt": "Which statement correctly describes AWS compliance support?",
+    "options": {
+      "B": "AWS takes responsibility for every customer's application-specific legal obligations.",
+      "C": "AWS provides compliance reports and attestations for in-scope services; customers must meet their own obligations, including a BAA where applicable.",
+      "D": "Using any AWS service automatically makes every workload compliant with all regulations."
+    },
+    "explanation": "HIPAA is not an AWS product certification that automatically makes customer workloads compliant."
+  },
+  "7:38": {
+    "prompt": "For a DynamoDB table using on-demand capacity, who manages scaling of request throughput within applicable limits?"
+  },
+  "7:44": {
+    "prompt": "Which Route 53 routing policy directs users to the configured endpoint with the lowest measured latency, rather than simply choosing the geographically closest Region?"
+  },
+  "8:8": {
+    "options": {
+      "A": "It provides building blocks that customers can use to design fault-tolerant applications."
+    }
+  },
+  "8:15": {
+    "options": {
+      "A": "An IAM user is a long-term identity; a role can be assumed by principals allowed by its trust policy and applicable permissions.",
+      "B": "An IAM user can have long-term credentials; assuming an IAM role provides temporary credentials."
+    }
+  },
+  "8:20": {
+    "prompt": "Which statement applies to S3 Glacier Flexible Retrieval?",
+    "options": {
+      "C": "Archived objects require a retrieval request before access; retrieval is not immediate."
+    },
+    "explanation": "This refers to Glacier Flexible Retrieval, not S3 Glacier Instant Retrieval."
+  },
+  "8:33": {
+    "options": {
+      "D": "Revoke the former administrator's credentials and active sessions.",
+      "E": "Secure root account email access, password, and MFA if the former administrator had access."
+    }
+  },
+  "8:43": {
+    "prompt": "What should a customer do before penetration testing its own permitted AWS resources?",
+    "options": {
+      "D": "Follow the AWS penetration-testing policy, including permitted services and prohibited activities; prior AWS approval is not required for permitted tests."
+    },
+    "source": "https://aws.amazon.com/security/penetration-testing/"
+  },
+  "9:35": {
+    "prompt": "Which are potential financial benefits of an appropriately designed AWS migration? (Choose TWO.)",
+    "options": {
+      "A": "Avoid upfront purchases of physical data-center infrastructure.",
+      "C": "Right-size resources and pay for usage according to the chosen service pricing model."
+    }
+  },
+  "10:12": {
+    "prompt": "Among these listed purchasing options for the described steady EC2 workload, which offers the largest Reserved Instance discount?"
+  },
+  "10:21": {
+    "options": {
+      "A": "Use Spot Instances for nonproduction jobs that can tolerate interruption."
+    }
+  },
+  "10:22": {
+    "prompt": "Which tools support AWS cost estimates or migration business-case analysis? (Choose TWO.)",
+    "answers": ["C", "D"]
+  },
+  "10:24": {
+    "prompt": "Among these plans, which is the lowest current plan that includes a designated technical account manager?"
+  },
+  "10:40": {
+    "prompt": "Which credentials form a long-term IAM user programmatic access-key pair?"
+  },
+  "10:44": {
+    "prompt": "How does EC2 Auto Scaling help manage demand when policies and capacity bounds are configured?"
+  },
+  "11:2": {
+    "prompt": "Which are AWS-provided learning resources for building cloud skills? (Choose TWO.)"
+  },
+  "11:7": {
+    "prompt": "For an Amazon RDS managed DB instance, which tasks are AWS responsibilities? (Choose TWO.)"
+  },
+  "11:8": {
+    "prompt": "After launching an EC2 instance in one Region, what must a customer do to launch an instance in another already enabled Region?"
+  },
+  "11:10": {
+    "prompt": "Among these options, which is the lowest current plan providing 24/7 technical support by phone, web, and chat?"
+  },
+  "11:13": {
+    "prompt": "A company needs 24/7 technical support and an initial response target of less than 30 minutes for a business-critical system down case. Which current plan meets these requirements at the lowest level among these choices?"
+  },
+  "11:20": {
+    "prompt": "Which two components make up a long-term IAM user access-key pair? (Choose TWO.)"
+  },
+  "11:31": {
+    "prompt": "Which support feature is available with Enterprise Support compared with Basic Support?"
+  },
+  "12:18": {
+    "prompt": "Which are two available options for connecting an on-premises network to AWS? (Choose TWO.)"
+  },
+  "12:33": {
+    "prompt": "For a self-managed application running on EC2, which tasks are the customer's responsibilities? (Choose TWO.)"
+  },
+  "12:38": {
+    "options": { "B": "AWS Systems Manager." },
+    "explanation": "Systems Manager can run commands and automation on eligible managed on-premises nodes; CodeDeploy supports application deployments to on-premises servers."
+  },
+  "13:16": {
+    "prompt": "Which tools support AWS cost estimates or migration business-case analysis? (Choose TWO.)",
+    "answers": ["C", "D"]
+  },
+  "13:39": {
+    "prompt": "Which credentials form a long-term IAM user programmatic access-key pair?"
+  },
+  "14:19": {
+    "answers": ["C"],
+    "explanation": "AWS maintains EC2 physical host firmware. Customers manage guest operating systems and their data/access configuration.",
+    "source": "https://aws.amazon.com/compliance/shared-responsibility-model/"
+  },
+  "14:27": { "options": { "B": "AWS Systems Manager." } },
+  "14:34": {
+    "prompt": "What should a customer do before penetration testing its own permitted AWS resources?",
+    "options": {
+      "D": "Follow the AWS penetration-testing policy; prior AWS approval is not required for permitted tests."
+    },
+    "source": "https://aws.amazon.com/security/penetration-testing/"
+  },
+  "14:48": {
+    "prompt": "Which are AWS-provided learning resources for building cloud skills? (Choose TWO.)"
+  },
+  "15:3": {
+    "prompt": "For an Amazon RDS managed DB instance, which tasks are AWS responsibilities? (Choose TWO.)"
+  },
+  "15:6": {
+    "prompt": "Among these plans, which is the lowest current plan that includes a designated technical account manager?"
+  },
+  "15:25": {
+    "prompt": "Which are potential financial benefits of an appropriately designed AWS migration? (Choose TWO.)",
+    "options": {
+      "A": "Avoid upfront purchases of physical data-center infrastructure.",
+      "C": "Right-size resources and pay for usage according to the chosen service pricing model."
+    }
+  },
+  "15:38": { "options": { "B": "AWS IAM Identity Center." } },
+  "15:40": {
+    "prompt": "Which are benefits of the AWS compliance program? (Choose TWO.)",
+    "options": {
+      "A": "Customers can access AWS audit reports and compliance documentation for in-scope services.",
+      "B": "Customers inherit AWS controls for physical data-center security.",
+      "C": "Every hosted workload is automatically compliant with every regulation.",
+      "D": "Customers no longer need to configure their own security controls.",
+      "E": "AWS takes over all customer-specific legal obligations."
+    },
+    "source": "https://aws.amazon.com/compliance/shared-responsibility-model/"
+  },
+  "15:42": {
+    "answers": ["A"],
+    "explanation": "Customers inherit AWS physical data-center security controls. Identity and access management remains a customer responsibility.",
+    "source": "https://aws.amazon.com/compliance/shared-responsibility-model/"
+  },
+  "16:10": {
+    "prompt": "For a self-managed application running on EC2, which task is the customer's responsibility?"
+  },
+  "16:37": {
+    "prompt": "Which AWS service provides a designated physical facility where a customer can bring its own storage devices and upload data to AWS?",
+    "options": { "D": "AWS Data Transfer Terminal." }
+  },
+  "16:44": {
+    "prompt": "Compared with Basic and Business Support+, which feature is included with Enterprise Support?"
+  },
+  "16:48": {
+    "options": {
+      "D": "Business Support+, Enterprise Support, and Unified Operations."
+    }
+  },
+  "17:7": {
+    "prompt": "Among these listed purchasing options for the described steady EC2 workload, which offers the largest Reserved Instance discount?"
+  },
+  "17:19": {
+    "options": {
+      "E": "Zonal EC2 Reserved Instances can reserve capacity in their specified Availability Zone."
+    }
+  },
+  "17:32": {
+    "prompt": "For a self-managed EC2 application, which task is a customer security responsibility?"
+  },
+  "18:19": {
+    "prompt": "Which S3 class is designed for the lowest-cost long-term archive storage among these choices, when retrieval can take hours and the minimum storage duration is acceptable?",
+    "options": { "D": "Amazon S3 Glacier Deep Archive." },
+    "explanation": "Use the current class and retrieval tier documentation; archive storage prices do not imply immediate access."
+  },
+  "18:27": {
+    "prompt": "Which approach is recommended for a workforce user authenticating to the AWS CLI?",
+    "options": {
+      "B": "Use IAM Identity Center or federation to obtain temporary role credentials."
+    },
+    "explanation": "The AWS CLI does not require every user to create a long-term access key."
+  },
+  "18:47": {
+    "prompt": "Which service records management API activity for longer-term audit retention when a trail or event data store is configured?",
+    "explanation": "CloudTrail Event history already provides recent management events; trails and event data stores support configured retention and event selection."
+  },
+  "19:12": {
+    "prompt": "Which are recommended identity security practices? (Choose TWO.)",
+    "options": {
+      "A": "Prefer workforce federation with temporary role credentials.",
+      "B": "Require MFA for human access."
+    }
+  },
+  "19:17": { "options": { "C": "AWS Migration Evaluator." } },
+  "19:18": {
+    "answers": ["C"],
+    "explanation": "Purchase the reservation in the intended member account and disable discount sharing for that account using the management account's billing settings.",
+    "source": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ri-turn-off.html"
+  },
+  "19:23": {
+    "prompt": "Which cost-monitoring capabilities does AWS Budgets provide? (Choose TWO.)",
+    "options": {
+      "A": "Automatically impose a universal hard spending cap on every AWS service.",
+      "C": "Monitor actual or forecast spending and send threshold notifications."
+    },
+    "answers": ["B", "C"],
+    "explanation": "Optional budget actions target specific permissions or resources. Budgets are not a universal spending cap."
+  },
+  "19:35": {
+    "prompt": "Which support feature is available with Enterprise Support compared with Basic Support?"
+  },
+  "19:37": {
+    "prompt": "After launching an EC2 instance in one Region, what must a customer do to launch an instance in another already enabled Region?"
+  },
+  "20:7": {
+    "options": {
+      "D": "Prefer temporary credentials from IAM roles and remove unused long-term keys."
+    }
+  },
+  "20:11": {
+    "options": {
+      "A": "Amazon EventBridge with CloudTrail sign-in events and an SNS notification target."
+    }
+  },
+  "20:13": {
+    "prompt": "Which services support moving on-premises files or databases into AWS over a network? (Choose TWO.)",
+    "options": { "A": "AWS DataSync." }
+  },
+  "20:30": {
+    "prompt": "How can economies of scale benefit AWS customers?",
+    "explanation": "Aggregated infrastructure demand can reduce unit costs; it does not guarantee that every service price continually falls."
+  },
+  "20:42": {
+    "prompt": "For a self-managed application running on EC2, who is responsible for guest operating system security and patching?"
+  },
+  "21:4": {
+    "prompt": "Which AWS service includes State Manager for maintaining configuration on managed nodes?",
+    "options": { "B": "AWS OpsWorks (retired)." },
+    "answers": ["D"]
+  },
+  "21:11": {
+    "answers": ["D"],
+    "explanation": "Among the listed options, multiple Availability Zones in two Regions provide the greatest geographic separation. The application must still be designed for replication and failover."
+  },
+  "21:17": {
+    "options": {
+      "D": "Use a transit gateway in each Region and inter-Region transit gateway peering."
+    }
+  },
+  "21:23": { "options": { "D": "AWS Cloud Development Kit (AWS CDK)." } },
+  "21:27": {
+    "prompt": "Which two components make up a long-term IAM user access-key pair? (Choose TWO.)"
+  },
+  "21:44": {
+    "prompt": "A company with Business Support+ cannot connect to its RDS database and needs technical troubleshooting. Who should it contact through its included support channel?",
+    "explanation": "Business Support+ includes technical support cases. A designated TAM is an Enterprise Support feature."
+  },
+  "21:49": {
+    "prompt": "For a standalone AWS account, which tasks require root user credentials? (Choose TWO.)",
+    "options": {
+      "A": "Change the root user's password.",
+      "C": "Enable MFA Delete for an S3 bucket."
+    },
+    "explanation": "Changing a support plan can be delegated to an authorized IAM identity; it is not root-only.",
+    "source": "https://docs.aws.amazon.com/IAM/latest/UserGuide/root-user-tasks.html"
+  },
+  "21:50": {
+    "options": {
+      "D": "The ability of a system to continue operating despite failures in its components."
+    }
+  },
+  "22:1": {
+    "prompt": "A company needs isolated environments with separate account-level cost allocation. Which account structure supports this?"
+  },
+  "22:11": {
+    "prompt": "What is required before a customer penetration-tests its own permitted AWS resources?",
+    "options": {
+      "B": "Follow the AWS penetration-testing policy; prior AWS approval is not required for permitted tests."
+    },
+    "source": "https://aws.amazon.com/security/penetration-testing/"
+  },
+  "22:13": {
+    "prompt": "For a Site-to-Site VPN terminating on an AWS virtual private gateway, which two gateway components are involved? (Choose TWO.)"
+  },
+  "22:25": {
+    "prompt": "A workload needs multiple Availability Zones and recovery from a regional interruption. Which configurations provide cross-Region recovery options? (Choose TWO.)"
+  },
+  "22:26": {
+    "prompt": "A customer can transport its own storage devices to a designated AWS facility for upload. Which service provides this physical transfer location?",
+    "options": { "A": "AWS Data Transfer Terminal." }
+  },
+  "22:49": {
+    "prompt": "Which AWS service offers designated physical facilities where customers can bring their own storage devices for high-throughput upload to AWS?",
+    "options": { "D": "AWS Data Transfer Terminal." }
+  },
+  "23:2": { "options": { "C": "AWS CodeDeploy." } },
+  "23:6": {
+    "prompt": "Among these listed purchasing choices for an EC2 database server that must remain online for one year, which offers the largest commitment discount?"
+  },
+  "23:8": {
+    "prompt": "Which tool configures password complexity requirements for IAM users who sign in with IAM user passwords?"
+  },
+  "23:9": {
+    "prompt": "For a self-managed EC2 application, which task is a customer's security responsibility?"
+  },
+  "23:18": {
+    "prompt": "A company wants an employee to use the AWS CLI and SDKs with only the RDS permissions needed for their job. Which actions follow current identity best practices? (Choose TWO.)",
+    "options": {
+      "B": "Use workforce federation or IAM Identity Center to assume a role with temporary credentials.",
+      "E": "Assign the role a policy limited to the required RDS actions, resources, and conditions."
+    }
+  },
+  "23:28": {
+    "options": {
+      "C": "Use a connection at an AWS Direct Connect location or a supported partner-provided connection."
+    }
+  },
+  "23:44": {
+    "explanation": "AWS Config records resource configurations and can evaluate compliance through Config rules."
+  },
+  "23:46": {
+    "options": {
+      "D": "Grant only the actions and resources required for the task, with appropriate conditions."
+    }
+  }
+}

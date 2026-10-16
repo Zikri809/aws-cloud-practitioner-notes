@@ -31,6 +31,8 @@
 
 ## Amazon AppStream 2.0
 
+AWS documentation now uses **Amazon WorkSpaces Applications** for this application-streaming offering. Older exam material calls it AppStream 2.0; recognize both names.
+
 - Desktop Application Streaming Service
 - Deliver applications to any computer without provisioning infrastructure
 - Applications are delivered from within a web browser
@@ -38,33 +40,24 @@
 | Amazon AppStream 2.0                                                       | WorkSpaces                                                       |
 | -------------------------------------------------------------------------- | ---------------------------------------------------------------- |
 | Stream a desktop application to web browsers (no need to connect to a VDI) | Fully managed VDI and desktop available                          |
-| Works with any device (that has a web browser)                             | Users connect to the VDI and open native or WAM applications      |
+| Works with any device (that has a web browser)                             | Users connect to their supported desktop environment and applications |
 | Configure an instance type per application type (CPU, RAM, GPU)            | Workspaces are on-demand or always on                            |
 
 ## Amazon Sumerian
 
-- Create and run virtual reality (VR), augmented reality (AR), and 3D applications
-- Quickly create 3D models with animations
-- Ready-to-use templates and assets - no programming or 3D expertise required
-- Accessible via web-browser URLs or on popular hardware for AR/VR
-- Example: <https://docs.aws.amazon.com/sumerian/latest/userguide/gettingstartedshowcase.html>
+Historical service: AWS lists Amazon Sumerian as retired, with support ending in March 2023. Its former purpose was building web-based AR/VR and 3D experiences. It is not a current service recommendation.
 
 ## AWS IoT Core
 
 - IoT stands for “Internet of Things” – the network of internet-connected devices that collect and transfer data
 - Connect IoT devices to AWS Cloud serverlessly, securely, and scalably
-- Applications can communicate with devices even when they aren’t connected
+- Device Shadows retain reported/desired state while devices are offline; a disconnected device receives relevant updates after it reconnects, not through a live offline connection.
 - Integrates with many AWS services (Lambda, S3, SageMaker, etc.)
 - Build IoT applications that gather, process, analyze, and act on data
 
 ## Amazon Elastic Transcoder
 
-- Convert media files stored in S3 into formats required by consumer playback devices (phones, etc.)
-- Benefits:
-  - Easy to use
-  - Highly scalable – handles large volumes and sizes of media files
-  - Cost-effective – duration-based pricing model
-  - Fully managed & secure, pay for what you use
+Historical service: Elastic Transcoder ended support in November 2025. For new file-based media transcoding, evaluate **AWS Elemental MediaConvert**, which converts media into supported delivery formats. Do not select Elastic Transcoder for a new deployment.
 
 ## AWS AppSync
 
@@ -120,11 +113,13 @@
 ## AWS DataSync
 
 - Move large amounts of data from on-premises to AWS
-- Synchronize to Amazon S3 (any storage classes including Glacier), Amazon EFS, Amazon FSx for Windows
+- Transfers data to supported S3, EFS, and FSx locations. Archived source objects may need restoration before they can be read; destination storage-class and metadata behavior have service-specific rules.
 - Schedule replication tasks hourly, daily, weekly
 - Incremental replication after the first full load
 
 ## AWS Application Discovery Service
+
+Closed to new customers since November 2025. The following capabilities describe existing-customer use. The old Discovery Connector is retired; do not confuse it with supported discovery agents/collectors or recommend it for a new migration.
 
 - Plan migration projects by gathering information about on-premises data centers
 - Collect server utilization data and dependency mapping for migrations
@@ -151,6 +146,8 @@
 - Analyze current state, define target state, and develop a migration plan
 
 ## AWS Migration Hub
+
+Migration Hub stopped accepting new customers on 7 November 2025. These capabilities are retained for context; new customers should use the alternatives in AWS's availability guidance.
 
 - Central location to collect servers and applications inventory data for the assessment, planning, and tracking of migrations to AWS
 - Accelerate migration to AWS, automate lift-and-shift
@@ -185,6 +182,8 @@
 
 ## AWS Pinpoint
 
+End of support is scheduled for **30 October 2026**, after this review date. Plan migration rather than treating its campaign, journey, endpoint, and analytics features as a long-term new-workload choice. The SMS, voice, mobile push, OTP, and number-validation APIs continue under AWS End User Messaging; that is not a blanket replacement for every Pinpoint feature.
+
 - Scalable 2-way (outbound/inbound) marketing communications service
 - Supports email, SMS, push, voice, and in-app messaging
 - Segment and personalize messages with the right content for customers
@@ -198,3 +197,15 @@
 * * *
 
 [<img align="center" src="../images/back-arrow.png" height="20" width="20"/> Advanced Identity](./advanced_identity.md)&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;[<img align="center" src="../images/list[...]
+
+## AWS documentation review
+
+Reviewed 16 October 2026. Identified retired Sumerian and Elastic Transcoder, upcoming Pinpoint end of support, and new-customer restrictions for migration tools.
+
+- [AWS service lifecycle](https://docs.aws.amazon.com/general/latest/gr/service-lifecycle.html)
+- [Retired services](https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html)
+- [AWS Elemental MediaConvert](https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html)
+- [Pinpoint end of support](https://docs.aws.amazon.com/pinpoint/latest/userguide/migrate.html)
+- [Application Discovery Service availability](https://docs.aws.amazon.com/application-discovery/latest/userguide/application-discovery-service-availability-change.html)
+- [Migration Hub availability](https://docs.aws.amazon.com/mhj/latest/userguide/migrationhub-availability-change.html)
+- [AWS DataSync](https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html)

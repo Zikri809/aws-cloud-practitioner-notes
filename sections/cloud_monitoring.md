@@ -97,13 +97,13 @@
 - Custom Event buses: for your own applications
 - Schema Registry: model event schema
 - EventBridge has a different name to mark the new capabilities
-- The CloudWatch Events name will be replaced with EventBridge
+- CloudWatch Events is the earlier name for these event-bus capabilities. Use Amazon EventBridge terminology; EventBridge Scheduler is a separate scheduling capability.
 
 ## AWS CloudTrail
 
 - Tracks and logs API calls made in your AWS account for auditing and governance.
 - Useful for security analysis, compliance, and operational troubleshooting.
-- CloudTrail is enabled by default!
+- CloudTrail event history is available by default for the last 90 days of management events in each Region. This is not a trail that automatically retains every API/data event indefinitely.
 - Get an history of events / API calls made within your AWS Account by:
   - Console
   - SDK
@@ -148,12 +148,12 @@
 
 ### CloudTrail Events Retention
 
-- Events are stored for 90 days in CloudTrail
-- To keep events beyond this period, log them to S3 and use Athena
+- Event history covers 90 days of management events. Data events require configuration and are not included in event history.
+- Configure a trail to S3 for longer retention and select the event types required for the audit. S3 data can be queried with Athena. CloudTrail Lake has separate availability and retention rules; it is not a new-customer default.
 
 ## AWS X-Ray
 
-- Helps analyze and debug distributed applications by providing request tracing.
+- Helps analyze and debug distributed applications by providing request tracing. The X-Ray service remains available, but the X-Ray SDKs and daemon entered maintenance on 25 February 2026. Prefer supported OpenTelemetry instrumentation for new work. The X-Ray service remains available, but the X-Ray SDKs and daemon entered maintenance on 25 February 2026. Prefer supported OpenTelemetry instrumentation for new work. The X-Ray service remains available, but the X-Ray SDKs and daemon entered maintenance on 25 February 2026. Prefer supported OpenTelemetry instrumentation for new work.
   - Test locally
   - Add log statements everywhere
   - Re-deploy in production
@@ -187,6 +187,7 @@
 
 ### Amazon CodeGuru Reviewer
 
+- CodeGuru Reviewer no longer accepts new repository associations; existing associations can continue. Its following capabilities describe existing-customer/historical use, not a recommendation to onboard a new account:
 - Uses machine learning to identify:
   - Security vulnerabilities.
   - Code inefficiencies.
@@ -210,6 +211,8 @@
 
 ## AWS Status - Service Health Dashboard
 
+Current name: the public service-health view of AWS Health Dashboard. Use [health.aws.amazon.com](https://health.aws.amazon.com/health/status).
+
 - Service Health Dashboard is the single place to learn about the availability and operations of AWS services.
 - You can view the overall status of AWS services, and you can sign in to view personalized communications about your particular AWS account or organization.
 - Shows all regions, all services health
@@ -218,6 +221,8 @@
 - <https://status.aws.amazon.com/>
 
 ## AWS Personal Health Dashboard
+
+Current name: the account-health view of AWS Health Dashboard. Public service status and account-specific events are different views of AWS Health.
 
 - AWS Personal Health Dashboard provides alerts and remediation guidance when AWS is experiencing events that may impact you.
 - While the Service Health Dashboard displays the general status of AWS services, Personal Health Dashboard gives you a personalized view into the performance and availability of the AWS services underlying your AWS resources.
@@ -241,3 +246,13 @@
 | Amazon CodeGuru           | automated code reviews and application performance recommendations                 |
 | Service Health Dashboard  | status of all AWS services across all regions                                      |
 | Personal Health Dashboard | AWS events that impact your infrastructure                                         |
+
+## AWS documentation review
+
+Reviewed 16 October 2026. Clarified CloudTrail's default event history, current Health naming, EventBridge, and X-Ray instrumentation lifecycle.
+
+- [CloudTrail event history](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/view-cloudtrail-events.html)
+- [AWS Health](https://docs.aws.amazon.com/health/latest/ug/what-is-aws-health.html)
+- [X-Ray to OpenTelemetry migration](https://docs.aws.amazon.com/xray/latest/devguide/xray-sdk-migration.html)
+- [CodeGuru Reviewer availability](https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/codeguru-reviewer-availability-change.html)
+- [Amazon EventBridge](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html)

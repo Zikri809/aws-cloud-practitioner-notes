@@ -3,14 +3,14 @@
 ## What is Docker?
 
 - Docker is a software development platform to deploy apps
-- Apps are packaged in containers that can be run on any OS
+- Apps are packaged in containers for a compatible operating-system kernel and CPU architecture.
 - Apps run the same, regardless of where they’re run
   - Any machine
-  - No compatibility issues
+  - Packages dependencies consistently; host and runtime compatibility still matter.
   - Predictable behavior
   - Less work
   - Easier to maintain and deploy
-  - Works with any language, any OS, any technology
+  - Supports many languages and technologies when a compatible container image and host are available.
 - Scale containers up and down very quickly (seconds)
 
 ### Where are Docker images stored?
@@ -37,7 +37,7 @@
 - Supports Docker containers.
 - Launch Docker containers on AWS
 - AWS takes care of starting / stopping containers
-- **Two launch modes**: **EC2** (self-managed instances) and **Fargate** (serverless).
+- Core compute choices include customer-managed EC2 instances and Fargate. ECS also offers managed-instance and external-capacity options; distinguish orchestration from responsibility for the host.
 - Provides integration with IAM, VPC, ELB, and ECR.
 
 ## Fargate
@@ -62,7 +62,7 @@
 - They just deploy code
 - They just deploy… functions !
 - Initially... Serverless == FaaS (Function as a Service)
-- Serverless was pioneered by AWS Lambda but now also includes anything that’s managed: “databases, messaging, storage, etc.”
+- A managed service is not automatically serverless. For example, provisioned RDS instances still have capacity and instance choices; Lambda and Fargate remove host-server management for their supported workloads.
 - Serverless does not mean there are no servers…
 - it means you just don’t manage / provision / see them
 - Ideal for event-driven and stateless applications.
@@ -78,7 +78,7 @@
 | Virtual Servers in the Cloud                       | Virtual functions – no servers to manage! |
 | Limited by RAM and CPU                             | Limited by time - short executions        |
 | Continuously running                               | Run on-demand                             |
-| Scaling means intervention to add / remove servers | Scaling is automated!                     |
+| EC2 Auto Scaling can add and remove instances automatically | Lambda scales supported invocations subject to concurrency and service quotas |
 
 ### Benefits of AWS Lambda
 
@@ -102,9 +102,9 @@
 - Python
 - Ruby
 - Java
-- Go
-- .NET Core
-- custom runtime (via container images) (community supported, example Rust)
+- Go through a supported OS-only/custom runtime (the old managed go1.x runtime is deprecated)
+- Supported .NET runtimes
+- Other languages through a custom runtime that implements the Lambda Runtime API; supported container images are another packaging option.
 - Lambda Container Image
   - The container image must implement the Lambda Runtime API
   - ECS / Fargate is preferred for running arbitrary Docker images
@@ -121,7 +121,7 @@
   - == 400,000 seconds if function is 1GB RAM
   - == 3,200,000 seconds if function is 128 MB RAM
   - After that $1.00 for 600,000 GB-seconds
-- It is usually **very cheap** to run AWS Lambda so it’s **very popular**
+- These figures describe a conventional request/duration pricing example, not a quote for every configuration. Architecture, Region, usage tiers, provisioned concurrency, extra ephemeral storage, and newer execution options can change cost. Check current Lambda pricing and Free Tier account eligibility.
 
 ## Amazon API Gateway
 
@@ -129,7 +129,7 @@
 - Integrates with AWS Lambda for fully serverless APIs.
 - Serverless and scalable
 - Support for security, user authentication, API throttling, API keys, monitoring.
-- **Throttling**, **caching**, and **authorization** features built-in.
+- Features depend on API type. For example, API Gateway's built-in API cache is a REST API feature; do not assume HTTP and WebSocket APIs provide the same features.
 
 ## AWS Batch
 
@@ -173,7 +173,7 @@
 - Lambda Billing:
   - By the time run x by the RAM provisioned
   - By the number of invocations
-- Language Support: many programming languages except (arbitrary) Docker
+- Lambda supports runtime-compatible container images. It is not a service for arbitrary long-running containers; use ECS/Fargate for those workloads.
 - Invocation time: up to 15 minutes
 - Use cases:
   - Create Thumbnails for images uploaded onto S3
@@ -187,6 +187,17 @@
 - Fargate:
 - Run Docker containers without provisioning the infrastructure
 - Serverless offering (no EC2 instances)
-- ECR: Private Docker Images Repository
+- ECR: managed private and public container-image repositories.
 - Batch: run batch jobs on AWS across managed EC2 instances
 - Lightsail: predictable & low pricing for simple application & DB stacks
+
+## AWS documentation review
+
+Reviewed 16 October 2026. Corrected serverless definitions, EC2 scaling, Lambda runtime and container support, and pricing assumptions.
+
+- [Lambda runtimes](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html)
+- [Lambda container images](https://docs.aws.amazon.com/lambda/latest/dg/images-create.html)
+- [Lambda quotas](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html)
+- [Lambda pricing](https://aws.amazon.com/lambda/pricing/)
+- [ECS compute options](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html)
+- [API Gateway API types](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-vs-rest.html)

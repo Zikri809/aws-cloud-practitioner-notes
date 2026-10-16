@@ -21,7 +21,7 @@
 - **High Availability**: Ensures a system is operational and accessible for a high percentage of time, often achieved by reducing the impact of failures.
 - There are two kinds of scalability:
   - Vertical Scalability
-  - Horizontal Scalability (= elasticity)
+  - Horizontal Scalability (adding or removing resources; elasticity is adapting capacity to changing demand)
 - Scalability is linked but different to High Availability
 
 ## Vertical Scalability
@@ -78,7 +78,7 @@
 
 - **Elastic Load Balancer (ELB)** is a fully managed service that automatically distributes incoming application traffic across multiple targets in one or more Availability Zones.
 - It improves fault tolerance, enhances performance, and scales according to demand.
-- AWS guarantees that it will be working
+- AWS operates the service; design across AZs, configure health checks, and review the service SLA rather than assuming uninterrupted availability.
 - AWS takes care of upgrades, maintenance, high availability
 - AWS provides only a few configuration knobs
 
@@ -86,7 +86,8 @@
 
 1. **Application Load Balancer (ALB)**: For HTTP and HTTPS traffic, operates at Layer 7 (application level).
 2. **Network Load Balancer (NLB)**: Handles high-performance traffic at Layer 4 (transport level).
-3. **Classic Load Balancer**: (slowly retiring) – Layer 4 & 7
+3. **Gateway Load Balancer**: Distributes traffic to virtual network appliances, such as firewalls.
+4. **Classic Load Balancer**: Previous-generation load balancer; AWS recommends Application or Network Load Balancers for new applications.
 
 ## What’s an Auto Scaling Group?
 
@@ -123,8 +124,15 @@
 - Elastic Load Balancers (ELB)
   - Distribute traffic across backend EC2 instances, can be Multi-AZ
   - Supports health checks
-  - 3 types: Application LB (HTTP – L7), Network LB (TCP – L4), Classic LB (old)
+  - Four types: Application, Network, Gateway, and Classic. Network Load Balancers support TCP, TLS, UDP, and supported combined protocols.
 - Auto Scaling Groups (ASG)
   - Implement Elasticity for your application, across multiple AZ
   - Scale EC2 instances based on the demand on your system, replace unhealthy
   - Integrated with the ELB
+
+## AWS documentation review
+
+Reviewed 16 October 2026. Added Gateway Load Balancers and removed the unconditional availability guarantee.
+
+- [Elastic Load Balancing types and migration](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/migrate-classic-load-balancer.html)
+- [How Elastic Load Balancing works](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html)

@@ -18,14 +18,14 @@
 
 - VPC -Virtual Private Cloud: private network to deploy your resources (regional resource)
 - Subnets allow you to partition your network inside your VPC (Availability Zone resource)
-- A public subnet is a subnet that is accessible from the internet
-- A private subnet is a subnet that is not accessible from the internet
+- A public subnet has a direct route to an internet gateway. Internet reachability also requires suitable addressing and security rules.
+- A private subnet has no direct route to an internet gateway; it can still use configured egress or private connectivity.
 - To define access to the internet and between subnets, we use Route Tables.
 
 ## Internet Gateway (IGW)
 
 - Connects a VPC to the internet.
-- Allows instances in the VPC to directly communicate with the internet.
+- Provides an internet path when routing, public IPv4 or IPv6 addressing, and security rules permit it. Attaching an internet gateway alone does not make every instance public.
 - Essential for a public subnet in a VPC to send/receive traffic to/from the internet.
 
 ## NAT Gateway
@@ -33,7 +33,7 @@
 - Allows instances in a private subnet to initiate outbound traffic to the internet.
 - Prevents unsolicited inbound traffic from reaching those instances.
 - Used for scenarios where instances need to download patches, updates, etc., but should not be directly accessed from the internet.
-- Managed by AWS
+- Managed by AWS. This outbound-internet example describes a public NAT gateway; private NAT gateways serve different connectivity use cases. Match NAT deployment and resilience to the current zonal or regional offering.
 
 ## NAT Gateway vs NAT Instance
 
@@ -106,7 +106,7 @@
 - Endpoints allow you to connect to AWS Services using a private network instead of the public www network
 - This gives you enhanced security and lower latency to access AWS services
 - VPC Endpoint Gateway: S3 & DynamoDB
-- VPC Endpoint Interface: the rest
+- Interface endpoints: supported AWS and other PrivateLink endpoint services, not automatically every AWS service. Check service and Region support.
 
 ## Site to Site VPN & Direct Connect
 
@@ -115,12 +115,12 @@
   - The connection is automatically encrypted
   - Goes over the public internet
   - On-premises: must use a Customer Gateway (CGW)
-  - AWS: must use a Virtual Private Gateway (VGW)
+  - AWS termination can use a virtual private gateway or transit gateway, according to the supported VPN architecture.
 - Direct Connect (DX)
   - Establish a physical connection between on-premises and AWS
-  - The connection is private, secure and fast
+  - Provides dedicated connectivity. Direct Connect traffic is not encrypted by default; use an appropriate VPN, supported MACsec, or application encryption when required.
   - Goes over a private network
-  - Takes at least a month to establish
+  - Provisioning time depends on the connection, provider, facility, and existing connectivity; there is no universal one-month minimum.
 
 ## Transit Gateway
 
@@ -142,3 +142,13 @@
 - Site to Site VPN: VPN over public internet between on-premises DC and AWS
 - Direct Connect: direct private connection to AWS
 - Transit Gateway: Connect thousands of VPC and on-premises networks together
+
+## AWS documentation review
+
+Reviewed 16 October 2026. Clarified public/private subnet routing, Direct Connect encryption, endpoint support, VPN termination, and deployment-dependent NAT behavior.
+
+- [VPC subnet types](https://docs.aws.amazon.com/vpc/latest/userguide/configure-subnets.html)
+- [NAT gateway basics](https://docs.aws.amazon.com/vpc/latest/userguide/nat-gateway-basics.html)
+- [Direct Connect encryption](https://docs.aws.amazon.com/directconnect/latest/UserGuide/encryption-in-transit.html)
+- [AWS Site-to-Site VPN](https://docs.aws.amazon.com/vpn/latest/s2svpn/VPC_VPN.html)
+- [AWS PrivateLink](https://docs.aws.amazon.com/vpc/latest/privatelink/what-is-privatelink.html)

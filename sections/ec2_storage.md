@@ -27,16 +27,16 @@
 - **Elastic Block Store (EBS)** is a network-attached storage for EC2 instances.
 - Provides persistent, block-level storage volumes.
 - Can be used for databases, file systems, or applications requiring consistent, low-latency performance.
-- It allows your instances to persist data, even after their termination
-- They can only be mounted to one instance at a time
+- EBS data can survive instance termination when the volume's DeleteOnTermination setting is disabled.
+- Most volumes attach to one instance. Supported io1/io2 volumes can use Multi-Attach with compatible instances in the same AZ; concurrent writes require an appropriate clustered application or file system.
 - They are bound to a specific availability zone
-- Free tier: 30 GB of free EBS storage of type General Purpose (SSD) or Magnetic per month
+- Free Tier eligibility depends on the account creation date and account plan. Do not assume the historical 30 GB offer applies to a new account; check the current [AWS Free Tier documentation](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier.html).
 
 ### EBS Volume
 
 - Volumes are automatically replicated within an **Availability Zone** (AZ).
 - Types include **General Purpose (gp3/gp2)**, **Provisioned IOPS (io1/io2)**, **Throughput Optimized (st1)**, and **Cold (sc1)**.
-- Volumes can be attached to one EC2 instance at a time but can be detached and re-attached.
+- Volumes can be detached and reattached within the same AZ. Multi-Attach is a specific exception to the usual single-instance attachment model.
 - Use case: preserve root volume when instance is terminated
 
 ![Elastic File System](../images/EBS.png)
@@ -69,7 +69,7 @@
 
 - Fully managed **NFS (Network File System)** for EC2 instances that can be mounted on 100s of EC2.
 - Can scale automatically as data grows.
-- Accessible from multiple AZs, providing high availability and durability.
+- Regional EFS file systems store data across AZs. EFS One Zone stores data in one AZ and has a different resilience profile.
 
 ![Elastic File System](../images/EFS.png)
 
@@ -89,6 +89,7 @@
   - FSx for Lustre
   - FSx for Windows File Server
   - FSx for NetApp ONTAP
+  - FSx for OpenZFS
 
 ### Amazon FSx for Windows File Server
 
@@ -149,3 +150,12 @@
 - Allows integration with services like **AWS Systems Manager** for automation and lifecycle management.
 - Can be run on a schedule (weekly, whenever packages are updated, etc…)
 - Free service (only pay for the underlying resources)
+
+## AWS documentation review
+
+Reviewed 16 October 2026. Corrected persistence and attachment restrictions, Free Tier assumptions, EFS deployment scope, and the FSx family list.
+
+- [EBS volumes](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes.html)
+- [EBS Multi-Attach](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html)
+- [EFS storage classes](https://docs.aws.amazon.com/efs/latest/ug/storage-classes.html)
+- [Amazon FSx](https://docs.aws.amazon.com/fsx/)
