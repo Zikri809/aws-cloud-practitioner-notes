@@ -38,8 +38,12 @@ test("search keyboard shortcut, matching, empty state, and escape", async ({
   page,
 }) => {
   await page.goto("/");
-  await page.keyboard.press("Control+k");
   const input = page.getByRole("textbox", { name: "Search all study notes" });
+  await page.getByRole("button", { name: /Search the notes/ }).click();
+  await expect(input).toBeFocused();
+  await page.keyboard.press("Escape");
+  await expect(page.getByRole("dialog")).not.toBeVisible();
+  await page.keyboard.press("Control+k");
   await expect(input).toBeFocused();
   await input.fill("CloudTrail");
   await expect(page.locator(".search-result").first()).toBeVisible();
