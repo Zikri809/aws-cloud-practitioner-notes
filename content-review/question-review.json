@@ -1853,7 +1853,7 @@
       },
       "after": {
         "id": 27,
-        "prompt": "For an existing eligible customer, which AWS directory service historically provided a managed hierarchical data store for organizational data?",
+        "prompt": "For an existing eligible customer, which statement describes the historical purpose of Amazon Cloud Directory?",
         "options": [
           {
             "key": "A",
@@ -3238,7 +3238,7 @@
       },
       "after": {
         "id": 29,
-        "prompt": "Which listed storage class stores data redundantly across multiple Availability Zones? (Choose TWO.)",
+        "prompt": "Which choices store data redundantly across multiple Availability Zones? (Choose TWO.)",
         "options": [
           {
             "key": "A",
@@ -3246,11 +3246,11 @@
           },
           {
             "key": "B",
-            "text": "S3."
+            "text": "Amazon S3 using the Standard storage class."
           },
           {
             "key": "C",
-            "text": "DynamoDB."
+            "text": "Amazon DynamoDB Regional tables."
           },
           {
             "key": "D",
@@ -3573,7 +3573,7 @@
       },
       "after": {
         "id": 44,
-        "prompt": "Which Route 53 routing policy directs users to the configured endpoint with the lowest measured latency, rather than simply choosing the geographically closest Region?",
+        "prompt": "Which AWS DNS service offers latency-based routing to configured endpoints, rather than simply choosing a geographically closest Region?",
         "options": [
           {
             "key": "A",
@@ -4944,7 +4944,7 @@
       },
       "after": {
         "id": 2,
-        "prompt": "Which are AWS-provided learning resources for building cloud skills? (Choose TWO.)",
+        "prompt": "Which AWS resources offer technical webinars or instructor-led classroom training? (Choose TWO.)",
         "options": [
           {
             "key": "A",
@@ -4972,8 +4972,8 @@
           "E"
         ]
       },
-      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html",
-      "explanation": "Terminology, scope, or answer wording amended; see the cited AWS reference."
+      "source": "https://aws.amazon.com/events/online-tech-talks/",
+      "explanation": "Online Tech Talks are technical webinar sessions; AWS Classroom Training provides instructor-led courses. See also https://aws.amazon.com/training/."
     },
     {
       "id": "11:6",
@@ -6650,7 +6650,7 @@
       },
       "after": {
         "id": 48,
-        "prompt": "Which are AWS-provided learning resources for building cloud skills? (Choose TWO.)",
+        "prompt": "Which AWS resources offer technical webinars or instructor-led classroom training? (Choose TWO.)",
         "options": [
           {
             "key": "A",
@@ -6678,8 +6678,8 @@
           "E"
         ]
       },
-      "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html",
-      "explanation": "Terminology, scope, or answer wording amended; see the cited AWS reference."
+      "source": "https://aws.amazon.com/events/online-tech-talks/",
+      "explanation": "Online Tech Talks are technical webinar sessions; AWS Classroom Training provides instructor-led courses. See also https://aws.amazon.com/training/."
     },
     {
       "id": "15:3",
@@ -8020,7 +8020,7 @@
       },
       "after": {
         "id": 32,
-        "prompt": "For a self-managed EC2 application, which task is a customer security responsibility? (Choose TWO.)",
+        "prompt": "For a self-managed EC2 application, which tasks are customer security responsibilities? (Choose TWO.)",
         "options": [
           {
             "key": "A",
@@ -9176,7 +9176,7 @@
       },
       "after": {
         "id": 30,
-        "prompt": "How can economies of scale benefit AWS customers?",
+        "prompt": "Which cloud-economics concept describes AWS aggregating demand across customers to reduce unit infrastructure costs?",
         "options": [
           {
             "key": "A",

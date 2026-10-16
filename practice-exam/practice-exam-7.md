@@ -429,11 +429,11 @@ Community practice material. Reviewed 16 October 2026 against AWS documentation.
 
    </details>
 
-29. Which listed storage class stores data redundantly across multiple Availability Zones? (Choose TWO.)
+29. Which choices store data redundantly across multiple Availability Zones? (Choose TWO.)
 
    - A. Instance Store.
-   - B. S3.
-   - C. DynamoDB.
+   - B. Amazon S3 using the Standard storage class.
+   - C. Amazon DynamoDB Regional tables.
    - D. Amazon Route 53.
    - E. AWS VPN.
 
@@ -664,7 +664,7 @@ Community practice material. Reviewed 16 October 2026 against AWS documentation.
 
    </details>
 
-44. Which Route 53 routing policy directs users to the configured endpoint with the lowest measured latency, rather than simply choosing the geographically closest Region?
+44. Which AWS DNS service offers latency-based routing to configured endpoints, rather than simply choosing a geographically closest Region?
 
    - A. Amazon Cognito.
    - B. AWS Systems Manager.

@@ -475,7 +475,7 @@ Community practice material. Reviewed 16 October 2026 against AWS documentation.
 
    </details>
 
-32. For a self-managed EC2 application, which task is a customer security responsibility? (Choose TWO.)
+32. For a self-managed EC2 application, which tasks are customer security responsibilities? (Choose TWO.)
 
    - A. Firmware upgrades of network infrastructure
    - B. Patching of operating systems

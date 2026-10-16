@@ -1,5 +1,5 @@
 {
-  "checked": "2026-10-16T07:48:02.205Z",
+  "checked": "2026-10-16T07:55:40.008Z",
   "results": [
     {
       "url": "https://aws.amazon.com/about-aws/global-infrastructure/",
@@ -50,6 +50,12 @@
       "title": "EC2 On-Demand Instance Pricing"
     },
     {
+      "url": "https://aws.amazon.com/events/online-tech-talks/",
+      "status": 200,
+      "finalUrl": "https://aws.amazon.com/events/online-tech-talks/",
+      "title": "Cloud Computing Webinars - AWS Online Tech Talks"
+    },
+    {
       "url": "https://aws.amazon.com/lambda/pricing/",
       "status": 200,
       "finalUrl": "https://aws.amazon.com/lambda/pricing/",
@@ -90,6 +96,12 @@
       "status": 200,
       "finalUrl": "https://aws.amazon.com/storagegateway/",
       "title": "AWS Storage Gateway | Amazon Web Services"
+    },
+    {
+      "url": "https://aws.amazon.com/training/.",
+      "status": 200,
+      "finalUrl": "https://aws.amazon.com/training/",
+      "title": "AWS Training and Certification"
     },
     {
       "url": "https://aws.amazon.com/types-of-cloud-computing/",

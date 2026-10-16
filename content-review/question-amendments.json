@@ -87,7 +87,7 @@
     "explanation": "EBS manages snapshot storage; customers do not select a destination S3 bucket for standard EBS snapshots."
   },
   "5:27": {
-    "prompt": "For an existing eligible customer, which AWS directory service historically provided a managed hierarchical data store for organizational data?"
+    "prompt": "For an existing eligible customer, which statement describes the historical purpose of Amazon Cloud Directory?"
   },
   "5:28": {
     "prompt": "What initial response target does Business Support+ provide for a business-critical system down case?",
@@ -180,7 +180,11 @@
     "prompt": "Which service can adjust the aggregate capacity of an EC2 fleet by adding or removing instances according to configured policies?"
   },
   "7:29": {
-    "prompt": "Which listed storage class stores data redundantly across multiple Availability Zones?",
+    "prompt": "Which choices store data redundantly across multiple Availability Zones? (Choose TWO.)",
+    "options": {
+      "B": "Amazon S3 using the Standard storage class.",
+      "C": "Amazon DynamoDB Regional tables."
+    },
     "explanation": "S3 Standard uses multiple Availability Zones. S3 also offers single-AZ classes, so this is not a property of every S3 class."
   },
   "7:35": {
@@ -210,7 +214,7 @@
     "prompt": "For a DynamoDB table using on-demand capacity, who manages scaling of request throughput within applicable limits?"
   },
   "7:44": {
-    "prompt": "Which Route 53 routing policy directs users to the configured endpoint with the lowest measured latency, rather than simply choosing the geographically closest Region?"
+    "prompt": "Which AWS DNS service offers latency-based routing to configured endpoints, rather than simply choosing a geographically closest Region?"
   },
   "8:8": {
     "options": {
@@ -272,7 +276,9 @@
     "prompt": "Which service adjusts the number of EC2 instances to match demand using configured policies and capacity bounds?"
   },
   "11:2": {
-    "prompt": "Which are AWS-provided learning resources for building cloud skills? (Choose TWO.)"
+    "prompt": "Which AWS resources offer technical webinars or instructor-led classroom training? (Choose TWO.)",
+    "source": "https://aws.amazon.com/events/online-tech-talks/",
+    "explanation": "Online Tech Talks are technical webinar sessions; AWS Classroom Training provides instructor-led courses. See also https://aws.amazon.com/training/."
   },
   "11:7": {
     "prompt": "For an Amazon RDS managed DB instance, which tasks are AWS responsibilities? (Choose TWO.)"
@@ -323,7 +329,9 @@
     "source": "https://aws.amazon.com/security/penetration-testing/"
   },
   "14:48": {
-    "prompt": "Which are AWS-provided learning resources for building cloud skills? (Choose TWO.)"
+    "prompt": "Which AWS resources offer technical webinars or instructor-led classroom training? (Choose TWO.)",
+    "source": "https://aws.amazon.com/events/online-tech-talks/",
+    "explanation": "Online Tech Talks are technical webinar sessions; AWS Classroom Training provides instructor-led courses. See also https://aws.amazon.com/training/."
   },
   "15:3": {
     "prompt": "For an Amazon RDS managed DB instance, which tasks are AWS responsibilities? (Choose TWO.)"
@@ -382,7 +390,7 @@
     }
   },
   "17:32": {
-    "prompt": "For a self-managed EC2 application, which task is a customer security responsibility?"
+    "prompt": "For a self-managed EC2 application, which tasks are customer security responsibilities? (Choose TWO.)"
   },
   "17:40": {
     "prompt": "Which AWS service centrally applies service control policy guardrails across member accounts?"
@@ -452,7 +460,7 @@
     "options": { "A": "AWS DataSync." }
   },
   "20:30": {
-    "prompt": "How can economies of scale benefit AWS customers?",
+    "prompt": "Which cloud-economics concept describes AWS aggregating demand across customers to reduce unit infrastructure costs?",
     "explanation": "Aggregated infrastructure demand can reduce unit costs; it does not guarantee that every service price continually falls."
   },
   "20:42": {

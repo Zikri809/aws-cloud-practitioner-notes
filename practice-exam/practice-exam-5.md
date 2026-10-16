@@ -402,7 +402,7 @@ Community practice material. Reviewed 16 October 2026 against AWS documentation.
 
    </details>
 
-27. For an existing eligible customer, which AWS directory service historically provided a managed hierarchical data store for organizational data?
+27. For an existing eligible customer, which statement describes the historical purpose of Amazon Cloud Directory?
 
    - A. Amazon Cloud Directory allows the organization of hierarchies of data across multiple dimensions.
    - B. Amazon Cloud Directory enables the analysis of video and data streams in real time.

@@ -716,7 +716,7 @@ Community practice material. Reviewed 16 October 2026 against AWS documentation.
 
    </details>
 
-48. Which are AWS-provided learning resources for building cloud skills? (Choose TWO.)
+48. Which AWS resources offer technical webinars or instructor-led classroom training? (Choose TWO.)
 
    - A. AWS Trusted Advisor
    - B. AWS Online Tech Talks
@@ -728,7 +728,9 @@ Community practice material. Reviewed 16 October 2026 against AWS documentation.
 
    Correct answer: B, E
 
-   AWS documentation: [AWS Cloud Practitioner exam domains](https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html)
+   Online Tech Talks are technical webinar sessions; AWS Classroom Training provides instructor-led courses. See also https://aws.amazon.com/training/.
+
+   AWS documentation: [AWS documentation](https://aws.amazon.com/events/online-tech-talks/)
 
    </details>
 

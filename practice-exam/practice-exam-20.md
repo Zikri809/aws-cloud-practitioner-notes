@@ -443,7 +443,7 @@ Community practice material. Reviewed 16 October 2026 against AWS documentation.
 
    </details>
 
-30. How can economies of scale benefit AWS customers?
+30. Which cloud-economics concept describes AWS aggregating demand across customers to reduce unit infrastructure costs?
 
    - A. pay-as-you go pricing
    - B. the AWS global infrastructure
