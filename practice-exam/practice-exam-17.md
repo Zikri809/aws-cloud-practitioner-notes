@@ -597,7 +597,7 @@ Community practice material. Reviewed 16 October 2026 against AWS documentation.
 
    </details>
 
-40. What AWS service would be used to centrally manage AWS access policies across multiple accounts?
+40. Which AWS service centrally applies service control policy guardrails across member accounts?
 
    - A. AWS Service Catalog
    - B. AWS Config

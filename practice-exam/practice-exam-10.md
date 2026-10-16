@@ -658,7 +658,7 @@ Community practice material. Reviewed 16 October 2026 against AWS documentation.
 
    </details>
 
-44. How does EC2 Auto Scaling help manage demand when policies and capacity bounds are configured?
+44. Which service adjusts the number of EC2 instances to match demand using configured policies and capacity bounds?
 
    - A. Amazon AutoScaling.
    - B. Amazon Redshift.

@@ -26,7 +26,7 @@ const empty: Progress = {
   storageAvailable: true,
 };
 const key = "aws-study-desk-v1";
-const quizRevision = "2026-10-16";
+const quizRevision = "2026-10-16-review-1";
 let snapshot = empty;
 let previous: string | null | undefined;
 const listeners = new Set<() => void>();

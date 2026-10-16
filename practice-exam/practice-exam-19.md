@@ -264,7 +264,7 @@ Community practice material. Reviewed 16 October 2026 against AWS documentation.
 
    - A. Purchase the Reserved Instances from master payer account and turn off Reserved Instance sharing.
    - B. Enable billing alerts in the AWS Billing and Cost Management console.
-   - C. Purchase the Reserved Instances in individual linked accounts and turn off Reserved Instance sharing from the payer level.
+   - C. Purchase the Reserved Instances in the intended member account and disable discount sharing for that account from the management account's billing settings.
    - D. Enable Reserved Instance sharing in the AWS Billing and Cost Management console.
 
    <details><summary>Answer</summary>
@@ -511,7 +511,7 @@ Community practice material. Reviewed 16 October 2026 against AWS documentation.
 
    </details>
 
-34. Which AWS service can be used to automatically scale an application up and down without making capacity planning decisions?
+34. Which service adjusts the number of EC2 instances to match demand using configured policies and capacity bounds?
 
    - A. Amazon AutoScaling
    - B. Amazon Redshift

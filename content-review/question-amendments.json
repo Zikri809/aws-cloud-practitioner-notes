@@ -17,6 +17,22 @@
     "prompt": "Which credentials form a long-term IAM user access-key pair used for programmatic access?",
     "explanation": "The AWS CLI also supports federation and temporary credentials; long-term IAM user keys are not required for every CLI user."
   },
+  "2:33": {
+    "options": {
+      "B": "Cloud infrastructure provides building blocks for designing across failure boundaries and reducing single points of failure."
+    }
+  },
+  "2:42": {
+    "options": {
+      "A": "Use Auto Scaling policies and schedules to match suitable EC2 workloads to demand and reduce unnecessary idle capacity."
+    }
+  },
+  "2:49": {
+    "prompt": "Which serverless service runs application functions without customers provisioning or managing the underlying servers?"
+  },
+  "5:12": {
+    "prompt": "Which approach reduces manual configuration errors and automates creating and updating AWS infrastructure?"
+  },
   "3:8": {
     "prompt": "Which RDS features can support availability or recovery designs? A read replica requires promotion before it can replace a failed writer. (Choose TWO.)"
   },
@@ -253,7 +269,7 @@
     "prompt": "Which credentials form a long-term IAM user programmatic access-key pair?"
   },
   "10:44": {
-    "prompt": "How does EC2 Auto Scaling help manage demand when policies and capacity bounds are configured?"
+    "prompt": "Which service adjusts the number of EC2 instances to match demand using configured policies and capacity bounds?"
   },
   "11:2": {
     "prompt": "Which are AWS-provided learning resources for building cloud skills? (Choose TWO.)"
@@ -342,6 +358,9 @@
   "16:10": {
     "prompt": "For a self-managed application running on EC2, which task is the customer's responsibility?"
   },
+  "16:22": {
+    "prompt": "Which AWS service centrally applies service control policy guardrails across member accounts?"
+  },
   "16:37": {
     "prompt": "Which AWS service provides a designated physical facility where a customer can bring its own storage devices and upload data to AWS?",
     "options": { "D": "AWS Data Transfer Terminal." }
@@ -364,6 +383,9 @@
   },
   "17:32": {
     "prompt": "For a self-managed EC2 application, which task is a customer security responsibility?"
+  },
+  "17:40": {
+    "prompt": "Which AWS service centrally applies service control policy guardrails across member accounts?"
   },
   "18:19": {
     "prompt": "Which S3 class is designed for the lowest-cost long-term archive storage among these choices, when retrieval can take hours and the minimum storage duration is acceptable?",
@@ -390,6 +412,9 @@
   },
   "19:17": { "options": { "C": "AWS Migration Evaluator." } },
   "19:18": {
+    "options": {
+      "C": "Purchase the Reserved Instances in the intended member account and disable discount sharing for that account from the management account's billing settings."
+    },
     "answers": ["C"],
     "explanation": "Purchase the reservation in the intended member account and disable discount sharing for that account using the management account's billing settings.",
     "source": "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ri-turn-off.html"
@@ -405,6 +430,9 @@
   },
   "19:35": {
     "prompt": "Which support feature is available with Enterprise Support compared with Basic Support?"
+  },
+  "19:34": {
+    "prompt": "Which service adjusts the number of EC2 instances to match demand using configured policies and capacity bounds?"
   },
   "19:37": {
     "prompt": "After launching an EC2 instance in one Region, what must a customer do to launch an instance in another already enabled Region?"

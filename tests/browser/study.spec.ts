@@ -132,7 +132,7 @@ test("finishing a set stores the score, review works, and completed filter shows
       localStorage.setItem(
         "aws-study-desk-v1",
         JSON.stringify({
-          quizRevision: "2026-10-16",
+          quizRevision: "2026-10-16-review-1",
           quizzes: {
             "practice-exam-12": {
               answers,

@@ -6,7 +6,7 @@ Review date: **16 October 2026**. Maintained by [Zikri809](https://github.com/Zi
 
 Reviewed all 19 chapter files and all 1,142 practice-question prompts and keyed choices across 23 sets. Replaced the CLF-C01 guide with a CLF-C02 reading guide. Identified outdated facts, lifecycle claims, ambiguous wording, and wrong answer keys were amended using official AWS documentation, pricing pages, and service notices only.
 
-The practice review amended **189 questions**. Some changes are terminology updates; others change a scenario, an option's meaning, or the answer key. Legacy explanations were removed rather than representing unverified third-party explanations as AWS-reviewed. Every answer now links to an AWS reference. Service-overview references provide context and are not a claim that AWS published or endorsed a particular community question.
+The practice review amended **196 questions**. Some changes are terminology updates; others change a scenario, an option's meaning, or the answer key. Legacy explanations were removed rather than representing unverified third-party explanations as AWS-reviewed. Every answer now links to an AWS reference. Service-overview references provide context and are not a claim that AWS published or endorsed a particular community question.
 
 This is an editorial review, not formal AWS validation or an assertion that every distractor is independently verified. The collection retains advanced and historical topics beyond the current exam scope. It is not an official question bank, and practice percentages do not map to AWS scaled scores.
 

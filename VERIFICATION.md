@@ -108,6 +108,6 @@ Verified on 16 October 2026. The production app is deployed at https://aws-cloud
 
 ## Practical limits
 
-Progress is local to one browser. The material received an editorial AWS documentation review dated 16 October 2026, with 189 amended questions, a rewritten CLF-C02 guide, and an explicit scope/limitations record in content-review/REVIEW.md. This is not AWS certification of the material or every distractor. The source repository is owned by Zikri809; upstream MIT attribution and history remain. The app needs no database or application secrets. CLI-generated credentials remain ignored.
+Progress is local to one browser. The material received an editorial AWS documentation review dated 16 October 2026, with 196 amended questions, a rewritten CLF-C02 guide, and an explicit scope/limitations record in content-review/REVIEW.md. This is not AWS certification of the material or every distractor. The source repository is owned by Zikri809; upstream MIT attribution and history remain. The app needs no database or application secrets. CLI-generated credentials remain ignored.
 
 The production dependency audit reports zero vulnerabilities. The full development dependency audit reports five high advisories in the ESLint configuration's glob dependency chain; npm offers an incompatible framework downgrade rather than a compatible patched release. These dependencies are build tooling, not shipped browser code.

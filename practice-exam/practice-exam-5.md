@@ -172,7 +172,7 @@ Community practice material. Reviewed 16 October 2026 against AWS documentation.
 
    </details>
 
-12. Which of the following approaches will help you eliminate human error and automate the process of creating and updating your AWS environment?
+12. Which approach reduces manual configuration errors and automates creating and updating AWS infrastructure?
 
    - A. Use Software test automation tools.
    - B. Use AWS CodeDeploy to build and automate your AWS environment.

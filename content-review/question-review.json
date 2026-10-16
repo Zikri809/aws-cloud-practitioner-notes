@@ -2,7 +2,7 @@
   "reviewed": "2026-10-16",
   "baseline": "c508a2e5d3e8b20000715bc30bad52ed6d4798cf",
   "questions": 1142,
-  "amendedQuestions": 189,
+  "amendedQuestions": 196,
   "method": "Reviewed all question prompts and keyed choices for dated claims and identified errors. Replaced legacy explanations with AWS documentation links. Unchanged distractors are not independently certified. This is an editorial review, not AWS validation.",
   "changes": [
     {
@@ -466,6 +466,71 @@
       "explanation": "Terminology, scope, or answer wording amended; see the cited AWS reference."
     },
     {
+      "id": "2:33",
+      "before": {
+        "id": 33,
+        "prompt": "What are two advantages of using Cloud Computing over using traditional data centers? (Choose TWO)",
+        "options": [
+          {
+            "key": "A",
+            "text": "Reserved Compute capacity."
+          },
+          {
+            "key": "B",
+            "text": "Eliminating Single Points of Failure (SPOFs)."
+          },
+          {
+            "key": "C",
+            "text": "Distributed infrastructure."
+          },
+          {
+            "key": "D",
+            "text": "Virtualized compute resources."
+          },
+          {
+            "key": "E",
+            "text": "Dedicated hosting."
+          }
+        ],
+        "answers": [
+          "B",
+          "C"
+        ]
+      },
+      "after": {
+        "id": 33,
+        "prompt": "What are two advantages of using Cloud Computing over using traditional data centers? (Choose TWO)",
+        "options": [
+          {
+            "key": "A",
+            "text": "Reserved Compute capacity."
+          },
+          {
+            "key": "B",
+            "text": "Cloud infrastructure provides building blocks for designing across failure boundaries and reducing single points of failure."
+          },
+          {
+            "key": "C",
+            "text": "Distributed infrastructure."
+          },
+          {
+            "key": "D",
+            "text": "Virtualized compute resources."
+          },
+          {
+            "key": "E",
+            "text": "Dedicated hosting."
+          }
+        ],
+        "answers": [
+          "B",
+          "C"
+        ]
+      },
+      "source": "https://aws.amazon.com/about-aws/global-infrastructure/",
+      "explanation": "Terminology, scope, or answer wording amended; see the cited AWS reference."
+    },
+    {
       "id": "2:38",
       "before": {
         "id": 38,
@@ -521,6 +586,61 @@
       "explanation": "Terminology, scope, or answer wording amended; see the cited AWS reference."
     },
     {
+      "id": "2:42",
+      "before": {
+        "id": 42,
+        "prompt": "Which of the following activities may help reduce your AWS monthly costs?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Enabling Amazon EC2 Auto Scaling for all of your workloads."
+          },
+          {
+            "key": "B",
+            "text": "Using the AWS Network Load Balancer (NLB) to load balance the incoming HTTP requests."
+          },
+          {
+            "key": "C",
+            "text": "Removing all of your Cost Allocation Tags."
+          },
+          {
+            "key": "D",
+            "text": "Deploying your AWS resources across multiple Availability Zones."
+          }
+        ],
+        "answers": [
+          "A"
+        ]
+      },
+      "after": {
+        "id": 42,
+        "prompt": "Which of the following activities may help reduce your AWS monthly costs?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Use Auto Scaling policies and schedules to match suitable EC2 workloads to demand and reduce unnecessary idle capacity."
+          },
+          {
+            "key": "B",
+            "text": "Using the AWS Network Load Balancer (NLB) to load balance the incoming HTTP requests."
+          },
+          {
+            "key": "C",
+            "text": "Removing all of your Cost Allocation Tags."
+          },
+          {
+            "key": "D",
+            "text": "Deploying your AWS resources across multiple Availability Zones."
+          }
+        ],
+        "answers": [
+          "A"
+        ]
+      },
+      "source": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
+      "explanation": "Terminology, scope, or answer wording amended; see the cited AWS reference."
+    },
+    {
       "id": "2:48",
       "before": {
         "id": 48,
@@ -573,6 +693,61 @@
         ]
       },
       "source": "https://aws.amazon.com/partners/paths/",
+      "explanation": "Terminology, scope, or answer wording amended; see the cited AWS reference."
+    },
+    {
+      "id": "2:49",
+      "before": {
+        "id": 49,
+        "prompt": "What is the AWS serverless service that allows you to run your applications without any administrative burden?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Amazon LightSail."
+          },
+          {
+            "key": "B",
+            "text": "AWS Lambda."
+          },
+          {
+            "key": "C",
+            "text": "Amazon RDS instances."
+          },
+          {
+            "key": "D",
+            "text": "Amazon EC2 instances."
+          }
+        ],
+        "answers": [
+          "B"
+        ]
+      },
+      "after": {
+        "id": 49,
+        "prompt": "Which serverless service runs application functions without customers provisioning or managing the underlying servers?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Amazon LightSail."
+          },
+          {
+            "key": "B",
+            "text": "AWS Lambda."
+          },
+          {
+            "key": "C",
+            "text": "Amazon RDS instances."
+          },
+          {
+            "key": "D",
+            "text": "Amazon EC2 instances."
+          }
+        ],
+        "answers": [
+          "B"
+        ]
+      },
+      "source": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html",
       "explanation": "Terminology, scope, or answer wording amended; see the cited AWS reference."
     },
     {
@@ -1482,6 +1657,61 @@
         ]
       },
       "source": "https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html",
+      "explanation": "Terminology, scope, or answer wording amended; see the cited AWS reference."
+    },
+    {
+      "id": "5:12",
+      "before": {
+        "id": 12,
+        "prompt": "Which of the following approaches will help you eliminate human error and automate the process of creating and updating your AWS environment?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Use Software test automation tools."
+          },
+          {
+            "key": "B",
+            "text": "Use AWS CodeDeploy to build and automate your AWS environment."
+          },
+          {
+            "key": "C",
+            "text": "Use code to provision and operate your AWS infrastructure."
+          },
+          {
+            "key": "D",
+            "text": "Migrate all of your applications to a dedicated host."
+          }
+        ],
+        "answers": [
+          "C"
+        ]
+      },
+      "after": {
+        "id": 12,
+        "prompt": "Which approach reduces manual configuration errors and automates creating and updating AWS infrastructure?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Use Software test automation tools."
+          },
+          {
+            "key": "B",
+            "text": "Use AWS CodeDeploy to build and automate your AWS environment."
+          },
+          {
+            "key": "C",
+            "text": "Use code to provision and operate your AWS infrastructure."
+          },
+          {
+            "key": "D",
+            "text": "Migrate all of your applications to a dedicated host."
+          }
+        ],
+        "answers": [
+          "C"
+        ]
+      },
+      "source": "https://aws.amazon.com/about-aws/global-infrastructure/",
       "explanation": "Terminology, scope, or answer wording amended; see the cited AWS reference."
     },
     {
@@ -4599,7 +4829,7 @@
       },
       "after": {
         "id": 44,
-        "prompt": "How does EC2 Auto Scaling help manage demand when policies and capacity bounds are configured?",
+        "prompt": "Which service adjusts the number of EC2 instances to match demand using configured policies and capacity bounds?",
         "options": [
           {
             "key": "A",
@@ -7142,6 +7372,61 @@
       "explanation": "Terminology, scope, or answer wording amended; see the cited AWS reference."
     },
     {
+      "id": "16:22",
+      "before": {
+        "id": 22,
+        "prompt": "What AWS service would be used to centrally manage AWS access across multiple accounts?",
+        "options": [
+          {
+            "key": "A",
+            "text": "AWS Service Catalog"
+          },
+          {
+            "key": "B",
+            "text": "AWS Config"
+          },
+          {
+            "key": "C",
+            "text": "AWS Trusted Advisor"
+          },
+          {
+            "key": "D",
+            "text": "AWS Organizations"
+          }
+        ],
+        "answers": [
+          "D"
+        ]
+      },
+      "after": {
+        "id": 22,
+        "prompt": "Which AWS service centrally applies service control policy guardrails across member accounts?",
+        "options": [
+          {
+            "key": "A",
+            "text": "AWS Service Catalog"
+          },
+          {
+            "key": "B",
+            "text": "AWS Config"
+          },
+          {
+            "key": "C",
+            "text": "AWS Trusted Advisor"
+          },
+          {
+            "key": "D",
+            "text": "AWS Organizations"
+          }
+        ],
+        "answers": [
+          "D"
+        ]
+      },
+      "source": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html",
+      "explanation": "Terminology, scope, or answer wording amended; see the cited AWS reference."
+    },
+    {
       "id": "16:25",
       "before": {
         "id": 25,
@@ -7767,6 +8052,61 @@
       "explanation": "Terminology, scope, or answer wording amended; see the cited AWS reference."
     },
     {
+      "id": "17:40",
+      "before": {
+        "id": 40,
+        "prompt": "What AWS service would be used to centrally manage AWS access policies across multiple accounts?",
+        "options": [
+          {
+            "key": "A",
+            "text": "AWS Service Catalog"
+          },
+          {
+            "key": "B",
+            "text": "AWS Config"
+          },
+          {
+            "key": "C",
+            "text": "AWS Trusted Advisor"
+          },
+          {
+            "key": "D",
+            "text": "AWS Organizations"
+          }
+        ],
+        "answers": [
+          "D"
+        ]
+      },
+      "after": {
+        "id": 40,
+        "prompt": "Which AWS service centrally applies service control policy guardrails across member accounts?",
+        "options": [
+          {
+            "key": "A",
+            "text": "AWS Service Catalog"
+          },
+          {
+            "key": "B",
+            "text": "AWS Config"
+          },
+          {
+            "key": "C",
+            "text": "AWS Trusted Advisor"
+          },
+          {
+            "key": "D",
+            "text": "AWS Organizations"
+          }
+        ],
+        "answers": [
+          "D"
+        ]
+      },
+      "source": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html",
+      "explanation": "Terminology, scope, or answer wording amended; see the cited AWS reference."
+    },
+    {
       "id": "18:2",
       "before": {
         "id": 2,
@@ -8267,7 +8607,7 @@
           },
           {
             "key": "C",
-            "text": "Purchase the Reserved Instances in individual linked accounts and turn off Reserved Instance sharing from the payer level."
+            "text": "Purchase the Reserved Instances in the intended member account and disable discount sharing for that account from the management account's billing settings."
           },
           {
             "key": "D",
@@ -8336,6 +8676,61 @@
       },
       "source": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
       "explanation": "Optional budget actions target specific permissions or resources. Budgets are not a universal spending cap."
+    },
+    {
+      "id": "19:34",
+      "before": {
+        "id": 34,
+        "prompt": "Which AWS service can be used to automatically scale an application up and down without making capacity planning decisions?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Amazon AutoScaling"
+          },
+          {
+            "key": "B",
+            "text": "Amazon Redshift"
+          },
+          {
+            "key": "C",
+            "text": "AWS CloudTrail"
+          },
+          {
+            "key": "D",
+            "text": "AWS Lambda"
+          }
+        ],
+        "answers": [
+          "A"
+        ]
+      },
+      "after": {
+        "id": 34,
+        "prompt": "Which service adjusts the number of EC2 instances to match demand using configured policies and capacity bounds?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Amazon AutoScaling"
+          },
+          {
+            "key": "B",
+            "text": "Amazon Redshift"
+          },
+          {
+            "key": "C",
+            "text": "AWS CloudTrail"
+          },
+          {
+            "key": "D",
+            "text": "AWS Lambda"
+          }
+        ],
+        "answers": [
+          "A"
+        ]
+      },
+      "source": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html",
+      "explanation": "Terminology, scope, or answer wording amended; see the cited AWS reference."
     },
     {
       "id": "19:35",

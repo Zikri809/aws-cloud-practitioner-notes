@@ -491,7 +491,7 @@ Community practice material. Reviewed 16 October 2026 against AWS documentation.
 33. What are two advantages of using Cloud Computing over using traditional data centers? (Choose TWO)
 
    - A. Reserved Compute capacity.
-   - B. Eliminating Single Points of Failure (SPOFs).
+   - B. Cloud infrastructure provides building blocks for designing across failure boundaries and reducing single points of failure.
    - C. Distributed infrastructure.
    - D. Virtualized compute resources.
    - E. Dedicated hosting.
@@ -629,7 +629,7 @@ Community practice material. Reviewed 16 October 2026 against AWS documentation.
 
 42. Which of the following activities may help reduce your AWS monthly costs?
 
-   - A. Enabling Amazon EC2 Auto Scaling for all of your workloads.
+   - A. Use Auto Scaling policies and schedules to match suitable EC2 workloads to demand and reduce unnecessary idle capacity.
    - B. Using the AWS Network Load Balancer (NLB) to load balance the incoming HTTP requests.
    - C. Removing all of your Cost Allocation Tags.
    - D. Deploying your AWS resources across multiple Availability Zones.
@@ -734,7 +734,7 @@ Community practice material. Reviewed 16 October 2026 against AWS documentation.
 
    </details>
 
-49. What is the AWS serverless service that allows you to run your applications without any administrative burden?
+49. Which serverless service runs application functions without customers provisioning or managing the underlying servers?
 
    - A. Amazon LightSail.
    - B. AWS Lambda.

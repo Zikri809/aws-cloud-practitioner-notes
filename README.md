@@ -9,7 +9,7 @@ A fast Next.js study workspace maintained by [Zikri809](https://github.com/Zikri
 - 19 chapters covering cloud concepts, services, security, architecture, and costs.
 - CLF-C02 guide with current domain weights and links to official objectives.
 - 23 practice sets containing 1,142 community questions.
-- 189 questions amended for terminology, scope, ambiguity, or incorrect answers during the 16 October 2026 review.
+- 196 questions amended for terminology, scope, ambiguity, or incorrect answers during the 16 October 2026 review.
 - AWS references in every practice answer and review references in each chapter.
 
 Amendments use official AWS documentation and service pages only. This is an independent editorial review, not AWS endorsement or verification of every distractor. Historical services are marked; announced future retirements are distinguished from completed ones. Read the [review scope and limitations](content-review/REVIEW.md) before relying on date-sensitive details.
