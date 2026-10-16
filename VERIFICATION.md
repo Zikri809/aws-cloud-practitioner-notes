@@ -8,7 +8,18 @@ Verified on 16 October 2026. The production app is deployed at https://aws-cloud
 - PASS: TypeScript, ESLint, formatting, and whitespace checks.
 - PASS: seven content tests cover all 19 chapters and 1,142 questions, selected corrected keys, mixed-case multi-answer parsing, response counts, AWS-only answer links, local diagrams, sanitized HTML, heading anchors, and legacy links.
 - PASS: 11 browser tests cover study interactions, responsive layouts, keyboard access, error recovery, automated accessibility scans, and migration from old quiz data while retaining reading progress.
-- PASS: local production-server checks confirm bookmarks, completion, single and multiple answers, deep links, diagrams, the CLF-C02 guide, and legacy redirects. Hosted verification is recorded below after deployment.
+- PASS: local and hosted production checks confirm bookmarks, completion, single and multiple answers, deep links, diagrams, the CLF-C02 guide, and legacy redirects.
+
+## Reviewed release
+
+- Application/content commit: `b4cbb95`.
+- Public repository: https://github.com/Zikri809/aws-cloud-practitioner-notes (`master`).
+- GitHub App checks run `38870322657`: success, including build, content checks, and browser checks on Linux.
+- Vercel production deployment `dpl_C5LLVxy4UsqAfTdPZhKAB9i1ivTM`: ready at https://aws-cloud-practitioner-notes.vercel.app.
+- All 11 browser checks passed against the public production URL in 23.7 seconds, including automated accessibility scans and quiz-revision migration.
+- Confirmed the final amended question text on the public site. Checked 163 AWS reference URLs for HTTP availability and inspected redirects.
+- Confirmed Vercel's GitHub integration successfully deployed the owned repository's commit; future pushes to `master` trigger deployments.
+- Original upstream history and MIT attribution remain; application credentials and generated build files are excluded from Git.
 
 ## Interaction evidence
 
