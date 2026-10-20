@@ -347,6 +347,20 @@ The old m4.large dollar-price table has been removed: it mixed instance and host
 - EC2 Instance Role: link to IAM roles
 - Purchasing Options: On-Demand, Spot, Reserved (Standard or Convertible), Savings Plans, Dedicated Hosts, Dedicated Instances, and Capacity Reservations.
 
+## Discounts, capacity, and isolation
+
+Answer three separate questions when choosing an EC2 purchasing option:
+
+| Question | Distinction |
+| --- | --- |
+| How is usage billed? | On-Demand usage, eligible Reserved Instance discounts, Savings Plans commitments, or interruptible Spot capacity |
+| Must capacity be held in a particular AZ? | A matching Capacity Reservation addresses capacity assurance; a discount alone is insufficient |
+| Is physical host control required? | Dedicated Hosts provide host-level visibility and control; Dedicated Instances provide dedicated tenancy without the same controls |
+
+A restartable batch job can consider Spot. A workload that must run uninterrupted cannot rely on spare-capacity availability alone. Commitments can be underused, and stopping an instance can leave storage and other charges.
+
+Course basis: AWS Cloud Practitioner Essentials, Module 2, captured 16 October 2026. Reference: [EC2 purchasing options](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html).
+
 ## AWS documentation review
 
 Reviewed 16 October 2026. Corrected Spot pricing, RI payment choices, Savings Plans scope, default security-group behavior, instance examples, and unsupported price comparisons.

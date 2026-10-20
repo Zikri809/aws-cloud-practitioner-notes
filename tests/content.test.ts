@@ -11,6 +11,72 @@ import {
   parseExam,
   renderMarkdown,
 } from "../src/lib/content";
+import { readChapterSource } from "../src/lib/chapter-source.mjs";
+
+test("detailed study content covers every task and its links resolve inside the website", async () => {
+  const map = JSON.parse(
+    fs.readFileSync("content-review/course-section-map.json", "utf8"),
+  ) as {
+    task: string;
+    source: string;
+    sha256: string;
+    heading: string;
+    chapter: string;
+  }[];
+  assert.equal(new Set(map.map((section) => section.task)).size, 19);
+  assert.equal(map.length, 170);
+  assert.equal(
+    new Set(map.map((section) => `${section.source}:${section.heading}`)).size,
+    map.length,
+  );
+  assert.deepEqual(
+    [...new Set(map.map((section) => section.chapter))].sort(),
+    getChapters()
+      .map((chapter) => chapter.slug)
+      .sort(),
+  );
+  const documents = new Map<string, string>();
+  for (const chapter of getChapters()) {
+    const document = await getChapter(chapter.slug);
+    assert.ok(document);
+    documents.set(`/notes/${chapter.slug}`, document.html);
+    assert.ok(
+      document.html.indexOf("Exam task") <
+        document.html.indexOf('id="reference-notes"'),
+    );
+    const source = readChapterSource(chapter.slug);
+    assert.ok(
+      chapter.minutes >= Math.ceil(source.split(/\s+/).length / 220) - 1,
+    );
+  }
+  const guide = await renderMarkdown(fs.readFileSync("study-guide.md", "utf8"));
+  documents.set("/study-guide", guide.html);
+  for (const chapter of getChapters()) {
+    const source = fs.readFileSync(`course-notes/${chapter.slug}.md`, "utf8");
+    assert.doesNotMatch(
+      source,
+      /Practice Review|question-coverage\.json|Domain Scores|assessment identifier/i,
+    );
+    const rendered = await renderMarkdown(source);
+    for (const link of rendered.html.matchAll(/href="([^" ]+)"/g)) {
+      const href = link[1].replaceAll("&amp;", "&");
+      if (/^https?:/.test(href) || href === "/practice") continue;
+      assert.ok(href.startsWith("/") || href.startsWith("#"), href);
+      const [route, id] = href.split("#");
+      const target = documents.get(route || `/notes/${chapter.slug}`);
+      assert.ok(target, href);
+      if (id)
+        assert.ok(target.includes(`id="${id}"`), `${chapter.slug}: ${href}`);
+    }
+  }
+  const taskLinks = [
+    ...guide.html.matchAll(/href="(\/notes\/[^"#]+)#(exam-task-[^"]+)"/g),
+  ];
+  assert.equal(taskLinks.length, 19);
+  for (const [, route, id] of taskLinks) {
+    assert.ok(documents.get(route)?.includes(`id="${id}"`), `${route}#${id}`);
+  }
+});
 
 test("every source chapter appears once and all note diagrams resolve locally", async () => {
   const sourceFiles = fs

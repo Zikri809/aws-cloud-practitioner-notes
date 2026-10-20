@@ -135,6 +135,47 @@ Current plans are Basic, Business Support+, Enterprise Support, and Unified Oper
 - Purchases go into your AWS bill.
 - You can sell your own solutions on the AWS Marketplace.
 
+## Cloud adoption and migration decisions
+
+The Cloud Adoption Framework (CAF) organizes organizational readiness into six perspectives. It complements architecture guidance and migration tools.
+
+| Perspective | Focus |
+| --- | --- |
+| Business | Outcomes and the business case |
+| People | Skills, staffing, and organizational change |
+| Governance | Investment, risk, and value management |
+| Platform | Architecture and technical foundations |
+| Security | Identity, protection, and controls |
+| Operations | Running, monitoring, supporting, and recovering workloads |
+
+A migration program commonly moves through **assess**, **mobilize**, and **migrate and modernize**. Assess readiness and value; establish foundations and a plan; then move, validate, operate, and improve. Discovery and planning can continue across phases.
+
+### The seven migration strategies
+
+| Strategy | Example decision |
+| --- | --- |
+| Rehost | Move an application with minimal architectural change |
+| Relocate | Move the infrastructure environment while preserving its operating approach |
+| Replatform | Adopt selected platform improvements without redesigning the core architecture |
+| Refactor or re-architect | Redesign the application to use cloud capabilities |
+| Repurchase | Replace an application with another product, commonly SaaS |
+| Retain | Keep a workload in its current environment for now |
+| Retire | Decommission a workload that is no longer needed |
+
+Moving a self-managed database to a managed database while keeping the application's core architecture is a replatforming example. Replacing the whole application with SaaS is repurchasing. The seven Rs are alternative decisions for workloads, rather than seven steps every application must complete.
+
+For database moves, distinguish copying data with DMS from converting an incompatible schema and application code. Continuous replication can reduce cutover interruption; validation and recovery planning are still required.
+
+Course basis: AWS Cloud Practitioner Essentials, Module 12, captured 16 October 2026. Current references: [CAF overview](https://docs.aws.amazon.com/whitepapers/latest/overview-aws-cloud-adoption-framework/welcome.html), [seven migration strategies](https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-guide/migration-strategies.html), and [DMS](https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html).
+
+## Reviewing a workload with Well-Architected
+
+The framework supplies design guidance. The Well-Architected Tool records a workload review through questions, identified risks, milestones, and improvement plans. It does not automatically certify compliance or discover every problem in an account.
+
+Consider an API Gateway, Lambda, and DynamoDB application. Configured tracing helps investigate request latency; least-privilege roles protect access; recovery tests support reliability. A design choice can support several pillars. Select the pillar that matches the scenario's stated objective.
+
+Course basis: Module 13, captured 16 October 2026. Reference: [AWS Well-Architected Tool](https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html).
+
 ## AWS documentation review
 
 Reviewed 16 October 2026. Retained the six-pillar framework and updated support-plan references, community resources, and the meaning of mechanical sympathy.

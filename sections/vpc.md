@@ -143,6 +143,16 @@
 - Direct Connect: direct private connection to AWS
 - Transit Gateway: Connect thousands of VPC and on-premises networks together
 
+## Tracing a connection through the network
+
+A public subnet has a direct route to an internet gateway. Placing an EC2 instance there does not by itself give the instance internet access: direct IPv4 access also needs a suitable public address and traffic permitted by security controls. A route chooses a path; it does not authorize the connection.
+
+For a private instance initiating an outbound internet connection through a public NAT gateway, trace the complete route through the NAT gateway and internet gateway. NAT does not provide an unsolicited inbound connection path to that private instance.
+
+Security groups track connections, so permitted response traffic is automatically allowed. Network ACLs are stateless, so the return path needs matching rules. Private connectivity and encryption are separate properties: Direct Connect is not encrypted by default.
+
+Course basis: AWS Cloud Practitioner Essentials, Module 5, captured 16 October 2026. References: [Internet gateways](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html) and [security groups and network ACLs](https://docs.aws.amazon.com/vpc/latest/userguide/infrastructure-security.html).
+
 ## AWS documentation review
 
 Reviewed 16 October 2026. Clarified public/private subnet routing, Direct Connect encryption, endpoint support, VPN termination, and deployment-dependent NAT behavior.

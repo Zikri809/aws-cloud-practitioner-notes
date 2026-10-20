@@ -79,6 +79,24 @@
 - Kinesis: real-time data streaming, persistence and analysis
 - Amazon MQ: managed ActiveMQ Classic or RabbitMQ, using each engine's supported messaging protocols.
 
+## Following a data pipeline
+
+The Module 8 course example starts with DynamoDB changes, captures them through Kinesis Data Streams, and uses Amazon Data Firehose to deliver transformed records to S3. A configured Lambda transformation returns processed records to Firehose; Firehose performs delivery.
+
+The Glue Data Catalog describes the resulting dataset. Athena can query suitable S3 data, while SageMaker AI can use prepared data for model development. These services have separate jobs:
+
+| Stage | Purpose |
+| --- | --- |
+| Capture | Collect incoming changes or events |
+| Transform | Prepare records in the required representation |
+| Deliver and store | Place data in the destination |
+| Catalog | Record schema and location metadata |
+| Analyze | Query data or develop models |
+
+A change feed does not automatically include the table's full history. Firehose buffers delivery; it is not an instantaneous delivery guarantee. In this example Lambda handles JSON-to-CSV transformation. Firehose's built-in format conversion targets Parquet or ORC.
+
+Course basis: [Data Pipelines on AWS](https://www.coursera.org/learn/aws-cloud-practitioner-essentials/supplement/AlgCB/data-pipelines-on-aws), captured 16 October 2026. Reference: [Firehose record format conversion](https://docs.aws.amazon.com/firehose/latest/dev/record-format-conversion.html).
+
 ## AWS documentation review
 
 Reviewed 16 October 2026. Corrected SQS deletion semantics, MQ engines, service names, and the blanket claim that SNS cannot retain messages.

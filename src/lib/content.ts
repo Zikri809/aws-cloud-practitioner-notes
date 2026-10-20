@@ -12,6 +12,8 @@ import rehypeStringify from "rehype-stringify";
 import { visit } from "unist-util-visit";
 import type { Root } from "hast";
 import { chapters, type Chapter, type Question } from "./catalog";
+import { readChapterSource, stripContents } from "./chapter-source.mjs";
+export { stripContents } from "./chapter-source.mjs";
 
 export type Heading = { id: string; title: string; level: number };
 
@@ -31,21 +33,6 @@ export function localHref(value: string, isImage = false): string {
   if (name === "mind-map-aws-ccp") return "/topic-map";
   if (name === "README" || name === "index") return "/";
   return local;
-}
-
-export function stripContents(source: string): string {
-  const lines = source
-    .replace(/^---\r?\n[\s\S]*?\r?\n---\r?\n/, "")
-    .split(/\r?\n/);
-  const firstHeading = lines.findIndex((line) => /^# /.test(line));
-  const bodyStart = lines.findIndex(
-    (line, index) =>
-      index > firstHeading && line.trim() !== "" && !/^\s*- \[/.test(line),
-  );
-  const body = lines
-    .slice(bodyStart < 0 ? firstHeading + 1 : bodyStart)
-    .join("\n");
-  return body.replace(/\n\[<img align="center"[\s\S]*$/, "");
 }
 
 export async function renderMarkdown(source: string) {
@@ -89,12 +76,7 @@ export async function renderMarkdown(source: string) {
 
 export const getChapters = cache((): Chapter[] =>
   chapters.map((chapter) => {
-    const body = stripContents(
-      fs.readFileSync(
-        path.join(process.cwd(), "sections", `${chapter.slug}.md`),
-        "utf8",
-      ),
-    );
+    const body = stripContents(readChapterSource(chapter.slug));
     return {
       ...chapter,
       minutes: Math.max(1, Math.ceil(body.split(/\s+/).length / 220)),
@@ -106,10 +88,7 @@ export const getChapters = cache((): Chapter[] =>
 export const getChapter = cache(async (slug: string) => {
   const chapter = getChapters().find((item) => item.slug === slug);
   if (!chapter) return null;
-  const source = fs.readFileSync(
-    path.join(process.cwd(), "sections", `${slug}.md`),
-    "utf8",
-  );
+  const source = readChapterSource(slug);
   return { ...chapter, ...(await renderMarkdown(stripContents(source))) };
 });
 

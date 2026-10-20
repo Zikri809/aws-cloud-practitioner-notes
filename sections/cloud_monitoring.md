@@ -247,6 +247,21 @@ Current name: the account-health view of AWS Health Dashboard. Public service st
 | Service Health Dashboard  | status of all AWS services across all regions                                      |
 | Personal Health Dashboard | AWS events that impact your infrastructure                                         |
 
+## Choosing an operational evidence source
+
+| Question | Start with |
+| --- | --- |
+| Is latency or CPU usage rising? | CloudWatch metrics and alarms |
+| Which log entries match an error pattern? | CloudWatch Logs Insights |
+| Which principal performed an API operation? | CloudTrail |
+| How did a resource configuration change? | AWS Config |
+| Where did a distributed request spend time? | X-Ray tracing |
+| Is AWS reporting an event affecting my resources? | AWS Health account-specific information |
+
+Logs Insights queries collected log data. A metric alarm evaluates a configured condition; it does not replace investigation of individual log records. Basic EC2 CPU and network metrics are available without installing a guest agent. Additional guest metrics and application logs need suitable collection configuration.
+
+Course basis: AWS Cloud Practitioner Essentials, Module 10, captured 16 October 2026. Logs Insights is supplemental exam context checked against [AWS documentation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html); it is not presented as verbatim course content.
+
 ## AWS documentation review
 
 Reviewed 16 October 2026. Clarified CloudTrail's default event history, current Health naming, EventBridge, and X-Ray instrumentation lifecycle.

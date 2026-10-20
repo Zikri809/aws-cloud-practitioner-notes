@@ -16,6 +16,25 @@
   - [Amazon Textract](#amazon-textract)
   - [Summary](#summary)
 
+## AI, machine learning, and generative AI
+
+AI is the broad field of systems performing tasks associated with intelligence. Machine learning learns patterns from examples; deep learning uses multilayer neural networks. Training fits a model to data. Inference uses the resulting model on new inputs.
+
+Generative AI creates content such as text, images, or code. A foundation model is broadly pretrained; a large language model specializes in language. Generated output needs evaluation for correctness and suitability.
+
+| Requirement | Starting point |
+| --- | --- |
+| Use a ready-made capability such as transcription or document extraction | A prebuilt AI service such as Transcribe or Textract |
+| Develop, train, and deploy a custom ML model | Amazon SageMaker AI |
+| Find pretrained models and solutions within SageMaker AI | SageMaker JumpStart |
+| Build a generative application using managed foundation models | Amazon Bedrock |
+| Assist employees using connected company information | Amazon Q Business, as named in the course |
+| Assist with software development | Amazon Q Developer |
+
+Prompting supplies instructions and context. Retrieval adds relevant information from a knowledge source. Fine-tuning changes model parameters through additional training. These approaches solve different needs; supported customization depends on the selected model and service.
+
+Course basis: Module 8, [Introduction to Generative AI on AWS](https://www.coursera.org/learn/aws-cloud-practitioner-essentials/supplement/hY9xH/introduction-to-generative-ai-on-aws) and [AWS Generative AI Solutions](https://www.coursera.org/learn/aws-cloud-practitioner-essentials/supplement/Jt1DX/aws-generative-ai-solutions), captured 16 October 2026. These are independent summaries. See the [Bedrock overview](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html) and [SageMaker AI documentation](https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html) for current capabilities.
+
 ## Amazon Rekognition
 
 - Identifies objects, people, text, and scenes in images and videos using ML

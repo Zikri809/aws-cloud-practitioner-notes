@@ -1,0 +1,1192 @@
+[
+  {
+    "task": "1.1",
+    "source": "Domain 1 - Cloud Concepts/Task 1.1 - Cloud benefits.md",
+    "sha256": "dab958a701664fa153c9315405328c58150a30bd2b5b34fea79cf9cff4dfef4f",
+    "heading": "1. Start with the client-server model",
+    "chapter": "cloud_computing"
+  },
+  {
+    "task": "1.1",
+    "source": "Domain 1 - Cloud Concepts/Task 1.1 - Cloud benefits.md",
+    "sha256": "dab958a701664fa153c9315405328c58150a30bd2b5b34fea79cf9cff4dfef4f",
+    "heading": "2. What cloud computing means",
+    "chapter": "cloud_computing"
+  },
+  {
+    "task": "1.1",
+    "source": "Domain 1 - Cloud Concepts/Task 1.1 - Cloud benefits.md",
+    "sha256": "dab958a701664fa153c9315405328c58150a30bd2b5b34fea79cf9cff4dfef4f",
+    "heading": "3. The six benefits and how exam scenarios describe them",
+    "chapter": "cloud_computing"
+  },
+  {
+    "task": "1.1",
+    "source": "Domain 1 - Cloud Concepts/Task 1.1 - Cloud benefits.md",
+    "sha256": "dab958a701664fa153c9315405328c58150a30bd2b5b34fea79cf9cff4dfef4f",
+    "heading": "4. Availability, fault tolerance, and latency",
+    "chapter": "cloud_computing"
+  },
+  {
+    "task": "1.1",
+    "source": "Domain 1 - Cloud Concepts/Task 1.1 - Cloud benefits.md",
+    "sha256": "dab958a701664fa153c9315405328c58150a30bd2b5b34fea79cf9cff4dfef4f",
+    "heading": "5. Distinguish availability, agility, and elasticity",
+    "chapter": "cloud_computing"
+  },
+  {
+    "task": "1.1",
+    "source": "Domain 1 - Cloud Concepts/Task 1.1 - Cloud benefits.md",
+    "sha256": "dab958a701664fa153c9315405328c58150a30bd2b5b34fea79cf9cff4dfef4f",
+    "heading": "Exam requirements and service choices",
+    "chapter": "cloud_computing"
+  },
+  {
+    "task": "1.1",
+    "source": "Domain 1 - Cloud Concepts/Task 1.1 - Cloud benefits.md",
+    "sha256": "dab958a701664fa153c9315405328c58150a30bd2b5b34fea79cf9cff4dfef4f",
+    "heading": "Before continuing",
+    "chapter": "cloud_computing"
+  },
+  {
+    "task": "1.2",
+    "source": "Domain 1 - Cloud Concepts/Task 1.2 - Cloud design principles.md",
+    "sha256": "3817c546eb96e3c5b706ac9e194f507145e3c5684f42a1a3dd23198dec9887e3",
+    "heading": "1. A working application still needs architectural review",
+    "chapter": "architecting_and_ecosystem"
+  },
+  {
+    "task": "1.2",
+    "source": "Domain 1 - Cloud Concepts/Task 1.2 - Cloud design principles.md",
+    "sha256": "3817c546eb96e3c5b706ac9e194f507145e3c5684f42a1a3dd23198dec9887e3",
+    "heading": "2. Distinguish the pillars in scenarios",
+    "chapter": "architecting_and_ecosystem"
+  },
+  {
+    "task": "1.2",
+    "source": "Domain 1 - Cloud Concepts/Task 1.2 - Cloud design principles.md",
+    "sha256": "3817c546eb96e3c5b706ac9e194f507145e3c5684f42a1a3dd23198dec9887e3",
+    "heading": "3. The framework versus the Well-Architected Tool",
+    "chapter": "architecting_and_ecosystem"
+  },
+  {
+    "task": "1.2",
+    "source": "Domain 1 - Cloud Concepts/Task 1.2 - Cloud design principles.md",
+    "sha256": "3817c546eb96e3c5b706ac9e194f507145e3c5684f42a1a3dd23198dec9887e3",
+    "heading": "4. Apply all six pillars to the florist example",
+    "chapter": "architecting_and_ecosystem"
+  },
+  {
+    "task": "1.2",
+    "source": "Domain 1 - Cloud Concepts/Task 1.2 - Cloud design principles.md",
+    "sha256": "3817c546eb96e3c5b706ac9e194f507145e3c5684f42a1a3dd23198dec9887e3",
+    "heading": "Further distinctions",
+    "chapter": "architecting_and_ecosystem"
+  },
+  {
+    "task": "1.2",
+    "source": "Domain 1 - Cloud Concepts/Task 1.2 - Cloud design principles.md",
+    "sha256": "3817c546eb96e3c5b706ac9e194f507145e3c5684f42a1a3dd23198dec9887e3",
+    "heading": "Exam requirements and service choices",
+    "chapter": "architecting_and_ecosystem"
+  },
+  {
+    "task": "1.2",
+    "source": "Domain 1 - Cloud Concepts/Task 1.2 - Cloud design principles.md",
+    "sha256": "3817c546eb96e3c5b706ac9e194f507145e3c5684f42a1a3dd23198dec9887e3",
+    "heading": "Before continuing",
+    "chapter": "architecting_and_ecosystem"
+  },
+  {
+    "task": "1.3",
+    "source": "Domain 1 - Cloud Concepts/Task 1.3 - Migration strategies and benefits.md",
+    "sha256": "1a1d5b5bdb7eaf16505d08d1ae3d2d172ea190ea32432f904213f254f3a04207",
+    "heading": "1. Migration is a business and technical change",
+    "chapter": "other_aws_services"
+  },
+  {
+    "task": "1.3",
+    "source": "Domain 1 - Cloud Concepts/Task 1.3 - Migration strategies and benefits.md",
+    "sha256": "1a1d5b5bdb7eaf16505d08d1ae3d2d172ea190ea32432f904213f254f3a04207",
+    "heading": "2. Three migration phases",
+    "chapter": "other_aws_services"
+  },
+  {
+    "task": "1.3",
+    "source": "Domain 1 - Cloud Concepts/Task 1.3 - Migration strategies and benefits.md",
+    "sha256": "1a1d5b5bdb7eaf16505d08d1ae3d2d172ea190ea32432f904213f254f3a04207",
+    "heading": "3. AWS Cloud Adoption Framework: six perspectives",
+    "chapter": "other_aws_services"
+  },
+  {
+    "task": "1.3",
+    "source": "Domain 1 - Cloud Concepts/Task 1.3 - Migration strategies and benefits.md",
+    "sha256": "1a1d5b5bdb7eaf16505d08d1ae3d2d172ea190ea32432f904213f254f3a04207",
+    "heading": "4. The seven Rs: classify the change",
+    "chapter": "other_aws_services"
+  },
+  {
+    "task": "1.3",
+    "source": "Domain 1 - Cloud Concepts/Task 1.3 - Migration strategies and benefits.md",
+    "sha256": "1a1d5b5bdb7eaf16505d08d1ae3d2d172ea190ea32432f904213f254f3a04207",
+    "heading": "5. Planning and application-migration tools",
+    "chapter": "other_aws_services"
+  },
+  {
+    "task": "1.3",
+    "source": "Domain 1 - Cloud Concepts/Task 1.3 - Migration strategies and benefits.md",
+    "sha256": "1a1d5b5bdb7eaf16505d08d1ae3d2d172ea190ea32432f904213f254f3a04207",
+    "heading": "6. Online data movement: distinguish the layers",
+    "chapter": "other_aws_services"
+  },
+  {
+    "task": "1.3",
+    "source": "Domain 1 - Cloud Concepts/Task 1.3 - Migration strategies and benefits.md",
+    "sha256": "1a1d5b5bdb7eaf16505d08d1ae3d2d172ea190ea32432f904213f254f3a04207",
+    "heading": "7. Offline movement: Snowball Edge in the course",
+    "chapter": "other_aws_services"
+  },
+  {
+    "task": "1.3",
+    "source": "Domain 1 - Cloud Concepts/Task 1.3 - Migration strategies and benefits.md",
+    "sha256": "1a1d5b5bdb7eaf16505d08d1ae3d2d172ea190ea32432f904213f254f3a04207",
+    "heading": "8. Reconstructing a migration decision",
+    "chapter": "other_aws_services"
+  },
+  {
+    "task": "1.3",
+    "source": "Domain 1 - Cloud Concepts/Task 1.3 - Migration strategies and benefits.md",
+    "sha256": "1a1d5b5bdb7eaf16505d08d1ae3d2d172ea190ea32432f904213f254f3a04207",
+    "heading": "Further distinctions",
+    "chapter": "other_aws_services"
+  },
+  {
+    "task": "1.3",
+    "source": "Domain 1 - Cloud Concepts/Task 1.3 - Migration strategies and benefits.md",
+    "sha256": "1a1d5b5bdb7eaf16505d08d1ae3d2d172ea190ea32432f904213f254f3a04207",
+    "heading": "Exam requirements and service choices",
+    "chapter": "other_aws_services"
+  },
+  {
+    "task": "1.3",
+    "source": "Domain 1 - Cloud Concepts/Task 1.3 - Migration strategies and benefits.md",
+    "sha256": "1a1d5b5bdb7eaf16505d08d1ae3d2d172ea190ea32432f904213f254f3a04207",
+    "heading": "Before continuing",
+    "chapter": "other_aws_services"
+  },
+  {
+    "task": "1.4",
+    "source": "Domain 1 - Cloud Concepts/Task 1.4 - Cloud economics.md",
+    "sha256": "84847abe0e9c5780ea660f3465fd1f46c08bed94324f411145aa11fac2b0814c",
+    "heading": "1. Three pricing principles",
+    "chapter": "cloud_computing"
+  },
+  {
+    "task": "1.4",
+    "source": "Domain 1 - Cloud Concepts/Task 1.4 - Cloud economics.md",
+    "sha256": "84847abe0e9c5780ea660f3465fd1f46c08bed94324f411145aa11fac2b0814c",
+    "heading": "2. Managed services and customer responsibility",
+    "chapter": "cloud_computing"
+  },
+  {
+    "task": "1.4",
+    "source": "Domain 1 - Cloud Concepts/Task 1.4 - Cloud economics.md",
+    "sha256": "84847abe0e9c5780ea660f3465fd1f46c08bed94324f411145aa11fac2b0814c",
+    "heading": "3. Reconstructing the optimization architecture",
+    "chapter": "cloud_computing"
+  },
+  {
+    "task": "1.4",
+    "source": "Domain 1 - Cloud Concepts/Task 1.4 - Cloud economics.md",
+    "sha256": "84847abe0e9c5780ea660f3465fd1f46c08bed94324f411145aa11fac2b0814c",
+    "heading": "4. Free Tier and planning context",
+    "chapter": "cloud_computing"
+  },
+  {
+    "task": "1.4",
+    "source": "Domain 1 - Cloud Concepts/Task 1.4 - Cloud economics.md",
+    "sha256": "84847abe0e9c5780ea660f3465fd1f46c08bed94324f411145aa11fac2b0814c",
+    "heading": "Exam requirements and service choices",
+    "chapter": "cloud_computing"
+  },
+  {
+    "task": "1.4",
+    "source": "Domain 1 - Cloud Concepts/Task 1.4 - Cloud economics.md",
+    "sha256": "84847abe0e9c5780ea660f3465fd1f46c08bed94324f411145aa11fac2b0814c",
+    "heading": "Before continuing",
+    "chapter": "cloud_computing"
+  },
+  {
+    "task": "2.1",
+    "source": "Domain 2 - Security and Compliance/Task 2.1 - Shared responsibility.md",
+    "sha256": "d46195a318fa9816ede6d48afee308720ca37ee3b595caa9978e58f5850110d9",
+    "heading": "1. Shared responsibility: decide who controls the layer",
+    "chapter": "cloud_computing"
+  },
+  {
+    "task": "2.1",
+    "source": "Domain 2 - Security and Compliance/Task 2.1 - Shared responsibility.md",
+    "sha256": "d46195a318fa9816ede6d48afee308720ca37ee3b595caa9978e58f5850110d9",
+    "heading": "2. Authentication, authorization, and shared responsibility",
+    "chapter": "cloud_computing"
+  },
+  {
+    "task": "2.1",
+    "source": "Domain 2 - Security and Compliance/Task 2.1 - Shared responsibility.md",
+    "sha256": "d46195a318fa9816ede6d48afee308720ca37ee3b595caa9978e58f5850110d9",
+    "heading": "3. Shared responsibility and final check",
+    "chapter": "cloud_computing"
+  },
+  {
+    "task": "2.1",
+    "source": "Domain 2 - Security and Compliance/Task 2.1 - Shared responsibility.md",
+    "sha256": "d46195a318fa9816ede6d48afee308720ca37ee3b595caa9978e58f5850110d9",
+    "heading": "Further distinctions",
+    "chapter": "cloud_computing"
+  },
+  {
+    "task": "2.1",
+    "source": "Domain 2 - Security and Compliance/Task 2.1 - Shared responsibility.md",
+    "sha256": "d46195a318fa9816ede6d48afee308720ca37ee3b595caa9978e58f5850110d9",
+    "heading": "Exam requirements and service choices",
+    "chapter": "cloud_computing"
+  },
+  {
+    "task": "2.1",
+    "source": "Domain 2 - Security and Compliance/Task 2.1 - Shared responsibility.md",
+    "sha256": "d46195a318fa9816ede6d48afee308720ca37ee3b595caa9978e58f5850110d9",
+    "heading": "Before continuing",
+    "chapter": "cloud_computing"
+  },
+  {
+    "task": "2.2",
+    "source": "Domain 2 - Security and Compliance/Task 2.2 - Security governance and compliance.md",
+    "sha256": "107fb0c04b99bc90158d751e1a4e32da43f706e7cb55b5813aa926567a5b43e1",
+    "heading": "1. Four activities that support each other",
+    "chapter": "security_compliance"
+  },
+  {
+    "task": "2.2",
+    "source": "Domain 2 - Security and Compliance/Task 2.2 - Security governance and compliance.md",
+    "sha256": "107fb0c04b99bc90158d751e1a4e32da43f706e7cb55b5813aa926567a5b43e1",
+    "heading": "2. Encryption and data protection",
+    "chapter": "security_compliance"
+  },
+  {
+    "task": "2.2",
+    "source": "Domain 2 - Security and Compliance/Task 2.2 - Security governance and compliance.md",
+    "sha256": "107fb0c04b99bc90158d751e1a4e32da43f706e7cb55b5813aa926567a5b43e1",
+    "heading": "5. Compliance, AWS Artifact, and data location",
+    "chapter": "security_compliance"
+  },
+  {
+    "task": "2.2",
+    "source": "Domain 2 - Security and Compliance/Task 2.2 - Security governance and compliance.md",
+    "sha256": "107fb0c04b99bc90158d751e1a4e32da43f706e7cb55b5813aa926567a5b43e1",
+    "heading": "6. Config versus Audit Manager",
+    "chapter": "security_compliance"
+  },
+  {
+    "task": "2.2",
+    "source": "Domain 2 - Security and Compliance/Task 2.2 - Security governance and compliance.md",
+    "sha256": "107fb0c04b99bc90158d751e1a4e32da43f706e7cb55b5813aa926567a5b43e1",
+    "heading": "Further distinctions",
+    "chapter": "security_compliance"
+  },
+  {
+    "task": "2.2",
+    "source": "Domain 2 - Security and Compliance/Task 2.2 - Security governance and compliance.md",
+    "sha256": "107fb0c04b99bc90158d751e1a4e32da43f706e7cb55b5813aa926567a5b43e1",
+    "heading": "Exam requirements and service choices",
+    "chapter": "security_compliance"
+  },
+  {
+    "task": "2.2",
+    "source": "Domain 2 - Security and Compliance/Task 2.2 - Security governance and compliance.md",
+    "sha256": "107fb0c04b99bc90158d751e1a4e32da43f706e7cb55b5813aa926567a5b43e1",
+    "heading": "Before continuing",
+    "chapter": "security_compliance"
+  },
+  {
+    "task": "2.2",
+    "source": "Domain 2 - Security and Compliance/Task 2.2 - Security governance and compliance.md",
+    "sha256": "107fb0c04b99bc90158d751e1a4e32da43f706e7cb55b5813aa926567a5b43e1",
+    "heading": "3. CloudWatch: operating health and performance",
+    "chapter": "cloud_monitoring"
+  },
+  {
+    "task": "2.2",
+    "source": "Domain 2 - Security and Compliance/Task 2.2 - Security governance and compliance.md",
+    "sha256": "107fb0c04b99bc90158d751e1a4e32da43f706e7cb55b5813aa926567a5b43e1",
+    "heading": "4. CloudTrail: activity and API auditing",
+    "chapter": "cloud_monitoring"
+  },
+  {
+    "task": "2.2",
+    "source": "Domain 2 - Security and Compliance/Task 2.2 - Security governance and compliance.md",
+    "sha256": "107fb0c04b99bc90158d751e1a4e32da43f706e7cb55b5813aa926567a5b43e1",
+    "heading": "7. Organizations: govern multiple AWS accounts",
+    "chapter": "account_management_billing_support"
+  },
+  {
+    "task": "2.2",
+    "source": "Domain 2 - Security and Compliance/Task 2.2 - Security governance and compliance.md",
+    "sha256": "107fb0c04b99bc90158d751e1a4e32da43f706e7cb55b5813aa926567a5b43e1",
+    "heading": "8. Control Tower, Service Catalog, and License Manager",
+    "chapter": "account_management_billing_support"
+  },
+  {
+    "task": "2.3",
+    "source": "Domain 2 - Security and Compliance/Task 2.3 - Identity and access management.md",
+    "sha256": "23e92309cc0e9f218d0fd58eb61022e59c9acfe96d9350d9310db579927b61ba",
+    "heading": "1. IAM fundamentals",
+    "chapter": "iam"
+  },
+  {
+    "task": "2.3",
+    "source": "Domain 2 - Security and Compliance/Task 2.3 - Identity and access management.md",
+    "sha256": "23e92309cc0e9f218d0fd58eb61022e59c9acfe96d9350d9310db579927b61ba",
+    "heading": "2. Reading a policy and understanding a deny",
+    "chapter": "iam"
+  },
+  {
+    "task": "2.3",
+    "source": "Domain 2 - Security and Compliance/Task 2.3 - Identity and access management.md",
+    "sha256": "23e92309cc0e9f218d0fd58eb61022e59c9acfe96d9350d9310db579927b61ba",
+    "heading": "3. Reconstructing the IAM demonstration",
+    "chapter": "iam"
+  },
+  {
+    "task": "2.3",
+    "source": "Domain 2 - Security and Compliance/Task 2.3 - Identity and access management.md",
+    "sha256": "23e92309cc0e9f218d0fd58eb61022e59c9acfe96d9350d9310db579927b61ba",
+    "heading": "Further distinctions",
+    "chapter": "iam"
+  },
+  {
+    "task": "2.3",
+    "source": "Domain 2 - Security and Compliance/Task 2.3 - Identity and access management.md",
+    "sha256": "23e92309cc0e9f218d0fd58eb61022e59c9acfe96d9350d9310db579927b61ba",
+    "heading": "Before continuing",
+    "chapter": "iam"
+  },
+  {
+    "task": "2.3",
+    "source": "Domain 2 - Security and Compliance/Task 2.3 - Identity and access management.md",
+    "sha256": "23e92309cc0e9f218d0fd58eb61022e59c9acfe96d9350d9310db579927b61ba",
+    "heading": "4. Supporting access and operations services",
+    "chapter": "advanced_identity"
+  },
+  {
+    "task": "2.3",
+    "source": "Domain 2 - Security and Compliance/Task 2.3 - Identity and access management.md",
+    "sha256": "23e92309cc0e9f218d0fd58eb61022e59c9acfe96d9350d9310db579927b61ba",
+    "heading": "Exam requirements and service choices",
+    "chapter": "advanced_identity"
+  },
+  {
+    "task": "2.4",
+    "source": "Domain 2 - Security and Compliance/Task 2.4 - Security services and resources.md",
+    "sha256": "007a844a0fa852f096d3a392980bfee5cddfb78200a8c9d97e693f4816687198",
+    "heading": "1. Network and application protection",
+    "chapter": "security_compliance"
+  },
+  {
+    "task": "2.4",
+    "source": "Domain 2 - Security and Compliance/Task 2.4 - Security services and resources.md",
+    "sha256": "007a844a0fa852f096d3a392980bfee5cddfb78200a8c9d97e693f4816687198",
+    "heading": "2. Detection, investigation, and response",
+    "chapter": "security_compliance"
+  },
+  {
+    "task": "2.4",
+    "source": "Domain 2 - Security and Compliance/Task 2.4 - Security services and resources.md",
+    "sha256": "007a844a0fa852f096d3a392980bfee5cddfb78200a8c9d97e693f4816687198",
+    "heading": "3. Apply the distinctions",
+    "chapter": "security_compliance"
+  },
+  {
+    "task": "2.4",
+    "source": "Domain 2 - Security and Compliance/Task 2.4 - Security services and resources.md",
+    "sha256": "007a844a0fa852f096d3a392980bfee5cddfb78200a8c9d97e693f4816687198",
+    "heading": "4. Resources and exam priorities",
+    "chapter": "security_compliance"
+  },
+  {
+    "task": "2.4",
+    "source": "Domain 2 - Security and Compliance/Task 2.4 - Security services and resources.md",
+    "sha256": "007a844a0fa852f096d3a392980bfee5cddfb78200a8c9d97e693f4816687198",
+    "heading": "5. Trusted Advisor and IAM Access Analyzer",
+    "chapter": "security_compliance"
+  },
+  {
+    "task": "2.4",
+    "source": "Domain 2 - Security and Compliance/Task 2.4 - Security services and resources.md",
+    "sha256": "007a844a0fa852f096d3a392980bfee5cddfb78200a8c9d97e693f4816687198",
+    "heading": "Further distinctions",
+    "chapter": "security_compliance"
+  },
+  {
+    "task": "2.4",
+    "source": "Domain 2 - Security and Compliance/Task 2.4 - Security services and resources.md",
+    "sha256": "007a844a0fa852f096d3a392980bfee5cddfb78200a8c9d97e693f4816687198",
+    "heading": "Exam requirements and service choices",
+    "chapter": "security_compliance"
+  },
+  {
+    "task": "2.4",
+    "source": "Domain 2 - Security and Compliance/Task 2.4 - Security services and resources.md",
+    "sha256": "007a844a0fa852f096d3a392980bfee5cddfb78200a8c9d97e693f4816687198",
+    "heading": "Before continuing",
+    "chapter": "security_compliance"
+  },
+  {
+    "task": "3.1",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.1 - Deploy and operate workloads.md",
+    "sha256": "70d30478123b693a795f4d72accd9d565cba8a805d1d0f76d9fd2e542ae9e971",
+    "heading": "1. Deployment models",
+    "chapter": "deploying"
+  },
+  {
+    "task": "3.1",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.1 - Deploy and operate workloads.md",
+    "sha256": "70d30478123b693a795f4d72accd9d565cba8a805d1d0f76d9fd2e542ae9e971",
+    "heading": "2. Provision resources through AWS APIs",
+    "chapter": "deploying"
+  },
+  {
+    "task": "3.1",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.1 - Deploy and operate workloads.md",
+    "sha256": "70d30478123b693a795f4d72accd9d565cba8a805d1d0f76d9fd2e542ae9e971",
+    "heading": "3. Infrastructure as code makes deployment repeatable",
+    "chapter": "deploying"
+  },
+  {
+    "task": "3.1",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.1 - Deploy and operate workloads.md",
+    "sha256": "70d30478123b693a795f4d72accd9d565cba8a805d1d0f76d9fd2e542ae9e971",
+    "heading": "4. Reconstruct the instance launch demonstration",
+    "chapter": "deploying"
+  },
+  {
+    "task": "3.1",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.1 - Deploy and operate workloads.md",
+    "sha256": "70d30478123b693a795f4d72accd9d565cba8a805d1d0f76d9fd2e542ae9e971",
+    "heading": "Further distinctions",
+    "chapter": "deploying"
+  },
+  {
+    "task": "3.1",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.1 - Deploy and operate workloads.md",
+    "sha256": "70d30478123b693a795f4d72accd9d565cba8a805d1d0f76d9fd2e542ae9e971",
+    "heading": "Exam requirements and service choices",
+    "chapter": "deploying"
+  },
+  {
+    "task": "3.1",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.1 - Deploy and operate workloads.md",
+    "sha256": "70d30478123b693a795f4d72accd9d565cba8a805d1d0f76d9fd2e542ae9e971",
+    "heading": "Before continuing",
+    "chapter": "deploying"
+  },
+  {
+    "task": "3.2",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.2 - Global infrastructure.md",
+    "sha256": "23bf596f8916146af66ead2d666349e90b71daf7aff77764d6f4ee75e1fdf1e9",
+    "heading": "1. Global infrastructure: Region, AZ, data center",
+    "chapter": "global_infrastructure"
+  },
+  {
+    "task": "3.2",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.2 - Global infrastructure.md",
+    "sha256": "23bf596f8916146af66ead2d666349e90b71daf7aff77764d6f4ee75e1fdf1e9",
+    "heading": "2. Rebuild the infrastructure hierarchy",
+    "chapter": "global_infrastructure"
+  },
+  {
+    "task": "3.2",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.2 - Global infrastructure.md",
+    "sha256": "23bf596f8916146af66ead2d666349e90b71daf7aff77764d6f4ee75e1fdf1e9",
+    "heading": "3. Choose a Region using four factors",
+    "chapter": "global_infrastructure"
+  },
+  {
+    "task": "3.2",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.2 - Global infrastructure.md",
+    "sha256": "23bf596f8916146af66ead2d666349e90b71daf7aff77764d6f4ee75e1fdf1e9",
+    "heading": "4. Multi-AZ versus multi-Region",
+    "chapter": "global_infrastructure"
+  },
+  {
+    "task": "3.2",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.2 - Global infrastructure.md",
+    "sha256": "23bf596f8916146af66ead2d666349e90b71daf7aff77764d6f4ee75e1fdf1e9",
+    "heading": "5. Edge locations and CloudFront",
+    "chapter": "global_infrastructure"
+  },
+  {
+    "task": "3.2",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.2 - Global infrastructure.md",
+    "sha256": "23bf596f8916146af66ead2d666349e90b71daf7aff77764d6f4ee75e1fdf1e9",
+    "heading": "6. Distinguish the edge-related services",
+    "chapter": "global_infrastructure"
+  },
+  {
+    "task": "3.2",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.2 - Global infrastructure.md",
+    "sha256": "23bf596f8916146af66ead2d666349e90b71daf7aff77764d6f4ee75e1fdf1e9",
+    "heading": "7. Put the module together",
+    "chapter": "global_infrastructure"
+  },
+  {
+    "task": "3.2",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.2 - Global infrastructure.md",
+    "sha256": "23bf596f8916146af66ead2d666349e90b71daf7aff77764d6f4ee75e1fdf1e9",
+    "heading": "Exam requirements and service choices",
+    "chapter": "global_infrastructure"
+  },
+  {
+    "task": "3.2",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.2 - Global infrastructure.md",
+    "sha256": "23bf596f8916146af66ead2d666349e90b71daf7aff77764d6f4ee75e1fdf1e9",
+    "heading": "Before continuing",
+    "chapter": "global_infrastructure"
+  },
+  {
+    "task": "3.3",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.3 - Compute services.md",
+    "sha256": "1d41f78338636d16ce3f75cddb35b2b881aa15c21b06b4446835776540c555f1",
+    "heading": "1. EC2 supplies compute capacity",
+    "chapter": "ec2"
+  },
+  {
+    "task": "3.3",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.3 - Compute services.md",
+    "sha256": "1d41f78338636d16ce3f75cddb35b2b881aa15c21b06b4446835776540c555f1",
+    "heading": "2. Choose an instance category by the bottleneck",
+    "chapter": "ec2"
+  },
+  {
+    "task": "3.3",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.3 - Compute services.md",
+    "sha256": "1d41f78338636d16ce3f75cddb35b2b881aa15c21b06b4446835776540c555f1",
+    "heading": "3. Control and management form a spectrum",
+    "chapter": "other_compute"
+  },
+  {
+    "task": "3.3",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.3 - Compute services.md",
+    "sha256": "1d41f78338636d16ce3f75cddb35b2b881aa15c21b06b4446835776540c555f1",
+    "heading": "4. Lambda runs functions in response to work",
+    "chapter": "other_compute"
+  },
+  {
+    "task": "3.3",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.3 - Compute services.md",
+    "sha256": "1d41f78338636d16ce3f75cddb35b2b881aa15c21b06b4446835776540c555f1",
+    "heading": "5. Understand the SQS-to-Lambda demonstration",
+    "chapter": "other_compute"
+  },
+  {
+    "task": "3.3",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.3 - Compute services.md",
+    "sha256": "1d41f78338636d16ce3f75cddb35b2b881aa15c21b06b4446835776540c555f1",
+    "heading": "6. Containers package an application environment",
+    "chapter": "other_compute"
+  },
+  {
+    "task": "3.3",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.3 - Compute services.md",
+    "sha256": "1d41f78338636d16ce3f75cddb35b2b881aa15c21b06b4446835776540c555f1",
+    "heading": "7. Separate registry, orchestration, and compute",
+    "chapter": "other_compute"
+  },
+  {
+    "task": "3.3",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.3 - Compute services.md",
+    "sha256": "1d41f78338636d16ce3f75cddb35b2b881aa15c21b06b4446835776540c555f1",
+    "heading": "8. Additional services solve specific requirements",
+    "chapter": "other_compute"
+  },
+  {
+    "task": "3.3",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.3 - Compute services.md",
+    "sha256": "1d41f78338636d16ce3f75cddb35b2b881aa15c21b06b4446835776540c555f1",
+    "heading": "12. Choose the service from the requirement",
+    "chapter": "other_compute"
+  },
+  {
+    "task": "3.3",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.3 - Compute services.md",
+    "sha256": "1d41f78338636d16ce3f75cddb35b2b881aa15c21b06b4446835776540c555f1",
+    "heading": "13. Common errors to avoid",
+    "chapter": "other_compute"
+  },
+  {
+    "task": "3.3",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.3 - Compute services.md",
+    "sha256": "1d41f78338636d16ce3f75cddb35b2b881aa15c21b06b4446835776540c555f1",
+    "heading": "14. Put the module together: an online retailer",
+    "chapter": "other_compute"
+  },
+  {
+    "task": "3.3",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.3 - Compute services.md",
+    "sha256": "1d41f78338636d16ce3f75cddb35b2b881aa15c21b06b4446835776540c555f1",
+    "heading": "Exam requirements and service choices",
+    "chapter": "other_compute"
+  },
+  {
+    "task": "3.3",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.3 - Compute services.md",
+    "sha256": "1d41f78338636d16ce3f75cddb35b2b881aa15c21b06b4446835776540c555f1",
+    "heading": "Before continuing",
+    "chapter": "other_compute"
+  },
+  {
+    "task": "3.3",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.3 - Compute services.md",
+    "sha256": "1d41f78338636d16ce3f75cddb35b2b881aa15c21b06b4446835776540c555f1",
+    "heading": "9. Scale the right part of the application",
+    "chapter": "elb_asg"
+  },
+  {
+    "task": "3.3",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.3 - Compute services.md",
+    "sha256": "1d41f78338636d16ce3f75cddb35b2b881aa15c21b06b4446835776540c555f1",
+    "heading": "10. EC2 Auto Scaling maintains and adjusts capacity",
+    "chapter": "elb_asg"
+  },
+  {
+    "task": "3.3",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.3 - Compute services.md",
+    "sha256": "1d41f78338636d16ce3f75cddb35b2b881aa15c21b06b4446835776540c555f1",
+    "heading": "11. Load balancing distributes requests",
+    "chapter": "elb_asg"
+  },
+  {
+    "task": "3.4",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.4 - Database services.md",
+    "sha256": "f11d879322442406e8abfe6db363662e078f345205a8a7132964d8e287024091",
+    "heading": "1. Start with the application's data and access pattern",
+    "chapter": "databases"
+  },
+  {
+    "task": "3.4",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.4 - Database services.md",
+    "sha256": "f11d879322442406e8abfe6db363662e078f345205a8a7132964d8e287024091",
+    "heading": "2. Relational databases and Amazon RDS",
+    "chapter": "databases"
+  },
+  {
+    "task": "3.4",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.4 - Database services.md",
+    "sha256": "f11d879322442406e8abfe6db363662e078f345205a8a7132964d8e287024091",
+    "heading": "3. Amazon Aurora",
+    "chapter": "databases"
+  },
+  {
+    "task": "3.4",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.4 - Database services.md",
+    "sha256": "f11d879322442406e8abfe6db363662e078f345205a8a7132964d8e287024091",
+    "heading": "4. DynamoDB and nonrelational data",
+    "chapter": "databases"
+  },
+  {
+    "task": "3.4",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.4 - Database services.md",
+    "sha256": "f11d879322442406e8abfe6db363662e078f345205a8a7132964d8e287024091",
+    "heading": "5. Reconstructing the database demonstration",
+    "chapter": "databases"
+  },
+  {
+    "task": "3.4",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.4 - Database services.md",
+    "sha256": "f11d879322442406e8abfe6db363662e078f345205a8a7132964d8e287024091",
+    "heading": "6. In-memory caching: ElastiCache and DAX",
+    "chapter": "databases"
+  },
+  {
+    "task": "3.4",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.4 - Database services.md",
+    "sha256": "f11d879322442406e8abfe6db363662e078f345205a8a7132964d8e287024091",
+    "heading": "7. Additional services",
+    "chapter": "databases"
+  },
+  {
+    "task": "3.4",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.4 - Database services.md",
+    "sha256": "f11d879322442406e8abfe6db363662e078f345205a8a7132964d8e287024091",
+    "heading": "8. Database migration: DMS versus schema conversion",
+    "chapter": "databases"
+  },
+  {
+    "task": "3.4",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.4 - Database services.md",
+    "sha256": "f11d879322442406e8abfe6db363662e078f345205a8a7132964d8e287024091",
+    "heading": "9. Work through the requirement, then eliminate distractors",
+    "chapter": "databases"
+  },
+  {
+    "task": "3.4",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.4 - Database services.md",
+    "sha256": "f11d879322442406e8abfe6db363662e078f345205a8a7132964d8e287024091",
+    "heading": "Exam requirements and service choices",
+    "chapter": "databases"
+  },
+  {
+    "task": "3.4",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.4 - Database services.md",
+    "sha256": "f11d879322442406e8abfe6db363662e078f345205a8a7132964d8e287024091",
+    "heading": "Before continuing",
+    "chapter": "databases"
+  },
+  {
+    "task": "3.5",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.5 - Network services.md",
+    "sha256": "9cc475f33e9cfb73b375dae3a7f1482ff569621198ab316b8fcd86d4260148d8",
+    "heading": "1. VPCs and subnets organize the network",
+    "chapter": "vpc"
+  },
+  {
+    "task": "3.5",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.5 - Network services.md",
+    "sha256": "9cc475f33e9cfb73b375dae3a7f1482ff569621198ab316b8fcd86d4260148d8",
+    "heading": "2. Address ranges and route tables",
+    "chapter": "vpc"
+  },
+  {
+    "task": "3.5",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.5 - Network services.md",
+    "sha256": "9cc475f33e9cfb73b375dae3a7f1482ff569621198ab316b8fcd86d4260148d8",
+    "heading": "3. Gateways have different jobs",
+    "chapter": "vpc"
+  },
+  {
+    "task": "3.5",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.5 - Network services.md",
+    "sha256": "9cc475f33e9cfb73b375dae3a7f1482ff569621198ab316b8fcd86d4260148d8",
+    "heading": "4. Security groups versus network ACLs",
+    "chapter": "vpc"
+  },
+  {
+    "task": "3.5",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.5 - Network services.md",
+    "sha256": "9cc475f33e9cfb73b375dae3a7f1482ff569621198ab316b8fcd86d4260148d8",
+    "heading": "5. Trace a request and its response",
+    "chapter": "vpc"
+  },
+  {
+    "task": "3.5",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.5 - Network services.md",
+    "sha256": "9cc475f33e9cfb73b375dae3a7f1482ff569621198ab316b8fcd86d4260148d8",
+    "heading": "6. Reconstruct the VPC demonstration",
+    "chapter": "vpc"
+  },
+  {
+    "task": "3.5",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.5 - Network services.md",
+    "sha256": "9cc475f33e9cfb73b375dae3a7f1482ff569621198ab316b8fcd86d4260148d8",
+    "heading": "7. Choose connectivity from the requirement",
+    "chapter": "vpc"
+  },
+  {
+    "task": "3.5",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.5 - Network services.md",
+    "sha256": "9cc475f33e9cfb73b375dae3a7f1482ff569621198ab316b8fcd86d4260148d8",
+    "heading": "8. DNS and global delivery",
+    "chapter": "vpc"
+  },
+  {
+    "task": "3.5",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.5 - Network services.md",
+    "sha256": "9cc475f33e9cfb73b375dae3a7f1482ff569621198ab316b8fcd86d4260148d8",
+    "heading": "9. Correct the final global-architecture model",
+    "chapter": "vpc"
+  },
+  {
+    "task": "3.5",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.5 - Network services.md",
+    "sha256": "9cc475f33e9cfb73b375dae3a7f1482ff569621198ab316b8fcd86d4260148d8",
+    "heading": "10. One connected example",
+    "chapter": "vpc"
+  },
+  {
+    "task": "3.5",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.5 - Network services.md",
+    "sha256": "9cc475f33e9cfb73b375dae3a7f1482ff569621198ab316b8fcd86d4260148d8",
+    "heading": "Further distinctions",
+    "chapter": "vpc"
+  },
+  {
+    "task": "3.5",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.5 - Network services.md",
+    "sha256": "9cc475f33e9cfb73b375dae3a7f1482ff569621198ab316b8fcd86d4260148d8",
+    "heading": "Exam requirements and service choices",
+    "chapter": "vpc"
+  },
+  {
+    "task": "3.5",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.5 - Network services.md",
+    "sha256": "9cc475f33e9cfb73b375dae3a7f1482ff569621198ab316b8fcd86d4260148d8",
+    "heading": "Before continuing",
+    "chapter": "vpc"
+  },
+  {
+    "task": "3.6",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.6 - Storage services.md",
+    "sha256": "29bb44e7febfeb27c2e863aaabf2df6cae1b8beb3fb5821a68381f49bd6ddeb4",
+    "heading": "1. Start with the storage interface",
+    "chapter": "ec2_storage"
+  },
+  {
+    "task": "3.6",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.6 - Storage services.md",
+    "sha256": "29bb44e7febfeb27c2e863aaabf2df6cae1b8beb3fb5821a68381f49bd6ddeb4",
+    "heading": "2. EC2 instance store versus EBS",
+    "chapter": "ec2_storage"
+  },
+  {
+    "task": "3.6",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.6 - Storage services.md",
+    "sha256": "29bb44e7febfeb27c2e863aaabf2df6cae1b8beb3fb5821a68381f49bd6ddeb4",
+    "heading": "3. Snapshots and EBS lifecycle",
+    "chapter": "ec2_storage"
+  },
+  {
+    "task": "3.6",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.6 - Storage services.md",
+    "sha256": "29bb44e7febfeb27c2e863aaabf2df6cae1b8beb3fb5821a68381f49bd6ddeb4",
+    "heading": "9. EFS: shared NFS files",
+    "chapter": "ec2_storage"
+  },
+  {
+    "task": "3.6",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.6 - Storage services.md",
+    "sha256": "29bb44e7febfeb27c2e863aaabf2df6cae1b8beb3fb5821a68381f49bd6ddeb4",
+    "heading": "10. FSx: choose the required filesystem",
+    "chapter": "ec2_storage"
+  },
+  {
+    "task": "3.6",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.6 - Storage services.md",
+    "sha256": "29bb44e7febfeb27c2e863aaabf2df6cae1b8beb3fb5821a68381f49bd6ddeb4",
+    "heading": "4. S3 objects, buckets, and access",
+    "chapter": "s3"
+  },
+  {
+    "task": "3.6",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.6 - Storage services.md",
+    "sha256": "29bb44e7febfeb27c2e863aaabf2df6cae1b8beb3fb5821a68381f49bd6ddeb4",
+    "heading": "5. Durability, availability, and recoverability",
+    "chapter": "s3"
+  },
+  {
+    "task": "3.6",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.6 - Storage services.md",
+    "sha256": "29bb44e7febfeb27c2e863aaabf2df6cae1b8beb3fb5821a68381f49bd6ddeb4",
+    "heading": "6. Choose an S3 storage class",
+    "chapter": "s3"
+  },
+  {
+    "task": "3.6",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.6 - Storage services.md",
+    "sha256": "29bb44e7febfeb27c2e863aaabf2df6cae1b8beb3fb5821a68381f49bd6ddeb4",
+    "heading": "7. Lifecycle is not the same as access-based tiering",
+    "chapter": "s3"
+  },
+  {
+    "task": "3.6",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.6 - Storage services.md",
+    "sha256": "29bb44e7febfeb27c2e863aaabf2df6cae1b8beb3fb5821a68381f49bd6ddeb4",
+    "heading": "8. Reconstruct the S3 demonstration",
+    "chapter": "s3"
+  },
+  {
+    "task": "3.6",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.6 - Storage services.md",
+    "sha256": "29bb44e7febfeb27c2e863aaabf2df6cae1b8beb3fb5821a68381f49bd6ddeb4",
+    "heading": "13. Select from the requirement",
+    "chapter": "s3"
+  },
+  {
+    "task": "3.6",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.6 - Storage services.md",
+    "sha256": "29bb44e7febfeb27c2e863aaabf2df6cae1b8beb3fb5821a68381f49bd6ddeb4",
+    "heading": "Exam requirements and service choices",
+    "chapter": "s3"
+  },
+  {
+    "task": "3.6",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.6 - Storage services.md",
+    "sha256": "29bb44e7febfeb27c2e863aaabf2df6cae1b8beb3fb5821a68381f49bd6ddeb4",
+    "heading": "Before continuing",
+    "chapter": "s3"
+  },
+  {
+    "task": "3.6",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.6 - Storage services.md",
+    "sha256": "29bb44e7febfeb27c2e863aaabf2df6cae1b8beb3fb5821a68381f49bd6ddeb4",
+    "heading": "11. Storage Gateway: preserve local interfaces",
+    "chapter": "other_aws_services"
+  },
+  {
+    "task": "3.6",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.6 - Storage services.md",
+    "sha256": "29bb44e7febfeb27c2e863aaabf2df6cae1b8beb3fb5821a68381f49bd6ddeb4",
+    "heading": "12. Elastic Disaster Recovery",
+    "chapter": "other_aws_services"
+  },
+  {
+    "task": "3.7",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.7 - AI ML and analytics.md",
+    "sha256": "5442859dd2b1db41d70ae883271c72d8ce78042b8612b13f3d1879691f317354",
+    "heading": "1. Understand the concepts before the service names",
+    "chapter": "machine_learning"
+  },
+  {
+    "task": "3.7",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.7 - AI ML and analytics.md",
+    "sha256": "5442859dd2b1db41d70ae883271c72d8ce78042b8612b13f3d1879691f317354",
+    "heading": "2. Choose the right level of control",
+    "chapter": "machine_learning"
+  },
+  {
+    "task": "3.7",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.7 - AI ML and analytics.md",
+    "sha256": "5442859dd2b1db41d70ae883271c72d8ce78042b8612b13f3d1879691f317354",
+    "heading": "3. Prebuilt AI services: learn the input and output",
+    "chapter": "machine_learning"
+  },
+  {
+    "task": "3.7",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.7 - AI ML and analytics.md",
+    "sha256": "5442859dd2b1db41d70ae883271c72d8ce78042b8612b13f3d1879691f317354",
+    "heading": "4. Generative AI on AWS",
+    "chapter": "machine_learning"
+  },
+  {
+    "task": "3.7",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.7 - AI ML and analytics.md",
+    "sha256": "5442859dd2b1db41d70ae883271c72d8ce78042b8612b13f3d1879691f317354",
+    "heading": "8. Scenario reasoning and exam priorities",
+    "chapter": "machine_learning"
+  },
+  {
+    "task": "3.7",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.7 - AI ML and analytics.md",
+    "sha256": "5442859dd2b1db41d70ae883271c72d8ce78042b8612b13f3d1879691f317354",
+    "heading": "Exam requirements and service choices",
+    "chapter": "machine_learning"
+  },
+  {
+    "task": "3.7",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.7 - AI ML and analytics.md",
+    "sha256": "5442859dd2b1db41d70ae883271c72d8ce78042b8612b13f3d1879691f317354",
+    "heading": "Before continuing",
+    "chapter": "machine_learning"
+  },
+  {
+    "task": "3.7",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.7 - AI ML and analytics.md",
+    "sha256": "5442859dd2b1db41d70ae883271c72d8ce78042b8612b13f3d1879691f317354",
+    "heading": "5. Analytics and data preparation",
+    "chapter": "databases"
+  },
+  {
+    "task": "3.7",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.7 - AI ML and analytics.md",
+    "sha256": "5442859dd2b1db41d70ae883271c72d8ce78042b8612b13f3d1879691f317354",
+    "heading": "Further distinctions",
+    "chapter": "databases"
+  },
+  {
+    "task": "3.7",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.7 - AI ML and analytics.md",
+    "sha256": "5442859dd2b1db41d70ae883271c72d8ce78042b8612b13f3d1879691f317354",
+    "heading": "6. Map pipeline stages to AWS services",
+    "chapter": "cloud_integration"
+  },
+  {
+    "task": "3.7",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.7 - AI ML and analytics.md",
+    "sha256": "5442859dd2b1db41d70ae883271c72d8ce78042b8612b13f3d1879691f317354",
+    "heading": "7. Reconstructing the real-life pipeline",
+    "chapter": "cloud_integration"
+  },
+  {
+    "task": "3.8",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.8 - Other service categories.md",
+    "sha256": "3bab0e14866591e81d05ce90e75234076562d8517b25654d3177ea0acd12fd97",
+    "heading": "1. Queues reduce direct dependencies",
+    "chapter": "cloud_integration"
+  },
+  {
+    "task": "3.8",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.8 - Other service categories.md",
+    "sha256": "3bab0e14866591e81d05ce90e75234076562d8517b25654d3177ea0acd12fd97",
+    "heading": "2. Development services: build, orchestrate, trace, and expose data",
+    "chapter": "deploying"
+  },
+  {
+    "task": "3.8",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.8 - Other service categories.md",
+    "sha256": "3bab0e14866591e81d05ce90e75234076562d8517b25654d3177ea0acd12fd97",
+    "heading": "3. Business, end-user computing, and device services",
+    "chapter": "other_aws_services"
+  },
+  {
+    "task": "3.8",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.8 - Other service categories.md",
+    "sha256": "3bab0e14866591e81d05ce90e75234076562d8517b25654d3177ea0acd12fd97",
+    "heading": "4. Reconstructing the serverless examples",
+    "chapter": "other_aws_services"
+  },
+  {
+    "task": "3.8",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.8 - Other service categories.md",
+    "sha256": "3bab0e14866591e81d05ce90e75234076562d8517b25654d3177ea0acd12fd97",
+    "heading": "Further distinctions",
+    "chapter": "other_aws_services"
+  },
+  {
+    "task": "3.8",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.8 - Other service categories.md",
+    "sha256": "3bab0e14866591e81d05ce90e75234076562d8517b25654d3177ea0acd12fd97",
+    "heading": "Exam requirements and service choices",
+    "chapter": "other_aws_services"
+  },
+  {
+    "task": "3.8",
+    "source": "Domain 3 - Cloud Technology and Services/Task 3.8 - Other service categories.md",
+    "sha256": "3bab0e14866591e81d05ce90e75234076562d8517b25654d3177ea0acd12fd97",
+    "heading": "Before continuing",
+    "chapter": "other_aws_services"
+  },
+  {
+    "task": "4.1",
+    "source": "Domain 4 - Billing Pricing and Support/Task 4.1 - Pricing models.md",
+    "sha256": "38ea09c1037401ffae839ebae949d600d176f0deaeb0b93036988646cf9a7a37",
+    "heading": "1. Separate price, capacity, and tenancy",
+    "chapter": "ec2"
+  },
+  {
+    "task": "4.1",
+    "source": "Domain 4 - Billing Pricing and Support/Task 4.1 - Pricing models.md",
+    "sha256": "38ea09c1037401ffae839ebae949d600d176f0deaeb0b93036988646cf9a7a37",
+    "heading": "2. Understand cost drivers and the full bill",
+    "chapter": "ec2"
+  },
+  {
+    "task": "4.1",
+    "source": "Domain 4 - Billing Pricing and Support/Task 4.1 - Pricing models.md",
+    "sha256": "38ea09c1037401ffae839ebae949d600d176f0deaeb0b93036988646cf9a7a37",
+    "heading": "3. Choose an S3 storage class",
+    "chapter": "ec2"
+  },
+  {
+    "task": "4.1",
+    "source": "Domain 4 - Billing Pricing and Support/Task 4.1 - Pricing models.md",
+    "sha256": "38ea09c1037401ffae839ebae949d600d176f0deaeb0b93036988646cf9a7a37",
+    "heading": "Further distinctions",
+    "chapter": "ec2"
+  },
+  {
+    "task": "4.1",
+    "source": "Domain 4 - Billing Pricing and Support/Task 4.1 - Pricing models.md",
+    "sha256": "38ea09c1037401ffae839ebae949d600d176f0deaeb0b93036988646cf9a7a37",
+    "heading": "Exam requirements and service choices",
+    "chapter": "ec2"
+  },
+  {
+    "task": "4.1",
+    "source": "Domain 4 - Billing Pricing and Support/Task 4.1 - Pricing models.md",
+    "sha256": "38ea09c1037401ffae839ebae949d600d176f0deaeb0b93036988646cf9a7a37",
+    "heading": "Before continuing",
+    "chapter": "ec2"
+  },
+  {
+    "task": "4.2",
+    "source": "Domain 4 - Billing Pricing and Support/Task 4.2 - Billing and cost management.md",
+    "sha256": "72a2ea248c5435f14ebfb2344fd1fc0cacdc9353a4a66c4dc2ac3d68d58e66be",
+    "heading": "1. Select the correct billing tool",
+    "chapter": "account_management_billing_support"
+  },
+  {
+    "task": "4.2",
+    "source": "Domain 4 - Billing Pricing and Support/Task 4.2 - Billing and cost management.md",
+    "sha256": "72a2ea248c5435f14ebfb2344fd1fc0cacdc9353a4a66c4dc2ac3d68d58e66be",
+    "heading": "2. Consolidated billing and cost allocation",
+    "chapter": "account_management_billing_support"
+  },
+  {
+    "task": "4.2",
+    "source": "Domain 4 - Billing Pricing and Support/Task 4.2 - Billing and cost management.md",
+    "sha256": "72a2ea248c5435f14ebfb2344fd1fc0cacdc9353a4a66c4dc2ac3d68d58e66be",
+    "heading": "3. Reconstructing the optimization architecture",
+    "chapter": "account_management_billing_support"
+  },
+  {
+    "task": "4.2",
+    "source": "Domain 4 - Billing Pricing and Support/Task 4.2 - Billing and cost management.md",
+    "sha256": "72a2ea248c5435f14ebfb2344fd1fc0cacdc9353a4a66c4dc2ac3d68d58e66be",
+    "heading": "4. Free Tier and planning context",
+    "chapter": "account_management_billing_support"
+  },
+  {
+    "task": "4.2",
+    "source": "Domain 4 - Billing Pricing and Support/Task 4.2 - Billing and cost management.md",
+    "sha256": "72a2ea248c5435f14ebfb2344fd1fc0cacdc9353a4a66c4dc2ac3d68d58e66be",
+    "heading": "Exam requirements and service choices",
+    "chapter": "account_management_billing_support"
+  },
+  {
+    "task": "4.2",
+    "source": "Domain 4 - Billing Pricing and Support/Task 4.2 - Billing and cost management.md",
+    "sha256": "72a2ea248c5435f14ebfb2344fd1fc0cacdc9353a4a66c4dc2ac3d68d58e66be",
+    "heading": "Before continuing",
+    "chapter": "account_management_billing_support"
+  },
+  {
+    "task": "4.3",
+    "source": "Domain 4 - Billing Pricing and Support/Task 4.3 - Technical resources and Support.md",
+    "sha256": "b5316b586e0b0c3b651e8e100a81616d0b25c4899a8bc2a07ae4f3d4cfb499ed",
+    "heading": "Exam requirements and service choices",
+    "chapter": "account_management_billing_support"
+  },
+  {
+    "task": "4.3",
+    "source": "Domain 4 - Billing Pricing and Support/Task 4.3 - Technical resources and Support.md",
+    "sha256": "b5316b586e0b0c3b651e8e100a81616d0b25c4899a8bc2a07ae4f3d4cfb499ed",
+    "heading": "1. Support: retain the course comparison and recognize change",
+    "chapter": "account_management_billing_support"
+  },
+  {
+    "task": "4.3",
+    "source": "Domain 4 - Billing Pricing and Support/Task 4.3 - Technical resources and Support.md",
+    "sha256": "b5316b586e0b0c3b651e8e100a81616d0b25c4899a8bc2a07ae4f3d4cfb499ed",
+    "heading": "2. Other assistance and third-party options",
+    "chapter": "account_management_billing_support"
+  },
+  {
+    "task": "4.3",
+    "source": "Domain 4 - Billing Pricing and Support/Task 4.3 - Technical resources and Support.md",
+    "sha256": "b5316b586e0b0c3b651e8e100a81616d0b25c4899a8bc2a07ae4f3d4cfb499ed",
+    "heading": "3. AWS Health: service events and affected resources",
+    "chapter": "account_management_billing_support"
+  },
+  {
+    "task": "4.3",
+    "source": "Domain 4 - Billing Pricing and Support/Task 4.3 - Technical resources and Support.md",
+    "sha256": "b5316b586e0b0c3b651e8e100a81616d0b25c4899a8bc2a07ae4f3d4cfb499ed",
+    "heading": "4. Trusted Advisor and IAM Access Analyzer",
+    "chapter": "account_management_billing_support"
+  },
+  {
+    "task": "4.3",
+    "source": "Domain 4 - Billing Pricing and Support/Task 4.3 - Technical resources and Support.md",
+    "sha256": "b5316b586e0b0c3b651e8e100a81616d0b25c4899a8bc2a07ae4f3d4cfb499ed",
+    "heading": "Before continuing",
+    "chapter": "account_management_billing_support"
+  }
+]

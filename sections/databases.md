@@ -299,6 +299,27 @@ Historical service: Amazon Quantum Ledger Database ended support on 31 July 2025
 - Database Migration: DMS
 - Neptune: graph database
 
+## From stored data to analytics
+
+A database serving application transactions, a data warehouse, and a search engine meet different requirements. Choose the service by the operation in the scenario.
+
+| Requirement | Service role |
+| --- | --- |
+| SQL analysis directly over suitable S3 datasets | Athena |
+| Data warehouse analytics | Redshift |
+| Search and log analytics | OpenSearch Service |
+| Store data lake objects | S3 |
+| Describe tables, schemas, and dataset locations | Glue Data Catalog |
+| Prepare and transform data | AWS Glue |
+| Run big-data frameworks such as Spark | Amazon EMR |
+| Present business dashboards | QuickSight, the BI service name used in the course |
+
+ETL extracts, transforms, then loads data. ELT loads before transformation. Batch processing groups work; streaming processes arriving events. The Data Catalog stores metadata rather than the dataset itself. A dashboard presents query results; it does not replace the underlying storage or query engine.
+
+For example, put suitable analysis data in S3, describe it in the Glue Data Catalog, and query it with Athena. Preparing that dataset and choosing dashboard permissions remain separate tasks.
+
+Course basis: Module 8, [Introduction to Data Analytics](https://www.coursera.org/learn/aws-cloud-practitioner-essentials/supplement/diDjS/introduction-to-data-analytics), captured 16 October 2026. Current references: [Athena](https://docs.aws.amazon.com/athena/latest/ug/what-is.html) and [Glue Data Catalog](https://docs.aws.amazon.com/glue/latest/dg/catalog-and-crawler.html).
+
 ## AWS documentation review
 
 Reviewed 16 October 2026. Corrected RDS deployment distinctions, Aurora storage and pricing claims, Redshift billing, DocumentDB wording, and retired QLDB guidance.

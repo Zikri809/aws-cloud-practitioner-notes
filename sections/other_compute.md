@@ -191,6 +191,22 @@
 - Batch: run batch jobs on AWS across managed EC2 instances
 - Lightsail: predictable & low pricing for simple application & DB stacks
 
+## Registry, orchestration, and compute
+
+A container image packages an application and its dependencies. A container is a running instance of that image. Three separate decisions describe a container deployment:
+
+| Decision | AWS service |
+| --- | --- |
+| Where to store and retrieve images | Amazon ECR |
+| How to coordinate containers | Amazon ECS, or Amazon EKS for Kubernetes |
+| What supplies execution capacity | Compatible EC2 capacity or AWS Fargate |
+
+For a Kubernetes requirement with supported containers and no host fleet to administer, consider EKS with Fargate. ECR stores the images; it does not schedule or execute them. Compatibility and service restrictions still apply.
+
+In the course's SQS-to-Lambda example, an event source mapping polls the queue and invokes the function with batches. The execution role grants permissions; it is separate from the trigger. Failed processing can cause retries, so processing must account for repeated messages.
+
+Course basis: AWS Cloud Practitioner Essentials, Module 3, captured 16 October 2026. References: [Fargate](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html) and [Using Lambda with SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html).
+
 ## AWS documentation review
 
 Reviewed 16 October 2026. Corrected serverless definitions, EC2 scaling, Lambda runtime and container support, and pricing assumptions.

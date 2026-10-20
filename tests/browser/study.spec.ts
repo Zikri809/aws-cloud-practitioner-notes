@@ -1,6 +1,38 @@
 import { test, expect } from "@playwright/test";
 import fs from "node:fs/promises";
 
+test("detailed lessons, reference notes, exam-task path, and new search content are accessible", async ({
+  page,
+}) => {
+  await page.goto("/notes/cloud_computing");
+  await expect(page.locator("#exam-task-11-cloud-benefits")).toBeVisible();
+  await expect(
+    page.getByText("The course uses a coffee shop:", { exact: false }),
+  ).toBeVisible();
+  await page
+    .locator("article")
+    .getByRole("link", { name: "reference notes", exact: true })
+    .click();
+  await expect(page).toHaveURL(/#reference-notes$/);
+  await expect(page.locator("#reference-notes")).toBeInViewport();
+  await page.goto("/study-guide#detailed-reading-by-exam-task");
+  const links = page.locator('article a[href*="#exam-task-"]');
+  expect(await links.count()).toBe(19);
+  await page
+    .getByRole("link", { name: "3.7 AI, ML, and analytics", exact: true })
+    .click();
+  await expect(
+    page.locator("#exam-task-37-ai-ml-and-analytics"),
+  ).toBeInViewport();
+  await page.getByRole("button", { name: /Search the notes/ }).click();
+  await page
+    .getByRole("textbox", { name: "Search all study notes" })
+    .fill("client-server model");
+  await page.locator('.search-result[href="/notes/cloud_computing"]').click();
+  await expect(page).toHaveURL(/\/notes\/cloud_computing$/);
+  await expect(page.locator("#exam-task-11-cloud-benefits")).toBeVisible();
+});
+
 test("overview, reading, bookmarks, and progress persist after reload", async ({
   page,
 }) => {

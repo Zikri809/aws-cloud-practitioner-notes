@@ -42,6 +42,56 @@ Explain the different jobs of Pricing Calculator, Cost Explorer, Budgets, and mi
 
 Read [Account management, billing, and support](sections/account_management_billing_support.md) and the [official domain 4 objectives](https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02-domain4.html).
 
+## Detailed reading by exam task
+
+The chapters now include the full explanations, worked examples, comparisons, and recall prompts from the course-based exam-task study pack. Some tasks span several chapters; the related-explanation links within each task connect those parts. Each chapter ends with the existing reference notes for revision.
+
+| Domain | Task and starting chapter |
+| --- | --- |
+| Cloud concepts | [1.1 Cloud benefits](sections/cloud_computing.md#exam-task-11-cloud-benefits) |
+| Cloud concepts | [1.2 Cloud design principles](sections/architecting_and_ecosystem.md#exam-task-12-cloud-design-principles) |
+| Cloud concepts | [1.3 Migration strategies and benefits](sections/other_aws_services.md#exam-task-13-migration-strategies-and-benefits) |
+| Cloud concepts | [1.4 Cloud economics](sections/cloud_computing.md#exam-task-14-cloud-economics) |
+| Security and compliance | [2.1 Shared responsibility](sections/cloud_computing.md#exam-task-21-shared-responsibility) |
+| Security and compliance | [2.2 Security governance and compliance](sections/security_compliance.md#exam-task-22-security-governance-and-compliance) |
+| Security and compliance | [2.3 Identity and access management](sections/iam.md#exam-task-23-identity-and-access-management) |
+| Security and compliance | [2.4 Security services and resources](sections/security_compliance.md#exam-task-24-security-services-and-resources) |
+| Cloud technology and services | [3.1 Deploy and operate workloads](sections/deploying.md#exam-task-31-deploy-and-operate-workloads) |
+| Cloud technology and services | [3.2 Global infrastructure](sections/global_infrastructure.md#exam-task-32-global-infrastructure) |
+| Cloud technology and services | [3.3 Compute services](sections/other_compute.md#exam-task-33-compute-services) |
+| Cloud technology and services | [3.4 Database services](sections/databases.md#exam-task-34-database-services) |
+| Cloud technology and services | [3.5 Network services](sections/vpc.md#exam-task-35-network-services) |
+| Cloud technology and services | [3.6 Storage services](sections/s3.md#exam-task-36-storage-services) |
+| Cloud technology and services | [3.7 AI, ML, and analytics](sections/machine_learning.md#exam-task-37-ai-ml-and-analytics) |
+| Cloud technology and services | [3.8 Other service categories](sections/other_aws_services.md#exam-task-38-other-service-categories) |
+| Billing, pricing, and support | [4.1 Pricing models](sections/ec2.md#exam-task-41-pricing-models) |
+| Billing, pricing, and support | [4.2 Billing and cost management](sections/account_management_billing_support.md#exam-task-42-billing-and-cost-management) |
+| Billing, pricing, and support | [4.3 Technical resources and support](sections/account_management_billing_support.md#exam-task-43-technical-resources-and-support) |
+
+The detailed material is an independent adaptation of reconstructed module guides and editorial syllabus expansions. It is not a reproduction of an official assessment or a claim that every paragraph was written by AWS. Personal assessment records are excluded. Service qualifications retain their stated review dates.
+
+## Follow the AWS course sequence
+
+Updated 20 October 2026 using the locally preserved AWS Cloud Practitioner Essentials course on Coursera, captured 16 October 2026. This map connects the thirteen course modules to this site's topic chapters. Chapter additions are independent summaries with source links; reconstructed guides and supplemental exam context are editorial material. The site is not an official AWS course or question bank.
+
+| Course module | Read on this site |
+| --- | --- |
+| 1. Introduction to the Cloud | [Cloud computing](sections/cloud_computing.md) |
+| 2. Compute in the Cloud | [EC2](sections/ec2.md), [load balancing and scaling](sections/elb_asg.md), [integration](sections/cloud_integration.md) |
+| 3. Exploring Compute Services | [Other compute services](sections/other_compute.md) |
+| 4. Going Global | [Global infrastructure](sections/global_infrastructure.md), [deployment](sections/deploying.md) |
+| 5. Networking | [VPC](sections/vpc.md) |
+| 6. Storage | [EC2 storage](sections/ec2_storage.md), [S3](sections/s3.md) |
+| 7. Databases | [Databases and analytics](sections/databases.md) |
+| 8. AI/ML and Data Analytics | [Machine learning](sections/machine_learning.md), [analytics](sections/databases.md#from-stored-data-to-analytics), [data pipelines](sections/cloud_integration.md#following-a-data-pipeline) |
+| 9. Security | [IAM](sections/iam.md), [advanced identity](sections/advanced_identity.md), [security and compliance](sections/security_compliance.md) |
+| 10. Monitoring, Compliance, and Governance | [Monitoring](sections/cloud_monitoring.md), [security and compliance](sections/security_compliance.md) |
+| 11. Pricing and Support | [Billing, pricing, and support](sections/account_management_billing_support.md) |
+| 12. Migrating to the AWS Cloud | [CAF and migration strategies](sections/architecting_and_ecosystem.md#cloud-adoption-and-migration-decisions), [other services](sections/other_aws_services.md) |
+| 13. Well-Architected Solutions | [Architecture and ecosystem](sections/architecting_and_ecosystem.md) |
+
+Source course: [AWS Cloud Practitioner Essentials on Coursera](https://www.coursera.org/learn/aws-cloud-practitioner-essentials). Course recordings can retain older service names, limits, and support plans. Use the dated AWS documentation review notes in each chapter for those distinctions, and consult live AWS documentation before making operational decisions.
+
 ## Working through this collection
 
 Read a chapter, follow its AWS references, then answer a practice set without opening the answer. Review why each selected choice meets the scenario. Revisit mistakes in the linked documentation rather than memorizing letters.
