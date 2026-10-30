@@ -7,6 +7,7 @@ import {
   BookOpen,
   LayoutDashboard,
   ClipboardList,
+  Target,
   Bookmark,
   Network,
   ArrowUpRight,
@@ -22,6 +23,7 @@ const navigation = [
   { href: "/", label: "Overview", icon: LayoutDashboard },
   { href: "/notes", label: "Study notes", icon: BookOpen },
   { href: "/practice", label: "Practice exams", icon: ClipboardList },
+  { href: "/final-sprint", label: "Final sprint", icon: Target },
   { href: "/bookmarks", label: "Bookmarks", icon: Bookmark },
   { href: "/topic-map", label: "Topic map", icon: Network },
 ];

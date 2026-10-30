@@ -1,0 +1,64 @@
+.introduction {
+  max-width: 1030px;
+  margin: 0 auto 30px;
+}
+
+.materials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.materials a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: var(--muted);
+  background: var(--surface);
+}
+
+.materials a:hover {
+  color: var(--text);
+  background: var(--raised);
+}
+
+.materials a[aria-current="page"] {
+  color: var(--accent);
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+
+.main {
+  min-width: 0;
+}
+
+.document :global(.prose table) {
+  font-size: 14px;
+}
+
+.document :global(.prose td),
+.document :global(.prose th) {
+  min-width: 170px;
+}
+
+.document :global(.prose td:first-child),
+.document :global(.prose th:first-child) {
+  min-width: 110px;
+}
+
+.document :global(.prose summary) {
+  min-height: 44px;
+  display: list-item;
+  align-content: center;
+}
+
+.document :global(.prose details[open] summary) {
+  margin-bottom: 12px;
+}
+
+.document :global(.prose details p:last-child) {
+  margin-bottom: 0;
+}

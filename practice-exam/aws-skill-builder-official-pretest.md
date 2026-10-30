@@ -1,0 +1,2966 @@
+# AWS Skill Builder — Official Pretest
+
+AWS Certified Cloud Practitioner (CLF-C02)
+
+## Assessment results
+
+- Outcome: Passed
+- Score: 86%
+- Attempt: 1
+- Correct answers: 56
+- Incorrect answers: 9
+- Skipped: 0
+- Total time: 24 minutes 21 seconds
+- Average time per question: 22 seconds
+
+Extracted from the supplied assessment results. AWS wording and explanations are preserved. Navigation and repeated table headings are removed. Reference labels are retained; the paste did not include their URLs.
+
+## Questions, answers, and explanations
+
+### Question 1
+
+**Type:** Multiple Choice · **Time:** 13 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+Which AWS Cloud service should be used to run a self-managed relational database?
+
+**Correct answer(s):** A
+
+**Your selection(s):** A
+
+#### A. Amazon EC2
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Amazon EC2 provides a virtual computing environment that can host a wide variety of applications, which includes relational databases.
+
+Learn more about how to host a relational database on an EC2 instance .
+
+#### B. Amazon DynamoDB
+
+**Correct answer:** No · **Your selection:** Not selected
+
+DynamoDB is a fully managed NoSQL database service. DynamoDB is not a relational database service.
+
+Learn more about how DynamoDB differs from relational databases .
+
+#### C. Amazon ElastiCache
+
+**Correct answer:** No · **Your selection:** Not selected
+
+ElastiCache is a distributed in-memory data cache. Although ElastiCache can cache data stored within a relational database, ElastiCache is not a relational database.
+
+Learn more about ElastiCache .
+
+#### D. Amazon Route 53
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Route 53 is a highly available and scalable DNS web service. You should use Route 53 to perform domain registration, DNS routing, and health checks. Route 53 is not a relational database service.
+
+Learn more about Route 53 .
+
+### Question 2
+
+**Type:** Multiple Choice · **Time:** 6 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+A company is going through a compliance inspection for ISO 27017. Which AWS service or tool can the company use to download the ISO certifications?
+
+**Correct answer(s):** C
+
+**Your selection(s):** C
+
+#### A. AWS Shield
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Shield provides protection against common DDoS attacks. Shield does not provide artifacts for compliance.
+
+Learn more about Shield .
+
+#### B. AWS Trusted Advisor
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Trusted Advisor is a best practices recommendation tool that first inspects your AWS account and environment. Then, Trusted Advisor provides recommendations for improvement. However, Trusted Advisor does not provide artifacts for ISO inspection.
+
+Learn more about Trusted Advisor .
+
+#### C. AWS Artifact
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+You can use AWS Artifact to download AWS security and compliance documents. Some of the available security and compliance documents include AWS ISO certifications, Payment Card Industry (PCI) reports, and System and Organization Control (SOC) reports.
+
+Learn more about AWS Artifact .
+
+#### D. AWS Well-Architected Tool (AWS WA Tool)
+
+**Correct answer:** No · **Your selection:** Not selected
+
+The AWS WA Tool is a best practice recommendation tool. You can use the AWS WA Tool to identify areas to improve workloads. For example, you can align with best practices, become more cost effective, and become more reliable. However, the AWS WA Tool does not provide artifacts for ISO inspection.
+
+Learn more about the AWS WA Tool .
+
+### Question 3
+
+**Type:** Multi-Select · **Time:** 11 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+A company wants to enhance security for AWS Identity and Access Management (IAM) users in an AWS account. Which methods should be used to add security to IAM users?
+
+**Correct answer(s):** B, C
+
+**Your selection(s):** B, C
+
+#### A. Use AWS Shield protected resources.
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Shield is used to protect against distributed denial of service (DDoS) attacks. It does not add security to IAM users.
+
+Learn more about Shield .
+
+#### B. Enforce password strength and expiration.
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+To protect long-term security credentials, you can rotate and expire passwords or access keys. Enforcing password policies can ensure that passwords are rotated frequently and can require complexity, which strengthens credentials.
+
+Learn more about IAM user password policies .
+
+#### C. Use multi-factor authentication (MFA).
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Using MFA is a best practice because it requires an additional authentication challenge, typically in the form of a key or code. The keys or codes are generated by another device and can increase security for IAM credentials.
+
+Learn more about MFA .
+
+#### D. Block access with security groups.
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Security groups are used for network-based access to act as a virtual firewall. Security groups do not add security to IAM users.
+
+Learn more about Amazon EC2 security groups .
+
+#### E. Implement Amazon Rekognition.
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon Rekognition is used to analyze pictures and videos. It does not add security to IAM users.
+
+Learn more about Amazon Rekognition .
+
+### Question 4
+
+**Type:** Multiple Choice · **Time:** 11 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+A company needs to establish an AWS Site-to-Site VPN tunnel. Which type of gateway should the company use?
+
+**Correct answer(s):** D
+
+**Your selection(s):** D
+
+#### A. NAT gateway
+
+**Correct answer:** No · **Your selection:** Not selected
+
+You can use a NAT gateway to establish a connection for instances in a private subnet within a VPC. NAT gateways give instances the ability to connect to resources or services outside of the VPC. However, NAT gateways do not establish connections to Site-to-Site VPN tunnels.
+
+Learn more about NAT gateways .
+
+#### B. AWS Direct Connect gateway
+
+**Correct answer:** No · **Your selection:** Not selected
+
+A Direct Connect gateway can establish a connection from on-premises sites to the AWS Cloud. A Direct Connect gateway uses dedicated links that are isolated from the internet. However, Direct Connect gateways do not establish connections to Site-to-Site VPN tunnels.
+
+Learn more about Direct Connect gateways .
+
+#### C. Internet gateway
+
+**Correct answer:** No · **Your selection:** Not selected
+
+You can use an internet gateway to establish public internet connections for an Amazon VPC. However, internet gateways do not establish connections to Site-to-Site VPN tunnels.
+
+Learn more about internet gateways .
+
+#### D. Virtual private gateway
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+You can use a virtual private gateway to establish connections to the AWS Cloud for on-premises sites through Site-to-Site VPN tunnels.
+
+Learn more about Site-to-Site VPN .
+
+### Question 5
+
+**Type:** Multiple Choice · **Time:** 16 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+Which AWS service or feature will automatically scale with an expected increase in web traffic?
+
+**Correct answer(s):** A
+
+**Your selection(s):** A
+
+#### A. Elastic Load Balancing (ELB)
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+ELB automatically distributes incoming application traffic across multiple targets. The targets can include Amazon EC2 instances, containers, IP addresses, AWS Lambda functions, and virtual appliances. ELB is a fully managed service. Therefore, you can focus on the delivery of applications, instead of the installation of fleets of load balancers. ELBs automatically add or remove capacity based on the usage of the underlying application servers.
+
+Learn more about ELB .
+
+#### B. AWS CodePipeline
+
+**Correct answer:** No · **Your selection:** Not selected
+
+CodePipeline is a fully managed continuous delivery service. CodePipeline helps you automate your release pipelines for fast and reliable application and infrastructure updates. You can use CodePipeline to release your web application. However, CodePipeline does not scale web traffic.
+
+Learn more about CodePipeline .
+
+#### C. AWS Direct Connect
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Direct Connect gives you the ability to establish a dedicated network connection from on premises to AWS. With Direct Connect, you can establish a private connection between AWS and your data center, office, or colocation environment. Direct Connect does not automatically scale web servers.
+
+Learn more about Direct Connect .
+
+#### D. Amazon Elastic Block Store (Amazon EBS)
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon EBS provides high-performance, block-storage volumes that you can use with Amazon EC2. However, Amazon EBS is a storage service. Amazon EBS does not automatically scale web servers.
+
+Learn more about Amazon EBS .
+
+### Question 6
+
+**Type:** Multiple Choice · **Time:** 14 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+A company is reviewing the current costs of running its own infrastructure on premises. The company wants to compare these on-premises costs to the costs of running infrastructure in the AWS Cloud. How should the company make this comparison?
+
+**Correct answer(s):** D
+
+**Your selection(s):** D
+
+#### A. Analyze the AWS Well-Architected Framework.
+
+**Correct answer:** No · **Your selection:** Not selected
+
+The Well-Architected Framework is a guide for best practices for building infrastructure on AWS. The Well-Architected Framework would not specifically help the company compare existing costs to AWS costs.
+
+Learn more about the Well-Architected Framework .
+
+#### B. Audit existing software and hardware licensing costs.
+
+**Correct answer:** No · **Your selection:** Not selected
+
+You should audit existing software and hardware costs as part of this analysis. However, to audit licensing costs does not provide a full analysis of migration to the cloud. Instead, you should compare all existing costs to AWS costs.
+
+Learn more about how to estimate AWS costs .
+
+#### C. Review the AWS shared responsibility model.
+
+**Correct answer:** No · **Your selection:** Not selected
+
+The shared responsibility model outlines the security responsibilities of both AWS and the customer. The shared responsibility model does not include the costs of running an on-premises environment.
+
+Learn more about the shared responsibility model .
+
+#### D. Use Migration Evaluator.
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Migration Evaluator will give you the ability to compare current environment costs to the costs of running in the AWS Cloud. Migration Evaluator monitors and collects information about your on-premises infrastructure. Then, Migration Evaluator compares that information to running the same infrastructure in the AWS Cloud.
+
+Learn more about Migration Evaluator .
+
+Learn more about Migration Evaluator features .
+
+### Question 7
+
+**Type:** Multi-Select · **Time:** 10 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+A company is developing a mobile app that needs a high-performance NoSQL database. Which AWS services could the company use for this database?
+
+**Correct answer(s):** B, E
+
+**Your selection(s):** B, E
+
+#### A. Amazon Redshift
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon Redshift is a fully managed, petabyte-scale data warehouse. Amazon Redshift does not support a NoSQL database.
+
+Learn more about Amazon Redshift .
+
+#### B. Amazon DocumentDB (with MongoDB compatibility)
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Amazon DocumentDB is a fully managed NoSQL database. Amazon DocumentDB can store and query data that supports native JSON format.
+
+Learn more about Amazon DocumentDB .
+
+#### C. Amazon RDS
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon RDS is a managed database service that supports the relational database engines MySQL, PostgreSQL, MariaDB, Oracle, and SQL Server. Amazon RDS does not support a NoSQL database.
+
+Learn more about Amazon RDS .
+
+#### D. Amazon Aurora
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Aurora is a relational database engine that is compatible with MySQL and PostgreSQL. Aurora does not support a NoSQL database.
+
+Learn more about Aurora .
+
+#### E. Amazon DynamoDB
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+DynamoDB is a fully managed NoSQL database service designed for fast and predictable performance with seamless scalability. DynamoDB provides single-digit millisecond performance at any scale.
+
+Learn more about DynamoDB .
+
+### Question 8
+
+**Type:** Multiple Choice · **Time:** 14 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+A cloud practitioner needs an Amazon EC2 instance to launch and run for 7 hours without interruptions. What is the MOST cost-effective option for this task?
+
+**Correct answer(s):** C
+
+**Your selection(s):** C
+
+#### A. Dedicated Host
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Dedicated Hosts provide you with a physical server to use EC2 capacity. Dedicated Hosts cost more than On-Demand Instances. Therefore, Dedicated Hosts are not a cost-effective option for a workload that only needs to run for 7 hours. Dedicated Hosts are well suited to situations in which you want to use existing software licenses on AWS for individual sockets, cores, or virtual machines (VMs).
+
+Learn more about Dedicated Hosts .
+
+#### B. Spot Instance
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Spot Instances are available at a discount. However, the instance can be stopped if demand from other customers increase and there is not enough capacity. Spot Instances are well suited for workloads that can be interrupted without any impact.
+
+Learn more about Spot Instances .
+
+#### C. On-Demand Instance
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+You should use On-Demand Instances for short-term, uninterrupted workloads. The user controls the lifecycle of an On-Demand Instance. You only pay for the time that the instance is running.
+
+Learn more about On-Demand Instances .
+
+#### D. Reserved Instance
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Reserved Instances have a minimum 1-year commitment. Therefore, this option is not cost-effective for a workload that only needs to run for 7 hours.
+
+Learn more about Reserved Instances .
+
+### Question 9
+
+**Type:** Multiple Choice · **Time:** 9 seconds · **Result:** Incorrect
+
+**Confidence level:** Confident
+
+A company does not own a physical data center but needs a network solution that connects employee laptops directly to the AWS Cloud. Which AWS service will meet this requirement?
+
+**Correct answer(s):** D
+
+**Your selection(s):** C
+
+#### A. AWS Direct Connect
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Direct Connect links your internal network to a Direct Connect location through a standard Ethernet fiber-optic cable. One end of the cable connects to your router. The other end of the cable connects to a Direct Connect router. Direct Connect provides a network level connection to AWS from on-premises data centers, not from laptops.
+
+Learn more about Direct Connect .
+
+#### B. AWS Site-to-Site VPN
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Site-to-Site VPN creates an encrypted network path between your on-premises network and your AWS Cloud network. This connection uses the internet. Site-to-Site VPN provides a network level connection to AWS from on-premises data centers, not from laptops.
+
+Learn more about Site-to-Site VPN .
+
+#### C. Amazon Connect
+
+**Correct answer:** No · **Your selection:** Selected
+
+Amazon Connect is an omnichannel cloud contact center that helps you provide superior customer service at a lower cost. Amazon Connect provides a seamless experience across voice and chat for your customers and agents. Amazon Connect is not a service that connects an on-premises network to AWS.
+
+Learn more about Amazon Connect .
+
+#### D. AWS Client VPN
+
+**Correct answer:** Yes · **Your selection:** Not selected
+
+Client VPN is a managed client-based VPN service that gives you the ability to securely access your AWS resources and the resources in your on-premises network. With Client VPN, you can access your resources from any location through an OpenVPN-based VPN client.
+
+Learn more about Client VPN .
+
+### Question 10
+
+**Type:** Multiple Choice · **Time:** 12 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+How should Reserved Instances be shared across multiple AWS accounts?
+
+**Correct answer(s):** D
+
+**Your selection(s):** D
+
+#### A. AWS Cost Explorer activated on all AWS accounts
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Cost Explorer is a tool that provides viewing and analysis of costs and usage in an AWS account. It does not provide account sharing of Reserved Instances.
+
+Learn more about Cost Explorer .
+
+#### B. IAM cross-account roles
+
+**Correct answer:** No · **Your selection:** Not selected
+
+IAM roles are an IAM identity with specific permissions intended to be assumable by anyone who needs it. IAM roles can be shared across accounts, but do not inherently give the ability to share Reserved Instances.
+
+Learn more about IAM roles .
+
+#### C. AWS Compute Optimizer activated on all AWS accounts
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Compute Optimizer is a service that analyzes the configuration and utilization metrics of AWS resources. Compute Optimizer reports whether resources are optimal, and generates optimization recommendations to reduce the cost and improve the performance of workloads. Compute Optimizer does not provide account sharing of Reserved Instances.
+
+Learn more about Compute Optimizer .
+
+#### D. AWS Organizations consolidated billing
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+For billing purposes, the consolidated billing feature of AWS Organizations treats all the accounts in the organization as one account. This means that all accounts in the organization can receive the hourly cost benefit of Reserved Instances that are purchased by any other account.
+
+Learn more about how to share Reserved Instances using AWS Organizations .
+
+### Question 11
+
+**Type:** Multiple Choice · **Time:** 8 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+A company hosts a website on an Amazon EC2 instance. The company wants to reduce latency for global users of the website. Which AWS service will meet this requirement?
+
+**Correct answer(s):** B
+
+**Your selection(s):** B
+
+#### A. AWS Outposts
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Outposts is a fully managed service that extends AWS infrastructure, services, APIs, and tools to customer premises. Outposts provides local access to AWS managed infrastructure. Outposts gives users the ability to build and run applications on premises by using the same programming interfaces as in AWS Regions. Outposts uses local compute and storage resources for lower latency and local data processing needs. Outposts might reduce latency to local users but not for global users.
+
+Learn more about Outposts .
+
+#### B. Amazon CloudFront
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+CloudFront is a web service that speeds up distribution of your static and dynamic web content, such as .html, .css, .js, and image files, to your users. CloudFront delivers your content through a worldwide network of data centers known as edge locations. A user requests content that you serve through CloudFront. CloudFront routes the request to the edge location that will provide the lowest latency.
+
+Learn more about CloudFront .
+
+#### C. AWS Elastic Beanstalk
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Elastic Beanstalk is used to deploy and scale web applications. Elastic Beanstalk can automate the application deployment process. However, Elastic Beanstalk does not address global latency reduction.
+
+Learn more about Elastic Beanstalk .
+
+#### D. AWS CloudFormation
+
+**Correct answer:** No · **Your selection:** Not selected
+
+CloudFormation is a service that helps you model and set up your AWS resources. CloudFormation can help you reduce the time necessary to manage resources so you can focus on the applications that you run on AWS. You create a template that describes all the AWS resources that you want. CloudFormation provides and configures those resources for you. CloudFormation does not reduce latency for global users.
+
+Learn more about CloudFormation .
+
+### Question 12
+
+**Type:** Multiple Choice · **Time:** 25 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+Which AWS service helps users meet contractual and regulatory compliance requirements for data security by using dedicated hardware appliances within the AWS Cloud?
+
+**Correct answer(s):** D
+
+**Your selection(s):** D
+
+#### A. AWS Key Management Service (AWS KMS)
+
+**Correct answer:** No · **Your selection:** Not selected
+
+AWS KMS is a managed service to create and control the encryption keys used to encrypt your data. AWS KMS does not provide dedicated hardware appliances.
+
+Learn more about AWS KMS .
+
+#### B. AWS Directory Service
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Directory Service is a managed Microsoft Active Directory service. Directory Service does not provide dedicated hardware appliances.
+
+Learn more about Directory Service .
+
+#### C. AWS Secrets Manager
+
+**Correct answer:** No · **Your selection:** Not selected
+
+With Secrets Manager, you can rotate, manage, and retrieve database credentials, API keys, and other secrets throughout their lifecycle. Secrets Manager does not provide dedicated hardware appliances.
+
+Learn more about Secrets Manager .
+
+#### D. AWS CloudHSM
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+CloudHSM helps you comply with corporate, contractual, and regulatory compliance requirements for data security by using dedicated hardware security module (HSM) appliances within the AWS Cloud.
+
+Learn more about CloudHSM .
+
+### Question 13
+
+**Type:** Multiple Choice · **Time:** 44 seconds · **Result:** Incorrect
+
+**Confidence level:** Educated guess
+
+A company is developing a new application that will be hosted in the AWS Cloud. The company needs to make changes to the application and the AWS resources that it uses. What is a characteristic of the AWS Cloud that would meet this requirement?
+
+**Correct answer(s):** D
+
+**Your selection(s):** A
+
+#### A. Elasticity
+
+**Correct answer:** No · **Your selection:** Selected
+
+Elasticity is the ability to acquire resources as you need them and release resources when you no longer need them.
+
+Learn more about elasticity .
+
+#### B. Performance
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Performance is the ability to use resources efficiently and optimize the performance even as demand changes.
+
+Learn more about performance efficiency .
+
+#### C. Reliability
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Reliability is the ability of an application to perform its intended function correctly and consistently. This characteristic includes the ability to recover from failure and scale horizontally.
+
+Learn more about reliability .
+
+#### D. Agility
+
+**Correct answer:** Yes · **Your selection:** Not selected
+
+Agility is the ability to deploy resources, such as computing, storage, or databases, in a matter of minutes.
+
+Learn more about the advantages of cloud computing .
+
+### Question 14
+
+**Type:** Multiple Choice · **Time:** 14 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+A company requires physical isolation of its Amazon EC2 instances from the instances of other customers. Which instance purchasing option meets this requirement?
+
+**Correct answer(s):** C
+
+**Your selection(s):** C
+
+#### A. Reserved Instances
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Reserved Instances are not physical instances. Reserved Instances are a billing discount applied to the use of On-Demand Instances in your account. Reserved Instances do not provide physical workload isolation.
+
+Learn more about Reserved Instances .
+
+#### B. Spot Instances
+
+**Correct answer:** No · **Your selection:** Not selected
+
+With Spot Instances, you can take advantage of unused EC2 capacity in the AWS Cloud. Spot Instances do not provide physical workload isolation.
+
+Learn more about Spot Instances .
+
+#### C. Dedicated Hosts
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+With Dedicated Hosts, a physical server is dedicated for your use. Dedicated Hosts provide visibility and the option to control how you place your instances on an isolated, physical server.
+
+Learn more about Dedicated Hosts .
+
+#### D. On-Demand Instances
+
+**Correct answer:** No · **Your selection:** Not selected
+
+With On-Demand Instances, you pay for compute capacity by the second with no long-term commitments. On-Demand Instances do not provide physical workload isolation.
+
+Learn more about On-Demand Instances .
+
+### Question 15
+
+**Type:** Multiple Choice · **Time:** 24 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+A company needs to deploy an Amazon EC2 instance and attach a storage mount for the operating system and application files. Which AWS service will meet these requirements?
+
+**Correct answer(s):** B
+
+**Your selection(s):** B
+
+#### A. Amazon S3
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon S3 is an object-based storage with unlimited scalability. You cannot use Amazon S3 to mount operating system files for EC2 instances.
+
+Learn more about Amazon S3 .
+
+#### B. Amazon Elastic Block Store (Amazon EBS)
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Amazon EBS is a high-performance block-storage service that you can use with EC2 instances. You can use Amazon EBS to mount operating system and application files.
+
+Learn more about Amazon EBS .
+
+#### C. AWS Backup
+
+**Correct answer:** No · **Your selection:** Not selected
+
+AWS Backup is a fully managed service that automates and centralizes backups of data from multiple AWS storage services and on-premises storage systems. AWS Backup does not provide a storage mount for operating system and application files.
+
+Learn more about AWS Backup .
+
+#### D. Amazon Elastic File System (Amazon EFS)
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon EFS provides a serverless, fully scalable shared file system. You cannot use Amazon EFS to mount operating system files for EC2 instances.
+
+Learn more about Amazon EFS .
+
+### Question 16
+
+**Type:** Multiple Choice · **Time:** 7 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+A company wants to increase its ability to recover its infrastructure in the case of a natural disaster. Which pillar of the AWS Well-Architected Framework does this ability represent?
+
+**Correct answer(s):** A
+
+**Your selection(s):** A
+
+#### A. Reliability
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+The reliability pillar provides the ability to recover from failure—even in the case of a natural disaster.
+
+Learn more about the reliability pillar .
+
+#### B. Security
+
+**Correct answer:** No · **Your selection:** Not selected
+
+The security pillar provides the ability to secure workloads and their data in the cloud.
+
+Learn more about the security pillar .
+
+#### C. Performance efficiency
+
+**Correct answer:** No · **Your selection:** Not selected
+
+The performance efficiency pillar provides the ability to efficiently run workloads by using the correct resources.
+
+Learn more about the performance efficiency pillar .
+
+#### D. Cost optimization
+
+**Correct answer:** No · **Your selection:** Not selected
+
+The cost optimization pillar provides the ability to run workloads in the most cost-effective way.
+
+Learn more about the cost optimization pillar .
+
+### Question 17
+
+**Type:** Multiple Choice · **Time:** 13 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+Which AWS service helps users to collect, process, and analyze real-time streaming data from sources including operating logs, financial transactions, and social media feeds?
+
+**Correct answer(s):** B
+
+**Your selection(s):** B
+
+#### A. Amazon Athena
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Athena is an interactive query service that gives you the ability to analyze data in Amazon S3 by using standard SQL. You can use Athena to query data that was already collected. Therefore, Athena can help you analyze data. However, Athena does not provide a way to collect or process real-time streaming data.
+
+Learn more about Athena .
+
+#### B. Amazon Kinesis
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Kinesis gives you the ability to collect, process, and analyze real-time streaming data. Kinesis provides timely insights so that you can react quickly to new information. Kinesis can ingest real-time data from video, audio, application logs, and website clickstreams. Additionally, Kinesis can ingest IoT telemetry data for machine learning, analytics, and other applications. Kinesis gives you the ability to process and analyze data when the data arrives. Then, you can respond instantly. You do not have to wait until all your data is collected before you can process the data.
+
+Learn more about Kinesis .
+
+Learn more about Kinesis Data Streams .
+
+#### C. AWS Direct Connect
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Direct Connect is a service that gives you the ability to establish a private fiber network connection to AWS from an on-premises data center. With Direct Connect, you can send information to and from AWS through your connection. However, Direct Connect does not specifically help users to collect, process, or analyze real-time streaming data. Direct Connect does not include any software to help streaming use cases.
+
+Learn more about Direct Connect .
+
+#### D. Amazon Redshift
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon Redshift is a fast and scalable data warehouse that gives you the ability to analyze all of your data across your data warehouse and data lake. Amazon Redshift gives you the ability to analyze data that was collected from real-time sources. However, Amazon Redshift does not provide a way to collect or process real-time streaming data.
+
+Learn more about Amazon Redshift .
+
+### Question 18
+
+**Type:** Multi-Select · **Time:** 13 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+Within the AWS shared responsibility model, which activities are the user's responsibility?
+
+**Correct answer(s):** C, E
+
+**Your selection(s):** C, E
+
+#### A. Maintain environmental controls within a data center.
+
+**Correct answer:** No · **Your selection:** Not selected
+
+AWS is responsible for everything that happens in the data center.
+
+Learn more about the AWS shared responsibility model .
+
+#### B. Patch operating system components for Amazon RDS.
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon RDS is fully managed by AWS. Therefore, AWS is responsible for the operating system.
+
+Learn more about the AWS shared responsibility model .
+
+#### C. Encrypt data on the client side.
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Users are responsible for data management (which includes encryption options), asset classification, and the use of IAM tools to apply the correct permissions.
+
+Learn more about the AWS shared responsibility model .
+
+Learn more about security in the shared responsibility model .
+
+#### D. Train the data center staff.
+
+**Correct answer:** No · **Your selection:** Not selected
+
+AWS is responsible for training the data center staff.
+
+Learn more about security in the shared responsibility model .
+
+#### E. Configure network access control lists (ACLs).
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+The user is responsible for the configuration of the AWS provided security controls, which includes security groups and network ACLs.
+
+Learn more about the AWS shared responsibility model .
+
+Learn more about security in the shared responsibility model .
+
+### Question 19
+
+**Type:** Multiple Choice · **Time:** 31 seconds · **Result:** Incorrect
+
+**Confidence level:** Unsure
+
+Which perspective of the AWS Cloud Adoption Framework (AWS CAF) connects technology and business?
+
+**Correct answer(s):** B
+
+**Your selection(s):** C
+
+#### A. Security
+
+**Correct answer:** No · **Your selection:** Not selected
+
+The security perspective helps to ensure the confidentiality, integrity, and availability of your data and workloads in the AWS Cloud. This perspective does not connect technology and business.
+
+Learn more about the security perspective .
+
+#### B. People
+
+**Correct answer:** Yes · **Your selection:** Not selected
+
+The people perspective helps transform your cloud migration with continuous learning. This perspective connects technology and business.
+
+Learn more about the people perspective .
+
+#### C. Operations
+
+**Correct answer:** No · **Your selection:** Selected
+
+The operations perspective helps ensure that your cloud services meet your business needs. This perspective does not connect technology and business.
+
+Learn more about the operations perspective .
+
+#### D. Governance
+
+**Correct answer:** No · **Your selection:** Not selected
+
+The governance perspective helps you to achieve your cloud goals and to maximize your benefits. The governance perspective also minimizes the risks of transitions to the AWS Cloud. This perspective does not connect technology and business.
+
+Learn more about the governance perspective .
+
+### Question 20
+
+**Type:** Multiple Choice · **Time:** 9 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+A Cloud Practitioner needs to recommend a data visualization tool for analysts to use to create user-friendly business intelligence insights. Which AWS service should the Cloud Practitioner recommend?
+
+**Correct answer(s):** B
+
+**Your selection(s):** B
+
+#### A. Amazon Comprehend
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon Comprehend is a natural language processing and machine learning service that can extract and summarize meaning from text samples. Amazon Comprehend is not a data visualization tool that can be used for business intelligence insights.
+
+Learn more about Amazon Comprehend .
+
+#### B. Amazon QuickSight
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+QuickSight is a business intelligence service used for data visualization. You can combine data from multiple services into one dashboard, which can deliver insights on your data more quickly.
+
+Learn more about QuickSight .
+
+#### C. Amazon Rekognition
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon Rekognition is a service used for image recognition. You can use Amazon Rekognition to identify objects, people, text, and more in an image or video. Amazon Rekognition is not a data visualization tool that can be used for business intelligence insights.
+
+Learn more about Amazon Rekognition .
+
+#### D. AWS X-Ray
+
+**Correct answer:** No · **Your selection:** Not selected
+
+X-Ray is a service used to identify and debug applications, as well as to discover opportunities for optimization in your application servers. X-Ray is not used as a data visualization tool for business intelligence insights.
+
+Learn more about X-Ray .
+
+### Question 21
+
+**Type:** Multiple Choice · **Time:** 35 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+A company is migrating its on-premises application to Amazon EC2 instances. The application has constant and predictable usage. The application must be available at all times. Which EC2 instance purchasing option is the MOST cost-effective for this application?
+
+**Correct answer(s):** D
+
+**Your selection(s):** D
+
+#### A. Spot Instance
+
+**Correct answer:** No · **Your selection:** Not selected
+
+A Spot Instance is an instance that uses unused EC2 capacity and is recommended for flexible workloads that can be interrupted. Although Spot Instances provide a discount, they only run when capacity is available. Therefore, a Spot Instance would not meet the requirement for an application that must be available at all times.
+
+Learn more about Spot Instances .
+
+#### B. On-Demand Instance
+
+**Correct answer:** No · **Your selection:** Not selected
+
+With an On-Demand Instance, you pay for compute capacity by the second with no long-term commitments. Although this purchasing option would work for the requirements, it is not the most cost-effective option because you do not receive any discounts for a specific usage amount.
+
+Learn more about On-Demand Instances .
+
+#### C. Dedicated Instance
+
+**Correct answer:** No · **Your selection:** Not selected
+
+A Dedicated Instance is an EC2 instance that runs on hardware that is dedicated to a single user. Dedicated hardware is not a requirement for the company that is migrating its application. Dedicated hardware does not provide any cost savings. Therefore, a Dedicated Instance is not the most cost-effective option.
+
+Learn more about Dedicated Instances .
+
+#### D. Savings Plan
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+With a Savings Plan, you can receive a discount if you commit to a specific amount of compute power for a one- or three-year period. Because the company's application has constant and predictable usage, the Savings Plan is the most cost-effective option being that the plan provides a discount on compute power that you know you will use.
+
+Learn more about Savings Plans .
+
+### Question 22
+
+**Type:** Multiple Choice · **Time:** 12 seconds · **Result:** Correct
+
+**Confidence level:** Educated guess
+
+Which AWS hybrid storage service enables a user's on-premises applications to seamlessly use AWS Cloud storage?
+
+**Correct answer(s):** B
+
+**Your selection(s):** B
+
+#### A. Amazon Connect
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon Connect is not a storage service, it is an omnichannel cloud contact center service. Amazon Connect is used to set up a contact center for users.
+
+Learn more about Amazon Connect .
+
+#### B. AWS Storage Gateway
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Storage Gateway is a hardware device or virtual software appliance used for hybrid cloud storage with local caching. Applications can benefit from Cloud storage solutions such as Amazon S3 or Amazon Elastic File System without changing storage protocols or technology.
+
+Learn more about Storage Gateway .
+
+#### C. AWS Backup
+
+**Correct answer:** No · **Your selection:** Not selected
+
+AWS Backup can be used to back up on-premises storage of virtual machines and storage gateway volumes. However, on-premises applications cannot seamlessly use AWS Backup for storage. AWS Backup provides a centralized console to automate and manage backups across AWS compute, database, and storage services.
+
+Learn more about AWS Backup .
+
+#### D. AWS Direct Connect
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Direct Connect is not a storage service. Direct Connect is a low-latency, dedicated network connection used to connect an on-premises data center with an AWS location.
+
+Learn more about Direct Connect .
+
+### Question 23
+
+**Type:** Multiple Choice · **Time:** 9 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+Which AWS service or feature gives a company the ability to analyze AWS costs and usage over time?
+
+**Correct answer(s):** D
+
+**Your selection(s):** D
+
+#### A. AWS Budgets
+
+**Correct answer:** No · **Your selection:** Not selected
+
+AWS Budgets gives you the ability to set custom budgets that send an alert to you when your costs or AWS usage exceeds (or are forecasted to exceed) your budgeted amount. AWS Budgets does not provide you the ability to analyze your AWS cost and usage over time.
+
+Learn more about AWS Budgets .
+
+#### B. Consolidated billing
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Although you can use the consolidated billing feature in AWS Organizations to consolidate payment for multiple AWS accounts or multiple Amazon Internet Services Private Limited (AISPL) accounts, this feature does not give you the ability to analyze cost and usage over time.
+
+Learn more about consolidated billing in AWS Organizations .
+
+#### C. AWS Organizations
+
+**Correct answer:** No · **Your selection:** Not selected
+
+AWS Organizations is a service to consolidate multiple AWS accounts into an organization. You can use AWS Organizations to consolidate billing and take advantage of volume pricing discounts. However, AWS Organizations does not provide cost and usage analysis.
+
+Learn more about AWS Organizations .
+
+#### D. AWS Cost Explorer
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Cost Explorer has an interface that gives you the ability to analyze your AWS costs and usage over time. You can use Cost Explorer to view costs by month, AWS service, or tag group. This service can be used to visually understand cost and usage trends over time.
+
+Learn more about Cost Explorer .
+
+### Question 24
+
+**Type:** Multiple Choice · **Time:** 29 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+What is a benefit of the pay-as-you-go pricing model for AWS services?
+
+**Correct answer(s):** A
+
+**Your selection(s):** A
+
+#### A. Reduces fixed costs
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+With AWS Cloud computing, you can trade fixed costs for variable costs by only paying for the resources that you use.
+
+Learn more about cloud computing .
+
+#### B. Relevant only for Amazon EC2, Amazon S3, and Amazon RDS
+
+**Correct answer:** No · **Your selection:** Not selected
+
+AWS offers pay-as-you-go pricing for more than 200 services.
+
+Learn more about AWS pricing .
+
+#### C. Requires payment up front for AWS services
+
+**Correct answer:** No · **Your selection:** Not selected
+
+AWS provides services on an as-needed basis. AWS services are billed monthly. Reserved Instances provide a greater discount if you pay in advance. However, Reserved Instances are not part of the pay-as-you-go model.
+
+Learn more about cloud computing .
+
+#### D. Reduces variable costs
+
+**Correct answer:** No · **Your selection:** Not selected
+
+With AWS Cloud computing, you can trade fixed costs for variable costs. Additionally, the variable costs might be lower than what you would pay otherwise because of economies of scale.
+
+Learn more about cloud computing .
+
+### Question 25
+
+**Type:** Multiple Choice · **Time:** 19 seconds · **Result:** Correct
+
+**Confidence level:** Educated guess
+
+Which service gives customers the ability to audit and monitor changes in AWS resources?
+
+**Correct answer(s):** A
+
+**Your selection(s):** A
+
+#### A. AWS Config
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+AWS Config is a service that gives you the ability to assess, audit, and evaluate the configurations of your AWS resources.
+
+Learn more about AWS Config .
+
+#### B. AWS Trusted Advisor
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Trusted Advisor is a tool that provides real-time guidance to help you follow AWS best practices to provision resources. Trusted Advisor does not audit and monitor changes to AWS resources.
+
+Learn more about Trusted Advisor .
+
+#### C. Amazon GuardDuty
+
+**Correct answer:** No · **Your selection:** Not selected
+
+GuardDuty is a continuous security event detection service. GuardDuty does not audit and monitor changes to AWS resources.
+
+Learn more about GuardDuty .
+
+#### D. Amazon Inspector
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon Inspector tests the network accessibility of Amazon EC2 instances and the security state of your applications that run on those instances. Amazon Inspector does not monitor changes to AWS resources.
+
+Learn more about Amazon Inspector .
+
+### Question 26
+
+**Type:** Multiple Choice · **Time:** 22 seconds · **Result:** Incorrect
+
+**Confidence level:** Educated guess
+
+How can a company isolate the costs of production and non-production workloads on AWS?
+
+**Correct answer(s):** B
+
+**Your selection(s):** C
+
+#### A. Use Amazon EC2 for non-production workloads and other services for production workloads.
+
+**Correct answer:** No · **Your selection:** Not selected
+
+The suggested solution does not provide parity of services for the different environments. In addition, it does not address separate costs, such as data transfer.
+
+#### B. Use different accounts for production and non-production expenses.
+
+**Correct answer:** Yes · **Your selection:** Not selected
+
+You can separate the production and non-production workloads on AWS by creating multiple accounts to provide the highest level of resource and billing isolation. AWS Organizations includes account management and consolidated billing capabilities that enable you to better meet the budgetary, security, and compliance needs of your business.
+
+Learn more about Organizations .
+
+#### C. Create AWS Identity and Access Management (IAM) roles for production and non-production workloads.
+
+**Correct answer:** No · **Your selection:** Selected
+
+IAM is a service that helps you securely control access to AWS resources. It does not provide cost allocation.
+
+Learn more about IAM roles .
+
+#### D. Use Amazon CloudWatch to monitor the use of services.
+
+**Correct answer:** No · **Your selection:** Not selected
+
+With CloudWatch, you gain system-wide visibility into resource utilization, application performance, and operational health. CloudWatch does not provide information about costs and isolation of costs for different workloads.
+
+Learn more about CloudWatch .
+
+### Question 27
+
+**Type:** Multi-Select · **Time:** 19 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+Which controls or features are shared controls according to the AWS shared responsibility model?
+
+**Correct answer(s):** B, D
+
+**Your selection(s):** B, D
+
+#### A. Environmental controls
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Environmental controls are controls that a customer inherits from AWS.
+
+#### B. Configuration management
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Configuration management is a shared control. AWS maintains the configuration of AWS infrastructure devices. Customers configure guest operating systems, databases, and applications.
+
+Learn more about the AWS shared responsibility model .
+
+#### C. Physical security controls
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Physical security controls are controls that a customer inherits from AWS.
+
+#### D. Patch management
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Patch management is a shared control. AWS will patch and fix flaws within the infrastructure. Customers must patch guest operating systems and applications.
+
+Learn more about the AWS shared responsibility model .
+
+#### E. Zone security
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Zone security controls are customer controls. Customers may need to route or zone data within specific security environments.
+
+### Question 28
+
+**Type:** Multiple Choice · **Time:** 16 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+What is a responsibility of AWS in the shared responsibility model?
+
+**Correct answer(s):** D
+
+**Your selection(s):** D
+
+#### A. Updating the security group rules to block traffic to the vulnerable ports
+
+**Correct answer:** No · **Your selection:** Not selected
+
+A security group acts as a virtual firewall for your instance to control inbound and outbound traffic. However, the customer decides how to configure security groups because their configuration will depend on the needs of the specific resources that use them.
+
+Learn more about how to control traffic to resources using security groups .
+
+#### B. Updating the network ACLs to block traffic to vulnerable ports
+
+**Correct answer:** No · **Your selection:** Not selected
+
+An ACL is an optional layer of security for your VPC that acts as a firewall to control traffic in and out of one or more subnets. However, you can decide how to configure network ACLs. The ACL configuration will depend on the needs of the specific instances that use them.
+
+Learn more about how to control traffic to subnets using Network ACLs .
+
+#### C. Patching operating systems running on Amazon EC2 instances
+
+**Correct answer:** No · **Your selection:** Not selected
+
+It is the customer’s responsibility to patch EC2 instances. EC2 instances offer greater control of patching than some other AWS services. EC2 instances are a good fit for customers that need more control of patching and want to make their own decisions on which patches to apply and when to apply them. Customers also have the option to use AWS Systems Manager to simplify the patching of fleets of EC2 instances.
+
+Learn more about the patching feature of Systems Manager .
+
+#### D. Updating the firmware on the underlying Amazon EC2 hosts
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+It is the responsibility of AWS to update the EC2 hosts where the instances run.
+
+Learn more about the AWS shared responsibility model .
+
+### Question 29
+
+**Type:** Multiple Choice · **Time:** 10 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+Which AWS service will help a company identify the user who deleted an Amazon EC2 instance yesterday?
+
+**Correct answer(s):** A
+
+**Your selection(s):** A
+
+#### A. AWS CloudTrail
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+CloudTrail provides operational and risk auditing, governance, and compliance of your AWS account. You can use CloudTrail to identify user actions on an Amazon EC2 instance.
+
+Learn more about CloudTrail .
+
+#### B. Amazon Inspector
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon Inspector is a vulnerability management service that continuously scans your AWS workloads for software vulnerabilities and unintended network exposure. However, Amazon Inspector does not provide a log of activities taken in an account.
+
+Learn more about Amazon Inspector .
+
+#### C. AWS Trusted Advisor
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Trusted Advisor inspects your AWS environment and makes recommendations when opportunities exist to save money, improve system availability and performance, or help close security gaps. However, Trusted Advisor does not provide a log of activities taken in an account.
+
+Learn more about Trusted Advisor .
+
+#### D. Amazon CloudWatch
+
+**Correct answer:** No · **Your selection:** Not selected
+
+CloudWatch is used to monitor resources and applications. However, CloudWatch, by itself, does not provide a log of activities taken in an account.
+
+Learn more about CloudWatch .
+
+### Question 30
+
+**Type:** Multi-Select · **Time:** 16 seconds · **Result:** Correct
+
+**Confidence level:** Educated guess
+
+Which AWS services can be used to provide network connectivity between an on-premises network and a VPC?
+
+**Correct answer(s):** B, C
+
+**Your selection(s):** B, C
+
+#### A. Amazon Connect
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon Connect is an omnichannel contact center solution. It does not provide network connectivity.
+
+Learn more about Amazon Connect .
+
+#### B. AWS VPN
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+AWS VPN can provide a secure tunnel between a customer's network and their VPC.
+
+Learn more about VPN connections .
+
+#### C. AWS Direct Connect
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Direct Connect can provide network connectivity between on-premises environments and the AWS Cloud.
+
+Learn more about Direct Connect .
+
+#### D. Amazon Route 53
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Route 53 is a DNS routing service. It does not provide a network connection between two networks.
+
+Learn more about Route 53 .
+
+#### E. AWS Data Exchange
+
+**Correct answer:** No · **Your selection:** Not selected
+
+AWS Data Exchange is a service you can use to find and use third-party data. It does not provide network connectivity. 
+
+Learn more about AWS Data Exchange .
+
+### Question 31
+
+**Type:** Multiple Choice · **Time:** 13 seconds · **Result:** Incorrect
+
+**Confidence level:** Educated guess
+
+What is the LEAST expensive AWS Support plan that provides users with technical phone support?
+
+**Correct answer(s):** D
+
+**Your selection(s):** C
+
+#### A. AWS Basic Support
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Incorrect. AWS Basic Support is included at no charge with every AWS account, but it provides only account and billing assistance, service quota increase requests, service health checks, documentation, and support forums. Basic Support customers cannot open technical support cases, so no technical phone support is available at this level.
+
+#### B. AWS Unified Operations
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Incorrect. AWS Unified Operations does include real-time technical support, but it is the most expensive AWS Support plan with a $50,000/month minimum spend.
+
+#### C. AWS Enterprise Support
+
+**Correct answer:** No · **Your selection:** Selected
+
+Incorrect. AWS Enterprise Support includes 24x7 phone, web, and chat access plus a designated Technical Account Manager, but its minimum spend is $5,000/month. That is far more than the $29/month minimum for Business Support+, so it is not the least expensive plan meeting the requirement.
+
+#### D. AWS Business Support+
+
+**Correct answer:** Yes · **Your selection:** Not selected
+
+Correct. AWS Business Support+ provides 24x7 phone, web, and chat access to Cloud Support Engineers, along with generative AI assisted responses, full AWS Trusted Advisor checks, the AWS Support API, and third-party software support. This is the lowest-cost plan that includes technical phone support.
+
+Learn more about AWS support plans .
+
+### Question 32
+
+**Type:** Multiple Choice · **Time:** 16 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+A company is planning to move to the AWS Cloud. The company wants guidance and best practices to guide key stakeholders on the cloud migration process. Which AWS service or guidance will meet this requirement?
+
+**Correct answer(s):** C
+
+**Your selection(s):** C
+
+#### A. AWS Well-Architected Framework
+
+**Correct answer:** No · **Your selection:** Not selected
+
+The Well-Architected Framework provides architectural best practices to ensure that your AWS workloads and systems follow best practices. The Well-Architected Framework provides guidance on designing systems that are reliable, secure, efficient, cost-effective, and sustainable. The Well-Architected Framework does not provide information to guide key stakeholders in the cloud migration process.
+
+Learn more about the Well-Architected Framework .
+
+#### B. AWS Support
+
+**Correct answer:** No · **Your selection:** Not selected
+
+You can use AWS Support to get help with your AWS account. AWS Support does not provide best practices to guide key stakeholders on the cloud migration process.
+
+Learn more about AWS Support .
+
+#### C. AWS Cloud Adoption Framework (AWS CAF)
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+AWS CAF provides guidance and best practices on how to successfully move to the AWS Cloud. Additionally, AWS CAF provides guidance and best practices on how to continue innovation in the AWS Cloud. The six perspectives of AWS CAF include business, people, governance, platform, security, and operations. Each perspective contains a set of capabilities that guide key stakeholders on the cloud migration process.
+
+Learn more about AWS CAF .
+
+#### D. Amazon Connect
+
+**Correct answer:** No · **Your selection:** Not selected
+
+You can use Amazon Connect to set up a cloud contact center. Amazon Connect does not provide guidance or best practices to guide key stakeholders on the cloud migration process.
+
+Learn more about Amazon Connect .
+
+### Question 33
+
+**Type:** Multiple Choice · **Time:** 26 seconds · **Result:** Correct
+
+**Confidence level:** Educated guess
+
+Management at a large company wants to avoid long-term contracts and is interested in AWS to move from fixed costs to variable costs. What is the value proposition of AWS for this company?
+
+**Correct answer(s):** C
+
+**Your selection(s):** C
+
+#### A. Cost optimization
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Cost optimization is the ability to manage your costs and still keep the performance and capacity that your business requires. This benefit is not about the avoidance of long-term contracts or the move from a fixed-cost model to a variable-cost model.
+
+Learn more about cost optimization .
+
+#### B. Economy of scale
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Economy of scale is a different value proposition. Economies of scale give users the ability to continually reduce the price of compute and storage services by aggregating cloud usage from hundreds of thousands of AWS users. This benefit is not tied to the avoidance of long-term contracts or the move from a fixed-cost model to a variable-cost model.
+
+Learn more about advantages of AWS Cloud computing .
+
+#### C. Pay-as-you-go pricing
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Users benefit when they pay for only what they consume, which is pay-as-you-go pricing. This benefit gives users the ability to move from a fixed-cost model to a variable-cost model.
+
+Learn more about advantages of AWS Cloud Computing .
+
+#### D. Volume discounts
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Many AWS services have a tiered pricing model. This pricing model gives users the ability to gain volume-based discounts and savings as their AWS usage increases. This benefit is not tied to the avoidance of long-term contracts or the move from a fixed-cost model to a variable-cost model.
+
+Learn more about pricing and volume discounts .
+
+### Question 34
+
+**Type:** Multiple Choice · **Time:** 9 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+Which service can be used to deploy applications on AWS?
+
+**Correct answer(s):** D
+
+**Your selection(s):** D
+
+#### A. AWS Config
+
+**Correct answer:** No · **Your selection:** Not selected
+
+AWS Config provides configuration details about AWS resources. AWS Config cannot be used to deploy applications in the AWS Cloud.
+
+Learn more about AWS Config .
+
+#### B. AWS Control Tower
+
+**Correct answer:** No · **Your selection:** Not selected
+
+AWS Control Tower is used to setup and govern a multi-account environment. AWS Control Tower cannot be used to deploy applications in the AWS Cloud.
+
+Learn more about AWS Control Tower .
+
+#### C. Amazon Kinesis Data Streams
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Kinesis Data Streams collects and processes data streams in real-time. Kinesis Data Streams cannot be used to deploy applications in the AWS Cloud.
+
+Learn more about Kinesis Data Streams .
+
+#### D. AWS Elastic Beanstalk
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Elastic Beanstalk gives the ability for a quick deployment and management of applications in the AWS Cloud.
+
+Learn more about Elastic Beanstalk .
+
+### Question 35
+
+**Type:** Multiple Choice · **Time:** 9 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+Which service or feature should be used to limit Amazon S3 bucket access to specific users?
+
+**Correct answer(s):** B
+
+**Your selection(s):** B
+
+#### A. Network ACL
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Network ACLs are firewalls that operate at the subnet level. They protect VPC resources and not S3 buckets.
+
+Learn more about network ACLs .
+
+#### B. IAM policies
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Writing an IAM policy to grant read-write access to an S3 bucket helps you control who can access your data stored in Amazon S3.
+
+Learn more about IAM .
+
+#### C. Security groups
+
+**Correct answer:** No · **Your selection:** Not selected
+
+A security group acts as a virtual firewall for the AWS resources that it is associated with. Security groups do not control access to S3 buckets.
+
+Learn more about security groups .
+
+#### D. AWS Key Management Service (AWS KMS)
+
+**Correct answer:** No · **Your selection:** Not selected
+
+AWS KMS is a managed service that helps you to create and control keys used to encrypt and protect your data. AWS KMS can encrypt the data in Amazon S3, but it does not restrict access to S3 buckets.
+
+Learn more about AWS KMS .
+
+### Question 36
+
+**Type:** Multiple Choice · **Time:** 11 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+A company is running a web application on Amazon EC2 instances. The company wants the application's compute capacity to automatically adjust to meet customer demand. Which AWS service or capability should the company use to meet this requirement?
+
+**Correct answer(s):** A
+
+**Your selection(s):** A
+
+#### A. Amazon EC2 Auto Scaling
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Amazon EC2 Auto Scaling will adjust the number of EC2 instances in your workload based on demand. Amazon EC2 Auto Scaling will scale out when demand is high. Scaling out will meet the need of the traffic that enters your cloud environment. Amazon EC2 Auto Scaling will scale in when demand is low to optimize your costs.
+
+Learn more about Amazon EC2 Auto Scaling .
+
+#### B. Amazon Lightsail
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Lightsail provides virtual private servers for web applications. Lightsail does not provide automatic adjustment of compute capacity based on customer demand.
+
+Learn more about Lightsail .
+
+#### C. AWS Compute Optimizer
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Compute Optimizer analyzes compute usage and makes recommendations for your workloads. The reports help to determine if you are over-provisioning or under-provisioning your use of compute services. The goal of Compute Optimizer is to optimize costs. Compute Optimizer does not automatically adjust compute capacity.
+
+Learn more about Compute Optimizer .
+
+#### D. Amazon EC2 Capacity Reservations
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon EC2 Capacity Reservations are used to reserve capacity for EC2 instances in a specific Availability Zone. Capacity Reservations do not automatically adjust capacity based on demand.
+
+Learn more about Capacity Reservations .
+
+### Question 37
+
+**Type:** Multiple Choice · **Time:** 15 seconds · **Result:** Correct
+
+A company wants to improve the overall availability and performance of its applications that are hosted on AWS. Which AWS service should the company use?
+
+**Correct answer(s):** D
+
+**Your selection(s):** D
+
+#### A. AWS Storage Gateway
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Storage Gateway is a hybrid cloud storage service that gives you on-premises access to virtually unlimited cloud storage. It is not used to improve availability and performance of applications hosted in AWS.
+
+Learn more about Storage Gateway .
+
+#### B. Amazon Connect
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon Connect is a self-service, cloud-based contact center service that makes it easy for any business to deliver customer service. Amazon Connect cannot be used to improve availability and performance of applications.
+
+Learn more about Amazon Connect .
+
+#### C. Amazon Lightsail
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Lightsail can provide AWS users with a simple virtual private server (VPS) solution. Lightsail can provide developers with compute, storage, and networking capacity and capabilities to deploy and manage websites and web applications in the cloud. Lightsail does not improve availability or application performance.
+
+Learn more about Lightsail .
+
+#### D. AWS Global Accelerator
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Global Accelerator uses the AWS global network to route traffic to the optimal regional endpoint based on application health, client location, and other custom configurations. Global Accelerator helps to increase the availability and performance of applications hosted in AWS.
+
+Learn more about Global Accelerator .
+
+### Question 38
+
+**Type:** Multiple Choice · **Time:** 31 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+A company wants to use Amazon EC2 to deploy a global commercial application. The deployment solution should be built with the highest redundancy and fault tolerance. How should the EC2 instances be deployed?
+
+**Correct answer(s):** B
+
+**Your selection(s):** B
+
+#### A. Across multiple Availability Zones in one AWS Region
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Although this design partially enhances the redundancy and fault-tolerance of the application, it is not to the highest level. A multi-region approach is recommended for disaster recovery strategies to meet recovery objectives.
+
+Learn more about how to design a reliable application using fault isolation .
+
+#### B. Across multiple Availability Zones in two AWS Regions
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Regions are composed of multiple Availability Zones that are designed to be independent of each other. Each Availability Zone is separated by a meaningful physical distance from other zones to avoid correlated failure scenarios due to environmental hazards like fires, floods, and tornadoes. A multi-region approach is common for disaster recovery strategies to meet recovery objectives.
+
+Learn more about how to design a reliable application using fault isolation .
+
+#### C. In a single Availability Zone in one AWS Region
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Workload data and resources should be distributed across multiple Availability Zones and Regions to build a redundant and fault-tolerant application.
+
+Learn more about how to design a reliable application using fault isolation .
+
+#### D. With multiple elastic network interfaces belonging to different subnets
+
+**Correct answer:** No · **Your selection:** Not selected
+
+This design does not enhance the redundancy or fault-tolerance of an application because it does not specify that the subnets should be in different Availability Zones. A best practice is to deploy critical components of your application across multiple Availability Zones. Additional elastic network interfaces attached to an Amazon EC2 instance must be in the same Availability Zone as the instance.
+
+Learn more about best practices for Amazon EC2 .
+
+### Question 39
+
+**Type:** Multiple Choice · **Time:** 35 seconds · **Result:** Correct
+
+**Confidence level:** Educated guess
+
+After a merger, a company inherits an AWS account with an existing infrastructure. The company needs to ensure that the infrastructure follows AWS best practices for cost optimization, security, and performance efficiency. Which AWS service or tool should the company use to meet these requirements?
+
+**Correct answer(s):** C
+
+**Your selection(s):** C
+
+#### A. AWS Config
+
+**Correct answer:** No · **Your selection:** Not selected
+
+You can use AWS Config to provide an overview and configuration of your AWS resources. AWS Config can provide information about security. However, AWS Config does not provide best practices on performance.
+
+Learn more about AWS Config .
+
+#### B. AWS Cost Explorer
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Cost Explorer gives you the ability to visualize, understand, and manage your AWS cost and usage over time. However, Cost Explorer does not compare workloads with AWS best practices.
+
+Learn more about Cost Explorer .
+
+#### C. AWS Well-Architected Tool (AWS WA Tool)
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+The AWS WA Tool gives you the ability to review and compare your architecture with AWS best practices. The AWS WA Tool provides recommendations to make workloads more reliable, secure, efficient, and cost effective.
+
+Learn more about the AWS WA Tool .
+
+#### D. AWS Compute Optimizer
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Compute Optimizer does provide performance optimization. However, Compute Optimizer does not provide any recommendations or best practices for security.
+
+Learn more about Compute Optimizer .
+
+### Question 40
+
+**Type:** Multi-Select · **Time:** 16 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+What are the benefits of using the AWS Cloud?
+
+**Correct answer(s):** B, C
+
+**Your selection(s):** B, C
+
+#### A. Removes the need to patch user software
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Using the AWS Cloud does not remove the need to apply software patches to your applications.
+
+Learn more about the shared responsibility model .
+
+#### B. Ability to deploy globally in minutes
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+The ability to easily deploy your application in multiple AWS Regions around the world is a benefit of using the AWS Cloud. This type of deployment means that you can provide lower latency and a better experience for your users.
+
+Learn more about the benefits of the AWS Cloud .
+
+#### C. Increased speed and agility
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+The AWS Cloud offers you simpler access to new IT resources. This means that you can reduce the time to make those resources available to your developers from weeks to just minutes. This can result in an increase in agility for the company, because the cost and time it takes to experiment and develop could be lower.
+
+Learn more about the benefits of the AWS Cloud .
+
+#### D. All user data is backed up globally
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Depending on the Cloud service used, data might be replicated automatically by AWS within the same AWS Region (for example, with Amazon S3). Or data might need to be manually backed up by you (for example, with applications running on Amazon EC2). Your data will never leave the AWS Region without your explicit consent.
+
+Learn more about S3 backups with AWS Backup .
+
+#### E. No risk of security breaches
+
+**Correct answer:** No · **Your selection:** Not selected
+
+AWS builds security into every Cloud service, but while AWS manages security of the cloud, you are responsible for security in the cloud. This means that you retain control of the security you choose to implement to protect your own content, platform, applications, systems, and networks no differently than you would in an on-premises data center.
+
+Learn more about the AWS shared responsibility model .
+
+### Question 41
+
+**Type:** Multiple Choice · **Time:** 20 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+A company plans to migrate an application workload to the AWS Cloud. Which control is the responsibility of AWS after the migration is complete?
+
+**Correct answer(s):** B
+
+**Your selection(s):** B
+
+#### A. Identify and protect personally identifiable information (PII).
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Although AWS offers services that can help identify and protect PII, it is the customer's responsibility to decide whether to use services that protect its data.
+
+#### B. Maintain physical and environmental controls.
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Physical and environmental controls are part of security “of” the AWS Cloud. This task is the responsibility of AWS.
+
+Learn more about the AWS shared responsibility model .
+
+#### C. Patch the guest operating system.
+
+**Correct answer:** No · **Your selection:** Not selected
+
+It can be the customer’s responsibility to patch the guest operating system when the customer is using Amazon EC2 instances.
+
+#### D. Patch customer-owned applications and customer-created applications.
+
+**Correct answer:** No · **Your selection:** Not selected
+
+It is the customer’s responsibility to patch applications that the customer creates or owns.
+
+### Question 42
+
+**Type:** Multi-Select · **Time:** 7 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+Which of the following are pillars of the AWS Well-Architected Framework?
+
+**Correct answer(s):** A, E
+
+**Your selection(s):** A, E
+
+#### A. Performance efficiency
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Performance efficiency is one of the six pillars of the Well-Architected Framework.
+
+Learn more about performance efficiency .
+
+#### B. Encryption usage
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Encryption refers to how to add an extra layer of security to your data usage. Encryption usage is not a pillar of the AWS Well-Architected Framework. The six pillars of the AWS Well-Architected Framework are operational excellence, security, reliability, performance efficiency, cost optimization, and sustainability.
+
+Learn more about encryption .
+
+#### C. High availability
+
+**Correct answer:** No · **Your selection:** Not selected
+
+High availability refers to an environment that can continue to run with little or no downtime, even when there are failures. High availability is not a pillar of the AWS Well-Architected Framework. The six pillars of the AWS Well-Architected Framework are operational excellence, security, reliability, performance efficiency, cost optimization, and sustainability.
+
+Learn more about high availability .
+
+#### D. Multiple Availability Zones
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Multiple Availability Zones gives you the ability to distribute your workload in case of failure. Multiple Availability Zones is not a pillar of the AWS Well-Architected Framework. The six pillars of the AWS Well-Architected Framework are operational excellence, security, reliability, performance efficiency, cost optimization, and sustainability.
+
+Learn more about Availability Zones .
+
+#### E. Sustainability
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Sustainability is one of the six pillars of the AWS Well-Architected Framework.
+
+Learn more about sustainability .
+
+### Question 43
+
+**Type:** Multiple Choice · **Time:** 7 minutes 39 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+A company wants assistance in creating a cloud environment for its business. Which AWS service or feature can the company use to find a third party to assist with the deployment?
+
+**Correct answer(s):** D
+
+**Your selection(s):** D
+
+#### A. AWS Cloud Development Kit (AWS CDK)
+
+**Correct answer:** No · **Your selection:** Not selected
+
+AWS CDK is a software development framework that you can use to build cloud application resources. AWS CDK is a tool that simplifies the creation of resources. However, AWS CDK does not provide advice.
+
+Learn more about AWS CDK .
+
+#### B. AWS Trusted Advisor
+
+**Correct answer:** No · **Your selection:** Not selected
+
+You can use Trusted Advisor to optimize your AWS environment and to help follow AWS best practices. Trusted Advisor does provide recommendations. However, the recommendations are for established cloud environments. Trusted Advisor does not tell you how to set up an environment. Instead, Trusted Advisor tells you how to make an existing environment more compliant with AWS best practices.
+
+Learn more about Trusted Advisor .
+
+#### C. AWS Support
+
+**Correct answer:** No · **Your selection:** Not selected
+
+You can use AWS Support to get help with your AWS account. However, AWS Support does not provide a third party for deployment.
+
+Learn more about AWS Support .
+
+#### D. AWS Partner Network
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+The AWS Partner Network is a community of third-party providers that can help support you with the AWS Cloud. Partners exist around the world to help your company at any stage of the cloud adoption process.
+
+Learn more about the AWS Partner Network .
+
+Learn more about how to find support from partners .
+
+### Question 44
+
+**Type:** Multiple Choice · **Time:** 21 seconds · **Result:** Incorrect
+
+**Confidence level:** Confident
+
+A company that is migrating to the AWS Cloud wants guidance about operational risk management. The company wants to lower its overall risk profile. Which perspective of the AWS Cloud Adoption Framework (AWS CAF) provides guidance on risk management?
+
+**Correct answer(s):** D
+
+**Your selection(s):** A
+
+#### A. Operations perspective
+
+**Correct answer:** No · **Your selection:** Selected
+
+The operations perspective of AWS CAF provides guidance to ensure that your applications and workloads are healthy and available. The operations perspective also provides guidance on how to automate and optimize your operations to be more efficient.
+
+Learn more about the operations perspective of AWS CAF .
+
+#### B. Business perspective
+
+**Correct answer:** No · **Your selection:** Not selected
+
+The business perspective of AWS CAF provides guidance on how to make the right investments in the cloud to meet business objectives. The business perspective does not include capabilities for risk management as you migrate to the cloud.
+
+Learn more about the business perspective of AWS CAF .
+
+#### C. Security perspective
+
+**Correct answer:** No · **Your selection:** Not selected
+
+The security perspective of AWS CAF provides guidance on how to keep data, applications, and resources secure. The security perspective includes capabilities such as security governance, identity and access management, threat detection, and data protection.
+
+Learn more about the security perspective of AWS CAF .
+
+#### D. Governance perspective
+
+**Correct answer:** Yes · **Your selection:** Not selected
+
+The governance perspective of AWS CAF provides guidance on risk management and how you can use the AWS Cloud to lower your overall risk profile. The governance perspective can help you lower risks related to infrastructure operation and failure. Additionally, the governance perspective can help you lower the risks of purchasing expensive resources or assets that might not be necessary.
+
+Learn more about the foundational capabilities of AWS CAF .
+
+Learn more about the governance perspective of AWS CAF .
+
+### Question 45
+
+**Type:** Multiple Choice · **Time:** 3 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+Which AWS service allows users to provision infrastructure as code?
+
+**Correct answer(s):** A
+
+**Your selection(s):** A
+
+#### A. AWS CloudFormation
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+CloudFormation is used to provision AWS resources and other infrastructure components from a template that is written in either JSON or YAML code.
+
+Learn more about CloudFormation .
+
+#### B. AWS Config
+
+**Correct answer:** No · **Your selection:** Not selected
+
+AWS Config cannot provision infrastructure as code. AWS Config is a service that provides a detailed view of AWS resource configurations in your AWS account.
+
+Learn more about AWS Config .
+
+#### C. AWS CodeBuild
+
+**Correct answer:** No · **Your selection:** Not selected
+
+CodeBuild cannot provision AWS infrastructure as code. CodeBuild compiles application source code, runs unit tests, and produces artifacts for code deployment.
+
+Learn more about CodeBuild .
+
+#### D. AWS Organizations
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Organizations cannot provision infrastructure as code. Organizations is an account management service to consolidate multiple AWS accounts for centralized management.
+
+Learn more about Organizations .
+
+### Question 46
+
+**Type:** Multi-Select · **Time:** 13 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+A company wants to run a workload on the AWS Cloud. What is the customer's responsibility?.
+
+**Correct answer(s):** A, C
+
+**Your selection(s):** A, C
+
+#### A. Configure an Amazon S3 bucket so that the bucket is restricted to certain IAM users.
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+The customer is responsible for defining access to an S3 bucket. Defining access to an S3 bucket is security in the cloud.
+
+Learn more about S3 bucket access .
+
+#### B. Control the physical access to the AWS resources that contain a customer's VPC.
+
+**Correct answer:** No · **Your selection:** Not selected
+
+AWS does not provide access to data centers that contain VPCs. A customer can take a virtual tour of a data center to understand the controls. However, customers cannot visit in person.
+
+Learn more about data centers .
+
+#### C. Configure permissions for IAM users for least-privilege access.
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+AWS provides the functionality of AWS Identity and Access Management (IAM). However, the customer determines who gets specific access rights. The customer defines IAM users and assigns policies to those users.
+
+Learn more about the shared responsibility model .
+
+#### D. Patch the VPC network devices.
+
+**Correct answer:** No · **Your selection:** Not selected
+
+AWS provides VPC network devices as a service. AWS manages the physical devices, including patching.
+
+Learn more about the shared responsibility model .
+
+#### E. Patch the operating system used by AWS Lambda functions.
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Lambda is a fully managed service. Therefore, the customer is not responsible for patching the operating system.
+
+Learn more about the shared responsibility model .
+
+### Question 47
+
+**Type:** Multiple Choice · **Time:** 12 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+A company runs an application on an Amazon EC2 instance that needs to securely write data to an Amazon S3 bucket without the use of long-term credentials. Which AWS service or feature will meet this requirement?
+
+**Correct answer(s):** D
+
+**Your selection(s):** D
+
+#### A. IAM user access key
+
+**Correct answer:** No · **Your selection:** Not selected
+
+You can use access keys to write data from EC2 instances to an S3 bucket. However, access keys are long-term credentials.
+
+Learn more about how to manage access keys for IAM users .
+
+#### B. Amazon Cognito
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon Cognito provides authentication, authorization, and user management for your web and mobile applications. Amazon Cognito is not appropriate for an EC2 instance to securely write data to an S3 bucket.
+
+Learn more about Amazon Cognito .
+
+#### C. AWS Shield
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Shield is a service for protection against DDoS attacks. You cannot use Shield to securely write data from an EC2 instance to an S3 bucket.
+
+Learn more about Shield .
+
+#### D. IAM role
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+An IAM role that you assign to an EC2 instance is an instance profile. You can associate IAM policies with the role. The IAM policies grant the instance access to the AWS services that you define in the policy.
+
+Learn more about how to use instance profiles .
+
+### Question 48
+
+**Type:** Multiple Choice · **Time:** 10 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+Which AWS service or feature can be used to block traffic to a specific port on Amazon EC2 instances?
+
+**Correct answer(s):** C
+
+**Your selection(s):** C
+
+#### A. Amazon Route 53
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Route 53 is a highly available and scalable DNS web service. You cannot use Route 53 to block network traffic.
+
+Learn more about Route 53 .
+
+#### B. AWS Direct Connect
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Direct Connect links your internal network to AWS with a dedicated connection. You cannot use Direct Connect to block specific traffic.
+
+Learn more about Direct Connect .
+
+#### C. Network ACL
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+A network ACL acts as a virtual firewall for your EC2 instances within a subnet to control incoming and outgoing traffic. The inbound rules control the incoming traffic to your instances. The outbound rules control the outgoing traffic from your instances.
+
+Learn more about network ACLs .
+
+#### D. Amazon VPC peering connections
+
+**Correct answer:** No · **Your selection:** Not selected
+
+An Amazon VPC peering connection is a networking connection between two VPCs. VPC peering connections give you the ability to route traffic between the VPCs by using private IPv4 addresses or IPv6 addresses. You cannot use VPC peering connections to block specific traffic.
+
+Learn more about VPC peering .
+
+### Question 49
+
+**Type:** Multi-Select · **Time:** 54 seconds · **Result:** Correct
+
+**Confidence level:** Unsure
+
+Which recommendations are included in the AWS Trusted Advisor checks?
+
+**Correct answer(s):** A, E
+
+**Your selection(s):** A, E
+
+#### A. Multi-factor authentication (MFA) use on the AWS account root user
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Trusted Advisor checks the root account and warns if MFA is not enabled.
+
+Learn more about Trusted Advisor .
+
+#### B. Available software patches for Amazon EC2 instances
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Trusted Advisor does not provide notifications about software patches for EC2 instances.
+
+Learn more about Trusted Advisor .
+
+#### C. AWS service outages for services
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Trusted Advisor does not provide notifications for service outages. You can use the AWS Health Dashboard to learn about AWS Health events that can affect your AWS services or account.
+
+Learn more about AWS Health Dashboard .
+
+#### D. Number of users in the account
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Trusted Advisor does not provide information about the number of users in an AWS account.
+
+Learn more about Trusted Advisor .
+
+#### E. Amazon S3 bucket permissions
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Trusted Advisor checks for S3 bucket permissions in Amazon S3 with open access permissions. Bucket permissions that grant list access to everyone can result in higher than expected charges if objects in the bucket are listed by unintended users at a high frequency. Bucket permissions that grant upload and delete access to all users create potential security vulnerabilities by allowing anyone to add, modify, or remove items in a bucket. This Trusted Advisor check examines explicit bucket permissions and associated bucket policies that might override the bucket permissions.
+
+Learn more about S3 bucket permissions .
+
+### Question 50
+
+**Type:** Multiple Choice · **Time:** 6 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+A company wants to quickly deploy duplicate infrastructure in a different AWS Region to create global redundancy. Which AWS service will meet this requirement?
+
+**Correct answer(s):** C
+
+**Your selection(s):** C
+
+#### A. Amazon API Gateway
+
+**Correct answer:** No · **Your selection:** Not selected
+
+You can use API Gateway to create and manage REST and WebSocket APIs. You cannot use API Gateway to deploy infrastructure.
+
+Learn more about API Gateway .
+
+#### B. Amazon Route 53
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Route 53 can change the DNS record to point to the new Region. However, Route 53 cannot deploy infrastructure.
+
+Learn more about Route 53 .
+
+#### C. AWS CloudFormation
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+CloudFormation gives you the ability to reuse templates to set up resources consistently and repeatedly in multiple Regions.
+
+Learn more about CloudFormation .
+
+#### D. AWS Config
+
+**Correct answer:** No · **Your selection:** Not selected
+
+You can use AWS Config to set up, verify, and remediate configurations for AWS resources. You cannot use AWS Config to deploy infrastructure.
+
+Learn more about AWS Config .
+
+### Question 51
+
+**Type:** Multiple Choice · **Time:** 9 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+Which AWS service runs containers without the need to provision and manage Amazon EC2 instances?
+
+**Correct answer(s):** B
+
+**Your selection(s):** B
+
+#### A. AWS Batch
+
+**Correct answer:** No · **Your selection:** Not selected
+
+AWS Batch manages compute environments and job queues. With AWS Batch, you can run thousands of jobs at any scale. AWS Batch uses EC2 instances to host the batch jobs. AWS Batch can run containers. However, the containers would run on EC2 instances.
+
+Learn more about AWS Batch .
+
+#### B. AWS Fargate
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+You can use Fargate with Amazon Elastic Container Service (Amazon ECS) to run containers without the need to manage servers or clusters of EC2 instances. Fargate is serverless, so you do not need to provision or manage EC2 instances. 
+
+Learn more about Fargate .
+
+Learn more about Amazon ECS on Fargate .
+
+#### C. Amazon Lightsail
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Lightsail provides a virtual private server (VPS) solution to get started on AWS. Lightsail is well suited for developers, small businesses, students, and other users. Lightsail provides you with compute, storage, and networking capacity and capabilities. With Lightsail, you can deploy and manage websites and web applications in the cloud. Lightsail can run containers. However, the containers would run on EC2 instances.
+
+Learn more about Lightsail .
+
+#### D. AWS Elastic Beanstalk
+
+**Correct answer:** No · **Your selection:** Not selected
+
+You can use Elastic Beanstalk to deploy, manage, and scale applications. When you run an application on Elastic Beanstalk, you do not need to develop, manage, or understand the underlying infrastructure. You can launch an application on Elastic Beanstalk that runs containers. However, the application would run on EC2 instances.
+
+Learn more about Elastic Beanstalk .
+
+### Question 52
+
+**Type:** Multi-Select · **Time:** 23 seconds · **Result:** Incorrect
+
+**Confidence level:** Confident
+
+Which AWS security mechanisms can be used to restrict or permit access to resources within a VPC?
+
+**Correct answer(s):** A, C
+
+**Your selection(s):** A, E
+
+#### A. Network ACL
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+A network ACL is an optional layer of security for your VPC that acts as a firewall for controlling traffic in and out of one or more subnets.
+
+Learn more about how to control traffic to subnets using network ACLs .
+
+#### B. VPC Flow Logs
+
+**Correct answer:** No · **Your selection:** Not selected
+
+VPC Flow Logs is a feature that you can use to capture information about the IP traffic that travels to and from network interfaces in your VPC. VPC Flow Logs is not a security mechanism to restrict or permit access to resources within a VPC.
+
+Learn more about VPC Flow Logs .
+
+#### C. Security group
+
+**Correct answer:** Yes · **Your selection:** Not selected
+
+A security group acts as a virtual firewall for your instance to control inbound and outbound traffic.
+
+Learn more about how to control traffic to resources using security groups .
+
+#### D. Elastic network interface
+
+**Correct answer:** No · **Your selection:** Not selected
+
+An elastic network interface is a logical networking component in a VPC that represents a virtual network card. An elastic network interface is not a security mechanism to restrict or permit access to resources within a VPC.
+
+Learn more about elastic network interfaces .
+
+#### E. Route table
+
+**Correct answer:** No · **Your selection:** Selected
+
+A route table contains a set of rules called routes. Routes are used to determine where network traffic from your subnet or gateway is directed. A route table is not a security mechanism to restrict or permit access to resources within a VPC.
+
+Learn more about route tables .
+
+### Question 53
+
+**Type:** Multi-Select · **Time:** 9 seconds · **Result:** Incorrect
+
+**Confidence level:** Confident
+
+Which AWS services or features enable a user to establish a network connection from on premises to the AWS Cloud?
+
+**Correct answer(s):** C, E
+
+**Your selection(s):** B, C
+
+#### A. Amazon S3
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon S3 is a highly available and scalable storage service that gives users the ability to store objects on AWS Cloud. It is not used for network connectivity use cases.
+
+Learn more about Amazon S3 .
+
+#### B. AWS Transit Gateway
+
+**Correct answer:** No · **Your selection:** Selected
+
+Transit Gateway is a network transit hub that connects VPCs and on-premises networks. Transit Gateway does not establish the initial connection from on-premises to AWS.
+
+Learn more about Transit Gateway .
+
+#### C. AWS Direct Connect
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Direct Connect provides a dedicated private connection between on-premises infrastructure and the AWS Cloud.
+
+Learn more about Direct Connect .
+
+#### D. Amazon Connect
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon Connect provides a highly scalable contact center in AWS cloud. Amazon Connect is not used to connect two different networks.
+
+Learn more about Amazon Connect .
+
+#### E. AWS VPN
+
+**Correct answer:** Yes · **Your selection:** Not selected
+
+AWS provides AWS VPN as a managed service. AWS VPN establishes a secure connection between AWS and your on-premises networks.
+
+Learn more about AWS VPN .
+
+### Question 54
+
+**Type:** Multiple Choice · **Time:** 13 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+A company wants to deploy a stateless application where occasional downtime is acceptable. What is the MOST affordable Amazon EC2 pricing option available for this use case?
+
+**Correct answer(s):** B
+
+**Your selection(s):** B
+
+#### A. Reserved Instances
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Reserved Instances will reduce the overall cost. However, Reserved Instances are not the most affordable option for workloads that can accommodate occasional interruptions.
+
+Learn more about Reserved Instances .
+
+#### B. Spot Instances
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Spot Instances provide discounts of up to 90% off On-Demand pricing. Spot Instances are suitable for workloads that can accommodate occasional downtime.
+
+Learn more about when to use Spot Instances .
+
+#### C. On-Demand Capacity Reservations
+
+**Correct answer:** No · **Your selection:** Not selected
+
+On-Demand Capacity Reservations allow you to reserve compute capacity for your EC2 instances in a specific Availability Zone for any duration. However, On-Demand Capacity Reservations are not the most affordable option for workloads that can accommodate occasional interruptions
+
+Learn more about On-Demand Capacity Reservations .
+
+#### D. On-Demand Instances
+
+**Correct answer:** No · **Your selection:** Not selected
+
+You pay for compute capacity by the hour or by the second (a minimum of 60 seconds) with no long-term commitments by using On-Demand Instances. However, On-Demand Instances are not the most affordable option.
+
+Learn more about On-Demand Instances .
+
+### Question 55
+
+**Type:** Multiple Choice · **Time:** 12 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+A company needs a relational database on AWS that records new customer orders from a website. Which AWS service or feature will meet this requirement?
+
+**Correct answer(s):** C
+
+**Your selection(s):** C
+
+#### A. Amazon Neptune
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Neptune is a fast, reliable, fully managed graphical database service. You can use Neptune to build and run applications that work with highly connected datasets. You can use Neptune for graphical use cases, such as recommendation engines, fraud detection, knowledge graphs, drug discovery, and network security. Neptune is not an ideal database for transactional orders.
+
+Learn more about Neptune .
+
+#### B. Amazon Redshift
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon Redshift is a fully managed, petabyte-scale data warehouse service in the cloud. Amazon Redshift is optimized for large queries that summarize data. Amazon Redshift is not ideal for transactional orders.
+
+Learn more about Amazon Redshift .
+
+#### C. Amazon Aurora
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Aurora is a MySQL- and PostgreSQL-compatible relational database built for the cloud. Aurora combines the performance and availability of traditional enterprise databases with the simplicity and cost-effectiveness of open source databases.
+
+Learn more about Aurora .
+
+#### D. Amazon DynamoDB
+
+**Correct answer:** No · **Your selection:** Not selected
+
+DynamoDB is a fully managed NoSQL database service. DynamoDB provides fast and predictable performance with seamless scalability. Although DynamoDB could store orders, DynamoDB is not a relational database.
+
+Learn more about DynamoDB .
+
+### Question 56
+
+**Type:** Multiple Choice · **Time:** 6 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+Which AWS service enables the decoupling and scaling of applications?
+
+**Correct answer(s):** A
+
+**Your selection(s):** A
+
+#### A. Amazon Simple Queue Service (Amazon SQS)
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Amazon SQS is a fully managed message queuing service that you can use to decouple, integrate, and scale microservices, distributed systems, and serverless applications.
+
+Learn more about Amazon SQS .
+
+#### B. Amazon S3
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon S3 is an object storage service with high durability, security, and unlimited scalability. You would not use Amazon S3 to decouple applications.
+
+Learn more about Amazon S3 .
+
+#### C. Amazon Simple Email Service (Amazon SES)
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon SES is a cloud-based email service that sends and receives messages. You would not use Amazon SES to decouple applications.
+
+Learn more about Amazon SES .
+
+#### D. AWS Outposts
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Outposts extends the AWS infrastructure into customer premises. This solution gives you the ability to deploy resources on local physical servers to meet latency, compliance, and local processing requirements. However, you would not use Outposts to decouple applications.
+
+Learn more about Outposts .
+
+### Question 57
+
+**Type:** Multiple Choice · **Time:** 11 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+Which solution describes a security best practice that can be implemented by using AWS Identity and Access Management (IAM)?
+
+**Correct answer(s):** C
+
+**Your selection(s):** C
+
+#### A. Turn off AWS Management Console access for all users.
+
+**Correct answer:** No · **Your selection:** Not selected
+
+There could be legitimate requirements for certain IAM users to have access to the console. Consequently, to turn off access for all users is not the correct solution.
+
+#### B. Generate secret keys for every IAM user.
+
+**Correct answer:** No · **Your selection:** Not selected
+
+This solution would generate secret keys for IAM users and would require the users to access their applications through programmatic access.
+
+#### C. Grant permissions to users who are required to perform a specific task only.
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+You can set permissions with IAM policies and grant users the minimum level of permissions required to perform their intended tasks. This practice is called least-privilege permissions. Through the security recommendation of least privilege, an IAM best practice is to grant granular permissions to users by using IAM roles.
+
+Learn more about IAM best practices and least privilege .
+
+Learn more about best practices to secure an AWS account .
+
+#### D. Store AWS credentials within Amazon EC2 instances.
+
+**Correct answer:** No · **Your selection:** Not selected
+
+The solution to store credentials within EC2 instances is not a security best practice. A better security practice would be to use IAM roles to grant permissions to EC2 instances because the IAM roles will rotate the credentials automatically.
+
+### Question 58
+
+**Type:** Multiple Choice · **Time:** 6 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+Which AWS service or feature can prevent SQL injection attacks?
+
+**Correct answer(s):** C
+
+**Your selection(s):** C
+
+#### A. Network ACLs
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Network ACLs are subnet-level firewalls that can approve or deny network traffic access to a subnet. To prevent a SQL injection attack, the payload of an HTTP request must be analyzed. Network ACLs cannot analyze the payload of an HTTP request. Therefore, network ACLs cannot prevent SQL injection attacks.
+
+Learn more about network ACLs .
+
+#### B. IAM policies
+
+**Correct answer:** No · **Your selection:** Not selected
+
+You can use IAM policies for AWS service-level permissions. For example, IAM policies can determine who or what can perform AWS actions in AWS resources. However, IAM policies do not give you the ability to filter web traffic. SQL injection attacks are performed through HTTP traffic. Therefore, IAM policies cannot prevent SQL injection attacks.
+
+Learn more about IAM policies .
+
+#### C. AWS WAF
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+AWS WAF gives you control over how traffic reaches your applications. AWS WAF gives you the ability to create security rules that control network traffic and block common attack patterns. You can create an AWS WAF rule that filters traffic that has possibly malicious SQL code. This rule would prevent SQL injection attacks.
+
+Learn more about AWS WAF rules .
+
+#### D. Security groups
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Security groups are instance-level firewalls that can provide network traffic with access to an instance. To prevent a SQL injection attack, the payload of an HTTP request must be analyzed. Security groups cannot analyze the payload of an HTTP request. Therefore, security groups cannot prevent SQL injection attacks.
+
+Learn more about security groups .
+
+### Question 59
+
+**Type:** Multiple Choice · **Time:** 8 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+Which AWS service provides on-demand downloads of AWS security and compliance documentation?
+
+**Correct answer(s):** D
+
+**Your selection(s):** D
+
+#### A. AWS Directory Service
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Directory Service offers a variety of options to use Microsoft Active Directory with other AWS services. It does not provide on-demand downloads of AWS security and compliance documentation.
+
+Learn more about Directory Service .
+
+#### B. AWS Trusted Advisor
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Trusted Advisor is a service that inspects your AWS environment, compares against best practices, and makes recommendations for environment cost, performance, and security optimization. Trusted Advisor does not provide on-demand downloads of AWS security and compliance documentation.
+
+Learn more about Trusted Advisor .
+
+#### C. Amazon Inspector
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon Inspector is a service that scans your AWS environment for software vulnerabilities and network exposure. Amazon Inspector produces data that helps identify issues, but it does not provide on-demand downloads of AWS security and compliance documentation.
+
+Learn more about Amazon Inspector .
+
+#### D. AWS Artifact
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+AWS Artifact provides access to third-party assessments of AWS security and compliance responsibilities outlined within the AWS shared responsibility model.
+
+Learn more about AWS Artifact .
+
+### Question 60
+
+**Type:** Multiple Choice · **Time:** 5 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+Which AWS service helps protect applications that run on AWS from DDoS attacks?
+
+**Correct answer(s):** C
+
+**Your selection(s):** C
+
+#### A. AWS Auto Scaling
+
+**Correct answer:** No · **Your selection:** Not selected
+
+You can use AWS Auto Scaling to automatically scale AWS resources to meet demand to support your workloads. However, AWS Auto Scaling does not protect against DDoS attacks.
+
+Learn more about AWS Auto Scaling .
+
+#### B. Amazon Inspector
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon Inspector is a vulnerability management service. You can use Amazon Inspector to continuously scan your AWS workloads for software vulnerabilities and unintended network exposure. However, Amazon Inspector does not protect against DDoS attacks.
+
+Learn more about Amazon Inspector .
+
+#### C. AWS Shield
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Shield is a managed DDoS protection service. Shield helps protect applications that run on AWS from DDoS attacks.
+
+Learn more about Shield .
+
+#### D. Amazon GuardDuty
+
+**Correct answer:** No · **Your selection:** Not selected
+
+GuardDuty continuously monitors for malicious activity and unauthorized behavior in your AWS accounts and workloads. GuardDuty can provide security findings and remediation recommendations if malicious activity is identified. However, GuardDuty does not protect against DDoS attacks.
+
+Learn more about GuardDuty .
+
+### Question 61
+
+**Type:** Multiple Choice · **Time:** 29 seconds · **Result:** Incorrect
+
+**Confidence level:** Confident
+
+Which AWS service or tool reduces latency for static websites running on AWS?
+
+**Correct answer(s):** C
+
+**Your selection(s):** D
+
+#### A. AWS Data Exchange
+
+**Correct answer:** No · **Your selection:** Not selected
+
+AWS Data Exchange is a service used to find and use third-party data. AWS Data Exchange does not deliver website content.
+
+Learn more about AWS Data Exchange .
+
+#### B. AWS Lambda
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Lambda is a serverless compute service that you can use to customize web content. Lambda will not accelerate website delivery on its own.
+
+Learn more about Lambda .
+
+#### C. Amazon CloudFront
+
+**Correct answer:** Yes · **Your selection:** Not selected
+
+CloudFront is a content delivery network with edge locations around the globe.
+
+Learn more about CloudFront .
+
+#### D. Amazon S3 Transfer Acceleration
+
+**Correct answer:** No · **Your selection:** Selected
+
+S3 Transfer Acceleration enables fast, easy, and secure transfers of files over long distances between your client and an S3 bucket. S3 Transfer Acceleration does not deliver website content.
+
+Learn more about S3 Transfer Acceleration .
+
+### Question 62
+
+**Type:** Multiple Choice · **Time:** 12 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+Which AWS Cloud benefit gives users the ability to provision only the resources required and to instantly scale up or down as demand changes?
+
+**Correct answer(s):** B
+
+**Your selection(s):** B
+
+#### A. Security
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Security gives users the ability to meet compliance requirements and to protect information, identities, applications, and devices. Security does not relate to provisioning or scaling resources as demand changes.
+
+Learn more about security in the AWS Cloud .
+
+#### B. Elasticity
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Elasticity gives users the ability to provision only the resources required and to instantly scale resources up or down as demand changes. Elasticity is a benefit of the AWS Cloud.
+
+Learn more about elasticity .
+
+#### C. High availability
+
+**Correct answer:** No · **Your selection:** Not selected
+
+High availability refers to applications that have no single point of failure. Highly available applications will continue to run and be available even if there is a failure in the design. High availability ensures continuous operation of applications. However, high availability does not relate to provisioning or scaling resources as demand changes.
+
+Learn more about high availability .
+
+Learn more about high availability and scalability .
+
+#### D. Cost savings
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Cost savings occur when users trade fixed costs for variable costs by moving to the AWS Cloud. Cost savings do not relate to the ability to scale resources up or down.
+
+Learn more about cost savings with AWS .
+
+### Question 63
+
+**Type:** Multiple Choice · **Time:** 15 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+Which AWS service adds speech-to-text capabilities to applications?
+
+**Correct answer(s):** B
+
+**Your selection(s):** B
+
+#### A. Amazon Polly
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon Polly is a service that turns text into lifelike speech. Amazon Polly gives you the ability to create applications that talk. With Amazon Polly, you can build entirely new categories of products that can speak. Amazon Polly does not add speech-to-text capabilities to applications.
+
+Learn more about Amazon Polly .
+
+#### B. Amazon Transcribe
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+Amazon Transcribe is a speech recognition service that uses machine learning models to convert audio to text. You can use Amazon Transcribe as a standalone transcription service. Additionally, you can use Amazon Transcribe to add speech-to-text capabilities to any application.
+
+Learn more about Amazon Transcribe .
+
+#### C. Amazon Comprehend
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon Comprehend is a natural language processing (NLP) service that uses machine learning models to uncover information in unstructured data. Amazon Comprehend develops insights by recognizing the entities, key phrases, language, sentiments, and other common elements in a document. Amazon Comprehend does not add speech-to-text capabilities to applications.
+
+Learn more about Amazon Comprehend .
+
+#### D. Amazon Textract
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Amazon Textract is a machine learning service that automatically extracts text, handwriting, and data from scanned documents. Amazon Textract goes beyond basic optical character recognition (OCR) to identify, understand, and extract data from forms and tables. Amazon Textract does not add speech-to-text capabilities to applications.
+
+Learn more about Amazon Textract .
+
+### Question 64
+
+**Type:** Multiple Choice · **Time:** 15 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+A user must encrypt data that is received, stored, and managed by AWS CloudTrail. Which AWS service will provide this capability?
+
+**Correct answer(s):** D
+
+**Your selection(s):** D
+
+#### A. AWS Systems Manager
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Systems Manager is used to organize, monitor, and automate management tasks on AWS resources. Systems Manager does not provide encryption for CloudTrail.
+
+Learn more about Systems Manager .
+
+#### B. AWS Secrets Manager
+
+**Correct answer:** No · **Your selection:** Not selected
+
+Secrets Manager helps to securely encrypt, store, and retrieve credentials for your databases and other services. However, it does not provide encryption for CloudTrail.
+
+Learn more about Secrets Manager .
+
+#### C. AWS Certificate Manager
+
+**Correct answer:** No · **Your selection:** Not selected
+
+ACM helps you to provision, manage, and deploy SSL/TLS certificates on AWS managed resources. SSL/TLS certificates are used to encrypt data traveling across a network. However, SSL/TLS certificates do not provide encryption for CloudTrail.
+
+Learn more about ACM .
+
+#### D. AWS Key Management Service (AWS KMS)
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+AWS KMS can be used to enable server-side encryption of CloudTrail data. AWS KMS makes it easy to create and manage cryptographic keys and control their use across a wide range of AWS services.
+
+Learn more about how to encrypt CloudTrail log files using AWS KMS .
+
+### Question 65
+
+**Type:** Multi-Select · **Time:** 11 seconds · **Result:** Correct
+
+**Confidence level:** Confident
+
+Which tasks will AWS perform according to the AWS shared responsibility model?
+
+**Correct answer(s):** A, B
+
+**Your selection(s):** A, B
+
+#### A. Patch Elastic Load Balancing (ELB) load balancers.
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+ELB is a managed service. The customer selects the options and configuration. AWS applies new patches.
+
+Learn more about ELB .
+
+#### B. Control physical access to a data center that contains a user's VPC.
+
+**Correct answer:** Yes · **Your selection:** Selected
+
+AWS does not provide access to data centers. Customers can take a virtual tour of a data center to understand the security measures and controls. Customers cannot visit data centers in person.
+
+Learn more about the security and controls of AWS data centers .
+
+#### C. Configure IAM users according to the principle of least privilege.
+
+**Correct answer:** No · **Your selection:** Not selected
+
+AWS provides AWS Identity and Access Management (IAM) as a service. The customer defines IAM users and the access policies that apply to those users.
+
+Learn more about the AWS shared responsibility model .
+
+#### D. Determine which services are allowed to access an Amazon DynamoDB table.
+
+**Correct answer:** No · **Your selection:** Not selected
+
+The customer determines access permissions between services within the cloud. 
+
+Learn more about the AWS shared responsibility model .
+
+Learn more about permissions in DynamoDB with AWS Identity and Access Management .
+
+#### E. Configure an Amazon S3 bucket to allow public access.
+
+**Correct answer:** No · **Your selection:** Not selected
+
+The customer defines access to an S3 bucket that the customer owns.
+
+Learn more about the AWS shared responsibility model .
