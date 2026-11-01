@@ -98,6 +98,7 @@ test("note filters and bookmark empty state", async ({ page }) => {
     page.getByRole("heading", { name: "A place for your saved chapters." }),
   ).toBeVisible();
   await page.getByRole("link", { name: "Browse study notes" }).click();
+  await expect(page).toHaveURL(/\/notes$/);
   await page
     .getByRole("button", { name: "Security & costs", exact: true })
     .click();
@@ -145,6 +146,18 @@ test("single and multiple answers, navigation, persistence and restart", async (
   await page.getByRole("button", { name: "Restart set" }).click();
   await expect(page.getByText("0 of 50 checked")).toBeVisible();
   await expect(page.getByText("Question 1 of 50")).toBeVisible();
+  await page.reload();
+  const saved = await page.evaluate(() => JSON.parse(localStorage.getItem("aws-study-desk-v1") ?? "{}"));
+  expect(saved.history).toHaveLength(1);
+  expect(saved.history[0]).toMatchObject({ examSlug: "practice-exam-1", correct: 2, total: 50, completed: false });
+  expect(saved.history[0].checked).toHaveLength(2);
+});
+
+test("practice question links open the requested question", async ({ page }) => {
+  await page.goto("/practice/practice-exam-1?question=4");
+  await expect(page.getByText("Question 4 of 50")).toBeVisible();
+  await page.getByRole("button", { name: "Question 5", exact: true }).click();
+  await expect(page.getByText("Question 5 of 50")).toBeVisible();
 });
 
 test("finishing a set stores the score, review works, and completed filter shows it", async ({

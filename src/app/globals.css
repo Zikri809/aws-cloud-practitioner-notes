@@ -15,6 +15,20 @@
   --error: #ffb4ae;
   --sidebar-width: 256px;
 }
+.account-form {
+  display: grid;
+  gap: 12px;
+  max-width: 420px;
+}
+.account-form input {
+  width: 100%;
+  padding: 10px 12px;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--control);
+  border-radius: 6px;
+}
+.account-form .button, .account-form .quiet-link { justify-self: start; }
 * {
   box-sizing: border-box;
 }

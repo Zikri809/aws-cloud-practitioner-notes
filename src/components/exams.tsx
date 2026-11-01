@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useRef, useState, useSyncExternalStore } from "react";
 import {
   ArrowRight,
   Check,
@@ -14,7 +14,8 @@ import {
   CircleHelp,
 } from "lucide-react";
 import type { ExamSummary, Question } from "@/lib/catalog";
-import { updateProgress, useProgress, type QuizState } from "./progress";
+import { gradeAnswer } from "@/lib/study-recommendations";
+import { updateProgress, useProgress, quizRevision, type QuizState } from "./progress";
 
 export function ExamLibrary({ exams }: { exams: ExamSummary[] }) {
   const { scores, quizzes } = useProgress();
@@ -97,7 +98,7 @@ export function ExamLibrary({ exams }: { exams: ExamSummary[] }) {
                 <div className="exam-card-bottom">
                   <span>
                     {score
-                      ? `Last result: ${score.correct}/${score.total}`
+                      ? `${score.unverified ? "Imported, unverified" : "Last result"}: ${score.correct}/${score.total}`
                       : quiz && Object.keys(quiz.answers).length > 0
                         ? `${quiz.checked.length} answers checked`
                         : "Single & multiple choice"}
@@ -140,8 +141,11 @@ const blankQuiz: QuizState = {
   finished: false,
 };
 const isCorrect = (selected: string[], question: Question) =>
-  selected.length === question.answers.length &&
-  question.answers.every((answer) => selected.includes(answer));
+  gradeAnswer(selected, question.answers);
+const subscribeLocation = (listener: () => void) => {
+  window.addEventListener("popstate", listener);
+  return () => window.removeEventListener("popstate", listener);
+};
 
 export function ExamPlayer({
   exam,
@@ -152,7 +156,12 @@ export function ExamPlayer({
 }) {
   const { quizzes } = useProgress();
   const state = quizzes[exam.slug] ?? blankQuiz;
-  const index = Math.min(state.index, questions.length - 1);
+  const search = useSyncExternalStore(subscribeLocation, () => window.location.search, () => "");
+  const [leftRequestedQuestion, setLeftRequestedQuestion] = useState(false);
+  const target = Number(new URLSearchParams(search).get("question"));
+  const found = questions.findIndex((item) => item.id === target);
+  const requestedIndex = !leftRequestedQuestion && found >= 0 ? found : null;
+  const index = requestedIndex ?? Math.min(state.index, questions.length - 1);
   const question = questions[index];
   const selected = state.answers[question.id] ?? [];
   const checked = state.checked.includes(String(question.id));
@@ -172,10 +181,11 @@ export function ExamPlayer({
       ...current,
       quizzes: {
         ...current.quizzes,
-        [exam.slug]: update(current.quizzes[exam.slug] ?? blankQuiz),
+        [exam.slug]: update({ ...blankQuiz, ...current.quizzes[exam.slug], attemptId: current.quizzes[exam.slug]?.attemptId ?? crypto.randomUUID() }),
       },
     }));
   const move = (target: number) => {
+    setLeftRequestedQuestion(true);
     change((current) => ({ ...current, index: target }));
     questionTitle.current?.focus();
     window.scrollTo({ top: 0, behavior: "instant" });
@@ -192,18 +202,24 @@ export function ExamPlayer({
       answers: { ...current.answers, [question.id]: next },
     }));
   };
-  const finish = () =>
+  const finish = () => {
+    const attemptId = state.attemptId ?? crypto.randomUUID();
     updateProgress((current) => ({
       ...current,
       quizzes: {
         ...current.quizzes,
-        [exam.slug]: { ...state, finished: true },
+        [exam.slug]: { ...state, attemptId, finished: true },
       },
       scores: {
         ...current.scores,
         [exam.slug]: { correct, total: questions.length },
       },
+      history: [
+        ...current.history.filter((attempt) => attempt.id !== attemptId),
+        { id: attemptId, examSlug: exam.slug, revision: quizRevision, savedAt: new Date().toISOString(), correct, total: questions.length, answers: state.answers, checked: state.checked, completed: true },
+      ],
     }));
+  };
   return (
     <div className="page exam-player">
       <Link href="/practice" className="back-link">
@@ -236,7 +252,7 @@ export function ExamPlayer({
           }}
         />
       </div>
-      {state.finished ? (
+      {state.finished && requestedIndex === null ? (
         <section className="quiz-results">
           <CheckCircle2 size={38} />
           <h2>Practice set complete.</h2>
@@ -467,7 +483,14 @@ export function ExamPlayer({
           <button
             className="button primary"
             onClick={() => {
-              change(() => blankQuiz);
+              updateProgress((current) => {
+                const previous = current.quizzes[exam.slug];
+                const alreadyRecorded = previous?.attemptId && current.history.some((attempt) => attempt.id === previous.attemptId);
+                const history = previous && previous.checked.length > 0 && !alreadyRecorded
+                  ? [...current.history, { id: previous.attemptId ?? crypto.randomUUID(), examSlug: exam.slug, revision: quizRevision, savedAt: new Date().toISOString(), correct, total: questions.length, answers: previous.answers, checked: previous.checked, completed: false }]
+                  : current.history;
+                return { ...current, history, quizzes: { ...current.quizzes, [exam.slug]: blankQuiz } };
+              });
               restartDialog.current?.close();
             }}
           >

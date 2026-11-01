@@ -4,6 +4,10 @@
 .github
 node_modules
 .next
+.next-verify
+supabase/.temp
+*.tsbuildinfo
+AGENTS.md
 test-results
 playwright-report
 tests

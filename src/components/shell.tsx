@@ -18,6 +18,7 @@ import {
 import { chapters } from "@/lib/catalog";
 import { SearchDialog } from "./search";
 import { StorageNotice, useProgress } from "./progress";
+import { CloudProgress } from "./cloud-progress";
 
 const navigation = [
   { href: "/", label: "Overview", icon: LayoutDashboard },
@@ -26,12 +27,15 @@ const navigation = [
   { href: "/final-sprint", label: "Final sprint", icon: Target },
   { href: "/bookmarks", label: "Bookmarks", icon: Bookmark },
   { href: "/topic-map", label: "Topic map", icon: Network },
+  { href: "/progress", label: "Attempt history", icon: ClipboardList },
+  { href: "/account", label: "Account", icon: BookOpen },
 ];
 
 export function Shell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const { completed } = useProgress();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [progressReady, setProgressReady] = useState(false);
   const mobileDialog = useRef<HTMLDialogElement>(null);
   useEffect(() => {
     mobileDialog.current?.close();
@@ -162,8 +166,10 @@ export function Shell({ children }: { children: React.ReactNode }) {
           </div>
           <SearchDialog />
         </header>
+        <CloudProgress onReady={setProgressReady} />
         <StorageNotice />
-        <main id="main-content" tabIndex={-1}>
+        {!progressReady && <div className="storage-notice" role="status">Loading study progress…</div>}
+        <main id="main-content" tabIndex={-1} inert={!progressReady} aria-busy={!progressReady}>
           {children}
         </main>
         <footer className="footer">

@@ -31,7 +31,7 @@ npx vercel@latest link
 npx vercel@latest deploy --prod
 ```
 
-Use the existing project when linking. No application environment variables are needed. `.vercel/`, `.env*`, dependencies, generated images/search files, and build/test output are ignored by Git. Do not commit CLI authentication files or generated environment credentials.
+Use the existing project when linking. Configure `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, and the server-only `SUPABASE_SERVICE_ROLE_KEY` in Vercel for account access. The dedicated Supabase project must have public signups and anonymous sign-ins disabled, and the migrations under `supabase/migrations/` applied. Keep service-role keys and database passwords private; they are never browser environment variables. `.vercel/`, `.env*`, dependencies, generated images/search files, and build/test output are ignored by Git. Do not commit CLI authentication files or generated environment credentials.
 
 ## Content pipeline
 

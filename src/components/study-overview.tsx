@@ -15,7 +15,7 @@ import {
   Network,
 } from "lucide-react";
 import { groups, type Chapter, type ExamSummary } from "@/lib/catalog";
-import { useProgress } from "./progress";
+import { getProgressStorageKey, useProgress } from "./progress";
 
 export function ChapterRows({ chapters }: { chapters: Chapter[] }) {
   const { completed, bookmarks } = useProgress();
@@ -144,7 +144,7 @@ export function StudyOverview({
         <section className="progress-panel">
           <div className="panel-topline">
             <h2 className="section-label">Your progress</h2>
-            <span className="subtle-tag">On this device</span>
+            <span className="subtle-tag">{getProgressStorageKey().includes(":account:") ? "Your account" : "On this device"}</span>
           </div>
           <div className="progress-visual">
             <svg

@@ -2,19 +2,38 @@
 
 import { useSyncExternalStore } from "react";
 import { chapters } from "@/lib/catalog";
+import { quizRevision } from "@/lib/quiz-revision";
+export { quizRevision } from "@/lib/quiz-revision";
 
 export type QuizState = {
   answers: Record<string, string[]>;
   checked: string[];
   index: number;
   finished: boolean;
+  attemptId?: string;
 };
+export type AttemptHistory = {
+  id: string;
+  examSlug: string;
+  revision: string;
+  savedAt: string;
+  correct: number;
+  total: number;
+  answers: Record<string, string[]>;
+  checked: string[];
+  completed: boolean;
+  imported?: boolean;
+  conflictCopy?: boolean;
+};
+export type ConflictedAttempt = { id: string; examSlug: string; revision: string; savedAt: string; quiz: QuizState };
 type Progress = {
   completed: string[];
   bookmarks: string[];
   lastRead: string | null;
   quizzes: Record<string, QuizState>;
-  scores: Record<string, { correct: number; total: number }>;
+  scores: Record<string, { correct: number; total: number; unverified?: boolean }>;
+  history: AttemptHistory[];
+  conflicts: ConflictedAttempt[];
   storageAvailable: boolean;
 };
 const empty: Progress = {
@@ -23,10 +42,12 @@ const empty: Progress = {
   lastRead: null,
   quizzes: {},
   scores: {},
+  history: [],
+  conflicts: [],
   storageAvailable: true,
 };
-const key = "aws-study-desk-v1";
-const quizRevision = "2026-10-16-review-1";
+const guestKey = "aws-study-desk-v1";
+let key = guestKey;
 let snapshot = empty;
 let previous: string | null | undefined;
 const listeners = new Set<() => void>();
@@ -94,6 +115,23 @@ function read(): Progress {
       lastRead: validSlugs([data?.lastRead])[0] ?? null,
       quizzes,
       scores,
+      history: Array.isArray(data?.history) ? data.history.filter((item: AttemptHistory) =>
+        item && typeof item.id === "string" && /^practice-exam-\d+$/.test(item.examSlug) &&
+        typeof item.revision === "string" && typeof item.savedAt === "string" &&
+        Number.isInteger(item.correct) && Number.isInteger(item.total) &&
+        item.correct >= 0 && item.total > 0 && item.correct <= item.total &&
+        Array.isArray(item.checked) && item.checked.every((id) => typeof id === "string") &&
+        item.answers && typeof item.answers === "object" && Object.values(item.answers).every((answer) =>
+          Array.isArray(answer) && answer.every((letter) => /^[A-F]$/.test(letter)))
+      ) : [],
+      conflicts: Array.isArray(data?.conflicts) ? data.conflicts.filter((item: ConflictedAttempt) =>
+        item && typeof item.id === "string" && /^practice-exam-\d+$/.test(item.examSlug) &&
+        typeof item.revision === "string" && typeof item.savedAt === "string" && item.quiz &&
+        Number.isInteger(item.quiz.index) && item.quiz.index >= 0 && Array.isArray(item.quiz.checked) &&
+        item.quiz.checked.every((id) => typeof id === "string") && item.quiz.answers &&
+        typeof item.quiz.answers === "object" && Object.values(item.quiz.answers).every((answer) =>
+          Array.isArray(answer) && answer.every((letter) => /^[A-F]$/.test(letter)))
+      ) : [],
       storageAvailable: true,
     };
   } catch {
@@ -122,6 +160,23 @@ export function updateProgress(update: (current: Progress) => Progress) {
   } catch {
     snapshot = { ...snapshot, storageAvailable: false };
   }
+  listeners.forEach((listener) => listener());
+  window.dispatchEvent(new Event("study-progress-changed"));
+}
+
+export function selectProgressAccount(userId: string | null) {
+  key = userId ? `${guestKey}:account:${userId}` : guestKey;
+  previous = undefined;
+  snapshot = empty;
+  listeners.forEach((listener) => listener());
+}
+
+export function getProgressStorageKey() {
+  return key;
+}
+
+export function reloadProgress() {
+  previous = undefined;
   listeners.forEach((listener) => listener());
 }
 

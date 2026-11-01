@@ -2,6 +2,8 @@ import type { NextConfig } from "next";
 
 const config: NextConfig = {
   poweredByHeader: false,
+  distDir: process.env.CLOUDNOTES_BUILD_DIR ?? ".next",
+  outputFileTracingIncludes: { "/api/study": ["./practice-exam/*.md"] },
   async redirects() {
     return [
       {
